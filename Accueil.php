@@ -1,27 +1,27 @@
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="author" content="Groupe G10E - ISEP" />
+
+	<head>
+		<title> Deal With Eat </title>
+		<!-- importation de la bibliothèque Font Awesome pour les polices vectorielles-->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	</head>
+	<header>
+		
+		<?php include('php/header.php'); ?>
+
+	</header>
+	<body>
+		
+
+	</body>
+	<footer>
+		<div id="footer">
+			<p>Accueil - Aide/FAQ - A Propos - Contact - Règlement</p>
+		</div>
+	</footer>
 
 
-        <link rel="stylesheet" href="CSS/style.css" />
 
-        <title> Deal With Eat </title>
-    </head>
- 
-        
-        <?php include("module/header.php");?>
-        <?php include("module/menu.php");?>
-        
-        
-    <body>
-    <?php include("module/moduleconnect.php");?>
-    <?php include("module/grappe.php");?>
-
-
-    </body>
-
-<?php include("module/footer.php");?>
-        
 </html>
