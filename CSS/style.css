@@ -5,7 +5,7 @@
 
 
 @font-face {
-    font-family: sunshine;
+    font-family: sunshine; /* On télécharge une police */
     src: url("fonts/sunshine.ttf");
 }
 
@@ -22,15 +22,15 @@ body{
 
 a{
 
-	text-decoration: none;
+	text-decoration: none; /* Soulignement ici normal par défaut*/
 	color:black;
 }
 #titre{
 	position: absolute;
-	margin-left: 105px;
+	margin-left: 105px; /* marge extérieur à gauche */
 	left:0;
-	font-size: 40px;
-	margin-top: 15px;
+	font-size: 40px; /*taille du texte*/
+	margin-top: 15px; /* marge extérieur en haut */
 	font-family: Moon;
 	z-index: 1;
 
