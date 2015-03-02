@@ -8,7 +8,7 @@
 
 	</head>
 	<header>
-		<p> wesh gros </p>
+		
 		<?php include('php/header.php'); ?>
 		
 	</header>
