@@ -208,13 +208,13 @@ a{
 	box-shadow: 0 0 2px 5px #F3E2A9;
 
 }
-
-#footer p{
+														/*footer inutile je pense*/
+/*#footer p{						
 	text-align: center;
 	font-family: molly;
 	font-size: 14px;
 
-}
+}*/
 
 .rgstr {
 	padding: 9em 0px;
@@ -272,7 +272,18 @@ a{
 	margin-top: 1.2em;
 }
 
+/*           ----------------------------------- footer -----------------------------------              */
 
+.reseau_sociaux {
+	position: absolute;
+	right: 35%;
+	left: 35%;
+}
+
+.footer {
+	background-color: #F2F5A9;
+
+}
 
 /*           ----------------------------------- ANNONCES -----------------------------------              */
 
