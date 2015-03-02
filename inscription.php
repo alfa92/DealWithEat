@@ -64,7 +64,7 @@ if (isset($_POST['mail'])) {
 
 
 			}else{
-			?><?php
+			
 			}
 		if($_POST['pass'] == $_POST['pass2']){
 			$sql = "INSERT INTO membres VALUES ('', '".$login."', '".$pass."' , '" . $mail . "' ,' 0 ')";
@@ -91,8 +91,9 @@ if (isset($_POST['mail'])) {
 ?>
 					<input type="text" name='login' placeholder="Pseudo" required />
 					<input type="password" style="width:30%;" name='pass' placeholder="Mot de passe"  required />
-					<input type="text" name='mail' class="email" placeholder="Enter Email"  required /></br>
 					<input type="password" name='pass2' placeholder="Retapez votre mot de passe" required /></br>
+					<input type="text" name='mail' class="email" placeholder="Enter Email"  required /></br>
+					
 					<input class="r-submit" name='submit' style="cursor:pointer;" type="submit"  value="S'inscrire"/>
 					</div>
 				</form>
