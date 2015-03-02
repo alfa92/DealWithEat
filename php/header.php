@@ -36,7 +36,7 @@
 				<p> <a href="inscription.php"> Pas encore inscrit ?<i class="fa fa-user-plus" ></i></a></p>
 			</form>
 			</div>
-			<img id="panier" src="css/images/bag.png">
+			
 
 			
 <?php 
