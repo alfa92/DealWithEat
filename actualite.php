@@ -11,17 +11,8 @@
 		
 		<?php include('php/header.php'); ?>
 		
+
 	</header>
 	<body>
-
-</div>
-		
-
 	</body>
-	<footer>
-		
-	</footer>
-
-
-
-</html>
+	</html>
