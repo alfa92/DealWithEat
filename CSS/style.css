@@ -17,8 +17,10 @@
 }
 
 body{
-	margin: 0;
-	margin-bottom:100px;
+	margin-right: 0;
+	margin-left: 0;
+	margin-top: 0;
+	margin-bottom:300px;
 }
 html{
 	position: relative;
@@ -294,14 +296,29 @@ body #presentation{
 
 #pied_de_page {
 	margin: 0;
-	position: absolute;
 	bottom:0;
-	height: 120px;
+	position: absolute;
 	width: 100%;
+	height: 180px;
 	background-color: #F2F5A9;
+	background: url('images/footer.png');
 }
 
-#pied_de_page img{
+#pied_de_page p{
+	position: absolute;
+	bottom:0;left:0;
+	margin-bottom: 0;
+	margin-left: 5px;
+	font-family: Sunshine;
+	font-size: 20px;
+}
+
+#pied_de_page p i {
+	font-size: 12px;
+
+}
+
+.reseau_sociaux img{
 	width: 40px;
 	height: 40px;
 }
@@ -314,6 +331,8 @@ body #presentation{
 	margin-right: 10px;
 
 }
+
+#logofooter{width: 300px;bottom:0;position: absolute;right:0;left:0;margin-right: auto;margin-left: auto;}
 
 /*           ----------------------------------- ANNONCES -----------------------------------              */
 

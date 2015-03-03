@@ -103,6 +103,8 @@ if (isset($_POST['mail'])) {
 	</div>
 	</body>
 	<footer>
+
+	<?php include('php/pied_de_page.php') ?>
 		
 	</footer>
 
