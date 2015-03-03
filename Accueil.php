@@ -15,10 +15,10 @@
 		</header>
 
 	<body>
-
+	<h1> Présentation </h1>
 		<!-- Le corps -->	
 
-		<p>
+		<p id="presentation">
         Le terme désigne aussi par métonymie les plantes potagères cultivées pour la production de légumes.
 
 		Dans le langage culinaire, « légume » s'oppose à « fruit », mais dans certains cas le même produit peut être cuisiné ou consommé soit comme légume soit comme fruit. </br>
@@ -33,15 +33,16 @@
 		Les légumes destinés à la conservation (appertisation, surgélation) et les légumes secs sont cultivés en plein champ, et leur récolte est le plus souvent mécanisée.
         </p>
 
-        <img src = "images/legume.jpg" alt ="Photo de légume" />
+        <img id="accueilbody" src = "images/legume.jpg" alt ="Photo de légume" />
 
 
-		<!-- Le pied de page -->
+		
 
-	<?php include('php/pied_de_page.php'); ?>
+	
 
 	</body>
-	
+	<!-- Le pied de page -->
+	<?php include('php/pied_de_page.php'); ?>
 
 
 	</html>	

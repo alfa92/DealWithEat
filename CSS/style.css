@@ -18,7 +18,14 @@
 
 body{
 	margin: 0;
+	margin-bottom:100px;
 }
+html{
+	position: relative;
+  	min-height: 100%;
+
+}
+
 
 a{
 
@@ -199,22 +206,31 @@ a{
 	font-family: molly;
 }
 
-#footer{
-	
-	height: 60px;
-	width: 100%;
-	bottom:0;
-	background-color: #F2F5A9;
-	box-shadow: 0 0 2px 5px #F3E2A9;
-
-}
-														/*footer inutile je pense*/
-/*#footer p{						
+body h1{
 	text-align: center;
-	font-family: molly;
-	font-size: 14px;
+	font-family: sunshine;
+	margin-top:20px;
+	margin-bottom: 0;
+}
 
-}*/
+body #presentation{
+	float: left;
+	margin-left: 5%;
+	margin-top: 10px;
+	width: 45%;
+	text-align: justify;
+	height: 350px;
+	
+}
+
+#accueilbody{
+	width: 49%;
+	float: left;
+	margin-left: 1%;
+	margin-top: 8px;
+	height: 380px;
+}
+
 
 .rgstr {
 	padding: 9em 0px;
@@ -274,14 +290,28 @@ a{
 
 /*           ----------------------------------- footer -----------------------------------              */
 
-.reseau_sociaux {
+
+
+#pied_de_page {
+	margin: 0;
 	position: absolute;
-	right: 35%;
-	left: 35%;
+	bottom:0;
+	height: 120px;
+	width: 100%;
+	background-color: #F2F5A9;
 }
 
-.footer {
-	background-color: #F2F5A9;
+#pied_de_page img{
+	width: 40px;
+	height: 40px;
+}
+
+.reseau_sociaux{
+	position: absolute;
+	right:0;
+	bottom:0;
+	margin-bottom: 2px;
+	margin-right: 10px;
 
 }
 
