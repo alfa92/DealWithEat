@@ -12,10 +12,11 @@
 		
 
 	</header>
-	<body>
+	<body >
 		<div>
 			<img id ="avatar" src="css/images/avatar_defaut.png" />
 		</div>
+		
 		<div id="principal">
 			
 			<h2> Antoine Doyen </h2>
@@ -36,8 +37,9 @@
 		
 
 		<div id="secondaire">
-
+		<?php include('php/moncompte_profil.php') ?>
 		</div>
+		
 
 
 

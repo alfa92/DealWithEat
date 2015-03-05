@@ -11,11 +11,13 @@
 	<header>
 		
 		<?php include('php/header.php'); ?>
+
 		
 		</header>
 
 	<body>
 	<h1> Présentation </h1>
+	
 		<!-- Le corps -->	
 
 		<p id="presentation">

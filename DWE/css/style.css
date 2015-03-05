@@ -1,0 +1,339 @@
+@charset 'UTF-8';
+
+@font-face{font-family:'FontAwesome';src:url('font/fontawesome-webfont.eot?v=4.0.1');src:url('font/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'),url('font/fontawesome-webfont.woff?v=4.0.1') format('woff'),url('font/fontawesome-webfont.ttf?v=4.0.1') format('truetype'),url('font/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
+
+
+@font-face {
+    font-family: forever;
+    src: url("fonts/Always Forever.ttf");
+}
+@font-face {
+    font-family: foreverBold;
+    src: url("fonts/Always Forever Bold.ttf");
+}
+	body,input,textarea,select,h1,h2
+	{
+		font-family: 'Roboto', sans-serif;
+		font-size: 11pt;
+		font-weight: 300;
+		line-height: 1.75em;
+		
+	}
+
+body {
+    margin:0;
+}
+/*********************************************************/
+/************************HEADER***************************/
+/*********************************************************/
+#principal{
+    position: relative;
+    height: 100%;}
+
+#logo {
+    width:110px;
+    margin:0;
+    float:left;
+    margin-top: -80px;
+    margin-left: -10px;
+}
+
+h1{
+    padding-top: 10px;
+    margin-left: 80px;
+    font-weight: 300;
+    line-height: 1em;
+    font-size: 3em;
+    letter-spacing: -0.075em;
+}
+h2{
+    font-weight: 300;
+    letter-spacing: -0.075em;
+    margin-left:105px;
+    margin-top: -40px;
+}
+
+#container_header {
+    width: 100%;
+    height: 65px;
+    background: white;
+    /*background: linear-gradient(to left, #D0FA58, #F6F286,#D0FA58);*/   
+}
+
+
+#search {
+    position: absolute;
+    width:400px;
+    height: 40px;
+    top:0;
+    right:10px;
+    left:240px;
+    margin-left:10%;
+    margin-top: 12px;
+    padding: 10px 12px;
+	outline: none !important;
+	color: #33383b;
+	font-size: 15px;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em
+}
+#subsearch {
+    position: absolute;
+    width:35px;
+    height: 35px;
+    top:0;
+    left:530px;
+    margin-left: 15.5%;
+    margin-top: 15px;
+    padding: 10px 12px;
+	outline: none !important;
+    background:url('images/search.png') no-repeat;
+    background-size:cover; 
+	border: none;
+	border-radius: 0.3em
+}
+
+#connectdiv{
+    position: absolute;
+    right:0;
+    top:0;
+    width: 368px;
+    margin-top: 14px;
+}
+#connectdiv .connect{
+    width: 150px;
+    height: 26px;
+    top:0;
+    padding: 10px 12px;
+	outline: none !important;
+	color: #33383b;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em
+}
+
+#connectdiv .subconnect{
+    position: absolute;
+    height:26px;
+    width:30px;
+    margin-top:0;
+    top:0;
+    right:0;
+    margin-right: 8%;
+    background: white;
+    outline: none !important;
+	color: #33383b;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em
+}
+
+#connectdiv p{
+    margin-top: 0px;
+    margin-left: 50px;
+    font-family:sans-serif;
+    font-size: 12px;
+    font-style: italic;
+    color:dimgrey;
+
+}
+ 
+/*********************************************************/
+/**************************NAV****************************/
+/*********************************************************/
+
+
+#nav
+	{
+     background-color: rgba(1, 1, 1, 0.2);
+	}
+
+#navcontainer
+{
+      
+    background: url("images/carrots.jpg") no-repeat;
+    background-size:100%;
+    background-position: 0px -320px;
+			top: 0;
+			left: 0;
+			width: 100%;
+}
+		
+#nav  ul
+		{
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+
+#nav  ul  li
+		{
+			display: inline-block;
+			border-right: 1px solid;
+			border-color: rgba(255,255,255,.6);
+		}
+		
+#nav ul li:last-child
+			{
+				padding-right: 0;
+				border-right: none;
+			}
+
+#nav ul li a,
+#nav ul li span
+			{
+				display: inline-block;
+				padding: 1.5em 1.5em;
+				letter-spacing: 0.06em;
+				text-decoration: none;
+                font-weight: 400;
+				text-transform: uppercase;
+				font-size: 1.1em;
+				outline: 0;
+				color: #FFF;
+			}
+
+
+/*********************************************************/
+/************************ACCUEIL**************************/
+/*********************************************************/
+
+#wlcm{ 
+    text-align: center;
+}
+
+#wlcm i{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    letter-spacing: -0.075em;
+    font-size: 20px;
+    display: inline;
+}
+
+#lastproduct {
+    margin-top: -50px;
+    width: 100%;
+}
+
+/*********************************************************/
+/************************INSCRIPTION**********************/
+/*********************************************************/
+h3{
+   font-weight: 300;
+    line-height: 1em;
+    font-size: 3em;
+    letter-spacing: -0.075em;
+   
+}
+
+.rgstr-main input[type="text"] {
+	width: 30%;
+	padding: 10px 12px;
+	margin: 7px 5px;
+	outline: none !important;
+	background: rgba(153, 153, 153, 0.09);
+	color: #33383b;
+	font-size: 15px;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em;
+
+}
+.rgstr-main input.email[type="text"], .rgstr-main input[type="password"] {
+	width: 61%;
+	padding: 10px 12px;
+	margin: 9px 0px;
+	outline: none !important;
+	background: rgba(153, 153, 153, 0.09);
+	color: #33383b;
+	font-size: 15px;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em;
+	
+}
+.r-submit  {
+	background: gray;
+	border: 0px;
+	font-family: "Roboto",sans-serif;
+	padding: 6px 14px;
+	margin: 10px 10px;
+	outline: none;
+	color: white;
+	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
+	font-size: 17px;
+}
+.rgstr-main {
+	width: 100%;
+	text-align: center;
+	top:0;
+    
+}
+
+.rgstr-main label{
+	font-family: 'Roboto',sans-serif;
+
+}
+.r-submit {
+	margin-top: 1.2em;
+    font-family: 'Roboto',sans-serif;
+}
+
+.rgstr-plus{
+    margin-left: auto;
+    margin-right: auto;
+    height: 20px;
+    width: 20px;
+    overflow: hidden;
+    margin-bottom: ;
+    margin-left:70%;
+}
+.rgstr-plus a{
+    text-align: right;
+    font-family: 'Roboto',sans-serif;
+    font-size: 10px;
+    color:gray;
+    
+}
+
+.rgstr-plus:hover {margin-left:auto;height:300px;
+width: auto}
+.rgstr-plus label{
+    display:inline-block;
+    width: 29%;
+    margin-right: 25px;
+    font-family: 'Roboto',sans-serif;
+    font-size: 20px;
+    color:gray;
+}
+
+
+/*********************************************************/
+/************************FOOTER***************************/
+/*********************************************************/
+
+
+footer{
+    position: relative; 
+    bottom:0;
+    border-top: 24px solid gray;
+    background: url("images/vegetable.jpg") no-repeat;
+    background-size:100%;
+    background-position: center;
+    width: 100%;
+    margin-top: 230px;
+    height:60px;
+
+}
+footer p{
+    margin-top: -21px;
+text-align: center;
+ color:white;
+    font-family: 'Roboto',sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+

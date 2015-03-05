@@ -1,4 +1,4 @@
-
+<?php include('php/config.php'); ?>
 <html>
 
 	<head>
@@ -30,18 +30,13 @@
 				<h3 style="font-family:moon;font-size:50px;"> Inscription </h3>
 				<?php 
 	
-	$serv='localhost';
-	$userdb='root';
-	$mdpdb='root';
-	$db='dealwitheat';
-
-	$conn=mysqli_connect($serv,$userdb,$mdpdb,$db) or die("Une erreur est apparu pendant la connection");
+	
 
 if (isset($_POST['login'])) {
 	$login=$_POST['login'];
 }
 if (isset($_POST['pass'])) {
-	$pass=md5($_POST['pass']);
+	$pass=$_POST['pass'];
 }
 if (isset($_POST['pass2'])) {
 	$pass2=$_POST['pass2'];

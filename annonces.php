@@ -55,9 +55,9 @@
 		
 
 	</body>
-	<footer>
-		
-	</footer>
+
+		<?php include('php/pied_de_page.php') ?>
+
 
 
 
