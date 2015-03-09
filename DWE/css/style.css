@@ -19,7 +19,8 @@
 		line-height: 1.75em;
 		
 	}
-
+a{text-decoration: none;
+color:black;}
 body {
     margin:0;
     height: 100%;
@@ -84,8 +85,29 @@ h2{
 #subsearch {
   display:none;
 }
+#connecterdiv p{
+    position:absolute;
+    text-align: right;
+    color:gray;
+    font-family: "Roboto" sans-serif;
+    text-decoration: none;
+    right:0; 
+    font-size: 16px;
+    margin-top: 14px;
+    margin-right: 36%;
+    font-style:normal;
+}
 
+#avatar_little{
+    position:absolute;
+    width:60px;
+    right:0;
+    margin-top:4px;
+    margin-right: 2%;
 
+}
+
+#connecterdiv,
 #connectdiv{
     position: absolute;
     right:0;
@@ -118,6 +140,7 @@ h2{
     margin-right: 2%;
     font-style:normal;
 }
+
 
 #connectdiv #connect img{
     width: 13px;
@@ -546,6 +569,22 @@ width: auto}
 #actdroite .lastarticle,#actdroite .moreview,#actdroite .bestblog{
  height: 150px;   
 }
+/*********************************************************/
+/*******************PAGE DE CONNECTION********************/
+/*********************************************************/
+
+#connectdivvous{
+    width: 100%;
+    text-align: center;
+}
+
+#connecvs{
+font-family: 'Roboto' sans-serif;
+    font-size:20px;
+
+}
+
+
 
 /*********************************************************/
 /************************FOOTER***************************/
@@ -581,3 +620,115 @@ width: auto}
     
 }
 
+
+#no_me {
+    display: block;
+    right:0;
+    text-align: right;
+    font-size: 12px;
+}
+
+.title_account {
+    float:left;
+    width:60%;
+    right:0;
+    margin-left: 12%;
+}
+
+#navcompte
+	{
+     background:#efcaa5;
+        height: 40px;
+        float:left;
+        whith:50%;
+        margin-left: 21.9%;
+        margin-top: 1px;
+
+	
+    }
+
+#navcontainercompte
+{
+      margin-top: 1px;
+    		top: 0;
+			left: 0;
+			width: 100%;
+        height:40px;
+    
+}
+		
+#navcompte  ul
+		{
+            top:0;
+            margin-top: -14px;
+			padding: 0;
+			text-align: center;
+		}
+
+#navcompte  ul  li
+		{
+			display: inline-block;
+			border-right: 1px solid;
+			border-color: rgba(255,255,255,.6);
+		}
+		
+#navcompte ul li:last-child
+			{
+				padding-right: 0;
+				border-right: none;
+			}
+
+#navcompte ul li a,
+#navcompte ul li span
+			{
+				display: inline-block;
+				padding: 1.5em 1.5em;
+				letter-spacing: 0.06em;
+				text-decoration: none;
+                font-weight: 400;
+				text-transform: uppercase;
+				font-size: 1.1em;
+				outline: 0;
+				color: #FFF;
+			}
+
+
+#navcompte ul li a:hover{
+    color: black;;
+
+}
+
+#avatar_moyen{
+    position: absolute;
+    width:120px;
+    top:0;
+    left:0;
+    margin-top: 230px;
+    margin-left: 11%;
+}
+
+#account_data{
+    width: 50%;
+    margin-left: 22%;
+       margin-top: 100px; 
+
+}
+
+
+#account_data td{
+    font-family: 'Roboto' sans-serif;
+    font-size:17px;
+
+         padding-top:20px;
+}
+
+#account_data a{
+
+font-family: 'Roboto' sans-serif;
+    font-size:14px;
+    color:gray;
+}
+
+#account_data input{
+    width: 220px;   
+}

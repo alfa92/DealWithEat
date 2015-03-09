@@ -9,8 +9,7 @@ espace membre puisse fonctionner correctement.
 
 //On se connecte a la base de donnee
 $conn=mysqli_connect('localhost', 'root', 'root','dealwitheat');
-
-
+ 
 //Email du webmaster
 $mail_webmaster = 'example@example.com';
 
