@@ -103,7 +103,7 @@ $ligne = $resultat->fetch_assoc();
 
    
 </table>
-    <input type="submit" name="rafraichir" value="Envoyer les modifications">
+    <input id="modif_sub" type="submit" name="rafraichir" value="Envoyer les modifications">
  </form>     
     </body>
     </div>
@@ -113,32 +113,37 @@ $ligne = $resultat->fetch_assoc();
 <?php 
     
     if(isset($_POST['rafraichir'])){
-         if(isset($_POST['nom'])){
+         if(isset($_POST['nom']) && $_POST['nom']!=NULL){
              $req = 'UPDATE membres SET nom="'.$_POST['nom'].'" WHERE membre_PSEUDO="'.$_SESSION['login'].'"';
              $result = mysqli_query($conn,$req) or die ('Erreur '.$req.''.mysql_error());
-
+        
+         }
+         if(isset($_POST['prenom']) && $_POST['prenom']!=NULL){
+            $req1 = 'UPDATE membres SET prenom="'.$_POST['prenom'].'" WHERE membre_PSEUDO="'.$_SESSION['login'].'"';
+             $result1 = mysqli_query($conn,$req1) or die ('Erreur '.$req1.''.mysql_error());
              
+         }
+         if(isset($_POST['date']) && $_POST['date']!=NULL){
+             $req2 = 'UPDATE membres SET age="'.$_POST['date'].'" WHERE membre_PSEUDO="'.$_SESSION['login'].'"';
+             $result2 = mysqli_query($conn,$req2) or die ('Erreur '.$req2.''.mysql_error());
+         }
+         if(isset($_POST['mail']) && $_POST['mail']!=NULL){
+           $req3 = 'UPDATE membres SET membre_mail="'.$_POST['mail'].'" WHERE membre_PSEUDO="'.$_SESSION['login'].'"';
+             $result3 = mysqli_query($conn,$req3) or die ('Erreur '.$req3.''.mysql_error());
+         }else{}
+         if(isset($_POST['adresse']) && $_POST['adresse']!=NULL){
+           $req4 = 'UPDATE membres SET adresse="'.$_POST['adresse'].'" WHERE membre_PSEUDO="'.$_SESSION['login'].'"';
+             $result4 = mysqli_query($conn,$req4) or die ('Erreur '.$req4.''.mysql_error());
+         }else{}
+         if(isset($_POST['ville']) && $_POST['ville']!=NULL){
+            $req5 = 'UPDATE membres SET ville="'.$_POST['ville'].'" WHERE membre_PSEUDO="'.$_SESSION['login'].'"';
+             $result5 = mysqli_query($conn,$req5) or die ('Erreur '.$req5.''.mysql_error());
          }else{
-        echo "Les modifications n'ont pas pu être acceptés";
-    }
-         if(isset($_POST['prenom'])){
-             "UPDATE  membres VALUES ('', '', '' , '' ,'','','".$_POST['prenom']."','','','','')";
-         }
-         if(isset($_POST['date'])){
-             "UPDATE  membres VALUES ('', '', '' , '' ,'','','','".$_POST['date']."','','','')";
-         }
-         if(isset($_POST['mail'])){
-             "UPDATE  membres VALUES ('', '', '' , '" .$_POST['mail']."' ,'','','','','','','')";
-         }
-         if(isset($_POST['adresse'])){
-             "UPDATE  membres VALUES ('', '', '' , '' ,'',','','','".$_POST['adresse']."','','')";
-         }
-         if(isset($_POST['ville'])){
-             "UPDATE  membres VALUES ('', '', '' , '' ,'','','','','','".$_POST['ville']."','')";
-         }
-        if(isset($_POST['pays'])){
-            "UPDATE  membres VALUES ('', '', '' , '' ,'','','','','','','".$_POST['pays']."')";
-        }
+         $_POST['ville']=$ligne['ville'];}
+        if(isset($_POST['pays']) && $_POST['pays']!=NULL){
+            $req6 = 'UPDATE membres SET pays="'.$_POST['pays'].'" WHERE membre_PSEUDO="'.$_SESSION['login'].'"';
+             $result6 = mysqli_query($conn,$req6) or die ('Erreur '.$req6.''.mysql_error());
+        }else{}
        ?> 
     <SCRIPT LANGUAGE="JavaScript">
      document.location.href="moncompte_modif.php" 

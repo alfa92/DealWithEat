@@ -710,7 +710,8 @@ font-family: 'Roboto' sans-serif;
 #account_data{
     width: 50%;
     margin-left: 22%;
-       margin-top: 100px; 
+       margin-top: 60px; 
+    border-bottom: 1px solid black;
 
 }
 
@@ -730,5 +731,33 @@ font-family: 'Roboto' sans-serif;
 }
 
 #account_data input{
-    width: 220px;   
+    height: 40px;
+      padding: 10px 12px;
+	margin: 7px 5px;
+	outline: none !important;
+	background: rgba(153, 153, 153, 0.09);
+	color: #33383b;
+	font-size: 15px;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em;
+}
+
+#modif_sub{
+    
+    float:center;
+    display: block;
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: gray;
+	border: 0px;
+	font-family: "Roboto",sans-serif;
+	padding: 6px 14px;
+	outline: none;
+	color: white;
+	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
+	font-size: 17px;
 }

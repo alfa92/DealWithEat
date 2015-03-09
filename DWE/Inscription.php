@@ -14,6 +14,7 @@
         
         <?php include('php/config.php'); ?>
         <?php include('php/header.php'); ?>
+        <?php include('php/connexion.php'); ?>
 		<?php include('nav.php'); ?> 	
 			
     
