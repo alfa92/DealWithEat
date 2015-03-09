@@ -18,6 +18,8 @@
     </header>
     
     
+    
+    
         <body>
            <div id="actgauche">
             <h1> Le fruit légume </h1>
@@ -26,11 +28,32 @@
              
             <a id="like"> J'aime </a>
                    <form id="cible">
-                <textarea id="paragraph_text" name="paragraph_text" cols="80" rows="3"></textarea><br>
-                    <input id="comment" type=submit value="Commenter">
+                <textarea id="paragraph_text" name="comment" cols="80" rows="3"></textarea><br>
+                    <input id="comment" name='comment_sub' type=submit value="Commenter">
                     
                 </form>
                 </div>
+               <?php
+        if(isset($_POST['comment'])){
+            $comment=$_POST['comment'];
+        }
+            if(isset($_POST['comment_sub'])){
+                if($login!=NULL){
+                    "INSERT INTO `blog`(`membre_id`, `membre_pseudo`, `titre_article`, `article`, `commentaire`, `like`, `date`) VALUES ('','$login','','','$comment','','NOW()')";
+                
+                }else{
+                    echo "Veuillez vous connectez s\'il vous plait" ;
+                            }
+            }
+
+              $com='SELECT commentaire FROM blog WHERE membre_id != NULL '  ;
+                $c=mysqli_query($conn,$com);
+                $w=mysqli_fetch_array($c);
+                
+                echo $w;
+
+
+    ?>
             </div>
             
                        <div id="actgauche">
