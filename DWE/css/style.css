@@ -283,6 +283,7 @@ margin-left: 40px;
 }
 
 #presentation{
+
     width: 100%;
 
 }
@@ -399,6 +400,7 @@ h3{
 	color: white;
 	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
 	font-size: 17px;
+
 }
 .rgstr-main {
 	width: 100%;
@@ -584,93 +586,6 @@ font-family: 'Roboto' sans-serif;
 
 }
 
-
-
-/*********************************************************/
-/************************FOOTER***************************/
-/*********************************************************/
-footer
-{
-    /*border : 1px solid red ;*/
-        color: black;
-    position: absolute bottom;
-    margin-top: 30%;
-}
-
-#banniere{
-    height: 15%;
-    width: 100%;
-    /*border : 1px solid pink ;*/
-
-}
-
-.reseaux {
-    /*border : 1px solid black ;*/
-    height: 15%;
-    width: 25%;
-    margin-left:35%;
-    margin-right:35%;
-    display: inline;
-    vertical-align: top;
-    margin-top: 25%;
-}
-
-#copyright{
-    /*border : 1px solid black ;*/
-    display: inline;
-    vertical-align: top;
-    margin-top: 25%;
-}
-
-.fb{
-    height: 30px;
-    width: :30px;
-}
-
-.twitter{
-    height: 30px;
-    width: :30px;
-}
-
-.contact{
-    height: 30px;
-    width: :30px;
-}
-
-.instragram{
-    height: 30px;
-    width: :30px;
-}
-
-/*********************************************************/
-/**********************RESPONSIVE*************************/
-/*********************************************************/
-
-
-
-@media screen and (max-width:1050px){
-    
-    #nav{
-        margin-top: 70px;
-    }
-    #search{
-        margin-top: 80px;
-        left:0;
-        margin-left: 10%;
-    }
-    #connectdiv{
-        margin-top: 70px;
-    }
-    .logo{
-     text-align: center;
-        left:0;
-    }
-    #container_header h1,#container_header h2{margin-left: 0;}
-    #logo{display: none;}
-    
-}
-
-
 #no_me {
     display: block;
     right:0;
@@ -687,7 +602,7 @@ footer
 
 #navcompte
 	{
-     background:#efcaa5;
+     background:rgb(180, 226, 255);
         height: 40px;
         float:left;
         whith:50%;
@@ -739,12 +654,12 @@ footer
 				text-transform: uppercase;
 				font-size: 1.1em;
 				outline: 0;
-				color: #FFF;
+				color: black;
 			}
 
 
 #navcompte ul li a:hover{
-    color: black;;
+    color: white;;
 
 }
 
@@ -809,4 +724,122 @@ font-family: 'Roboto' sans-serif;
 	color: white;
 	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
 	font-size: 17px;
+}
+
+
+/*********************************************************/
+/************************FOOTER***************************/
+/*********************************************************/
+footer
+{
+    /*border : 1px solid red ;*/
+    color: black;
+    position: absolute bottom;
+    margin-top: 5%;
+}
+
+#banniere{
+    height: 100px;;
+    width: 100%;
+    border-top: 2px solid gray ;
+   
+   
+      /*  background: url(images/banniereDWE.jpg) 
+        background-size: 15%;
+        background-position: bottom right;
+        opacity: 0.8;*/
+      
+ 
+    
+}
+
+.reseaux {
+    /*border : 1px solid black ;*/
+    height: 15%;
+    width: 25%;
+    margin-left:35%;
+    margin-right:35%;
+    display: inline;
+    vertical-align: top;
+}
+
+#copyright{
+    /*border : 1px solid black ;*/
+    display: inline;
+    vertical-align: top;
+    margin-top: 25%;
+}
+
+.fb{
+    height: 30px;
+    width: :30px;
+}
+
+.twitter{
+    height: 30px;
+    width: :30px;
+}
+
+.contact{
+    height: 30px;
+    width: :30px;
+}
+
+.instragram{
+    height: 30px;
+    width: :30px;
+}
+
+/*********************************************************/
+/**********************RESPONSIVE*************************/
+/*********************************************************/
+
+
+
+@media screen and (max-width:1050px){
+    
+    #navcontainer,#nav{ 
+        display:none;
+    }
+    #search{
+        margin-top: 80px;
+        left:0;
+        margin-left: 10%;
+    }
+    #connectdiv,.rgstr{
+        margin-top: 70px;
+    }
+    .logo{
+        width: 70%;
+     text-align: center;
+        left:0;
+        right:0;
+        margin: auto;
+    }
+    #presentation{
+    margin-top: 100px;
+    }
+    #principe{
+        margin-top: 230px;   
+    }
+    #ccmimg{margin-top: 550px;}
+    #container_header h1,#container_header h2{margin-left: 0;}
+    #logo{display: none;}
+    
+    
+    
+}
+
+@media screen and (max-width:580px){
+    #connecterdiv{
+        margin-top: 67px;
+    width: 200px;;}
+  
+      #ccmimg,#principe{
+   display: none;
+    }
+    footer{display: none;}
+   #presentation p,#presentation h1,#ccm p,#ccm h1{
+        width: 90%;   
+    }
 }

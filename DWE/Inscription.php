@@ -115,5 +115,5 @@ if (isset($_POST['mail'])) {
 	</div>
 
 	</body>
-<?php include('php/footer.php'); ?>
+<?php include('php/pied_de_page.php'); ?>
 </html>
