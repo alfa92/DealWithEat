@@ -75,7 +75,8 @@ $ligne = $resultat->fetch_assoc();
             <input name="pass" class="connect" type="password" placeholder="Mot de passe">
             <input name="subconnect" class="subconnect" type="submit" value="Ok" >
                   </form>
-                <p STYLE="margin-top:-15px;"> Pas encore inscrit ? <a href="Inscription.php" style="color:black; text-decoration:none;border-bottom:1px dotted black ">Rejoignez-nous</a> </p>
+                <p STYLE="margin-top:-17px;"> Pas encore inscrit ? <a href="Inscription.php" style="color:black; text-decoration:none;border-bottom:1px dotted black ">Rejoignez-nous</a> </p>
+<p STYLE="margin-top:-20px;"><a href="oubliemdp.php" style="color:black; text-decoration:none;border-bottom:1px dotted black ">Mot de passe oublié ?</a> </p>
           
                 
         </div> <?php }

@@ -121,7 +121,7 @@ h2{
 #connectdiv:hover{
     margin-right: 4px;
     width:365px;
-    height: 154px;
+    height: 160px;
     background: white;
     border-bottom:1px solid gray;
     border-left:1px solid gray;
@@ -761,7 +761,6 @@ footer
     width: 50%;
     margin-left: 22%;
        margin-top: 60px; 
-    border-bottom: 1px solid black;
 
 }
 
@@ -781,9 +780,8 @@ font-family: 'Roboto' sans-serif;
 }
 
 #account_data input{
-    height: 40px;
-      padding: 10px 12px;
-	margin: 7px 5px;
+    height: 25px;
+    padding-left: 10px;
 	outline: none !important;
 	background: rgba(153, 153, 153, 0.09);
 	color: #33383b;
@@ -791,6 +789,7 @@ font-family: 'Roboto' sans-serif;
 	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
 	border: none;
 	border-radius: 0.3em;
+    font-size: 15px;
 }
 
 #modif_sub{
