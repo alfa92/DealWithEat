@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start(); 
+include('php/config.php');?>
 <?php 
     
     if(isset($_POST['rafraichir'])){

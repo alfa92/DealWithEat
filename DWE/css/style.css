@@ -735,7 +735,7 @@ footer
     /*border : 1px solid red ;*/
     color: black;
     position: absolute bottom;
-    margin-top: 5%;
+    margin-top:35%;
 }
 
 #banniere{
@@ -747,7 +747,7 @@ footer
       /*  background: url(images/banniereDWE.jpg) 
         background-size: 15%;
         background-position: bottom right;
-        opacity: 0.8;*/
+        opacity: 0.8; */
       
  
     
