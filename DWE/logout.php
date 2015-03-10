@@ -14,11 +14,11 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['login']) && $_SESSION['login']=='Alfa59'){include('nav_connect.php');}else{include('nav.php');} ?> 
+	
         
         <?php
 
-if(isset($_POST['deconnexion'])){
+
 
 // On détruit les variables de notre session
 session_unset ();
@@ -32,12 +32,3 @@ session_destroy ();
 document.location.href="accueil.php" 
     
 </script>
-<?php }
-
-?>
-
-<form method=post>
-    <input type="submit" name="deconnexion" value="Se déconnecter">
-</form>
-        
-        <a href="accueil.php"> Retour à l'accueil </a>

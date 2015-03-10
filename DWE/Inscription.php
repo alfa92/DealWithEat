@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset=UTF-8>
-        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 
         <title>Deal With Eat</title>
