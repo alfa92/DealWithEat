@@ -45,12 +45,13 @@
                     Pour vous inscrire c'est très simple, il suffit de vous rendre sur la <a href="Inscription.php"> page d'inscription</a>.
                 </p>
             </div>
-        <img id="ccmimg" src="css/images/carrots.jpg">
-            
+        <!--img id="ccmimg" src="css/images/carrots.jpg"-->
+
         </body>
+        
     </div>   
     
-   <?php include('php/footer.php'); ?>
+   <?php include('php/pied_de_page.php'); ?>
     
     
 </html>

@@ -589,8 +589,58 @@ font-family: 'Roboto' sans-serif;
 /*********************************************************/
 /************************FOOTER***************************/
 /*********************************************************/
+footer
+{
+    /*border : 1px solid red ;*/
+        color: black;
+    position: absolute bottom;
+    margin-top: 30%;
+}
 
+#banniere{
+    height: 15%;
+    width: 100%;
+    /*border : 1px solid pink ;*/
 
+}
+
+.reseaux {
+    /*border : 1px solid black ;*/
+    height: 15%;
+    width: 25%;
+    margin-left:35%;
+    margin-right:35%;
+    display: inline;
+    vertical-align: top;
+    margin-top: 25%;
+}
+
+#copyright{
+    /*border : 1px solid black ;*/
+    display: inline;
+    vertical-align: top;
+    margin-top: 25%;
+}
+
+.fb{
+    height: 30px;
+    width: :30px;
+}
+
+.twitter{
+    height: 30px;
+    width: :30px;
+}
+
+.contact{
+    height: 30px;
+    width: :30px;
+}
+
+.instragram{
+    height: 30px;
+    width: :30px;
+}
 
 /*********************************************************/
 /**********************RESPONSIVE*************************/
