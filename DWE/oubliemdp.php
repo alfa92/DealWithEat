@@ -1,5 +1,9 @@
 <?php session_start() ;
-phpinfo(); ?>
+ini_set("SMTP","smtp.gmail.com");
+ini_set("smtp_port","25");
+ini_set('sendmail_from', 'd.antoine94@gmail.com');
+ini_set('sendmail_path','/usr/sbin/sendmail -t -i -f d.antoine94@gmail.com');
+?>
 <html>
     <head>
         <meta charset=UTF-8>
@@ -28,8 +32,9 @@ phpinfo(); ?>
                 $pseudo=$_POST['pseudo'];   
                 $mail=$_POST['mail'];
                 
+            
             // Je selectionne le mail du pseudo
-            $obmdp = "SELECT membre_mail,membre_mdp,membre_pseudo FROM membres WHERE membre_pseudo='".$pseudo."'";
+            $obmdp = "SELECT * FROM membres WHERE membre_pseudo='".$pseudo."'";
             // envoi de la requête
             $resultatobmdp = mysqli_query($conn,$obmdp) or die ('Erreur '.$obmdp.' '.$mysqli->error);
             // resultat de la requete
@@ -41,16 +46,30 @@ phpinfo(); ?>
                             if($pseudo==$tabob['membre_pseudo']){
                                 // SI le mail indiqué est le même mail que celui dans la ligne du pseudo
                                 if($mail==$tabobmdp['membre_mail']){ 
-                                    echo "Vous allez recevoir un email à l'adresse indiquée";
-// Le message
-$message = "Bonjour ".$tabobmdp['membre_pseudo'].", \r\n Le mot de passe lié à votre compte est le suivant \r\n Mot de passe = " .md5($tabobmdp['membre_mdp']).". \r\n Ne pas réponde à ce message, merci. A bientot sur Deal With Eat  ";
+                                    
+                                   
 
-// Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
-$message = wordwrap($message, 70, "\r\n");
+                            $passage_ligne = "\r\n";
+                            $boundary = "-----=".md5(rand());
 
-// Envoi du mail
-mail($tabobmdp['membre_mail'], '[Deal With Eat] Oublie mot de passe', $message);
+                            //=====Création du header de l'e-mail.
+                            $header = "From: \"DealWithEat\"<d.antoine94@gmail.com>".$passage_ligne;
+                            $header.= "Reply-to: \"DealWithEat\" <d.antoine94@gmail.com>".$passage_ligne;
+                            $header.= "MIME-Version: 1.0".$passage_ligne;
+                            $header.= "Content-Type: multipart/alternative;".$passage_ligne." boundary=\"$boundary\"".$passage_ligne;
+                            //==========
 
+                            // Le message
+                            $message = "Bonjour ".$tabobmdp['membre_pseudo'].", \r\n Le mot de passe lié à votre compte est le suivant \r\n Mot de passe = " .md5($tabobmdp['membre_mdp']).". \r\n Ne pas réponde à ce message, merci. A bientot sur Deal With Eat  ";
+
+                            // Dans le cas où nos lignes comportent plus de 70 caractères, nous les coupons en utilisant wordwrap()
+                            $message = wordwrap($message, 70, "\r\n");
+
+                            // Envoi du mail
+                            mail($tabobmdp['membre_mail'], '[Deal With Eat] Oublie mot de passe', $message,$header);
+
+                                    
+                                     echo "Vous allez recevoir un email à l'adresse indiquée";
                                 }else{
                                     echo "L'adresse mail rentrée n'est pas la bonne";}
                             }else{ 

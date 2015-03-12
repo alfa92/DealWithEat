@@ -105,6 +105,7 @@ $ligne = $resultat->fetch_assoc();
       
     </body>
     </div>
+       <?php include('php/pied_de_page.php'); ?>
 </html>
 
 <?php } ?>

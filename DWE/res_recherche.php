@@ -49,7 +49,9 @@ if($ligne != NULL) // si le nombre de résultats est supérieur à 0, on continu
 while($donnees = $ligne|| $donnees = $resultat->fetch_assoc()) // on fait un while pour afficher la liste des fonctions trouvées, ainsi que l'id qui permettra de faire le lien vers la page de la fonction
 {
 ?>
-<a href="membre_info.php?id=<? echo $ligne['membre_id'];  ?>"><? echo $ligne['membre_pseudo']; $ligne['membre_pseudo']==$_COOKIE["pseudo"] ;?></a><br/>
+<a href="membre_info.php?id=<? echo $ligne['membre_id'];  ?>"><? echo $ligne['membre_pseudo'];  ;?></a><br/>
+    <a href="membre_info.php?id=<? echo $ligne['membre_id']+1;  ?>"><? echo $ligne['membre_pseudo'];?></a><br/>
+    <a href="membre_info.php?id=<? echo $ligne['membre_id'];  ?>"><? echo $ligne['membre_pseudo']; ?></a><br/>
     
 <?
  $ligne = false;

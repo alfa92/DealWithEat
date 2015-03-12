@@ -8,7 +8,7 @@
         <title>Deal With Eat</title>
         
     </head>
-    
+    <div id="body">
 <div id="principal">
     <header>
         <?php include('php/config.php'); ?>
@@ -37,7 +37,7 @@
                 
             </div>
         <img id="principe" src="css/images/vegetable.jpg">
-        
+         <img id="ccmimg" src="css/images/carrots.jpg">
         <div id="ccm">
                 <h1> Comment ça marche ? </h1>
                 <p>
@@ -45,12 +45,12 @@
                     Pour vous inscrire c'est très simple, il suffit de vous rendre sur la <a href="Inscription.php"> page d'inscription</a>.
                 </p>
             </div>
-        <img id="ccmimg" src="css/images/carrots.jpg">
+       
 
         </body>
         
     </div>   
-    
+        </div>
    <?php include('php/pied_de_page.php'); ?>
     
     
