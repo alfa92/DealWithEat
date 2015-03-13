@@ -349,6 +349,7 @@ margin-left: 40px;
     float:right;
     margin-right: 2%;
     text-align: right;
+    width: 100%;
     left:0;
     border-bottom : 2px dotted gray;
 
@@ -744,7 +745,8 @@ footer
     color: black;
     bottom:0;
     margin-top: 30px;
-    width: 100%;
+    display: block; 
+    width:100%;
     
     
 }
@@ -832,8 +834,6 @@ footer
     #container_header h1,#container_header h2{margin-left: 0;}
     #logo{display: none;}
     
-    
-    
 }
 
 @media screen and (max-width:580px){
@@ -850,52 +850,34 @@ footer
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*********************************************************/
+/**********************ANNONCE**********************/
+/*********************************************************/
 
 form{
 
-    width: 20%;
-    height: 60%;
-    margin-top: 0px;
+	width: 20%;
+	height: 60%;
+	margin-top: 0px;
 
     display: inline-block;
-        
+		
 }
 #tableau{
 
-    background: url("fond.jpg") ;
-    background-repeat:repeat-y;
-    border-right: 2px black solid ;
+	background: url("fond.jpg") ;
+	background-repeat:repeat-y;
+	border-right: 2px black solid ;
 }
 
 aside{
 
-                margin-left: 40%;
-                margin-right: 40%;
-                margin-top: 0%;
-                vertical-align: top;
-
-    display: inline-block;
-                
+				margin-left: 5%;
+			    margin-right: 40%;
+				margin-top: 0%;
+				vertical-align: top;
+                display: inline;
+				
 
 
 
@@ -903,24 +885,23 @@ aside{
 
 
 h3{
-    font-size: 1.4em;
-    font-family:"Roboto"sans-serif;
-    border-top: 2px black solid;
-    border-bottom: 2px black solid;
+	font-size: 1.4em;
+	font-family:"Roboto"sans-serif;
+	border-top: 2px black solid;
+	border-bottom: 2px black solid;
  
 }
 
 article{
 
-    margin-left: 40%;
+    margin-left: 5%;
     margin-right: 40%;
     margin-bottom: 5%;
-    height: 300px;
-    width: 20%;
-   
-    border: 1px solid black;
-    padding:5%;
-    vertical-align: top;
+    height: 100px;
+    width: 100%;
+   overflow:scroll;
+	border: 1px solid black;
+	padding:5%;
+	vertical-align: top;
 
 }
-

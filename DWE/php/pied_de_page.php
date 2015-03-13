@@ -11,7 +11,4 @@
    </div>
 	<!--img id ="banniere" src ="css/images/banniereDWE.jpg" alt = "logo de la banniere" -->
 
-
-
-
 </footer> 

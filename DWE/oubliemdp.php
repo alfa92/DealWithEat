@@ -18,6 +18,7 @@ ini_set('sendmail_path','/usr/sbin/sendmail -t -i -f d.antoine94@gmail.com');
     <header
         <?php include('php/config.php'); ?>
         <?php include('php/header.php'); ?>
+        <?php include('nav.php'); ?>
 
 
  <?php  
