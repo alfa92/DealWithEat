@@ -26,16 +26,14 @@ a{
 }
 
 body {
+
     margin:0;
-    height: 100%;
+    min-height: 85%;
 }
 /*********************************************************/
 /************************HEADER***************************/
 /*********************************************************/
-#principal{
-    position: relative;
-    min-height: 100%;
-}
+
 
 #logo {
     width:110px;
@@ -285,11 +283,7 @@ margin-left: 40px;
     margin-top: -50px;
     width: 100%;
 }
-#body{
-    height:auto;
-    position: relative
-    
-}
+
 
 #presentation{
     float:left;
@@ -742,9 +736,10 @@ font-family: 'Roboto' sans-serif;
 /*********************************************************/
 footer
 {
+  
     color: black;
     bottom:0;
-    margin-top: 30px;
+    margin-top: 10%;
     display: block; 
     width:100%;
     
@@ -755,7 +750,7 @@ footer
     height: 80px;;
     width: 100%;
     border-top: 2px solid gray ;
-    background: lightgray/* url(images/fond_foot.jpeg) no-repeat */;
+    background: lightgray ;
     background-size: cover;
     background-position: top ;
       
