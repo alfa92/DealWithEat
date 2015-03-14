@@ -44,7 +44,7 @@
    		 
 </td>
 <td>
-<section>
+<section id="sectionAnnonces">
   					   		<aside id="asideannonces">
                         <form   method="post" action="annonces.php">
                            <p>
@@ -66,47 +66,49 @@
    		 				
    		 			
    		 		<article id="articleannonce1" >	
-             		 			<p>
+             		 			<div class="NomDescription"><p>
              		 				Nom: Mangue
              		 			 </br>
              		 				DESCRIPTION: Fruit exotique
-             		 			</br>
-             		 			<img id="banane" src="css/images/Mangue.jpg" width="50" height="50"> 
+             		 			</br> </div>
+             		 			<img id="mangue" src="css/images/Mangue.jpg" > 
              		 		
              		 			
-             		 			<strong>         <p style="text-align:center">Prix: 2,3€/Kg</p>   			 </strong>	
-             		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br> stock disponible</p>   			 </strong>	
+             		 			<strong>        </br> </br>  <p class="VenteEchange" >Prix: 2,3€/Kg          <div class="echange">ECHANGE contre:</div></p>   			 </strong>	
+             		 			<div class="Stock" > stock disponible  </div></p>   			
              		 		
                       </p>
  
    		 		</article>
  
         <article id="articleannonce2" >	
-                      <p>
+                    <div class="NomDescription">  <p>
            		 				Nom: Banane
            		 			 </br>
            		 				DESCRIPTION: Fruit jaune qui est bon est qui passe bien avec le nutella
            		 			</br>
+                  </div>
            		 			
-                    <img id="banane" src="css/images/banane.jpg" width="50" height="50"> 
+                    <img id="banane" src="css/images/banane.jpg" > 
            		 			
            		 			
-           		 			<strong>         <p style="text-align:center">Prix: 1€/Kg</p>   			 </strong>	
-           		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br>stock disponible </p>   			 </strong>	
+           		 			<strong>       </br> </br>   <p class="VenteEchange"  >Prix: 1€/Kg     <div class="echange">ECHANGE contre:</div>   </p>   			 </strong>	
+           		 			           <div class="Stock" > stock disponible  </div>  			 	
            		 			
                     	</p>
         </article>
 	
    		 		<article id="articleannonce3" >
-          	     <p>
+          	    <div class="NomDescription"> <p>
        		 				Nom: Fraise
        		 			 </br>
        		 				DESCRIPTION: Fruit rouge qui est super bon est qui passe bien avec le sucre
        		 			</br>
-       		 		<img id="banane" src="css/images/fraise.jpg" width="50" height="50"> 
+              </div>
+       		 		<img id="fraise" src="css/images/fraise.jpg" > 
        		 		
-       		 			<strong>         <p style="text-align:center">Prix: 1,5€/Kg</p>   			 </strong>	
-       		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br> stock disponible </p>   			 </strong>	
+       		 			<strong>       </br> </br>   <p class="VenteEchange" >Prix: 1,5€/Kg          <div class="echange">ECHANGE contre:</div></p>   			 </strong>	
+       		 	     <div class="Stock" > stock disponible  </div> </p>   		
        		 		
               </p>
      
@@ -115,6 +117,28 @@
    		 	</td>
        </tr>
      </table>
-		<footer> <?php include("php/pied_de_page.php"); ?> </footer>
+		<footer> 
+
+         <form   method="post" action="annonces.php">
+                           <p>
+                             
+                                 <select name="PagesAnnonces" id="PagesAnnonces">
+                                      <option value="Page1">Page 1</option>
+                                      <option value="Page2">Page 2</option>
+                                      <option value="Page3">Page 3</option>
+                                      <option value="Page4">Page 4</option>
+                                      <option value="Page5">Page 5</option>
+                             
+                                  </select>
+                               
+                  </p>
+  
+                        </form>
+
+</br>
+
+
+<?php include("php/pied_de_page.php"); ?> 
+                      </footer>
 	    </body>
 </html>
