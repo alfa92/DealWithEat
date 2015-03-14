@@ -21,7 +21,7 @@
 <table><tr><td style="vertical-align: top;">
    		 				
    		 				
-  						<form id="tableau" method="post" action="annonces.php" style="width: 100%;">
+  						<form id="tableauannonces" method="post" action="annonces.php" style="width: 100%;">
 						   <p> <h3 id="h3annonces" >  Types  </h3> </p>
 						    
 						       <input type="radio" name="FruitLegume" value="Fruit" /> <label for="Fruit">Fruit</label><br/>
@@ -45,8 +45,8 @@
 </td>
 <td>
 <section>
-  					   		<aside>
-                        <form  id="" method="post" action="annonces.php">
+  					   		<aside id="asideannonces">
+                        <form   method="post" action="annonces.php">
                            <p>
                               <label for="TrierPar">Trier par:</label> 
                                  <select name="TrierPar" id="TrierPar">
@@ -65,48 +65,49 @@
    		 							</aside></br>
    		 				
    		 			
-   		 		<article id="articleannonces" >	
+   		 		<article id="articleannonce1" >	
              		 			<p>
              		 				Nom: Mangue
              		 			 </br>
              		 				DESCRIPTION: Fruit exotique
              		 			</br>
-             		 			<center><img id="banane" src="css/images/Mangue.jpg" width="50" height="50"> </center>
-             		 			</br>
+             		 			<img id="banane" src="css/images/Mangue.jpg" width="50" height="50"> 
+             		 		
              		 			
              		 			<strong>         <p style="text-align:center">Prix: 2,3€/Kg</p>   			 </strong>	
-             		 			<strong>	         <p style="text-align:center">ECHANGE: contre ta soeur</p>   			 </strong>	
-             		 				<p>stock disponible</p>
+             		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br> stock disponible</p>   			 </strong>	
+             		 		
                       </p>
  
    		 		</article>
  
-        <article id="articleannonces" >	
+        <article id="articleannonce2" >	
                       <p>
            		 				Nom: Banane
            		 			 </br>
            		 				DESCRIPTION: Fruit jaune qui est bon est qui passe bien avec le nutella
            		 			</br>
-           		 			<center><img id="banane" src="css/images/banane.jpg" width="50" height="50"> </center>
-           		 			</br>
+           		 			
+                    <img id="banane" src="css/images/banane.jpg" width="50" height="50"> 
+           		 			
            		 			
            		 			<strong>         <p style="text-align:center">Prix: 1€/Kg</p>   			 </strong>	
-           		 			<strong>	         <p style="text-align:center">ECHANGE: contre ta soeur</p>   			 </strong>	
-           		 			<p>stock disponible</p>
+           		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br>stock disponible </p>   			 </strong>	
+           		 			
                     	</p>
         </article>
 	
-   		 		<article id="articleannonces" >
+   		 		<article id="articleannonce3" >
           	     <p>
        		 				Nom: Fraise
        		 			 </br>
        		 				DESCRIPTION: Fruit rouge qui est super bon est qui passe bien avec le sucre
        		 			</br>
-       		 			<center><img id="banane" src="css/images/fraise.jpg" width="50" height="50"> </center>
+       		 		<img id="banane" src="css/images/fraise.jpg" width="50" height="50"> 
        		 		
        		 			<strong>         <p style="text-align:center">Prix: 1,5€/Kg</p>   			 </strong>	
-       		 			<strong>	         <p style="text-align:center">ECHANGE: contre ta soeur</p>   			 </strong>	
-       		 			<p>stock disponible</p>
+       		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br> stock disponible </p>   			 </strong>	
+       		 		
               </p>
      
    		 		</article>
