@@ -8,7 +8,7 @@
         <title>Deal With Eat</title>
         
     </head>
-    <!--<div id="body">-->
+    <div id="body">
 <div id="principal">
     <header>
         <?php include('php/config.php'); ?>
@@ -50,7 +50,7 @@
         </body>
         
     </div>   
-        <!--</div>-->
+        </div>
    <?php include('php/pied_de_page.php'); ?>
     
     
