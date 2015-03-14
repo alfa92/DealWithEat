@@ -21,7 +21,7 @@
 <table><tr><td style="vertical-align: top;">
    		 				
    		 				
-  						<form id="tableau" method="post" action="annonces.php" style="width: 100%;">
+  						<form id="tableauannonces" method="post" action="annonces.php" style="width: 100%;">
 						   <p> <h3 id="h3annonces" >  Types  </h3> </p>
 						    
 						       <input type="radio" name="FruitLegume" value="Fruit" /> <label for="Fruit">Fruit</label><br/>
@@ -44,15 +44,9 @@
    		 
 </td>
 <td>
-<<<<<<< HEAD
 <section id="sectionAnnonces">
   					   		<aside id="asideannonces">
                         <form   method="post" action="annonces.php">
-=======
-<section>
-  					   		<aside>
-                        <form  id="" method="post" action="annonces.php">
->>>>>>> origin/master
                            <p>
                               <label for="TrierPar">Trier par:</label> 
                                  <select name="TrierPar" id="TrierPar">
@@ -71,7 +65,6 @@
    		 							</aside></br>
    		 				
    		 			
-<<<<<<< HEAD
    		 		<article id="articleannonce1" >	
              		 			<div class="NomDescription"><p>
              		 				Nom: Mangue
@@ -82,82 +75,41 @@
              		 		
              		 			
              		 			<strong>        </br> </br>  <p class="VenteEchange" >Prix: 2,3€/Kg          <div class="echange">ECHANGE contre:</div></p>   			 </strong>	
-             		 			<div class="Stock" > stock disponible  </div></p>   			
+             		         <div class="Stock" > stock disponible  </div></p>   			 	
              		 		
-=======
-   		 		<article id="articleannonces" >	
-             		 			<p>
-             		 				Nom: Mangue
-             		 			 </br>
-             		 				DESCRIPTION: Fruit exotique
-             		 			</br>
-             		 			<center><img id="banane" src="css/images/Mangue.jpg" width="50" height="50"> </center>
-             		 			</br>
-             		 			
-             		 			<strong>         <p style="text-align:center">Prix: 2,3€/Kg</p>   			 </strong>	
-             		 			<strong>	         <p style="text-align:center">ECHANGE: contre ta soeur</p>   			 </strong>	
-             		 				<p>stock disponible</p>
->>>>>>> origin/master
                       </p>
  
    		 		</article>
  
-<<<<<<< HEAD
         <article id="articleannonce2" >	
                     <div class="NomDescription">  <p>
-=======
-        <article id="articleannonces" >	
-                      <p>
->>>>>>> origin/master
            		 				Nom: Banane
            		 			 </br>
            		 				DESCRIPTION: Fruit jaune qui est bon est qui passe bien avec le nutella
            		 			</br>
-<<<<<<< HEAD
                   </div>
            		 			
                     <img id="banane" src="css/images/banane.jpg" > 
            		 			
            		 			
            		 			<strong>       </br> </br>   <p class="VenteEchange"  >Prix: 1€/Kg     <div class="echange">ECHANGE contre:</div>   </p>   			 </strong>	
-           		 			           <div class="Stock" > stock disponible  </div>  			 	
+           		 		          <div class="Stock" > stock disponible  </div>  		
            		 			
                     	</p>
         </article>
 	
    		 		<article id="articleannonce3" >
           	    <div class="NomDescription"> <p>
-=======
-           		 			<center><img id="banane" src="css/images/banane.jpg" width="50" height="50"> </center>
-           		 			</br>
-           		 			
-           		 			<strong>         <p style="text-align:center">Prix: 1€/Kg</p>   			 </strong>	
-           		 			<strong>	         <p style="text-align:center">ECHANGE: contre ta soeur</p>   			 </strong>	
-           		 			<p>stock disponible</p>
-                    	</p>
-        </article>
-	
-   		 		<article id="articleannonces" >
-          	     <p>
->>>>>>> origin/master
        		 				Nom: Fraise
        		 			 </br>
        		 				DESCRIPTION: Fruit rouge qui est super bon est qui passe bien avec le sucre
        		 			</br>
-<<<<<<< HEAD
               </div>
        		 		<img id="fraise" src="css/images/fraise.jpg" > 
        		 		
        		 			<strong>       </br> </br>   <p class="VenteEchange" >Prix: 1,5€/Kg          <div class="echange">ECHANGE contre:</div></p>   			 </strong>	
        		 	     <div class="Stock" > stock disponible  </div> </p>   		
        		 		
-=======
-       		 			<center><img id="banane" src="css/images/fraise.jpg" width="50" height="50"> </center>
-       		 		
-       		 			<strong>         <p style="text-align:center">Prix: 1,5€/Kg</p>   			 </strong>	
-       		 			<strong>	         <p style="text-align:center">ECHANGE: contre ta soeur</p>   			 </strong>	
-       		 			<p>stock disponible</p>
->>>>>>> origin/master
               </p>
      
    		 		</article>
