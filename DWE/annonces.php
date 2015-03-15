@@ -18,7 +18,7 @@
                  </header>
 
      <body>
-<table ><tr height="60%"><td style="vertical-align: top;" >
+<table><tr><td style="vertical-align: top;">
    		 				
    		 				
   						<form id="tableauannonces" method="post" action="annonces.php" style="width: 100%;">
@@ -44,7 +44,7 @@
    		 
 </td>
 <td>
-<section id="sectionAnnonces">
+<section>
   					   		<aside id="asideannonces">
                         <form   method="post" action="annonces.php">
                            <p>
@@ -66,49 +66,47 @@
    		 				
    		 			
    		 		<article id="articleannonce1" >	
-             		 			<div class="NomDescription"><p>
+             		 			<p>
              		 				Nom: Mangue
              		 			 </br>
              		 				DESCRIPTION: Fruit exotique
-             		 			</br> </div>
-             		 			<img id="mangue" src="css/images/Mangue.jpg" > 
+             		 			</br>
+             		 			<img id="banane" src="css/images/Mangue.jpg" width="50" height="50"> 
              		 		
              		 			
-             		 			<strong>        </br> </br>  <p class="VenteEchange" >Prix: 2,3€/Kg          <div class="echange">ECHANGE contre:</div></p>   			 </strong>	
-             		         <div class="Stock" > stock disponible  </div></p>   			 	
+             		 			<strong>         <p style="text-align:center">Prix: 2,3€/Kg</p>   			 </strong>	
+             		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br> stock disponible</p>   			 </strong>	
              		 		
                       </p>
  
    		 		</article>
  
         <article id="articleannonce2" >	
-                    <div class="NomDescription">  <p>
+                      <p>
            		 				Nom: Banane
            		 			 </br>
            		 				DESCRIPTION: Fruit jaune qui est bon est qui passe bien avec le nutella
            		 			</br>
-                  </div>
            		 			
-                    <img id="banane" src="css/images/banane.jpg" > 
+                    <img id="banane" src="css/images/banane.jpg" width="50" height="50"> 
            		 			
            		 			
-           		 			<strong>       </br> </br>   <p class="VenteEchange"  >Prix: 1€/Kg     <div class="echange">ECHANGE contre:</div>   </p>   			 </strong>	
-           		 		          <div class="Stock" > stock disponible  </div>  		
+           		 			<strong>         <p style="text-align:center">Prix: 1€/Kg</p>   			 </strong>	
+           		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br>stock disponible </p>   			 </strong>	
            		 			
                     	</p>
         </article>
 	
    		 		<article id="articleannonce3" >
-          	    <div class="NomDescription"> <p>
+          	     <p>
        		 				Nom: Fraise
        		 			 </br>
        		 				DESCRIPTION: Fruit rouge qui est super bon est qui passe bien avec le sucre
        		 			</br>
-              </div>
-       		 		<img id="fraise" src="css/images/fraise.jpg" > 
+       		 		<img id="banane" src="css/images/fraise.jpg" width="50" height="50"> 
        		 		
-       		 			<strong>       </br> </br>   <p class="VenteEchange" >Prix: 1,5€/Kg          <div class="echange">ECHANGE contre:</div></p>   			 </strong>	
-       		 	     <div class="Stock" > stock disponible  </div> </p>   		
+       		 			<strong>         <p style="text-align:center">Prix: 1,5€/Kg</p>   			 </strong>	
+       		 			<strong>	         <p style="text-align:center">ECHANGE contre: </br> stock disponible </p>   			 </strong>	
        		 		
               </p>
      
@@ -117,28 +115,6 @@
    		 	</td>
        </tr>
      </table>
-		<footer> 
-
-         <form   method="post" action="annonces.php">
-                           <p>
-                             
-                                 <select name="PagesAnnonces" id="PagesAnnonces">
-                                      <option value="Page1">Page 1</option>
-                                      <option value="Page2">Page 2</option>
-                                      <option value="Page3">Page 3</option>
-                                      <option value="Page4">Page 4</option>
-                                      <option value="Page5">Page 5</option>
-                             
-                                  </select>
-                               
-                  </p>
-  
-                        </form>
-
-</br>
-
-
-<?php include("php/pied_de_page.php"); ?> 
-                      </footer>
+		<footer> <?php include("php/pied_de_page.php"); ?> </footer>
 	    </body>
 </html>
