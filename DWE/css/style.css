@@ -884,7 +884,7 @@ footer
 
 
 
-section{
+#sectionAnnonces{
 
     width:100%;
                 margin-left: 70%;
@@ -914,17 +914,49 @@ section{
 	border: 1px solid black;
 	padding:1%;
 	vertical-align: top;
-    height: 10%;
-    width: 10%;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin-left: 100px;
+    margin-bottom: 10px;  
     margin-right:70%;
-    width: 50%;
+    width: 70%;
+    height: 250px;
+
+}
 
 
+.VenteEchange, .echange{ 
+
+    font-size: 25px;
+     
+
+}
+
+.NomDescription{
+    font-size: 25px;
+    text-align: center;
 
 
+}
+
+.Stock{
+    text-align: right;
+    position: relative;
+    bottom:50px;
+
+}
+
+
+#banane, #mangue,#fraise{
+
+    width: 100px;
+    height: 60px;
+    position: absolute;
+
+}
+
+#PagesAnnonces{
+
+    position: absolute;
+    right: 100px;
 
 }
 
@@ -944,38 +976,3 @@ section{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*#TableauTechniques{
-    margin-bottom: 100px;
-    margin-top: 100px;
-    margin-right: 100px;
-    margin-top: 100px;
-
-}
-
-#TitreFaq{
-
-   color: blue;
-   font-size: 35px;
-   border:1px black solid;
-   padding-left: 400px;
-   padding-right: 400px;
-   margin-left: 300px;
-   padding-bottom: 20px;
-
-
-}
-*/
