@@ -18,7 +18,7 @@
                  </header>
 
      <body>
-<table><tr><td style="vertical-align: top;">
+<table ><tr height="60%"><td style="vertical-align: top;" >
    		 				
    		 				
   						<form id="tableauannonces" method="post" action="annonces.php" style="width: 100%;">

@@ -868,9 +868,9 @@ footer
 
 #tableauannonces{
 
-	width: 20%;
-	height: 60%;
-	margin-top: 0px;
+	width: 100%;
+	height: 100%;
+
 
     display: inline-block;
     background: url("images/fond.jpg") ;
@@ -918,7 +918,8 @@ footer
     margin-bottom: 10px;  
     margin-right:70%;
     width: 70%;
-    height: 250px;
+    height: 200px;
+
 
 }
 
@@ -926,6 +927,8 @@ footer
 .VenteEchange, .echange{ 
 
     font-size: 25px;
+    position: relative;
+    bottom: 50%;
      
 
 }
@@ -940,7 +943,7 @@ footer
 .Stock{
     text-align: right;
     position: relative;
-    bottom:50px;
+    bottom:150px;
 
 }
 
@@ -949,7 +952,8 @@ footer
 
     width: 100px;
     height: 60px;
-    position: absolute;
+    position: relative;
+    bottom: 50px;
 
 }
 
@@ -959,13 +963,6 @@ footer
     right: 100px;
 
 }
-
-
-
-
-
-
-
 
 
 
