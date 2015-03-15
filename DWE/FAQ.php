@@ -3,19 +3,25 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" type="text/css" href="css/style.css">
-            
+      
+        
+
+       
+        
+
+        
+        
         
     </head>
+   		 <body>
 
                   <header>
-                     <?php include('php/config.php'); ?>
-        <?php include('php/connexion.php'); ?>
-        <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+                          <?php include("php/header.php"); ?>
+                          <?php include("php/connect.php"); ?>
                  </header>
 
-<body>
-             
+
+<nav><?php include("nav.php"); ?></nav>
 
 
 <section>
@@ -121,7 +127,6 @@
 
 
 
-</body>
 
 
 
@@ -137,6 +142,8 @@
 
 
 
-<?php include("php/pied_de_page.php"); ?>
 
+		<footer> <?php include("php/pied_de_page.php"); ?> </footer>
+
+	    </body>
 </html>

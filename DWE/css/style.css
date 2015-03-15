@@ -850,14 +850,27 @@ footer
     }
 }
 
+<<<<<<< HEAD
 /*********************************************************/
 /**********************ANNONCE**********************/
 /*********************************************************/
 
 form{
+=======
+>>>>>>> origin/master
 
 
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -881,17 +894,28 @@ form{
 }
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
 
 
 #sectionAnnonces{
 
-              
+                width:100%;
+                margin-left: 70%;
+                margin-right: 40%;
+                margin-top: 0%;
+                vertical-align: top;
+                width: 200px;
+<<<<<<< HEAD
+
 				margin-left: 5%;
 			    margin-right: 40%;
 				margin-top: 0%;
 				vertical-align: top;
-
+=======
+>>>>>>> origin/master
                 display: inline;
                
 
@@ -912,16 +936,17 @@ form{
  
 }
 
-
+<<<<<<< HEAD
 article{
  
-}
+=======
 #articleannonce1, #articleannonce2, #articleannonce3{
 
  
 	border: 1px solid black;
 	padding:1%;
 	vertical-align: top;
+>>>>>>> origin/master
     margin-left: 100px;
     margin-bottom: 10px;  
     margin-right:70%;
@@ -974,10 +999,20 @@ article{
 
 #asideannonces{
 
-
+<<<<<<< HEAD
+}
+=======
       position: absolute;
     right: 100px;
 
 }
 
 
+
+
+
+
+
+
+
+>>>>>>> origin/master
