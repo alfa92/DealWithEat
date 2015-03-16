@@ -370,7 +370,23 @@ margin-left: 40px;
 
 }
 
+<<<<<<< Updated upstream
 
+=======
+#ccmimg{
+
+    display:inline-block;
+    width: 45%;
+    height: 300px;
+    left:0;
+    margin-right: 0;
+    margin-top: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+   
+    
+}
+>>>>>>> Stashed changes
 
 
 /*********************************************************/
