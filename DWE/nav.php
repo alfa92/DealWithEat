@@ -2,7 +2,7 @@
      	<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li ><a href="accueil.php">Accueil</a></li>
+						<li class="current"><a href="accueil.php">Accueil</a></li>
                         <li><a href="actualites.php"> Actualités </a></li>
 						<li><a href="annonce.php"> Annonces </a></li>
 						<li><a href="inscription.php"> Inscritpion </a></li>
@@ -10,3 +10,4 @@
 					</ul>
 				</nav>
         </div>
+

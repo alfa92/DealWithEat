@@ -940,18 +940,29 @@ margin-top: 20px;
     
 }
 
-
+/* Mobile Navigation */
+.nav-mobile {
+	display:none; /* Hide from browsers that don't support media queries */
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	right:0;
+	background:#34495E url(../img/nav.svg) no-repeat center center;
+	height:40px;
+	width:40px;
+	border-radius:5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
 /*********************************************************/
 /**********************RESPONSIVE*************************/
 /*********************************************************/
 
 
-
 @media screen and (max-width:1050px){
     
-    #navcontainer,#nav{ 
-        display:none;
-    }
+ 
+    
     #search{
         margin-top: 80px;
         left:0;
@@ -1006,4 +1017,73 @@ margin-top: 20px;
         margin-top: 8px;
         margin-left: 82%;
     }
+}
+
+
+@media screen and (max-width: 1050px) {
+    header{border-bottom: 2px dotted gray;}
+	#nav {
+        background: none;
+		position: relative;
+		min-height: 40px;
+        max-height: 50px;
+	}	
+    #navcontainer{background: none;;}
+	#nav ul {
+		width: 50px;
+		padding: 5px 0;
+        height: 40px;
+        overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+        margin-top:-55px;
+        margin-left:3%;
+        font-size: 0;
+		border: solid 1px #aaa;
+		background: #fff url(images/menu17.png) no-repeat 5px 5px;
+        background-size:40px 40px;
+		border-radius: 5px;
+		box-shadow: 0 1px 2px rgba(0,0,0,.3);
+	}
+	#nav li {
+		display: none; /* hide all <li> items */
+		margin: 0;
+         color:black;
+         border:none;
+	}
+	#nav .current {
+		display: block; /* show only current <li> item */
+	}
+	#nav a {
+		display: block;
+		padding: 5px 5px 5px 32px;
+		text-align: left;
+         color:black!important;
+	}
+	#nav .current a {
+		background: none;
+         color:black;
+	}
+
+	/* on nav hover */
+	#nav ul:hover {
+		background-image: none;
+        height: auto;
+        width:auto;
+        font-size: 14Px;
+        color:black;
+	}
+	#nav ul:hover li {
+		display: block;
+		margin: 0 0 5px;
+         color:black;
+        border:none;
+	}
+	#nav ul:hover .current {
+		background: url(images/icon-check.png) no-repeat 10px 7px;
+	}
+
+
+	
 }
