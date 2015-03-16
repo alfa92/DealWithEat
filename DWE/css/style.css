@@ -828,40 +828,6 @@ footer
 }
 
 
-@charset 'UTF-8';
-
-@font-face{font-family:'FontAwesome';src:url('font/fontawesome-webfont.eot?v=4.0.1');src:url('font/fontawesome-webfont.eot?#iefix&v=4.0.1') format('embedded-opentype'),url('font/fontawesome-webfont.woff?v=4.0.1') format('woff'),url('font/fontawesome-webfont.ttf?v=4.0.1') format('truetype'),url('font/fontawesome-webfont.svg?v=4.0.1#fontawesomeregular') format('svg');font-weight:normal;font-style:normal}
-
-
-@font-face {
-    font-family: forever;
-    src: url("fonts/Always Forever.ttf");
-}
-@font-face {
-    font-family: foreverBold;
-    src: url("fonts/Always Forever Bold.ttf");
-}
-    body,input,textarea,select,h1,h2
-    {
-        font-family: 'Roboto', sans-serif;
-        font-size: 11pt;
-        font-weight: 300;
-        line-height: 1.75em;
-        
-    }
-
-a{
-    text-decoration: none;
-    color:black;
-}
-
-body  {
-    margin:0;
-    height: 100%;
-}
-
-
-
 
 /**************************************
 **************ANNONCES*****************
