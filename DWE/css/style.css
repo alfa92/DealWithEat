@@ -448,7 +448,8 @@ width: auto}
 /*********************************************************/
 
 #actgauche{
-    float:left;
+    display: inline-block;
+    vertical-align: top;
     margin-top: 10px;
     margin-left: 1%;
     width: 70%;
@@ -528,8 +529,8 @@ width: auto}
 
 
 #actdroite{
-    display: block;
-    float:left;;
+    display: inline-block;
+    vertical-align: top;
     right:0;
     top:0;
     margin-top: 2%;
@@ -828,8 +829,8 @@ footer
 /*********************************************************/
 /**********************ANNONCE**********************/
 /*********************************************************/
-/*
-form{
+
+#tableauannonces{
 
 	width: 20%;
 	height: 60%;
@@ -845,25 +846,15 @@ form{
 	border-right: 2px black solid ;
 }
 
-aside{
 
-<<<<<<< HEAD
 
 
 #sectionAnnonces{
 
-    width:100%;
-                margin-left: 70%;
-                margin-right: 40%;
-                margin-top: 0%;
-                vertical-align: top;
-                width: 200px;
-=======
 				margin-left: 5%;
 			    margin-right: 40%;
 				margin-top: 0%;
 				vertical-align: top;
->>>>>>> origin/master
                 display: inline;
 				
 
@@ -872,7 +863,7 @@ aside{
 }
 
 
-h3{
+#h3annonces{
 	font-size: 1.4em;
 	font-family:"Roboto"sans-serif;
 	border-top: 2px black solid;
@@ -882,16 +873,7 @@ h3{
 
 article{
 
-    margin-left: 5%;
-    margin-right: 40%;
-    margin-bottom: 5%;
-    height: 100px;
-    width: 100%;
-   overflow:scroll;
-	border: 1px solid black;
-	padding:5%;
-	vertical-align: top;
-<<<<<<< HEAD
+
     margin-left: 100px;
     margin-bottom: 10px;  
     margin-right:70%;
@@ -954,7 +936,4 @@ article{
 
 
 
-=======
-
-}*/
->>>>>>> origin/master
+}
