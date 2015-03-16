@@ -21,7 +21,7 @@
 <table ><tr height="60%"><td style="vertical-align: top;" >
    		 				
    		 				
-  						<form id="tableauannonces" method="post" action="annonces.php" style="width: 100%;">
+  						<form id="tableauannonces" method="post" action="annoncesLeBon.php" style="width: 100%;">
 						   <p> <h3 id="h3annonces" >  Types  </h3> </p>
 						    
 						       <input type="radio" name="FruitLegume" value="Fruit" /> <label for="Fruit">Fruit</label><br/>
@@ -46,10 +46,11 @@
 <td>
 <section id="sectionAnnonces">
   					   		<aside id="asideannonces">
-                        <form   method="post" action="annonces.php">
+                        <form   method="post" action="annoncesLeBon.php">
                            <p>
                          
-                                 <select name="TrierPar" id="TrierPar">
+                                 <select name="TrierPar" id="TrierPar" value="TrierPar">
+
                                       <option value="vendeur">Vendeur</option>
                                       <option value="fruit">Fruit</option>
                                       <option value="legume">Légume</option>
@@ -119,7 +120,7 @@
      </table>
 		<footer> 
 
-         <form   method="post" action="annonces.php">
+         <form   method="post" action="annoncesLeBon.php">
                            <p>
                              
                                  <select name="PagesAnnonces" id="PagesAnnonces">
