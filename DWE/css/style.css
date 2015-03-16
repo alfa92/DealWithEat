@@ -830,52 +830,51 @@ footer
 
 
 /**************************************
-**************ANNONCES*****************
+**************ANNONCES_SINAN*****************
 **************************************/
 
 
 
 
 #tableauannonces{ 
-
+    display: inline-block;
     width: 100%;
     height: 100%;
-
-
     font-size: 25px;
-    background: url("images/fond.jpg") ;
+    background: /*url("images/fond.jpg")*/ ;
     background-repeat:repeat-y;
     border-right: 2px black solid ;
     margin-top: 22%;  
         
 }
+#tableauannonces label{
+        font-family: "Roboto" sans-serif;
+        font-size:14px;
+    margin:0;
+    
+}
 
-
-
-
+#tableauannonces input{
+        font-family: "Roboto" sans-serif;
+        font-size:14px;
+    margin:0;
+    padding:0;
+    
+}
 
 #sectionAnnonces{
 
                 width:100%;
-                margin-left: 70%;
-                margin-right: 39%;
                 margin-top: 0%;
                 vertical-align: top;
                 width: 200px;
                 display: inline;
                
-
-
-
 }
 
 
-
-
-
-
 #h3annonces{
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-family:"Roboto"sans-serif;
     border-top: 2px black solid;
     border-bottom: 2px black solid;
@@ -884,14 +883,14 @@ footer
 
 #articleannonce1, #articleannonce2, #articleannonce3{
 
- 
+    display: inline-block;
     border: 1px solid black;
     padding:1%;
     vertical-align: top;
-    margin-left: 100px;
+    top:0;
+    margin-left: 300px;
     margin-bottom: 10px;  
-    margin-right:70%;
-    width: 70%;
+    width: 50%;
     height: 200px;
 
 
@@ -939,10 +938,134 @@ footer
 }
 
 #asideannonces{
-
-      position: absolute;
+    width: 100%;
     right: 2%;
 
 }
 
+#triage{
+    float:right;
+    right:0;
+    margin-right: 0;
+    left:0;
+    display: block;
+    
+}
 
+
+/**************************************
+**************ANNONCES_ANTO*****************
+**************************************/
+
+
+h4,h5,h6,p{
+    font-family:"Roboto" sans-serif;
+    font-weight: normal;
+    
+}
+
+h4{
+    font-size:16px;
+    text-align: center;
+    border-bottom: 2px dotted gray;
+}
+
+#gauche_annonce{
+    float:left;
+    margin-top: 10px;
+    width: 16%;
+    border-right:2px solid gray;
+}
+
+#liste_annonces{
+    height: 200px;
+    overflow: scroll;
+}
+
+#droite_annonce{
+    margin-top: 20px;
+    min-height: 100%;
+    width: 82%;
+    margin-left: 17%;
+}
+
+#sub_trierpar,#droite_annonce select{
+    background: white;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    color:black;
+    border: 0px;
+	font-family: "Roboto",sans-serif;
+	outline: none;
+	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
+	font-size: 12px;
+    
+}
+
+#triage_annonce{
+    width: 200px;
+    right:0;
+    left:0;
+    margin-right: 00px;
+    margin-left: auto;
+}
+
+#article_annonce{  
+    width: 60%;
+    margin-left: 5%;
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+ h5{
+    font-size: 16px;
+ }
+#article_annonce p{
+    width: 60%;
+    right:0;
+    margin-right: 0;
+    margin-left: auto;
+    max-height: 100px;
+    overflow: scroll;
+    
+}
+
+#image_article{
+    width: 30%;
+    border:1px solid black;
+    margin-top:  -110px;
+}
+
+#info_produit{
+    margin-top: 10px;
+    width: 60%;
+    border-top:1px dashed black;
+}
+
+#info_produit h5{
+    margin:0;
+}
+
+#ajout_panier{
+    border:none;
+    height: 40px;
+    padding-top:5px;
+    font-weight: 700;
+    background: white;
+    outline: none;
+	box-shadow: 1px 1px 1px 1px green;
+    
+}
+
+#div_ajout_panier{
+    float: right;
+    display: inline; 
+    margin-top: -60px;
+    margin-right: 10px;
+}
+
+#div_ajout_panier i{
+    font-family:'Roboto' sans-serif;
+    font-size: 10px;
+}

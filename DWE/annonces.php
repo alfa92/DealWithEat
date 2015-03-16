@@ -17,8 +17,10 @@
                       
                  </header>
 
+    
      <body>
-<table ><tr height="60%"><td style="vertical-align: top;" >
+<table >
+    <tr height="60%"><td style="vertical-align: top;" >
    		 				
    		 				
   						<form id="tableauannonces" method="post" action="annoncesLeBon.php" style="width: 100%;">
@@ -44,9 +46,12 @@
    		 
 </td>
 <td>
+     	</td>
+       </tr>
+     </table>
 <section id="sectionAnnonces">
   					   		<aside id="asideannonces">
-                        <form   method="post" action="annonces.php">
+                        <form id="triage" method="post" action="annonces.php">
                            <p>
                          
                                  <select name="TrierPar" id="TrierPar" value="TrierPar">
@@ -115,9 +120,7 @@
      
    		 		</article>
 </section>
-   		 	</td>
-       </tr>
-     </table>
+   		
 		<footer> 
 
          <form   method="post" action="annonces.php">

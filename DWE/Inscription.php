@@ -60,7 +60,9 @@ if (isset($_POST['mail'])) {
 			}
 		if($_POST['pass'] == $_POST['pass2']){
 			$sql = "INSERT INTO membres VALUES ('', '".$login."', '".$pass."' , '" . $mail . "' ,' 0 ','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['age']."','".$_POST['adresse']."','".$_POST['ville']."','".$_POST['pays']."')";
-			if ($conn->query($sql) === TRUE) {
+            
+            
+			if ($conn->query($sql) == TRUE) {
     ?><p style="text-align:center;"> Votre compte a été créé avec succés !</p><?php 
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
