@@ -70,6 +70,14 @@ h2{
     /*background: linear-gradient(to left, #D0FA58, #F6F286,#D0FA58);*/   
 }
 
+#panier_partout{
+    position: absolute;
+    top:0;
+    left:0;
+    margin-top: 8px;
+    margin-left: 77%;
+    width: 50px;
+}
 
 #search {
     position: absolute;
@@ -120,7 +128,7 @@ h2{
     right:0;
     top:0;
     height:65px;
-    width: 30%;
+    width: 25%;
     overflow: hidden;
     
 }
@@ -285,8 +293,8 @@ margin-left: 40px;
 }
 
 #presentation{
-    width: 98%;
-    margin-left: 1%;
+    width: 94%;
+    margin-left: 4%;
     margin-right: 1%;
     height: 350px;
 }
@@ -308,9 +316,10 @@ margin-left: 40px;
 
 #presentation img{
     float:right;
-    width: 50%;
+    width: 40%;
     height: 85%;
     top:0;
+    margin-right: 8%;
     margin-top: -70px;
 }
 
@@ -340,13 +349,12 @@ margin-left: 40px;
 
 #ccmimg{
     display:inline-block;
-    width: 45%;
+    width: 40%;
     height: 300px;
     right:0;
-    margin-right: 0;
+
     margin-top: 20px;
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 4%;
    
     
 }
@@ -601,6 +609,8 @@ font-family: 'Roboto' sans-serif;
     margin-left: 12%;
 }
 
+
+
 #navcompte
 	{
      background:rgb(180, 226, 255);
@@ -775,184 +785,6 @@ footer
 }
 
 
-/*********************************************************/
-/**********************RESPONSIVE*************************/
-/*********************************************************/
-
-
-
-@media screen and (max-width:1050px){
-    
-    #navcontainer,#nav{ 
-        display:none;
-    }
-    #search{
-        margin-top: 80px;
-        left:0;
-        margin-left: 10%;
-    }
-    #connectdiv,.rgstr{
-        margin-top: 70px;
-    }
-    .logo{
-        width: 70%;
-     text-align: center;
-        left:0;
-        right:0;
-        margin: auto;
-    }
-    #presentation{
-    margin-top: 100px;
-    }
-    #principe{
-        margin-top: 230px;   
-    }
-    #ccmimg{margin-top: 550px;}
-    #container_header h1,#container_header h2{margin-left: 0;}
-    #logo{display: none;}
-    
-}
-
-@media screen and (max-width:580px){
-    #connecterdiv{
-        margin-top: 67px;
-    width: 200px;;}
-  
-      #ccmimg,#principe{
-   display: none;
-    }
-    footer{display: none;}
-   #presentation p,#presentation h1,#ccm p,#ccm h1{
-        width: 90%;   
-    }
-}
-
-
-
-/**************************************
-**************ANNONCES_SINAN*****************
-**************************************/
-
-
-
-
-#tableauannonces{ 
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    font-size: 25px;
-    background: /*url("images/fond.jpg")*/ ;
-    background-repeat:repeat-y;
-    border-right: 2px black solid ;
-    margin-top: 22%;  
-        
-}
-#tableauannonces label{
-        font-family: "Roboto" sans-serif;
-        font-size:14px;
-    margin:0;
-    
-}
-
-#tableauannonces input{
-        font-family: "Roboto" sans-serif;
-        font-size:14px;
-    margin:0;
-    padding:0;
-    
-}
-
-#sectionAnnonces{
-
-                width:100%;
-                margin-top: 0%;
-                vertical-align: top;
-                width: 200px;
-                display: inline;
-               
-}
-
-
-#h3annonces{
-    font-size: 1.2em;
-    font-family:"Roboto"sans-serif;
-    border-top: 2px black solid;
-    border-bottom: 2px black solid;
- 
-}
-
-#articleannonce1, #articleannonce2, #articleannonce3{
-
-    display: inline-block;
-    border: 1px solid black;
-    padding:1%;
-    vertical-align: top;
-    top:0;
-    margin-left: 300px;
-    margin-bottom: 10px;  
-    width: 50%;
-    height: 200px;
-
-
-}
-
-
-.VenteEchange, .echange{
-
-    font-size: 25px;
-    position: relative;
-    bottom: 50%;
-     
-
-}
-
-.NomDescription{
-    font-size: 25px;
-    text-align: center;
-
-
-}
-
-.Stock{
-    text-align: right;
-    position: relative;
-    bottom:150px;
-
-}
-
-
-#banane, #mangue,#fraise{
-
-    width: 100px;
-    height: 60px;
-    position: relative;
-    bottom: 50px;
-
-}
-
-#PagesAnnonces{
-
-    position: absolute;
-    right: 2%;
-
-}
-
-#asideannonces{
-    width: 100%;
-    right: 2%;
-
-}
-
-#triage{
-    float:right;
-    right:0;
-    margin-right: 0;
-    left:0;
-    display: block;
-    
-}
-
-
 /**************************************
 **************ANNONCES_ANTO*****************
 **************************************/
@@ -989,7 +821,7 @@ h4{
     margin-left: 17%;
 }
 
-#sub_trierpar,#droite_annonce select{
+#sub_trierpar,#droite_annonce select,#sub_page,#annonces_pages select{
     background: white;
     height: 20px;
     display: inline-block;
@@ -1003,7 +835,7 @@ h4{
     
 }
 
-#triage_annonce{
+#triage_annonce,#annonces_pages{
     width: 200px;
     right:0;
     left:0;
@@ -1028,10 +860,13 @@ h4{
     margin-left: auto;
     max-height: 100px;
     overflow: scroll;
+    text-align: justify;
     
 }
 
 #image_article{
+    left:0;
+    margin-left: 0;
     width: 30%;
     border:1px solid black;
     margin-top:  -110px;
@@ -1068,4 +903,107 @@ h4{
 #div_ajout_panier i{
     font-family:'Roboto' sans-serif;
     font-size: 10px;
+}
+
+
+/**********************************************************
+**************************PANIER***********************
+**********************************************************/
+#panier_titre{
+margin-top: 20px;
+    font-size: 30px;   
+}
+#panier_panier
+{
+    width: 90%;
+    margin-top: 0px;
+    margin-left: 5%;
+    text-align: center;
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+#panier_panier td,#panier_panier th
+{
+    height:30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+}
+
+#panier_panier th{
+    background-color: lightgray;   
+}
+
+#panier caption{
+    font-size: 20px;
+    padding:2px;
+    font-family:'Roboto' sans-serif;
+    
+}
+
+
+/*********************************************************/
+/**********************RESPONSIVE*************************/
+/*********************************************************/
+
+
+
+@media screen and (max-width:1050px){
+    
+    #navcontainer,#nav{ 
+        display:none;
+    }
+    #search{
+        margin-top: 80px;
+        left:0;
+        margin-left: 10%;
+    }
+.rgstr{
+        margin-top: 70px;
+    }
+      #connecterdiv,#connectdiv{
+        margin-top: 67px;
+    width: 200px;;}
+    
+    .logo{
+        width: 70%;
+     text-align: center;
+        left:0;
+        right:0;
+        margin: auto;
+    }
+    #presentation{
+
+    }
+    #principe{
+        margin-top: 230px;   
+    }
+    #container_header h1,#container_header h2{margin-left: 0;}
+    #logo{display: none;}
+    #presentation {
+  margin-top: 80px;
+}
+}
+
+@media screen and (max-width:780px){
+    #msgconnexion{
+        margin-top: 80px;
+    }
+    #connecterdiv{
+        margin-top: 67px;
+    width: 200px;;}
+  
+      #ccmimg,#principe{
+   display: none;
+    }
+   #presentation p,#presentation h1,#ccm p,#ccm h1{
+        width: 90%;   
+    }
+    #ccm{
+    width: 94%;
+    }
+    #panier_partout{
+        width:40px;
+        margin-top: 8px;
+        margin-left: 82%;
+    }
 }

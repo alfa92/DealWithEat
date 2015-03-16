@@ -123,7 +123,20 @@
                     </div>
                 </form>
         </div>
-    </div>    
-        
+    </div>
+        <div id="annonces_pages">
+           <form id='triage' method="post" action="annonce.php">
+             
+                                 <select name="TrierPar" id="TrierPar" value="TrierPar">
+                                      <option value="vendeur">Page 1</option>
+                                      <option value="fruit">Page 2</option>
+                                      <option value="legume">Page 3</option>
+                                      <option value="saison">Page 4</option>
+                                      <option value="ville">Page 5</option>
+                                  </select>
+                 <input id="sub_page" type='submit' name='page' value='Allez à'  >
+                               
+            </form>
+        </div>
 </body>
     <?php include('php/pied_de_page.php'); ?>

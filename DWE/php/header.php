@@ -4,15 +4,19 @@
             <h2> Vendez, Achetez, Echangez</h2>
             <img id="logo" src="css/images/logoDWE.png">
     </div></a>
+    
         <div id="searchdiv">
         
             <form method="post" action="res_recherche.php">
             <input id="search" name="search" type="text" placeholder="Recherche rapide">
             <input id="subsearch" type="submit" value="">
             </form>
+            
         </div>
     
+       
     
+     <a href="panier.php"><img  id="panier_partout" src="css/images/shop.png"></a>
        
 
     </div>

@@ -46,7 +46,7 @@ $ligne = $resultat->fetch_assoc();
     }
         if(isset($_SESSION['login']) ){
     if($_SESSION['id']=='1'){
-        ?> <div id="connecterdiv" > <p>Bonjour <?php echo $_SESSION['login'] ?>
+        ?> <div id="connecterdiv" > <p>Bonjour <?php echo $_SESSION['login'] ?><br> <i style="font-size:12px;"><a href="panier.php" >Mon panier (2)</a></i>
 </p><img id="avatar_little" src=css/images/avatar.png ></div> <?php
             $_SESSION['id']='1';
        }
