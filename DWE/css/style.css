@@ -1087,3 +1087,75 @@ margin-top: 20px;
 
 	
 }
+
+/*********************************************************/
+/************************FAQ**************************/
+/*********************************************************/
+
+#techniques{
+    display: block;
+    width:25%;
+    background-color: white;
+    left:0;
+    right:0;
+    margin:auto;
+    margin-top: 50px;
+    padding-top: 50  
+
+}
+
+#techniques h1{
+    
+    text-align:center;
+    padding:none;
+    margin-left:0px!important;
+    border-bottom : 2px dotted gray; 
+    
+}
+
+#probleme td{
+    
+    border: 1px solid black;
+}
+#probleme table {
+    border-collapse: collapse;
+    width : 75% ;
+    margin-top: 50px; 
+    margin-left: 50px; 
+}
+#probleme th {
+    border: 1px solid black;
+}
+
+#produits h1{
+    
+    text-align:center;
+    padding:none;
+    margin-left:0px!important; 
+    border-bottom : 2px dotted gray;
+}
+
+#produits{
+    display: block;
+    width:25%;
+    background-color: white;
+    left:0;
+    right:0;
+    margin:auto;
+    margin-top: 50px;
+    padding-top: 50
+}
+
+#problemes td{
+    
+    border: 1px solid black;
+}
+#problemes table {
+    border-collapse: collapse;
+    width : 75% ;
+    margin-top: 50px; 
+    margin-left: 50px; 
+}
+#problemes th {
+    border: 1px solid black;
+}
