@@ -786,7 +786,7 @@ footer
 
 
 /**************************************
-**************ANNONCES_ANTO*****************
+**************ANNONCE*****************
 **************************************/
 
 
@@ -806,6 +806,8 @@ h4{
     float:left;
     margin-top: 10px;
     width: 16%;
+    min-width: 100px;
+    margin-right: 10px;
     border-right:2px solid gray;
 }
 
@@ -819,6 +821,7 @@ h4{
     min-height: 100%;
     width: 82%;
     margin-left: 17%;
+    
 }
 
 #sub_trierpar,#droite_annonce select,#sub_page,#annonces_pages select{
@@ -1019,7 +1022,22 @@ margin-top: 20px;
     }
 }
 
+@media screen and (max-width:680px){
+    #div_ajout_panier{
+            float: right;
+            display: inline; 
+            margin-top: -60px;
+            margin-right: -18px;
+}
+    #droite_annonce{
+        margin-left:100px;
+        width: auto;
+    }
+    #article_annonce {
+  width: 82%;
+    }
 
+}
 @media screen and (max-width: 1050px) {
     header{border-bottom: 2px dotted gray;}
 	#nav {
