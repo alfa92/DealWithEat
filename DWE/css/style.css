@@ -1117,8 +1117,8 @@ margin-top: 20px;
     left:0;
     right:0;
     margin:auto;
-    margin-top: 50px;
-    padding-top: 50  
+    
+    padding-top: -50px;  
 
 }
 
@@ -1127,7 +1127,7 @@ margin-top: 20px;
     text-align:center;
     padding:none;
     margin-left:0px!important;
-    border-bottom : 2px dotted gray; 
+    border-bottom : 2px dotted orange; 
     
 }
 
@@ -1135,22 +1135,32 @@ margin-top: 20px;
     
     border: 1px solid black;
 }
+
+#probleme table a,#probleme table th{
+font-family: 'roboto' sans-serif;
+}
 #probleme table {
     border-collapse: collapse;
     width : 75% ;
     margin-top: 50px; 
-    margin-left: 50px; 
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0; 
+    height: 25%; 
 }
 #probleme th {
     border: 1px solid black;
+    background-color: lightgray;
 }
+
 
 #produits h1{
     
     text-align:center;
     padding:none;
     margin-left:0px!important; 
-    border-bottom : 2px dotted gray;
+    border-bottom : 2px dotted orange;
 }
 
 #produits{
@@ -1161,7 +1171,8 @@ margin-top: 20px;
     right:0;
     margin:auto;
     margin-top: 50px;
-    padding-top: 50
+    padding-top: -50px;
+
 }
 
 #problemes td{
@@ -1169,11 +1180,18 @@ margin-top: 20px;
     border: 1px solid black;
 }
 #problemes table {
+
     border-collapse: collapse;
     width : 75% ;
+    height: 25%;
     margin-top: 50px; 
-    margin-left: 50px; 
+    margin-left: auto;
+    margin-right: auto;
+    right: 0;
+    left: 0;
+    margin-bottom: 100px; 
 }
 #problemes th {
     border: 1px solid black;
+    background-color: lightgray;
 }

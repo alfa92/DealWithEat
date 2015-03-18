@@ -33,6 +33,13 @@
             <div id="probleme">
 
             <table>
+              <tr>
+                        <th> Probleme </th>
+                        <th> Reponse </th>
+                        <th> Date </th>
+                        
+                        
+                </tr>
    <tr>
        <td><a href="#"> Probleme numero 1 </a><br></td>
        <td><a href="#"> Reponse 1 </a><br></td>
@@ -63,6 +70,13 @@
  <div id="problemes">
 
             <table>
+              <tr>
+                        <th> Probleme </th>
+                        <th> Reponse </th>
+                        <th> Date </th>
+                        
+                        
+                </tr>
    <tr>
        <td><a href="#"> Probleme numero 1 </a><br></td>
        <td><a href="#"> Reponse 1 </a><br></td>
