@@ -38,7 +38,7 @@
                 </p>
                         <img id="principe" src="css/images/vegetable.jpg">
             </div>
-
+ <hr/>
               <img id="ccmimg" src="css/images/carrots.jpg">
         <div id="ccm">
               

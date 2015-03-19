@@ -64,14 +64,18 @@
 
           <?php
                
-                $reponse = $bdd->query('SELECT * FROM produits');
+                $query = 'SELECT * FROM produits';
+                $reponse = $bdd->query($query);
+             
+                
                     while ($donnees = $reponse->fetch())
 {
+                        
                    
                   
             ?>
         <div id="article_annonce">
-            <form id="panier" method="post" action="panier.php">
+            <form id="panier" method="post" action="annonce.php">
                 <h5 style="text-align:right;border-bottom:1px dashed black;"> <?php echo $donnees['Pr_Nom']; ?></h5>
                     <p> <?php echo $donnees['Pr_Description']; ?> </p>
             <img id="image_article" src="css/images/<?php echo $donnees['Pr_Nom'].'.jpg' ?>">
@@ -81,7 +85,7 @@
                 </div>
                 
                 <div id="div_ajout_panier">
-            <input type="submit" id="ajout_panier" value="Ajouter au panier"><br>
+            <input type="submit" id="ajout_panier" onclick="return confirm('Produit ajouter au panier ! ')" value="Ajouter au panier"><br>
                 <i>Quantité disponible : <?php echo $donnees['Pr_Quantité']; ?> kg </i> 
                     
                     </div>
@@ -90,7 +94,8 @@
   
           <?php
      }
-        ?>
+     
+?>
         
     </div>
         <div id="annonces_pages">
@@ -109,3 +114,10 @@
         </div>
 </body>
     <?php include('php/pied_de_page.php'); ?>
+    
+    
+    
+    <script type="text/javascript">
+      
+    
+    </script>

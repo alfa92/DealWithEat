@@ -49,7 +49,7 @@ include('php/config.php');?>
         
        ?> 
     <SCRIPT LANGUAGE="JavaScript">
-     document.location.href="moncompte_modif.php" 
+     document.location.href="moncompte.php" 
 </SCRIPT>
 
     <?php 
@@ -163,7 +163,7 @@ $ligne = $resultat->fetch_assoc();
 
    
 </table>
-    <input id="modif_sub" type="submit" name="rafraichir" value="Envoyer les modifications">
+    <input id="modif_sub" type="submit" name="rafraichir" onclick="return confirm('Êtes vous sur de vouloir effectuer ces changements')""value="Envoyer les modifications">
  </form>     
     </body>
     </div>
