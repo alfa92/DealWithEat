@@ -1195,3 +1195,11 @@ font-family: 'roboto' sans-serif;
     border: 1px solid black;
     background-color: lightgray;
 }
+
+/*********************************************************/
+/************************probleme1**************************/
+/*********************************************************/
+#question h1{
+    border-bottom : 2px dotted orange;
+
+}
