@@ -764,24 +764,32 @@ footer
 }
 
 .reseaux {
-    display: block;
-    width: 100px;;
-    right:0;
+    display: inline;
+    width: 100px;
+    margin-left:93%;
+    /*margin-bottom: 120%;
+    /*right:0;
     float:right;
-    bottom:0;
-    margin-right: 10px;
-
+    bottom:0;*/
     
+   
 }
 
 .reseaux img{
- width: 30px;   
+ width: 30px;
+ 
+ 
+
+ ;
+
 }
 
 #copyright{
-    display: inline;
+    display: inline-block;
     vertical-align: top;
-    bottom:0;
+    /*padding-bottom: 1%;
+    border: 1px solid red;
+    /*bottom:0;*/
     
 }
 
