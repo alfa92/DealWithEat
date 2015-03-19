@@ -53,8 +53,8 @@ $ligne = $resultat->fetch_assoc();
     else{
          ?> <div id="connectdiv" >
             
-            <a id="connect" > Connectez-vous <img  src="css/images/arrow486.png"> </a>
-            
+            <a id="connect" href="#connexiondiv"> Connectez-vous <img  src="css/images/arrow486.png"> </a>
+                <div id="connexiondiv">
             <form ACTION="accueil.php" METHOD="POST"> 
             <input name="login" class="connect" type="text" placeholder="Pseudo">
             <input name="pass" class="connect" type="password" placeholder="Mot de passe">
@@ -62,14 +62,17 @@ $ligne = $resultat->fetch_assoc();
                   </form>
                 <p STYLE="margin-top:-15px;"> Pas encore inscrit ? <a href="Inscription.php" style="color:black; text-decoration:none;border-bottom:1px dotted black ">Rejoignez-nous</a> </p>
           
-                
+</div>
         </div> <?php
         }
         }else{
-        ?> <div id="connectdiv" >
+        ?> 
+
+
+      <div id="connectdiv"  >
             
-            <a id="connect" > Connectez-vous <img  src="css/images/arrow486.png"> </a>
-            
+            <a id="connect" href="#connectdiv"> Connectez-vous <img  src="css/images/arrow486.png"> </a>
+              
             <form ACTION="accueil.php" METHOD="POST"> 
             <input name="login" class="connect" type="text" placeholder="Pseudo">
             <input name="pass" class="connect" type="password" placeholder="Mot de passe">
@@ -78,10 +81,8 @@ $ligne = $resultat->fetch_assoc();
                 <p STYLE="margin-top:-17px;"> Pas encore inscrit ? <a href="Inscription.php" style="color:black; text-decoration:none;border-bottom:1px dotted black ">Rejoignez-nous</a> </p>
 <p STYLE="margin-top:-20px;"><a href="oubliemdp.php" style="color:black; text-decoration:none;border-bottom:1px dotted black ">Mot de passe oublié ?</a> </p>
           
-                
+
         </div> <?php }
 ?>
-
-
 
 

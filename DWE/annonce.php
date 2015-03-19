@@ -60,39 +60,36 @@
                                <input id="sub_trierpar" type='submit' name='TrierPar' value='Trier'  >
             </form>
         </div>
-        <?php 
 
-            $sql = $conn->prepare('SELECT * FROM annonces');
-$sql -> execute();
-while ($lignes = $sql -> fetch(PDO::FETCH_OBJ)) // On fait une boucle pour récupérer les résultats, le FETCH_OBJ peut être considéré comme le array.
 
+          <?php
+               
+                $reponse = $bdd->query('SELECT * FROM produits');
+                    while ($donnees = $reponse->fetch())
 {
-    $id = $lignes -> id_annonces;
-	$titre = $lignes -> titre_annonce; // récupération de la valeur contenu dans la ligne 'nom'
-	$prix = $lignes ->prix_annonce;
-	$qtt = $lignes -> quantitée_annonce;
-
-
-
-?>
+                   
+                  
+            ?>
         <div id="article_annonce">
             <form id="panier" method="post" action="panier.php">
-                <h5 style="text-align:right;border-bottom:1px dashed black;"> <?php echo $titre; ?></h5>
-                    <p> Description de l'article Description de l'article Description de l'article  Description de l'article Description de l'article Description de l'article Description de l'article </p>
-            <img id="image_article" src="css/images/banane.jpg">
+                <h5 style="text-align:right;border-bottom:1px dashed black;"> <?php echo $donnees['Pr_Nom']; ?></h5>
+                    <p> <?php echo $donnees['Pr_Description']; ?> </p>
+            <img id="image_article" src="css/images/<?php echo $donnees['Pr_Nom'].'.jpg' ?>">
                 <div id="info_produit">
-            <h5> Prix : <?php echo $prix; ?>€/kg</h5> <h5> 
+            <h5> Prix : <?php echo $donnees['Pr_Prix']; ?>€/kg</h5> <h5> 
                     Echange contre : Produit / Produit / Produit </h5>
                 </div>
+                
                 <div id="div_ajout_panier">
             <input type="submit" id="ajout_panier" value="Ajouter au panier"><br>
-                <i>Quantité disponible : 24 kg </i> 
+                <i>Quantité disponible : <?php echo $donnees['Pr_Quantité']; ?> kg </i> 
                     
                     </div>
                 </form>
         </div>
-        <?php 
-                                                                                          }
+  
+          <?php
+     }
         ?>
         
     </div>

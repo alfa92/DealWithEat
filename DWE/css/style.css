@@ -133,7 +133,7 @@ h2{
     
 }
 
-#connectdiv:hover{
+#connectdiv:target{
     margin-right: 4px;
     width:365px;
     height: 160px;
@@ -143,6 +143,7 @@ h2{
     border-right:1px solid gray;
 
 }
+
 #connectdiv #connect{
     position:absolute;
     text-align: right;
@@ -424,7 +425,7 @@ h3{
     font-family: 'Roboto',sans-serif;
 }
 
-.rgstr-plus{
+#rgstr-plus{
     margin-left: auto;
     margin-right: auto;
     height: 20px;
@@ -433,7 +434,7 @@ h3{
     margin-bottom: ;
     margin-left:68%;
 }
-.rgstr-plus a{
+#rgstr-plus a{
     text-align: right;
     font-family: 'Roboto',sans-serif;
     font-size: 10px;
@@ -441,9 +442,9 @@ h3{
     
 }
 
-.rgstr-plus:hover {margin-left:auto;height:400px;
+#rgstr-plus:target {margin-left:auto;height:400px;
 width: auto}
-.rgstr-plus label{
+#rgstr-plus label{
     display:inline-block;
     width: 29%;
     margin-right: 25px;

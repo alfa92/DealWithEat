@@ -90,8 +90,8 @@ if (isset($_POST['mail'])) {
             
             
             
-            <div class="rgstr-plus">
-                <a><i class="fa fa-plus fa-2x" > </i>Inscription complète</a>   
+            <div id="rgstr-plus">
+                <a href="#rgstr-plus"><i class="fa fa-plus fa-2x" > </i>Inscription complète</a>   
                 <ul>
                 <input type="text" name='nom' placeholder="Nom"  />
 					<input type="text" style="width:30%;" name='prenom' placeholder="Prenom"   /><br>
@@ -100,7 +100,7 @@ if (isset($_POST['mail'])) {
                 
                 	<input type="text" name='pays' class="pass2" placeholder="Pays"   />
                     <input type="text" name='ville' class="pass2" placeholder="Ville"   /></br>
-                    <label for='date'>Date de naissance (AAAA-MM-JJ) </label><input type="text" name='age' class="pass2" placeholder="Date de naissance"   /> 
+                    <label for='date'> Date de naissance (AAAA-MM-JJ) </label><input type="text" name='age' class="pass2" placeholder="Date de naissance"   /> 
                 
                 
                 </ul>
