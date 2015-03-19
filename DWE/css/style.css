@@ -764,9 +764,10 @@ footer
 }
 
 .reseaux {
-    display: inline;
+    display: inline-block;
     width: 100px;
     margin-left:93%;
+
     /*margin-bottom: 120%;
     /*right:0;
     float:right;
@@ -778,21 +779,24 @@ footer
 .reseaux img{
  width: 30px;
  
- 
-
- ;
 
 }
 
 #copyright{
     display: inline-block;
     vertical-align: top;
-    /*padding-bottom: 1%;
-    border: 1px solid red;
+    margin-bottom: 0;
     /*bottom:0;*/
     
 }
 
+
+
+i{
+   
+   margin-left:30%;
+   
+}
 
 /**************************************
 **************ANNONCE*****************
