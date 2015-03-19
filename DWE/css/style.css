@@ -915,27 +915,42 @@ h4{
 **************************PANIER***********************
 **********************************************************/
 #panier_titre{
-margin-top: 20px;
-    font-size: 30px;   
+margin-top: 50px;
+    margin-left: 15%;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 300;
+    font-size: 40px;
 }
 #panier_panier
 {
     width: 90%;
-    margin-top: 0px;
+    margin-top: 15px;
     margin-left: 5%;
     text-align: center;
     border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+    
 }
-#panier_panier td,#panier_panier th
+
+#panier_panier td
 {
     height:30px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid black;
+    
+}
+#panier_panier th
+{
+    height:15px;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+     border-radius:20px 20px 20px 20px;
 }
 
+
 #panier_panier th{
-    background-color: lightgray;   
+    background-color: #f8d79a;   
 }
 
 #panier caption{
