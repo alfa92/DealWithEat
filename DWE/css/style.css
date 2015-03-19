@@ -862,6 +862,7 @@ h4{
     right:0;
     margin-right: 0;
     margin-left: auto;
+    min-height: 70px;
     max-height: 100px;
     overflow: scroll;
     text-align: justify;
@@ -1118,8 +1119,8 @@ margin-top: 20px;
     left:0;
     right:0;
     margin:auto;
-    
-    padding-top: -50px;  
+    margin-top: 50px;
+    padding-top: 50  
 
 }
 
@@ -1128,7 +1129,7 @@ margin-top: 20px;
     text-align:center;
     padding:none;
     margin-left:0px!important;
-    border-bottom : 2px dotted orange; 
+    border-bottom : 2px dotted gray; 
     
 }
 
@@ -1136,32 +1137,22 @@ margin-top: 20px;
     
     border: 1px solid black;
 }
-
-#probleme table a,#probleme table th{
-font-family: 'roboto' sans-serif;
-}
 #probleme table {
     border-collapse: collapse;
     width : 75% ;
     margin-top: 50px; 
-    margin-left: auto;
-    margin-right: auto;
-    right: 0;
-    left: 0; 
-    height: 25%; 
+    margin-left: 50px; 
 }
 #probleme th {
     border: 1px solid black;
-    background-color: lightgray;
 }
-
 
 #produits h1{
     
     text-align:center;
     padding:none;
     margin-left:0px!important; 
-    border-bottom : 2px dotted orange;
+    border-bottom : 2px dotted gray;
 }
 
 #produits{
@@ -1172,8 +1163,7 @@ font-family: 'roboto' sans-serif;
     right:0;
     margin:auto;
     margin-top: 50px;
-    padding-top: -50px;
-
+    padding-top: 50
 }
 
 #problemes td{
@@ -1181,26 +1171,11 @@ font-family: 'roboto' sans-serif;
     border: 1px solid black;
 }
 #problemes table {
-
     border-collapse: collapse;
     width : 75% ;
-    height: 25%;
     margin-top: 50px; 
-    margin-left: auto;
-    margin-right: auto;
-    right: 0;
-    left: 0;
-    margin-bottom: 100px; 
+    margin-left: 50px; 
 }
 #problemes th {
     border: 1px solid black;
-    background-color: lightgray;
-}
-
-/*********************************************************/
-/************************probleme1**************************/
-/*********************************************************/
-#question h1{
-    border-bottom : 2px dotted orange;
-
 }
