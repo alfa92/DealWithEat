@@ -17,7 +17,7 @@
             <body>
                 
                 <table id="panier_panier">
-                    <img src="css/images/picnic5.png" style="width:60px;position:absolute;margin-top:20px;margin-left:10%;">
+                    <img src="css/images/picnic5.png" style="width:60px;position:absolute;margin-top:20px;margin-left:13%;">
                     <center id="panier_titre">Votre Panier </center>
                
                     

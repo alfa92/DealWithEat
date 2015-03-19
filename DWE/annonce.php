@@ -84,8 +84,10 @@
                     Echange contre : Produit / Produit / Produit </h5>
                 </div>
                 
+                
+                
                 <div id="div_ajout_panier">
-            <input type="submit" id="ajout_panier" onclick="return confirm('Produit ajouter au panier ! ')" value="Ajouter au panier"><br>
+            <input type="submit" id="ajout_panier" onclick="return confirm(' Produit ajouter au panier')" value="Ajouter au panier"><br>
                 <i>Quantité disponible : <?php echo $donnees['Pr_Quantité']; ?> kg </i> 
                     
                     </div>
