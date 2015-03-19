@@ -1,5 +1,5 @@
 <?php $expire = 365*24*3600;
-setcookie("pseudo",time()+$expire);session_start() ?>
+setcookie("id",time()+$expire);session_start() ?>
 <html>
     <head>
         <meta charset=UTF-8>

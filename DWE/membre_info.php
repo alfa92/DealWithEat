@@ -1,5 +1,5 @@
 <?php $expire = 365*24*3600;
-setcookie("pseudo",time()+$expire);session_start()  ?>
+setcookie("id",time()+$expire); session_start()  ?>
 
 
 <html>
@@ -20,7 +20,7 @@ setcookie("pseudo",time()+$expire);session_start()  ?>
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} 
         
               
-               $requete = "SELECT * FROM membres WHERE membre_pseudo='".$_COOKIE['pseudo']."'";
+               $requete = "SELECT * FROM membres WHERE membre_id='".$_COOKIE['id']."'";
 
 // envoi de la requête
 $resultat = mysqli_query($conn,$requete) or die ('Erreur '.$requete.' '.$mysqli->error);
@@ -34,7 +34,7 @@ $ligne = $resultat->fetch_assoc();
         <div id="account_top">
         <fieldset class="title_account">
             <legend> <?php 
-              echo $_COOKIE['pseudo'];
+              echo $ligne['pseudo'];
             ?></legend>
             </fieldset>
             <img id=avatar_moyen src="css/images/avatar.png">
