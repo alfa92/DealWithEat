@@ -58,11 +58,13 @@ $ligne = $resultat->fetch_assoc();
                         <li><a href="actualites.php"> Paramètres </a></li>
 						<li><a href="#"> Mes annonces </a></li>
 						<li><a href="logout.php"> Déconnexion </a></li>
+                        <li><a href="backoffice/adminmembre.php"> Interface administrateur </a></li>
 					</ul>
 				</nav>
         </div>
 
-<table id="account_data">
+
+            <table id="account_data">
    <tr>
        <td>Nom</td>
        <td><?php echo $ligne['nom']; ?></td>

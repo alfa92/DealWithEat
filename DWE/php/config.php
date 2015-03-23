@@ -12,6 +12,7 @@ $conn=mysqli_connect('localhost', 'root', 'root','dealwitheat');
 $conn1=mysqli_connect('localhost', 'root', 'root','mydb');
 mysqli_set_charset($conn1,"UTF8");
 $bdd = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'root');
+$bdd1 = new PDO('mysql:host=localhost;dbname=dealwitheat;charset=utf8', 'root', 'root');
 //Email du webmaster
 $mail_webmaster = 'example@example.com';
 

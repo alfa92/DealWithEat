@@ -120,6 +120,7 @@ $ligne = $resultat->fetch_assoc();
 						<li><a href="logout.php"> Déconnexion </a></li>
 					</ul>
 				</nav>
+
         </div>
 <form method="post">
 <table id="account_data">

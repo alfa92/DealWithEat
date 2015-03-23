@@ -44,7 +44,11 @@
               
                 <h1> Comment ça marche ? </h1>
                 <p>
-                Notre site offre trois modes de navigation. Le premier est le mode "non inscrit" ce mode permet à l'utilisateur de voir le site sans action de sa part. Le deuxième "inscrit lite" est une inscription rapide qui permet à l'utilisateur d'acheter des produits sur notre site et d'intéragir avec les autres utilisateurs via la FAQ ou la page d'actualité. Enfin vient "l'inscrit complet", ce dernier a les mêmes droits que "l'inscrit lite" mais il peut vendre et échanger des produits. 
+                    Notre site offre trois modes de navigation. Le premier est le mode "non inscrit" ce mode permet à
+                    l'utilisateur de voir le site sans action de sa part. Le deuxième "inscrit lite" est une inscription
+                    rapide qui permet à l'utilisateur d'acheter des produits sur notre site et d'intéragir avec les
+                    autres utilisateurs via la FAQ ou la page d'actualité. Enfin vient "l'inscrit complet", ce dernier a
+                    les mêmes droits que "l'inscrit lite" mais il peut vendre et échanger des produits.
                     Pour vous inscrire c'est très simple, il suffit de vous rendre sur la <a href="Inscription.php"> page d'inscription</a>.
                 </p>
             </div>
