@@ -38,7 +38,6 @@ $ligne = $resultat->fetch_assoc();
         $msgconnexion="Bienvenue ".$_SESSION['login']."";
                 $_SESSION['id']='1';
 
-
             } else {
                 $msgconnexionfail = "La connexion a échoué, veuillez réessayer";
 
