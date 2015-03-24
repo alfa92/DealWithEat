@@ -1,0 +1,86 @@
+body{
+	
+	margin:0;
+}
+
+#fondindex{
+	
+	position: absolute;
+	margin:0;
+	width: 100%;
+	height: 100%;
+
+
+
+    
+	
+}
+
+#titreindex{
+
+	
+	font-family : 'Roboto' sans-serif ;
+	position: absolute;
+	left: 450px;
+	top:50px;
+	font-size: 70px;
+	
+
+}
+
+
+#Slogan{
+
+
+	font-family : "Roboto" sans-serif ;
+	position: absolute;
+	left: 500px;
+	top:210px;
+	font-size: 30px;
+	
+
+}
+
+
+#logoindex{
+	
+	position: absolute;
+	left: 0px;
+	top: 50px;
+
+
+}
+
+
+.ChoixLangue{
+	
+	font-family : "Roboto" sans-serif ;
+	position: absolute;
+	text-align: center;
+	top: 360px;
+	font-size: 20px;
+	border-top: 1px solid black ;
+	width:80%;
+	margin-left : auto;
+	margin-right: auto;
+	left:0;
+	right:0;
+	
+
+
+}
+
+.Drapeaux{
+
+	position: absolute;
+	left: 550px;
+	top: 390px;
+	width: 50%;
+	height: 50%;
+	
+
+
+
+
+}
+
