@@ -8,7 +8,8 @@
     font-family: foreverBold;
     src: url("fonts/Always Forever Bold.ttf");
 }
-	body,input,textarea,select,h1,h2
+
+body, input, textarea, select, h1, h2, h3, h4, h5, h6
 	{
 		font-family: 'Roboto', sans-serif;
 		font-size: 11pt;
@@ -29,6 +30,64 @@ body {
   
 
 }
+
+/*********************************************************/
+/************************INDEX****************************/
+/*********************************************************/
+
+#fondindex {
+    width: 100%;
+    height: 112%;
+    position: absolute;
+}
+
+#logoindex {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 0%;
+    left: 0;
+
+}
+
+#echangeindex {
+    position: absolute;
+    margin-top: 85px;
+    width: 200px;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: 15%;
+}
+
+#titreindex {
+    position: absolute;
+    font-size: 120px;
+    margin-top: 250px;
+    margin-left: 32%;
+}
+
+#soustitreindex {
+    position: absolute;
+    font-size: 55px;
+    margin-top: 350px;
+    margin-left: 36%;
+    border-bottom: 3px dotted black;
+
+}
+
+#flagfr, #flagen {
+    position: absolute;
+    width: 10%;
+    margin-top: 450px;
+    margin-left: 38%;
+}
+
+#flagen {
+    margin-left: 50%;
+}
+
+
+
 /*********************************************************/
 /************************HEADER***************************/
 /*********************************************************/
@@ -1134,6 +1193,44 @@ margin-top: 50px;
 
 /*********************************************************/
 /************************FAQ**************************/
+/*********************************************************/
+
+#asidefaq {
+    width: 19%;
+    display: inline-block;
+    vertical-align: top;
+    list-style: none;
+    position: fixed;
+
+}
+
+#asidefaq ul li {
+
+}
+
+#sectionfaq {
+    margin-left: 20%;
+    width: 79%;
+    display: inline-block;
+}
+
+#sectionfaq h6 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+    font-style: italic;
+}
+
+#sectionfaq p strong {
+    margin-left: -20px;
+    text-decoration: underline;
+}
+
+#sectionfaq p {
+    margin-left: 50px;
+}
+/*********************************************************/
+/************************FORUM**************************/
 /*********************************************************/
 
 #techniques{

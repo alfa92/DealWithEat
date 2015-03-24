@@ -19,9 +19,9 @@
 
   	<p id="logoindex">  <img src="css/images/logodwe.png" alt="logo dwe"/>
   	</p>
-  	<h5 id="titreindex">
-			DEAL WITH EAT
-    </h5>
+
+<h1 id="titreindex">Deal With Eat
+</h1>
 		
 		
 
@@ -33,7 +33,7 @@
 <section> 
      <article>
 
-        <p id="Slogan">ACHETEZ, VENDEZ, ECHANGER </p> 
+         <p id="Slogan">Vendez, Achetez, Echangez </p>
 
 
         <p class="ChoixLangue"> Choisissez votre langage/Choose your language  </p> 

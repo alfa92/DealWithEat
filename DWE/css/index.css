@@ -1,3 +1,11 @@
+body, input, textarea, select, h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 11pt;
+    font-weight: 300;
+    line-height: 1.75em;
+
+}
+
 body{
 	
 	margin:0;
@@ -18,12 +26,12 @@ body{
 
 #titreindex{
 
-	
-	font-family : 'Roboto' sans-serif ;
 	position: absolute;
-	left: 450px;
-	top:50px;
-	font-size: 70px;
+    left: 0px;
+    margin-left: 30%;
+    top: 30px;
+    font-size: 120px;
+    font-weight: 300;
 	
 
 }
@@ -31,12 +39,12 @@ body{
 
 #Slogan{
 
-
-	font-family : "Roboto" sans-serif ;
 	position: absolute;
-	left: 500px;
-	top:210px;
-	font-size: 30px;
+    left: 0;
+    margin-left: 35%;
+    top: 0px;
+    margin-top: 270px;
+    font-size: 50px;
 	
 
 }
@@ -46,6 +54,7 @@ body{
 	
 	position: absolute;
 	left: 0px;
+    margin-left: -4%;
 	top: 50px;
 
 

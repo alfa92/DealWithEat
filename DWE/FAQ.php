@@ -14,70 +14,73 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
-			
-    <?php 
+		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?>
 
-         $req = "SELECT DISTINCT * FROM FAQ ";
+        <?php
 
-// envoi de la requête
-$res = mysqli_query($conn1,$req) or die ('Erreur '.$requete.' '.$mysqli->error);
-// resultat de la requete
-$lignes = $res->fetch_assoc();
-    
-        
+        $queryfaq1 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Questions populaires"';
+        $reponsefaq1 = $bdd->query($queryfaq1);
+        $queryfaq2 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Réglement"';
+        $reponsefaq2 = $bdd->query($queryfaq2);
+        $queryfaq3 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Inscription"';
+        $reponsefaq3 = $bdd->query($queryfaq3);
+        $queryfaq4 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Connexion"';
+        $reponsefaq4 = $bdd->query($queryfaq4);
+        $queryfaq5 = 'SELECT * FROM FAQ WHERE FA_Emplacement="ACHAT - VENTE - ECHANGE"';
+        $reponsefaq5 = $bdd->query($queryfaq5);
+
 
     ?>
     </header>
     <body>
          <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;">FAQ</h1>
-        <aside style="width:20%";>
+         <aside id="asidefaq" ;>
             <nav>
                 <ul>
-                    <li>Réglement</li>
-                    <li>Inscription</li>
-                    <li>Connexion</li>
-                    <li>Achat - Vente  -Echange</li>
+                    <li><a href="#faqr">Réglement</a></li>
+                    <li><a href="#faqi">Inscription</a></li>
+                    <li><a href="#faqc">Connexion</a></li>
+                    <li><a href="#faqave">Achat - Vente -Echange</a></li>
                     
                 </ul>
             </nav>
         </aside>
-        <section >
-           
-                    <h6> Questions populaires </h6>
-            <?php if($lignes['FA_Emplacement']=='Questions populaires'){ ?>
-                            <p><strong><?php  echo $lignes['FA_Sujet']?></strong><br>
-            <?php  echo $lignes['FA_Reponse']?></p>
+         <section id="sectionfaq">
+
+             <h6 id="faqQP"> QUESTIONS POPULAIRES </h6>
+             <?php while ($donnees = $reponsefaq1->fetch()) { ?>
+                 <p><strong><?php echo $donnees['FA_Sujet'] ?></strong><br>
+                     <?php echo nl2br($donnees['FA_Reponse']) ?></p>
             <?php
     }
             ?>
-                    <h6>Réglement</h6>
-                             <?php while($lignes['FA_Emplacement']=='Réglement'){ ?>
-                            <p><strong><?php  echo $lignes['FA_Sujet']?></strong><br>
-            <?php  echo $lignes['FA_Reponse']?></p>
+             <h6 id="faqr">REGLEMENT</h6>
+             <?php while ($donnees2 = $reponsefaq2->fetch()) { ?>
+                 <p><strong><?php echo $donnees2['FA_Sujet'] ?></strong><br>
+                     <?php echo nl2br($donnees2['FA_Reponse']) ?></p>
             <?php
-    }
+             }
             ?>
-                    <h6>Inscription</h6>
-             <?php if($lignes['FA_Emplacement']=='Inscription'){ ?>
-                            <p><strong><?php  echo $lignes['FA_Sujet']?></strong><br>
-            <?php  echo $lignes['FA_Reponse']?></p>
+             <h6 id="faqi">INSCRIPTION</h6>
+             <?php while ($donnees3 = $reponsefaq3->fetch()) { ?>
+                 <p><strong><?php echo $donnees3['FA_Sujet'] ?></strong><br>
+                     <?php echo nl2br($donnees3['FA_Reponse']) ?></p>
             <?php
-    }
+             }
             ?>
-                    <h6>Connexion</h6>
-             <?php if($lignes['FA_Emplacement']=='Connexion'){ ?>
-                            <p><strong><?php  echo $lignes['FA_Sujet']?></strong><br>
-            <?php  echo $lignes['FA_Reponse']?></p>
+             <h6 id="faqc">CONNEXION</h6>
+             <?php while ($donnees4 = $reponsefaq4->fetch()) { ?>
+                 <p><strong><?php echo $donnees4['FA_Sujet'] ?></strong><br>
+                     <?php echo nl2br($donnees4['FA_Reponse']) ?></p>
             <?php
-    }
+             }
             ?>
-                    <h6>Achat - Vente  - Echange</h6>
-             <?php if($lignes['FA_Emplacement']=='Achat - Vente - Echange'){ ?>
-                            <p><strong><?php  echo $lignes['FA_Sujet']?></strong><br>
-            <?php  echo $lignes['FA_Reponse']?></p>
+             <h6 id="faqave">ACHAT - VENTE - ECHANGE</h6>
+             <?php while ($donnees5 = $reponsefaq5->fetch()) { ?>
+                 <p><strong><?php echo $donnees5['FA_Sujet'] ?></strong><br>
+                     <?php echo nl2br($donnees5['FA_Reponse']) ?></p>
             <?php
-    }
+             }
             ?>
         
         </section>

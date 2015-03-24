@@ -3,23 +3,18 @@
     $msg='';
     $msgconnexionfail='';
 $msgad = NULL;
-    
-    
+
     if(isset($_POST['login'])){
         $login=$_POST['login'];
     }else{
         $login=NULL;
     }
-
     if(isset($_POST['pass'])){
         $pass=md5($_POST['pass']);
     }else{
         $pass=NULL;
     }
-
-
 ?>
-
 
 <?php 
     $requete = "SELECT * FROM membres WHERE membre_pseudo='".$login."'";
@@ -41,11 +36,12 @@ $ligne = $resultat->fetch_assoc();
             } else {
                 $msgconnexionfail = "La connexion a échoué, veuillez réessayer";
 
-    }
+            }
     }
         if(isset($_SESSION['login']) ){
     if($_SESSION['id']=='1'){
         ?>
+
         <div id="connecterdiv"><p>Bonjour <?php echo $_SESSION['login']; ?><br> <i style="font-size:12px;"><a
                         href="panier.php">Mon panier (2)</a></i>
 </p><img id="avatar_little" src=css/images/avatar.png ></div> <?php
