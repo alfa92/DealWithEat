@@ -30,7 +30,9 @@
         $reponsefaq5 = $bdd->query($queryfaq5);
 
 
-    ?>
+
+
+        ?>
     </header>
     <body>
          <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;">FAQ</h1>
