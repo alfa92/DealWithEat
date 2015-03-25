@@ -45,7 +45,7 @@
 
         <h2> Il vous suffit de remplir le forumlaire ci-dessous</h2>
 
-        <form name="postfaq" method="post">
+        <form id="postfaq" name="postfaq" method="post">
             <label for="Emplacement">Choisissez l'emplacement du sujet </label>
             <select name="Emplacement">
                 <option> - - - - - - -</option>
@@ -56,18 +56,30 @@
                 <option>Achat - Vente - Echange</option>
             </select>
             <br>
-            <input name="titre" placeholder="Saisir le sujet"/>
+            <input name="titre" placeholder="Saisir le sujet" required/>
             <br>
-            <textarea name="reponse" placeholder="Veuillez saisir la réponse au sujet mentionné plus haut" cols="55"
-                      rows="8"></textarea>
+            <textarea name="reponse" placeholder="Veuillez saisir la réponse au sujet mentionné plus haut" cols="75"
+                      rows="8" required></textarea>
             <br>
-            <input type="submit" value="Poster la sujet">
+            <input name="subfaq" type="submit" value="Poster la sujet">
         </form>
 
     <?php
+if (isset($_POST['subfaq'])) {
 
-        $reqmlf = "INSERT INTO FAQ VALUES ('', '" . $_POST['Emplacement'] . "', '" . $_POST['titre'] . "' , '" . $_POST['reponse'] . "' )";
+    if (isset($_POST['Emplacement'])) {
+        $emp = $_POST['Emplacement'];
+    }
+    if (isset($_POST['titre'])) {
+        $titrefaq = ($_POST['titre']); // Le md5 signifie que l'on crypte le mot de passe (il existe d'aute méthode de cryptage comme le sha1
+    }
+    if (isset($_POST['reponse'])) {
+        $repfaq = $_POST['reponse'];
+    }
+
+    $reqmlf = "INSERT INTO FAQ VALUES ('', '" . $emp . "', '" . $titrefaq . "' , '" . $repfaq . "' )";
 
 
     $db = mysqli_query($conn1, $reqmlf) or die('Erreur SQL !' . $reqmlf . '<br>' . mysql_error());
+}
 ?>

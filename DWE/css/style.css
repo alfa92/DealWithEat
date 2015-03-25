@@ -1324,4 +1324,30 @@ margin-top: 50px;
     margin-left: 14%;
     margin-top: 21%;
 
+/*********************************************************/
+/************************BACKOFFICE************************/
+/*********************************************************/
+
+#postfaq {
+    margin-left: 20%;
+}
+
+#postfaq input, #postfaq textarea {
+    padding: 10px 12px;
+    margin: 7px 5px;
+    outline: none !important;
+    background: rgba(153, 153, 153, 0.09);
+    color: #33383b;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+
+}
+
+#formmail {
+    margin-left: 20%;
+    margin-bottom: 100px;
+
+
 }
