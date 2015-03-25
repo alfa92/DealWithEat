@@ -14,28 +14,40 @@
         <?php include('php/config.php'); ?>
         <?php include('php/header.php'); ?>
         <?php include('php/connexion.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
-			
+	<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+   
+
+        
+                  
     
     </header>
 
     <body>
 
-        <div id="question">
-            <h1> Poser vos question ici </h1>
-            <textarea id="paragraph_text" cols="80" rows="3"></textarea><br>
+
+      <div id="problemes">
+         
+
+        
+            <table>
+              <tr>
+                        <th > Pseudo </th>
+                        <th> Sujet </th>
+                        <th> Date </th>
+                        
+                        
+                </tr>
+   <tr>
+       <td id="tdpseudo"><a href="probleme1.php"><h5> <?php echo $_SESSION['login']  ?>  </h5><img id=ava src="css/images/avatar.png"> </a><br></td>
+       <td><a href="#"> Sujet1 </a><br></td>
+       <td><a href="#"> Date 1 </a><br></td>
+   </tr>
 
 
-              <div id="action"><a href="#cible"> Commenter</a>
-             
-            <a id="like"> J'aime </a>
-                   <form id="cible">
-                <textarea id="paragraph_text" name="comment" cols="80" rows="3"></textarea><br>
-                    <input id="comment" name='comment_sub' type=submit value="Commenter">
-                    
-                </form>
-                </div>
-        </div>
+
+   
+</table>
+        
 
 
     </body>

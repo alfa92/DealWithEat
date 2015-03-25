@@ -1192,7 +1192,7 @@ margin-top: 50px;
 }
 
 /*********************************************************/
-/************************FAQ**************************/
+/************************Forum**************************/
 /*********************************************************/
 
 #asidefaq {
@@ -1261,8 +1261,9 @@ margin-top: 50px;
 #probleme table {
     border-collapse: collapse;
     width : 75% ;
-    margin-top: 50px; 
-    margin-left: 50px; 
+    right:0;
+    left: 0;
+    margin:auto;
 }
 #probleme th {
     border: 1px solid black;
@@ -1294,9 +1295,33 @@ margin-top: 50px;
 #problemes table {
     border-collapse: collapse;
     width : 75% ;
-    margin-top: 50px; 
-    margin-left: 50px; 
+    right:0;
+    left: 0;
+    margin:auto;
+    margin-bottom: 100px;
+    margin-top: 100px; 
 }
 #problemes th {
     border: 1px solid black;
+}
+
+#tdpseudo {
+    height: 150px;
+    width: 150px;
+}
+
+#tdpseudo h5{
+    text-align: center;
+    margin-bottom: 100px; 
+}
+
+#ava {
+    position: absolute;
+    width:120px;
+    top:0;
+    left:0;
+    margin-top: 230px;
+    margin-left: 14%;
+    margin-top: 21%;
+
 }
