@@ -35,7 +35,9 @@
         ?>
     </header>
     <body>
-         <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;">FAQ</h1>
+    <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;">FAQ<i
+            style="margin-left:70%;font-size: 20px;letter-spacing: normal;"><a href="forum.php">Accéder au forum
+                d'aide</a></i></h1>
          <aside id="asidefaq" ;>
             <nav>
                 <ul>

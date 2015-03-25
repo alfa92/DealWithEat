@@ -44,7 +44,7 @@ body {
 #logoindex {
     position: absolute;
     margin-top: 130px;
-    margin-left: 0%;
+    margin-left: 0;
     left: 0;
 
 }
@@ -160,7 +160,7 @@ h2{
     position:absolute;
     text-align: right;
     color:gray;
-    font-family: "Roboto" sans-serif;
+    font-family: "Roboto", sans-serif;
     text-decoration: none;
     right:0; 
     font-size: 16px;
@@ -204,7 +204,7 @@ h2{
     position:absolute;
     text-align: right;
     color:gray;
-    font-family: "Roboto" sans-serif;
+    font-family: "Roboto", sans-serif;
     text-decoration: none;
     right:0; 
     font-size: 18px;
@@ -444,7 +444,7 @@ h3{
 .rgstr-main input.email[type="text"], .rgstr-main input[type="password"] {
 	width: 61%;
 	padding: 10px 12px;
-	margin: 9px 0px;
+    margin: 9px 0;
 	outline: none !important;
 	background: rgba(153, 153, 153, 0.09);
 	color: #33383b;
@@ -456,7 +456,7 @@ h3{
 }
 .r-submit  {
 	background: gray;
-	border: 0px;
+    border: 0;
 	font-family: "Roboto",sans-serif;
 	padding: 6px 14px;
 	outline: none;
@@ -482,12 +482,11 @@ h3{
 }
 
 #rgstr-plus{
-    margin-left: auto;
+
     margin-right: auto;
     height: 20px;
     width: 200px;
     overflow: hidden;
-    margin-bottom: ;
     margin-left:68%;
 }
 #rgstr-plus a{
@@ -559,7 +558,7 @@ width: auto}
 #paragraph_text{
 
 	padding: 10px 12px;
-	margin: 9px 0px;
+    margin: 9px 0;
 	outline: none !important;
 	background: rgba(153, 153, 153, 0.09);
 	color: #33383b;
@@ -571,7 +570,7 @@ width: auto}
 
 #comment{
     background: gray;
-	border: 0px;
+    border: 0;
 	font-family: "Roboto",sans-serif;
 	padding: 6px 14px;
     margin-left: 56%;
@@ -587,7 +586,6 @@ width: auto}
         display: inline;
         margin-left: 50px;
         text-align: justify;
-        font-weight: 500;
         color:rgba(255, 158, 45, 0.75);
     font-weight: 700;
 
@@ -614,17 +612,17 @@ width: auto}
     font-size: 18px;
     padding-bottom: 10px;
     border-bottom:2px dotted rgba(255, 158, 45, 0.75);
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 10px;
     margin-left: 0;
     text-align: center;
-     font-family: "Roboto" sans-serif;
+    font-family: "Roboto", sans-serif;
 
 
 }
 
 #actdroite a{
-    font-family: "Roboto" sans-serif;
+    font-family: "Roboto", sans-serif;
     text-decoration: none;
     font-size: 12px;
     line-height: 1.5em;
@@ -647,7 +645,7 @@ width: auto}
 }
 
 #connecvs{
-font-family: 'Roboto' sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size:20px;
 
 }
@@ -673,7 +671,7 @@ font-family: 'Roboto' sans-serif;
      background:rgb(180, 226, 255);
         height: 40px;
         float:left;
-        whith:50%;
+    width: 50%;
         margin-left: 21.9%;
         margin-top: 1px;
     }
@@ -759,7 +757,7 @@ font-family: 'Roboto' sans-serif;
 
 
 #account_data td{
-    font-family: 'Roboto' sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size:17px;
 
          padding-top:20px;
@@ -767,7 +765,7 @@ font-family: 'Roboto' sans-serif;
 
 #account_data a{
 
-font-family: 'Roboto' sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size:14px;
     color:gray;
 }
@@ -786,8 +784,7 @@ font-family: 'Roboto' sans-serif;
 }
 
 #modif_sub{
-    
-    float:center;
+
     display: block;
     left:0;
     right:0;
@@ -795,7 +792,7 @@ font-family: 'Roboto' sans-serif;
     margin-right: auto;
     margin-top: 20px;
     background: gray;
-	border: 0px;
+    border: 0;
 	font-family: "Roboto",sans-serif;
 	padding: 6px 14px;
 	outline: none;
@@ -835,12 +832,12 @@ footer
 }
 
 #copyright{
-    font-family:"Roboto" sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size:12px;
     font-style: italic;
      display: inline-block;
     vertical-align: top;
-    margin-top: 0px;
+    margin-top: 0;
     
   
 
@@ -860,7 +857,7 @@ text-align: center;
 
 
 h4,h5,h6,p{
-    font-family:"Roboto" sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: normal;
     
 }
@@ -899,7 +896,7 @@ h4{
     display: inline-block;
     vertical-align: middle;
     color:black;
-    border: 0px;
+    border: 0;
 	font-family: "Roboto",sans-serif;
 	outline: none;
 	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
@@ -974,7 +971,7 @@ h4{
 }
 
 #div_ajout_panier i{
-    font-family:'Roboto' sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 10px;
 }
 
@@ -985,7 +982,7 @@ h4{
 #panier_titre{
 margin-top: 50px;
     margin-left: 18%;
-    font-size: 30px;
+
     text-align: left;
     font-weight: 300;
     font-size: 40px;
@@ -1024,7 +1021,7 @@ margin-top: 50px;
 #panier caption{
     font-size: 20px;
     padding:2px;
-    font-family:'Roboto' sans-serif;
+    font-family: 'Roboto', sans-serif;
     
 }
 
@@ -1035,8 +1032,8 @@ margin-top: 50px;
 	position:absolute;
 	top:0;
 	right:0;
-	background:#34495E url(../img/nav.svg) no-repeat center center;
-	height:40px;
+
+    height: 40px;
 	width:40px;
 	border-radius:5px;
 	-webkit-border-radius:5px;
@@ -1183,12 +1180,7 @@ margin-top: 50px;
          color:black;
         border:none;
 	}
-	#nav ul:hover .current {
-		background: url(images/icon-check.png) no-repeat 10px 7px;
-	}
 
-
-	
 }
 
 /*********************************************************/
@@ -1241,17 +1233,14 @@ margin-top: 50px;
     right:0;
     margin:auto;
     margin-top: 50px;
-    padding-top: 50  
 
 }
 
 #techniques h1{
     
     text-align:center;
-    padding:none;
-    margin-left:0px!important;
-    border-bottom : 2px dotted gray; 
-    
+    margin-left: 0 !important;
+    border-bottom: 2px dotted gray;
 }
 
 #probleme td{
@@ -1272,8 +1261,7 @@ margin-top: 50px;
 #produits h1{
     
     text-align:center;
-    padding:none;
-    margin-left:0px!important; 
+    margin-left: 0 !important;
     border-bottom : 2px dotted gray;
 }
 
@@ -1285,7 +1273,6 @@ margin-top: 50px;
     right:0;
     margin:auto;
     margin-top: 50px;
-    padding-top: 50
 }
 
 #problemes td{
@@ -1316,14 +1303,13 @@ margin-top: 50px;
 }
 
 #ava {
-    position: absolute;
-    width:120px;
-    top:0;
-    left:0;
-    margin-top: 230px;
-    margin-left: 14%;
-    margin-top: 21%;
 
+    width: 120px;
+    top: 0;
+    left: 0;
+    margin-left: 14%;
+    margin-top: -100px;
+}
 /*********************************************************/
 /************************BACKOFFICE************************/
 /*********************************************************/

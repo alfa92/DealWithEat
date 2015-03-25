@@ -5,9 +5,10 @@
 						<li class="current"><a href="accueil.php">Accueil</a></li>
                         <li><a href="actualites.php"> Actualités </a></li>
 						<li><a href="annonce.php"> Annonces </a></li>
-						<li><a href="inscription.php"> Inscritpion </a></li>
-						<li><a href="faq.php">FAQ </a></li>
-					</ul>
+                        <li><a href="Inscription.php"> Inscritpion </a></li>
+                        <li><a href="FAQ.php">Aide </a></li>
+
+                    </ul>
 				</nav>
         </div>
 
