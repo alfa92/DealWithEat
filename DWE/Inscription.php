@@ -54,10 +54,8 @@ if (isset($_POST['mail'])) {
 			&& isset($_POST['pass2']) && !empty($_POST['pass2'])
 			&& isset($_POST['mail']) && !empty($_POST['mail'])){
 
-			
 
-
-			}else{
+        }else{
             // Sinon on affiche le message
             echo 'Veuillez remplir les champs obligatoires s\'il vous plait';
 			?><?php
