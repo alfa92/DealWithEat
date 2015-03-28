@@ -19,19 +19,29 @@
         } else {
             include('nav.php');
         } ?>
-			
-    
-    </header>
-    
-    
-    <body>
-        
+
+
+        <!--/header>
+        <form method="get">
+    <input type="text" name="colorbody" placeholder="Couleur body">
+    <input type="submit">
+        </form>
+
+    <body style="background-color:<?php echo $_GET['colorbody']; ?>"-->
+        <body>
+
+
         <div id="msgconnexion">
-                 <p style="text-align:center;font-family:'Roboto' sans-serif ; font-size:30px; color:Green;"><?php if(isset($msgconnexion)){echo $msgconnexion;} ?></p>
-                        <p style="text-align:center;font-family:'Roboto' sans-serif ; font-size:30px; color:red;"><?php if(isset($msgconnexionfail)){echo $msgconnexionfail;} ?></p>
-        </div>   
-        
-            <div id="presentation">
+            <p style="text-align:center;font-family:'Roboto', sans-serif ; font-size:30px; color:Green;"><?php if (isset($msgconnexion)) {
+                    echo $msgconnexion;
+                } ?></p>
+
+            <p style="text-align:center;font-family:'Roboto', sans-serif ; font-size:30px; color:red;"><?php if (isset($msgconnexionfail)) {
+                    echo $msgconnexionfail;
+                } ?></p>
+        </div>
+
+        <div id="presentation">
                 <h1> Le principe </h1>
                 <p>
                     Deal With Eat est un site d'échange et de vente de fruits et légumes fraits entre particuliers. 
