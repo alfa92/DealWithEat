@@ -742,86 +742,50 @@ font-family: 'Roboto' sans-serif;
 footer
 {
     bottom: 0;
-    color: black; 
+    color: black;
     width:100%;
-    border-top:2px solid black;
-    margin-top: 20px;
-    max-height:130px;
-    min-height: 90px;
-    
-    
-    
-}
-
-#banniere{
+    border-top: 2px dotted black;
+    background-color: #F5F5F5;
+    height: 80px;
+    overflow: hidden;
     margin-top: 10px;
-    width: 100%;
-    max-height:120px;
-    min-height: 80px;
-    background-color:#AFAFAF;
-
-
-  
-    
 }
+
 
 .reseaux {
-<<<<<<< Updated upstream
-    /*display: inline-block;*/
-    width: 100px;
-    margin-left:93%;
-    border: 1px solid blue;
-    vertical-align: bottom;
-    
-    /*margin-bottom: 120%;
-    /*right:0;
-    float:right;
-    bottom:0;*/
-    
-   
-=======
     width: 130px;
-    margin-top: -40px;
-    left:0;
-    righ:0;
+    vertical-align: top;
     margin-left: auto;
     margin-right: auto;
->>>>>>> Stashed changes
+    right: 0;
+    left: 0;
+    margin-top: -45px;
 }
 
-#coadmin{
-    margin-top: -40px;
-}
 .reseaux img{
- width: 30px;
- 
+    width: 25px;
+
 }
- 
-
-
 
 #copyright{
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-style: italic;
     display: inline-block;
-    /*vertical-align:top;*/
-    margin-bottom: 0;
-    border: 1px solid red;
-    /*vertical-align: bottom;*/
-    /*bottom:0;*/
-    
+    vertical-align: top;
+    margin-top: 0;
+
 }
 
-<<<<<<< Updated upstream
+#coadmin {
+    margin-top: -25px;
+    text-align: right;
+}
 
-
-i{
-   
-   margin-left:30%;
-=======
 #lien_footer{
 
-text-align: center;
->>>>>>> Stashed changes
-   
+    text-align: center;
+
 }
 
 /**************************************
