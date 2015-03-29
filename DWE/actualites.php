@@ -18,11 +18,9 @@
 			
     
     </header>
-    
-    
-    
-    
-        <body>
+
+
+    <body style="background-color:<?php echo $_SESSION['colorbody']; ?>">
             
            <div id="actgauche">               
             <h1> Le fruit légume </h1>

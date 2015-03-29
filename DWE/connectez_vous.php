@@ -16,10 +16,15 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
-        
-        <p style="text-align:center;font-family:'Roboto' sans-serif ; font-size:30px; color:Green;"><?php if(isset($msgconnexion)){echo $msgconnexion;} ?></p>
-                <p style="text-align:center;font-family:'Roboto' sans-serif ; font-size:30px; color:red;"><?php if(isset($msgconnexionfail)){echo $msgconnexionfail;} ?></p>
+		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?>
+
+        <p style="text-align:center;font-family:'Roboto', sans-serif ; font-size:30px; color:Green;"><?php if (isset($msgconnexion)) {
+                echo $msgconnexion;
+            } ?></p>
+
+        <p style="text-align:center;font-family:'Roboto', sans-serif ; font-size:30px; color:red;"><?php if (isset($msgconnexionfail)) {
+                echo $msgconnexionfail;
+            } ?></p>
         
         <?php 
 
@@ -106,5 +111,103 @@ $ligne = $resultat->fetch_assoc();
 ?>
 
 
+        <!-- PROCEDURE D'OUBLIE DE MOT DE PASSE -->
+        <?php
 
 
+        // Je selectionne toutes les données de la table membres pour vérifier que le pseudo existe bien.
+        $ob = "SELECT * FROM membres";
+        $resultatob = mysqli_query($conn, $ob) or die ('Erreur ' . $ob . ' ' . $mysqli->error);
+        $tabob = $resultatob->fetch_assoc();
+
+
+        if (isset($_POST['pseudo']) && $_POST['pseudo'] != NULL) {
+            $pseudo = $_POST['pseudo'];
+            $email = $_POST['mail'];
+
+
+            // Je selectionne le mail du pseudo
+            $obmdp = "SELECT * FROM membres WHERE membre_pseudo='" . $pseudo . "'";
+            // envoi de la requête
+            $resultatobmdp = $bdd1->query($obmdp) or die ('Erreur ' . $obmdp . ' ' . $mysqli->error);
+            // resultat de la requete
+            $donnees = $resultatobmdp->fetch();
+            $mdp = $donnees['membre_mdp'];
+            // Je vérifie que les deux cases sont bien remplies
+            if (isset($pseudo) && $pseudo != NULL && isset($email) && $email != NULL) {
+                // Si le pseudo existe dans la table membres
+                if ($pseudo == $donnees['membre_pseudo']) {
+                    // SI le mail indiqué est le même mail que celui dans la ligne du pseudo
+                    if ($email == $donnees['membre_mail']) {
+
+                        date_default_timezone_set('Etc/UTC');
+
+                        require 'phpmailer/PHPMailerAutoload.php';
+
+//Create a new PHPMailer instance
+                        $mail = new PHPMailer;
+
+//Tell PHPMailer to use SMTP
+                        $mail->isSMTP();
+
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+                        // $mail->SMTPDebug = 2;
+
+//Ask for HTML-friendly debug output
+                        // $mail->Debugoutput = 'html';
+
+//Set the hostname of the mail server
+                        $mail->Host = 'smtp.gmail.com';
+
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+                        $mail->Port = 587;
+
+//Set the encryption system to use - ssl (deprecated) or tls
+                        $mail->SMTPSecure = 'tls';
+
+//Whether to use SMTP authentication
+                        $mail->SMTPAuth = true;
+
+//Username to use for SMTP authentication - use full email address for gmail
+                        $mail->Username = "d.antoine94@gmail.com";
+
+//Password to use for SMTP authentication
+                        $mail->Password = "14juin199412mai2009";
+
+//Set who the message is to be sent from
+                        $mail->setFrom('d.antoine94@gmail.com', 'DWE');
+
+//Set an alternative reply-to address
+                        $mail->addReplyTo('d.antoine94@gmail.com', 'DWE');
+
+//Set who the message is to be sent to
+                        $mail->addAddress($email, $donnees['prenom'] . ' ' . $donnees['nom']);
+
+//Set the subject line
+                        $mail->Subject = '[DWE] Oublie de mot de passe ';
+
+//Read an HTML message body from an external file, convert referenced images to embedded,
+//convert HTML into a basic plain-text alternative body
+                        $mail->charSet = "UTF-8";
+                        $mail->msgHTML('<p><strong>Bonjour ' . $pseudo . '</strong> <br><br> Votre mot de passe est le suivant : ' . $mdp . '
+                                    <br><br> Merci de ne pas répondre à ce mail ! Ceci est un mail automatique</p>');
+
+//send the message, check for errors
+                        if (!$mail->send()) {
+                            echo "Mailer Error: " . $mail->ErrorInfo;
+                        } else {
+                            echo "Un mail vous a été envoyé";
+                        }
+                    } else {
+                        echo "L'adresse mail rentrée n'est pas la bonne";
+                    }
+                } else {
+                    echo "Le pseudo n'existe pas ";
+                }
+
+            }
+        }
+        ?>

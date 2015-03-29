@@ -29,11 +29,14 @@
 				<?php 
 $_SESSION['login'] = NULL ;
 
+
+                // On vérifie que les trois input 'login','pass' et 'pass' deux sont remplis et si ils sont remplis
+                // on associe une variable au mot rentré dans l'input
 if (isset($_POST['login'])) {
 	$login=$_POST['login'];
 }
 if (isset($_POST['pass'])) {
-	$pass=md5($_POST['pass']);
+    $pass = md5($_POST['pass']); // Le md5 signifie que l'on crypte le mot de passe (il existe d'aute méthode de cryptage comme le sha1
 }
 if (isset($_POST['pass2'])) {
 	$pass2=$_POST['pass2'];
@@ -43,36 +46,35 @@ if (isset($_POST['mail'])) {
 }
 
 
-	
-
+                // On vérifie que l'utilisateur a envoyé le formulaire
 	if(isset($_POST['submit'])){
-
+// Si il l'a fait on vérifie que les 4 input principaux sont remplis
 		if(isset($_POST['login']) && !empty($_POST['login'])
 			&& isset($_POST['pass']) && !empty($_POST['pass'])
 			&& isset($_POST['pass2']) && !empty($_POST['pass2'])
 			&& isset($_POST['mail']) && !empty($_POST['mail'])){
 
-			
 
-
-			}else{
+        }else{
+            // Sinon on affiche le message
+            echo 'Veuillez remplir les champs obligatoires s\'il vous plait';
 			?><?php
 			}
+        // On vérifie alors que les deux mots de passes sont les mêmes.
 		if($_POST['pass'] == $_POST['pass2']){
 			$sql = "INSERT INTO membres VALUES ('', '".$login."', '".$pass."' , '" . $mail . "' ,' 0 ','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['age']."','".$_POST['adresse']."','".$_POST['ville']."','".$_POST['pays']."')";
-            
-            
+
+            // Si les deux mots de passes sont les mêmes on envoi les informations à la base de donnée
 			if ($conn->query($sql) == TRUE) {
+                // Si ça marche on affiche le résultat
     ?><p style="text-align:center;"> Votre compte a été créé avec succés !</p><?php 
 } else {
+                // Sinon on affiche une erreur
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-					
-			
-
 		}else{
-
+// Si les mots de passe ne sont pas les mêmes on affiche un message
 			echo "Les mot des passes ne sont pas les mêmes ! ";
 		}
 			
