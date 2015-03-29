@@ -10,5 +10,5 @@
 		<img class ="contact" src = "css/images/contact.png" alt = "logo des contacts" />
 	</div>
     </div>
-    <p id="coadmin"><a href="../backoffice/adminmembre.php">Connexion administrateur</a></p>
+    <p id="coadmin"><a href="backoffice/connexion.php">Connexion administrateur</a></p>
 </footer> 
