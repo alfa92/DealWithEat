@@ -13,6 +13,7 @@
     
 <div id="principal">
     <header>
+
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
@@ -43,10 +44,11 @@ $ligne = $resultat->fetch_assoc();
         <div id="account_top">
         <fieldset class="title_account">
             <legend>Bienvenue sur votre compte <?php 
-              echo $ligne['prenom'];echo ' '.$ligne['nom'];
+              if (isset ($ligne['prenom'])){echo $ligne['prenom'];}
+              if (isset ($ligne['nom'])){echo ' '.$ligne['nom'];}
             ?></legend>
             <i id="no_me">Si vous n'ètes pas <?php 
-              echo $ligne['membre_pseudo'];
+              if (isset ($ligne['membre_pseudo'])){echo $ligne['membre_pseudo'];}
             ?> veuillez <a href="logout.php">vous déconnectez</a>. 
         </i></fieldset>
             <img id=avatar_moyen src="css/images/avatar.png">
@@ -65,7 +67,7 @@ $ligne = $resultat->fetch_assoc();
 <table id="account_data">
    <tr>
        <td>Nom</td>
-       <td><?php echo $ligne['nom']; ?></td>
+       <td><?php if (isset ($ligne['nom'])){echo $ligne['nom'];} ?></td>
        <td> <a href="moncompte_modif.php"> Modifier </a></td>
    <tr>
        <td>Prenom</td>

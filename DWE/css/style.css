@@ -759,15 +759,19 @@ footer
     max-height:120px;
     min-height: 80px;
     background-color:#AFAFAF;
+
+
   
     
 }
 
 .reseaux {
-    display: inline-block;
+    /*display: inline-block;*/
     width: 100px;
     margin-left:93%;
-
+    border: 1px solid blue;
+    vertical-align: bottom;
+    
     /*margin-bottom: 120%;
     /*right:0;
     float:right;
@@ -779,13 +783,17 @@ footer
 .reseaux img{
  width: 30px;
  
-
 }
+ 
+
+
 
 #copyright{
     display: inline-block;
-    vertical-align: top;
+    /*vertical-align:top;*/
     margin-bottom: 0;
+    border: 1px solid red;
+    /*vertical-align: bottom;*/
     /*bottom:0;*/
     
 }
