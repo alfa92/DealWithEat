@@ -35,12 +35,6 @@
 
 
 
-            <?php session_start() ?>
-
-
-
-
-
 
 
 

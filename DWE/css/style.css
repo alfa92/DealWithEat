@@ -766,6 +766,7 @@ footer
 }
 
 .reseaux {
+<<<<<<< Updated upstream
     /*display: inline-block;*/
     width: 100px;
     margin-left:93%;
@@ -778,8 +779,19 @@ footer
     bottom:0;*/
     
    
+=======
+    width: 130px;
+    margin-top: -40px;
+    left:0;
+    righ:0;
+    margin-left: auto;
+    margin-right: auto;
+>>>>>>> Stashed changes
 }
 
+#coadmin{
+    margin-top: -40px;
+}
 .reseaux img{
  width: 30px;
  
@@ -798,11 +810,17 @@ footer
     
 }
 
+<<<<<<< Updated upstream
 
 
 i{
    
    margin-left:30%;
+=======
+#lien_footer{
+
+text-align: center;
+>>>>>>> Stashed changes
    
 }
 
@@ -1213,4 +1231,131 @@ margin-top: 50px;
 }
 #problemes th {
     border: 1px solid black;
+<<<<<<< Updated upstream
+=======
+}
+
+#tdpseudo {
+    height: 150px;
+    width: 150px;
+}
+
+#tdpseudo h5{
+    text-align: center;
+    margin-bottom: 100px; 
+}
+
+#ava {
+
+    width: 120px;
+    top: 0;
+    left: 0;
+    margin-left: 14%;
+    margin-top: -100px;
+}
+/*********************************************************/
+/************************BACKOFFICE************************/
+/*********************************************************/
+
+#postfaq {
+    margin-left: 20%;
+}
+
+#postfaq input, #postfaq textarea {
+    padding: 10px 12px;
+    margin: 7px 5px;
+    outline: none !important;
+    background: rgba(153, 153, 153, 0.09);
+    color: #33383b;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+
+}
+
+#formmail {
+    margin-left: 20%;
+    margin-bottom: 100px;
+
+
+}
+
+#connect_admin{
+    border: 1px solid black;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px 2px black ;
+    width: 300px;
+    height: 300px;
+    left:0;
+    right:0;
+    margin-right: auto;
+    margin-left:auto;
+    background-color: rgba(248, 253, 255, 0.40);
+    margin-top: 10%;
+}
+
+#connect_admin input:first-child{
+   margin-top: 80px;
+
+}
+
+#connect_admin input{
+    opacity:;
+    width: 250px;
+    margin-bottom: 10px;
+    margin-left: 8%;
+    padding: 10px 12px;
+    outline: none !important;
+    background: rgba(153, 153, 153);
+    color: #33383b;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+
+}
+
+
+#body_admin{
+    background:url('images/carrots.jpg');
+}
+
+#membre_data{
+    width: 90%;
+    margin-left: 22%;
+    margin-top: 10px;
+    border: 1px solid black;
+
+}
+
+
+#membre_data td{
+    font-family: 'Roboto', sans-serif;
+    font-size:17px;
+    border: 1px solid black;
+    text-align: center;
+    padding:0;
+}
+
+#membre_data a{
+
+    font-family: 'Roboto', sans-serif;
+    font-size:14px;
+    color:gray;
+
+}
+
+#account_data input{
+    height: 25px;
+    padding-left: 10px;
+    outline: none !important;
+    background: rgba(153, 153, 153, 0.09);
+    color: #33383b;
+    font-size: 15px;
+    min-width: 100px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+>>>>>>> Stashed changes
 }
