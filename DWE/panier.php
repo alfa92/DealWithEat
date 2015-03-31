@@ -33,47 +33,64 @@
     }
 
     ?>
-            <body>
+    <body id="bodypanier">
+        
+        
+        
+    <h1 id="monpanier"> Mon panier </h1>
+                                    <h2 > <?= $panier->count(); ?> article<?php if($panier->count()> 1){echo 's';} ?></h2>
+        
+    <?php    if($panier->count()> 0){ ?>
+<p id="continuer" ><a href="annonce.php">Continuer mes achats</a></p>
+<br>
+        
+        
+        
+<?php foreach($products as $products): ?>
+<section id="panier">
+    <img id="imgpanier" src="css/images/<?= $products->Pr_Nom;?>.jpg"><br>
+    <div id="descriptionpanier">
+    <span id="nom"><?= $products->Pr_Nom;?></span><br> 
+        <span id="vendeurpro">  <?= $products->Pr_Membre;?></span><br><br>
+       
+ <span id="autre"> Quantité disponible <?= $products->Pr_Quantité;?> kg </span><br>
+    <span id="autre"> Récolté le  <?= $products->Pr_Date_récolte;?></span><br>
+    <span id="autre"> A consomer avant le <?= $products->Pr_Date_péremption;?></span><br>
+
+    <a id="delproduit" href="panier.php?delPanier=<?= $products->Pr_idProduits ;?>"> Supprimer du panier </a>
+
+       
+    <span id="Prix_unite"> <?= $products->Pr_Prix;?> €/kg</span>
+    <span id="quantite"><?= $_SESSION['panier'][$products->Pr_idProduits];?> kg</span>
+    <span id="prixproduit"><?= $products->Pr_Prix;?> €</span>
+    </div>
+    
+    
+    
+</section >
                 
-                <table id="panier_panier">
-                    <img src="css/images/picnic5.png" style="width:60px;position:absolute;margin-top:20px;margin-left:10%;">
-                    <center id="panier_titre">Votre Panier </center>
-               
-                    
-                <tr>
-                        <th> Produit </th>
-                        <th> Quantité </th>
-                        <th> Prix unité </th>
-                        <th> Prix </th>
-                        <th> Actions </th>
-                      
-                </tr>
-                    <?php foreach($products as $products): ?>
-                 <tr>
-                       <td><img style="width:50px;" src="css/images/<?= $products->Pr_Nom;?>.jpg"><?= $products->Pr_Nom;?></td>
-                       <td> <?= $_SESSION['panier'][$products->Pr_idProduits];?></td>
-                       <td> <?= $products->Pr_Prix;?> €/kg </td>
-                        <td style="color:green;font-weight:500;font-size:22px;"> <?= $products->Pr_Prix;?> €</td>
-                     <td><a href="panier.php?delPanier=<?= $products->Pr_idProduits ;?>"> Supprimer </a></td>
-                    
-                   </tr>
-                  <?php endforeach; ?>
-                    <tr >
-                    <td style="border:none;" colspan=""> </td>
-                    </tr>
-                    <tr style="border:1px solid black;">
-                    <td colspan="2" style="border:1px solid black;"> Prix total</td>
-                    <td colspan="4" style="color:red;font-weight:500;font-size:24px;"> <?= number_format($panier->total(),2,',',' '); ?> €</td>
-                       
-                </tr>
-</table>
-                
-                <div id="panier_dessous">
-                    <h2 style="margin-top:20px;"> Retourner faire du shopping </h2>
-                    <h2 style="margin-left:80%;"> Payer </h2>
-                
-                </div>
-            </body>
+<?php endforeach; ?>
+        
+    <section id="total">
+        <h1> ma commande </h1>
+        <div id="macommande">
+            <span id="commande"> Sous-total : <?php if(null !== $panier->total()){ echo number_format($panier->total(),2,',',' ');} ?>       € </span><br>
+        <span id="commande" style="padding-bottom:30px!important;border-bottom:2px dotted black;"> Prix de transport ou envoi : <?= $products->Pr_Prix_Envoi;?>   € </span>
+            <br>
+            <br>
+            <br>
+            <span style="padding-top:30px!important;margin-left:50%;">Total : <strong><?= number_format($panier->total(),2,',',' ')+$products->Pr_Prix_Envoi; ?> € </strong></span>
+            
+        </div>
+        
+    </section>
+        
+        <?php }else{
+        ?> <center><p> Vous n'avez pas de produit dans votre panier, vous pouvez ajouter des produits via la page <a style="border-bottom:1px dotted gray;" href="annonce.php"> annonce </a></p></center> <?php  } ?>
+
+<br>
+</body>
+
 
 
 </html>

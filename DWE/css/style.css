@@ -25,6 +25,8 @@ a{
     color:black;
 }
 
+
+
 body {
     margin:0;
      min-height: 60%;
@@ -916,70 +918,152 @@ h4{
 /**********************************************************
 **************************PANIER***********************
 **********************************************************/
-#panier_titre{
-margin-top: 50px;
-    margin-left: 18%;
-    font-size: 30px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 40px;
+
+#bodypanier{
+
 }
-#panier_panier
-{
-    width: 90%;
-    margin-top: 15px;
+
+#monpanier{
+    font-size:26px;
+    font-weight: 400;
+}
+#bodypanier > h2{
+    left:0;
+    margin-left: 14%;
+    margin-top:-22px;
+    width: 60%;
+    font-size:16px;
+
+
+}
+
+#continuer{
+    text-align: right;
+    margin-right:3%;
+    margin-top:-50px;
+}
+
+#bodypanier > #panier{
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin-left: 4%;
+    margin-right: 5%;
+    border-bottom:4px solid gray;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+
+}
+
+#total{
+    position: absolute;
+    right:0;
+    top:0;
+    margin-top:270px;
+    width: 26%;
+    margin-right: 10%;
     margin-left: 5%;
-    text-align: center;
-    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
-    
+    background-color:gainsboro;
+    min-height:430px;
+    max-height: auto;
 }
 
-#panier_panier td
-{
-    height:30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    
+#imgpanier{
+    display: inline-block;
+    vertical-align: top;
+    width:25%;
 }
-#panier_panier th
-{
-    height:15px;
-    padding-top: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-     border-radius:20px 20px 20px 20px;
+
+#descriptionpanier{
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    margin-left:28%;
+    margin-top:-115px;
+}
+#bodypanier span {
+    font-family: "Roboto", sans-serif;
+    font-size:18px;
+}
+
+#descriptionpanier #nom {
+    margin-left: 5px;
+    font-size: 22px;
+}
+
+#vendeurpro{
+    font-size: 13px!important;
+}
+
+#autre {
+    color:darkgray;
+    font-size: 14px!important;
 }
 
 
-#panier_panier th{
-    background-color: #f8d79a;   
+#Prix_unite {
+    position: absolute;
+    margin-left:-80px;
+    margin-top:-140px;
+
 }
 
-#panier caption{
-    font-size: 20px;
-    padding:2px;
-    font-family:'Roboto' sans-serif;
-    
+#quantite{
+    position: absolute;
+    padding:4px;
+    margin-left:-10px;
+    border: 1px solid gray;
+    margin-top:-144px;
 }
 
-/* Mobile Navigation */
-.nav-mobile {
-	display:none; /* Hide from browsers that don't support media queries */
-	cursor:pointer;
-	position:absolute;
-	top:0;
-	right:0;
-	background:#34495E url(../img/nav.svg) no-repeat center center;
-	height:40px;
-	width:40px;
-	border-radius:5px;
-	-webkit-border-radius:5px;
-	-moz-border-radius:5px;
+#prixproduit {
+    position: absolute;
+    margin-left:60px;
+    margin-top:-140px;
+
 }
+#delproduit{
+    margin-left:240px;
+}
+
+#macommande {
+    width: 76%;
+    min-height:140px;
+    max-height: auto;
+    padding:20px;
+    left:0;
+    right:0;
+    margin: auto;
+    background-color: white;
+}
+
+#payercommande {
+    width: 87%;
+    height:70px;
+    background: linear-gradient(to right,#6b98ef, #a9d4ef);
+    border:2px solid black;
+}
+
+
+
+
 /*********************************************************/
 /**********************RESPONSIVE*************************/
 /*********************************************************/
-
+/* Mobile Navigation */
+.nav-mobile {
+    display:none; /* Hide from browsers that don't support media queries */
+    cursor:pointer;
+    position:absolute;
+    top:0;
+    right:0;
+    background:#34495E url(../img/nav.svg) no-repeat center center;
+    height:40px;
+    width:40px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+}
 
 @media screen and (max-width:1050px){
     
@@ -1234,8 +1318,6 @@ margin-top: 50px;
 }
 #problemes th {
     border: 1px solid black;
-<<<<<<< Updated upstream
-=======
 }
 
 #tdpseudo {
@@ -1360,5 +1442,11 @@ margin-top: 50px;
     box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
     border: none;
     border-radius: 0.3em;
->>>>>>> Stashed changes
 }
+
+
+
+
+
+
+
