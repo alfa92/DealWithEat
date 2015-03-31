@@ -38,9 +38,9 @@
                         
                 </tr>
    <tr>
-       <td id="tdpseudo"><a href="probleme1.php"><h5> <?php echo $_SESSION['login']  ?>  </h5><img id=ava src="css/images/avatar.png"> </a><br></td>
+       <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?php if(isset($_SESSION['login'])){ echo $_SESSION['login']; }  ?> </strong> </h5><img id=ava src="css/images/avatar.png"> </a><br></td>
        <td><a href="#"> Sujet1 </a><br></td>
-       <td><a href="#"> Date 1 </a><br></td>
+       <td id="tdate"><a href="#"> Date 1 </a><br></td>
    </tr>
 
 

@@ -41,7 +41,7 @@
                         
                 </tr>
    <tr>
-       <td><a href="probleme1.php"> Probleme numero 1 </a><br></td>
+       <td><a href="questionforum.php"> Probleme numero 1 </a><br></td>
        <td><a href="#"> Reponse 1 </a><br></td>
        <td><a href="#"> Date 1 </a><br></td>
    </tr>
