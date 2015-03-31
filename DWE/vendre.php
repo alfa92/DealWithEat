@@ -25,47 +25,68 @@
             <h2> Pour mettre en vente un produit veuillez remplir le formulaire ci-dessous</h2>
             
           <!-- PHP -->
-            <?php 
+         <?php
+function upload($index,$destination,$maxsize=FALSE,$extensions=FALSE)
+{
+   //Test1: fichier correctement uploadé
+     if (!isset($_FILES[$index]) OR $_FILES[$index]['error'] > 0) return FALSE;
+   //Test2: taille limite
+     if ($maxsize !== FALSE AND $_FILES[$index]['size'] > $maxsize) return FALSE;
+   //Test3: extension
+     $ext = substr(strrchr($_FILES[$index]['name'],'.'),1);
+     if ($extensions !== FALSE AND !in_array($ext,$extensions)) return FALSE;
+   //Déplacement
+     return move_uploaded_file($_FILES[$index]['tmp_name'],$destination);
+}
+ 
+//EXEMPLES
+  $upload1 = upload('icone','imageUploades/monicone1',15360, array('png','gif','jpg','jpeg') );
+  $upload2 = upload('mon_fichier','imageUploades/file112',1048576, FALSE );
+ 
+  if ($upload1) "Upload de l'icone réussi!<br />";
+  if ($upload2) "Upload du fichier réussi!<br />";
+?>
 
-
-            ?>
             
+          
+
+
+
+
+
+
+
+
+
+
             <!-- FORMULAIRE EN HTML -->
-
-
-
-
-
-
 
 <?php 
 
 /*création du formulaire pour l'upload d'image*/
 ?>
 
+<section>
+  <article>
+    <form id="FormulaireVendre" method="post" action="annonce.php" enctype="multipart/form-data" name="form1">
+               Veuillez indiquer si vous vendez des fruits ou des légumes:<br />
 
-<form method="post" action="annonce.php" enctype="multipart/form-data">
-           Veuillez indiquer si vous vendez des fruits ou des légumes:<br />
-
-     <input type="radio" name="TypeProduit" value="fruit" id="fruit" /> <label for="fruit">fruit</label><br />
-     <input type="radio" name="TypeProduit" value="legume" id="legume" /> <label for="legume">légume</label><br /> <br/>
+         <input type="radio" name="TypeProduit" value="fruit" id="fruit" /> <label for="fruit">fruit</label><br />
+         <input type="radio" name="TypeProduit" value="legume" id="legume" /> <label for="legume">légume</label><br /> <br/>
 
 
-     <label for="icone">Icône du produit  (JPG, PNG ou GIF | max. 15 Ko) :</label><br />
-     <input type="file" name="icone" id="icone" /><br /> <br />
+        <label for="file">Ajouter une photo :</label>
+        <input type="file" name="fichier" id="fichier" />
+        <input type="submit" name="submit" value="Insérer le fichier" />
 
-     <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
-     <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
-     <input type="file" name="mon_fichier" id="mon_fichier" /><br /><br />
 
-     <label for="titre">Titre du fichier (max. 50 caractères) :</label><br />
-     <input type="text" name="titre" value="" id="titre" /><br /><br />
+  </form>
 
-     <label for="description">Description de votre fichier (max. 255 caractères) :</label><br />
-     <textarea name="description" id="description"></textarea><br />
-     <input type="submit" name="submit" value="Envoyer" />
-</form>
 
+
+
+</article>
+</section>
 
 
 
