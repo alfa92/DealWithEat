@@ -41,10 +41,6 @@
        <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?php if(isset($_SESSION['login'])){ echo $_SESSION['login']; }  ?> </strong> </h5><img id=ava src="css/images/avatar.png"> </a><br></td>
        <td>
         
-
-
-
-
  <br></td>
       
 
