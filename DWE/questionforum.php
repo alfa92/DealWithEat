@@ -20,21 +20,7 @@
     
     
     
-    <?php 
-if(isset($_POST['sujet'])){
-         $sujet=$_POST['sujet'];
-         }
 
-$sql = "INSERT INTO `faqq`(`Fq_idFAQ`, `Fq_Sujet`, `Fq_Date`, `Fq_Contenu`, `Membres_Me_idMembres`) VALUES ('','".$sujet."','','','')";
-
-            
-      if ($conn1->query($sql) == TRUE) {
-                // Si ça marche on affiche le résultat
-   } else {
-                // Sinon on affiche une erreur
-    echo "Error: " . $sql . "<br>" . $conn1->error;
-}
- ?>
 
 
     
@@ -58,11 +44,24 @@ $sql = "INSERT INTO `faqq`(`Fq_idFAQ`, `Fq_Sujet`, `Fq_Date`, `Fq_Contenu`, `Mem
       <textarea id="boitemsg" class="cadre" name="boitemsg" placeholder="Ecrivez votre question ici"/></textarea>
    </li>
                      
-   <button type="button" id="btnenvoyer"> <a href="probleme1.php">Envoyer</a></button>                     
+   <center><input type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer" action="probleme1.php"></center>
 </ul>
 </form>
 
+        <?php
 
+        if(isset($_POST['subenvoyer'])){
+        if(isset($_POST['sujet'])){
+            $sujet=$_POST['sujet'];
+        }else{
+            $sujet=null;
+        }
+
+        $reqmlf = "INSERT INTO FAQQ VALUES ('', '" . $sujet . "', '' , '' ,'')";
+        $db = $bdd->query($reqmlf);
+
+        }
+        ?>
 
 
 </div>

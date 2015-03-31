@@ -11,6 +11,7 @@ setcookie("id",time()+$expire);session_start() ?>
     </head>
     
 <div id="principal">
+
     <header>
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
@@ -19,44 +20,9 @@ setcookie("id",time()+$expire);session_start() ?>
 			
     
     </header>
+    <body>
+    </body>
 
-
-    <h3>Résultats de votre recherche.</h3>
-<?php
-
-
-$mot = htmlspecialchars($_POST['search']);
-$mot = str_replace(' ', '', $mot);
-
-if(isset($_POST['search'])){
-
-    $requete = "SELECT * FROM membres WHERE prenom=" . $mot . "";
-    $repse = $bdd1->query($requete);
-
-
-    while ($donnees = $repse->fetch()) {
-        echo 'petit';
-        ?>
-        <p> <?php $donnees['prenom']; ?></p>
-
-    <?php
-    }
-
-    ?>
-
-
-<br/>
-<br/>
-<a href="accueil.php">Faire une nouvelle recherche</a></p>
-<?php
-} // Fini d'afficher les résultats ! Maintenant, nous allons afficher l'éventuelle erreur en cas d'échec de recherche et le formulaire.
-else
-{ // de nouveau, un peu de HTML
-?>
-<h3>Pas de résultats</h3>
-<p>Nous n'avons trouvé aucun résultat pour votre requête </p>
-<?
-// Fini d'afficher l'erreur ^^
-}  ?>
-    
+    </div>
+</html>
     
