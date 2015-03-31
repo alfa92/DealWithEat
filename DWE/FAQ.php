@@ -16,23 +16,7 @@
         <?php include('php/header.php'); ?>
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?>
 
-        <?php
 
-        $queryfaq1 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Questions populaires"';
-        $reponsefaq1 = $bdd->query($queryfaq1);
-        $queryfaq2 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Réglement"';
-        $reponsefaq2 = $bdd->query($queryfaq2);
-        $queryfaq3 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Inscription"';
-        $reponsefaq3 = $bdd->query($queryfaq3);
-        $queryfaq4 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Connexion"';
-        $reponsefaq4 = $bdd->query($queryfaq4);
-        $queryfaq5 = 'SELECT * FROM FAQ WHERE FA_Emplacement="ACHAT - VENTE - ECHANGE"';
-        $reponsefaq5 = $bdd->query($queryfaq5);
-
-
-
-
-        ?>
     </header>
     <body>
     <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;">FAQ<i

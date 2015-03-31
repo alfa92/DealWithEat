@@ -17,10 +17,24 @@ setcookie("id",time()+$expire);session_start() ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
-			
-    
+
     </header>
     <body>
+
+
+        <?php
+                $search=$_GET['search'];
+
+        $s=explode(" ",$search);
+        print_r($s);
+        $research = $DB->query('SELECT * FROM Produits ');
+        foreach ($research as $research):
+
+            echo $research->Pr_Nom;
+
+        endforeach;
+
+        ?>
     </body>
 
     </div>

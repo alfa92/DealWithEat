@@ -55,10 +55,10 @@
             <label for="Emplacement">Choisissez l'emplacement du sujet </label>
             <select name="Emplacement">
                 <option> - - - - - - -</option>
-                <option>Questions populaires</option>
-                <option>Réglement</option>
-                <option>Inscription</option>
-                <option>Connexion</option>
+                <option> QUESTIONS POPULAIRES </option>
+                <option>REGLEMENT</option>
+                <option>INSCRIPTION</option>
+                <option>CONNEXION</option>
                 <option>ACHAT - VENTE - ECHANGE</option>
             </select>
             <br>
@@ -70,80 +70,10 @@
             <input name="subfaq" type="submit" value="Poster la sujet">
         </form>
 
-        <?php
-        if (isset($_POST['subfaq'])) {
 
-            if (isset($_POST['Emplacement'])) {
-                $emp = $_POST['Emplacement'];
-            }
-            if (isset($_POST['titre'])) {
-                $titrefaq = ($_POST['titre']);
-            }
-            if (isset($_POST['reponse'])) {
-                $repfaq = $_POST['reponse'];
-            }
-
-            $reqmlf = "INSERT INTO FAQ VALUES ('', '" . $emp . "', '" . $titrefaq . "' , '" . $repfaq . "' )";
-            $db = $bdd->query($reqmlf);
-        }
-        ?>
-
-    <div >
-
-        <?php
-
-        $selecfaq="SELECT FA_Sujet FROM FAQ";
-        $selecquery=$bdd->query($selecfaq);
-
-        if(isset($_POST['subrep'])){}
-        if(isset($_POST['rep'])){
-        $rep=$_POST['rep'];
-    }
-
-
-
-        if (isset($_POST['rep'])) {
-            $rep = $_POST['rep'];
-        }
-        if (isset($_POST['sujetselect'])) {
-            $cible = $_POST['sujetselect'];
-        }
-
-        if(isset($_POST['subrep']) && isset($cible) && isset($rep)){
-
-            $majfaq="UPDATE `FAQ` SET `FA_idFAQ`='',
-            `FA_Reponse`='.$rep.' WHERE FA_sujet='.$cible.'" ;
-            $majquery=$bdd->query($majfaq);
-
-        }
-
-        ?>
-        <center><h2> Mettre à jour un sujet </h2></hé></center>
-<form method="POST">
-        <center><select name="Emplacement">
-                <option> - - - - - - -</option>
-            <?php
-            while($selection = $selecquery->fetch()) {
-                ?>
-                <option name="sujetselect"> <?php $selection['FA_Sujet'];
-                    echo $selection['FA_Sujet'] ?> </option>
-            <?php
-            }
-            ?>
-
-                <input name="selec" type="submit" value="Selectionner ce sujet">
-        </select>
-</form>
-
-        <?php
-        if(isset($_POST['select'])){
-            echo $_POST['sujectselect'];
-        }
-        ?>
 
         <br>
-        <textarea name="rep" placeholder="Veuillez saisir la réponse au sujet mentionné plus haut" cols="75"
-                  rows="8" required></textarea>
+        <textarea name="rep" placeholder="Veuillez saisir la réponse au sujet mentionné plus haut" cols="75" rows="8" required></textarea>
         <input name="subrep" type="submit" value="Poster la sujet">
         </center>
     </div>
