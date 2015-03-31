@@ -13,7 +13,7 @@
     <header>
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
-        <?php include('php/header.php'); ?>
+        <?php require('php/header.php'); ?>
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
         
 <body>
@@ -63,39 +63,36 @@
 
 
           <?php
-               
-                $query = 'SELECT * FROM produits';
-                $reponse = $bdd->query($query);
-             
-                
-                    while ($donnees = $reponse->fetch())
-{
+          $products = $DB->query('SELECT * FROM produits');
+                    foreach ($products as $products):
+
                         
                    
                   
             ?>
         <div id="article_annonce">
             <form id="panier" method="post" action="annonce.php">
-                <h5 style="text-align:right;border-bottom:1px dashed black;"> <?php echo $donnees['Pr_Nom']; ?></h5>
-                    <p> <?php echo $donnees['Pr_Description']; ?> </p>
-            <img id="image_article" src="css/images/<?php echo $donnees['Pr_Nom'].'.jpg' ?>">
+                <h5 style="text-align:right;border-bottom:1px dashed black;"> <?php echo $products->Pr_Nom; ?></h5>
+                    <p> <?php echo $products->Pr_Description; ?> </p>
+            <img id="image_article" src="css/images/<?php echo $products->Pr_Nom; ?>.jpg">
                 <div id="info_produit">
-            <h5> Prix : <?php echo $donnees['Pr_Prix']; ?>€/kg</h5> <h5> 
+            <h5> Prix : <?php echo $products->Pr_Prix; ?>€/kg</h5> <h5>
                     Echange contre : Produit / Produit / Produit </h5>
                 </div>
-                
-                
-                
+
+
+                <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $products->Pr_idProduits; ?>">
                 <div id="div_ajout_panier">
-            <input type="submit" id="ajout_panier" onclick="return confirm(' Produit ajouter au panier')" value="Ajouter au panier"><br>
-                <i>Quantité disponible : <?php echo $donnees['Pr_Quantité']; ?> kg </i> 
+
+            Ajouter au panier </a><br>
+                <i>Quantité disponible : <?php echo $products->Pr_Quantité; ?> kg </i>
                     
                     </div>
                 </form>
         </div>
   
           <?php
-     }
+     endforeach;
      
 ?>
         
@@ -119,7 +116,4 @@
     
     
     
-    <script type="text/javascript">
-      
-    
-    </script>
+

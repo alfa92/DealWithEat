@@ -1,4 +1,7 @@
-<?php session_start() ?>
+<?php session_start() ;
+
+
+?>
 <html>
     <head>
         <meta charset=UTF-8>
@@ -12,8 +15,24 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){
+            include('nav_connect.php');}else{
+            include('nav.php');} ?>
         </header>
+
+
+    <br>
+    <?php
+
+
+    $ids=array_keys($_SESSION['panier']);
+    if(empty($ids)){
+        $products=array();
+    }else{
+    $products=$DB->query('SELECT * FROM Produits WHERE Pr_idProduits IN ('.implode(',',$ids).')');
+    }
+
+    ?>
             <body>
                 
                 <table id="panier_panier">
@@ -26,28 +45,25 @@
                         <th> Quantité </th>
                         <th> Prix unité </th>
                         <th> Prix </th>
+                        <th> Actions </th>
                       
-                </tr>        
+                </tr>
+                    <?php foreach($products as $products): ?>
                  <tr>
-                       <td><img style="width:50px;" src="css/images/banane.jpg">Banane</td>
-                       <td> 2kg</td>
-                       <td> 12€/kg </td>
-                        <td style="color:green;font-weight:500;font-size:22px;"> 24 €</td>
+                       <td><img style="width:50px;" src="css/images/<?= $products->Pr_Nom;?>.jpg"><?= $products->Pr_Nom;?></td>
+                       <td> <?= $_SESSION['panier'][$products->Pr_idProduits];?></td>
+                       <td> <?= $products->Pr_Prix;?> €/kg </td>
+                        <td style="color:green;font-weight:500;font-size:22px;"> <?= $products->Pr_Prix;?> €</td>
+                     <td><a href="panier.php?delPanier=<?= $products->Pr_idProduits ;?>"> Supprimer </a></td>
                     
                    </tr>
-                   <tr>
-                       <td> <img style="width:50px;" src="css/images/pommes.jpg">Pommes</td>
-                       <td> 2kg </td>
-                       <td> 12€/kg </td>
-                        <td style="color:green;font-weight:500;font-size:22px;"> 24 €</td>
-                  
-                   </tr>
+                  <?php endforeach; ?>
                     <tr >
                     <td style="border:none;" colspan=""> </td>
                     </tr>
                     <tr style="border:1px solid black;">
                     <td colspan="2" style="border:1px solid black;"> Prix total</td>
-                    <td colspan="4" style="color:red;font-weight:500;font-size:24px;"> 48  €</td>
+                    <td colspan="4" style="color:red;font-weight:500;font-size:24px;"> <?= number_format($panier->total(),2,',',' '); ?> €</td>
                        
                 </tr>
 </table>

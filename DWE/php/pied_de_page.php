@@ -11,4 +11,5 @@
 	</div>
     </div>
     <p id="coadmin"><a href="backoffice/connexion.php">Connexion administrateur</a></p>
-</footer> 
+</footer>
+

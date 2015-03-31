@@ -44,6 +44,7 @@
         <div id="presentation">
                 <h1> Le principe </h1>
                 <p>
+
                     Deal With Eat est un site d'échange et de vente de fruits et légumes fraits entre particuliers. 
                     Les produits présents sur le site viennent tous de potager de particulier ou de ferme. 
                     <br>
