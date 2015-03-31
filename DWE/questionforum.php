@@ -20,13 +20,29 @@
     
     
     
-    
+    <?php 
+if(isset($_POST['sujet'])){
+         $sujet=$_POST['sujet'];
+         }
+
+$sql = "INSERT INTO `faqq`(`Fq_idFAQ`, `Fq_Sujet`, `Fq_Date`, `Fq_Contenu`, `Membres_Me_idMembres`) VALUES ('','".$sujet."','','','')";
+
+            
+      if ($conn1->query($sql) == TRUE) {
+                // Si ça marche on affiche le résultat
+   } else {
+                // Sinon on affiche une erreur
+    echo "Error: " . $sql . "<br>" . $conn1->error;
+}
+ ?>
 
 
     
         <body>
     <div id="formulairequest">
-<form id="form-id" action="#">
+
+<form action="questionforum.php" method="post">
+
 <ul>
    <li>
       <label><strong>Pseudo</strong></label>
@@ -34,8 +50,8 @@
    </li>
 
    <li>
-      <label><strong>Sujet</strong></label>
-      <input  name="sujet" type="text" placeholder="Votre sujet"/>
+      <label><strong> sujet </strong></label>
+      <input type="text" name="sujet" placeholder="Votre sujet"/>
    </li>
                      
    <li>
@@ -45,6 +61,8 @@
    <button type="button" id="btnenvoyer"> <a href="probleme1.php">Envoyer</a></button>                     
 </ul>
 </form>
+
+
 
 
 </div>
