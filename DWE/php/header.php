@@ -9,7 +9,7 @@
     
         <div id="searchdiv">
         
-            <form method="post" action="res_recherche.php">
+            <form method="get" action="res_recherche.php">
             <input id="search" name="search" type="text" placeholder="Recherche rapide">
             <input id="subsearch" type="submit" value="">
             </form>

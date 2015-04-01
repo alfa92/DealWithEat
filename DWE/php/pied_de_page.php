@@ -1,6 +1,6 @@
 <footer>
    
-        <p id="lien_footer"> <a href =""> Réglement </a> - <a href =""> Contact </a> - <a href= "Inscription.php">Inscription</a> - <a href = "faq.php"> FAQ/Aide </a> </p>
+        <p id="lien_footer"> <a href ="reglement.php" target="_blank"> Réglement </a> - <a href =""> Contact </a> - <a href= "Inscription.php">Inscription</a> - <a href = "faq.php"> FAQ/Aide </a> </p>
     <div id="bas_footer">
     <p id="copyright"> Tout droit réservé copyright </p>
 	<div class = "reseaux">
