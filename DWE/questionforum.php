@@ -43,8 +43,13 @@
    <li>
       <textarea id="boitemsg" class="cadre" name="boitemsg" placeholder="Ecrivez votre question ici"/></textarea>
    </li>
-                     
-   <center><input type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer" action="probleme1.php"></center>
+         
+
+       <li>
+                    
+   <center> <input  type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer" action="probleme1.php" </center>
+      </li>
+
 </ul>
 </form>
 
