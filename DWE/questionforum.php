@@ -17,17 +17,13 @@
   <?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?>
     
     </header>
-    
-    
-    
-
 
 
     
         <body>
     <div id="formulairequest">
 
-<form action="questionforum.php" method="post">
+<form method="post">
 
 <ul>
    <li>
@@ -39,10 +35,11 @@
       <label><strong> sujet </strong></label>
       <input type="text" name="sujet" placeholder="Votre sujet"/>
    </li>
-                     
+
    <li>
       <textarea id="boitemsg" class="cadre" name="boitemsg" placeholder="Ecrivez votre question ici"/></textarea>
    </li>
+<<<<<<< Updated upstream
          
 
        <li>
@@ -50,20 +47,30 @@
    <center> <input  type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer" action="probleme1.php" </center>
       </li>
 
+=======
+                     
+   <center><input type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer"></center>
+>>>>>>> Stashed changes
 </ul>
 </form>
 
         <?php
-
-        if(isset($_POST['subenvoyer'])){
+        $date = date("d-m-Y");
         if(isset($_POST['sujet'])){
             $sujet=$_POST['sujet'];
-        }else{
-            $sujet=null;
         }
+        if(isset($_POST['boitemsg'])){
+            $msg=$_POST['boitemsg'];
+        }
+        if(isset($_POST['pseudo'])){
+            $pseudo=$_POST['pseudo'];
+        }
+        if(isset($_POST['subenvoyer'])){
 
-        $reqmlf = "INSERT INTO FAQQ VALUES ('', '" . $sujet . "', '' , '' ,'')";
-        $db = $bdd->query($reqmlf);
+
+            $query = "INSERT INTO FAQQ VALUES ('', '".$sujet."', '".$msg."' , '" . $date . "' ,'".$pseudo."')";
+            $bdd->query($query) or die("error");
+
 
         }
         ?>

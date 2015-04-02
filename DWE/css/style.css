@@ -135,7 +135,7 @@ h2{
     
 }
 
-#connectdiv:target{
+#connectdiv:hover{
     margin-right: 4px;
     width:365px;
     height: 160px;
@@ -584,7 +584,7 @@ width: auto}
  height: 150px;   
 }
 /*********************************************************/
-/*******************PAGE DE CONNECTION********************/
+/*******************PAGE DE CONNEXION********************/
 /*********************************************************/
 
 #connectdivvous{

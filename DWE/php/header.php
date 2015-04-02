@@ -18,7 +18,10 @@
 
 
 
-     <a href="panier.php"><img  id="panier_partout" src="css/images/shop.png" style="z-index: 1;"> </a>
+    <a href="panier.php"><img  id="panier_partout" src="css/images/shop.png" style="z-index: 1;"> </a>
+    
+    <?php  if($panier->count() >0){ ?>
+    <p style="text-align:center;padding-top:2px;padding-right:2px;margin-top:-80px;margin-left:80%;background-color:#white;border:1px solid black;width:28px;height:28px;border-radius:50%;z-index:1;"><?= $panier->count(); ?></p> <?php } ?>
 
        
 
