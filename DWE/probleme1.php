@@ -24,52 +24,37 @@
         <?php include('php/header.php'); ?>
         <?php include('php/connexion.php'); ?>
 	<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
-   
-
-        
-                  
-    
     </header>
+    <?php
+
+          $article=$DB->query('SELECT * FROM forumQ');
+
+    ?>
+
 
     <body>
-
-
       <div id="problemes">
-         
-
-        
             <table>
               <tr>
                         <th > Pseudo </th>
                         <th> Sujet </th>
-                        <th> Date </th>
-                        
-                        
+                        <th> Date </th>     
                 </tr>
+                <?php foreach ($article as $article): ?>
    <tr>
-       <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?php if(isset($_SESSION['login'])){ echo $_SESSION['login']; }  ?> </strong> </h5><img id=ava src="css/images/avatar.png"> </a><br></td>
-       <td>
+       <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?= $article->Fo_Pseudo; ?>  </strong> </h5><!--img id=ava src="css/images/avatar.png"--> </a><br></td>
+       <td><?= $article->Fo_Contenu; ?> 
         
  <br></td>
       
 
 
-       <td id="tdate"><a href="#">  <?php
-
-
-$jour = date('d');
-$mois = date('m');
-$annee = date('Y');
-
-$heure = date('H');
-$minute = date('i');
-
-
-echo 'Sujet posté le ' . $jour . '/' . $mois . '/' . $annee .' '. 'à ' . $heure. ' h ' . $minute;
-?> </a><br></td>
+       <td id="tdate"><a href="#"> 
+       <?= $article->Fo_Date; ?> 
+   </a><br></td>
    </tr>
 
-
+<?php endforeach; ?>
 
    
 </table>

@@ -17,66 +17,41 @@
   <?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?>
     
     </header>
-
-
-    
         <body>
-    <div id="formulairequest">
+        <form id="forum_q" method="get">
+            <input class="inputq" type="text" id="q_pseudo" name="q_pseudo" placeholder="Pseudo" required/><br>
+            <input class="inputq" type="text" id="q_sujet" name="q_sujet" placeholder="Sujet" required/><br>
+            <textarea class="inputq" type="text" id="q_contenu" name="q_contenu" placeholder="Question" required/></textarea><br>
+            <input type="submit" id="sub_q" name="sub_q" value="Envoyer sur le forum" >
+        </form>
 
-<form method="post">
+      <?php 
 
-<ul>
-   <li>
-      <label><strong>Pseudo</strong></label>
-      <input name="pseudo" type="text" placeholder="ecrivez votre pseudo ici"/>
-   </li>
-
-   <li>
-      <label><strong> sujet </strong></label>
-      <input type="text" name="sujet" placeholder="Votre sujet"/>
-   </li>
-
-   <li>
-      <textarea id="boitemsg" class="cadre" name="boitemsg" placeholder="Ecrivez votre question ici"/></textarea>
-   </li>
-<<<<<<< Updated upstream
-         
-
-       <li>
-                    
-   <center> <input  type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer" action="probleme1.php" </center>
-      </li>
-
-=======
-                     
-   <center><input type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer"></center>
->>>>>>> Stashed changes
-</ul>
-</form>
-
-        <?php
-        $date = date("d-m-Y");
-        if(isset($_POST['sujet'])){
-            $sujet=$_POST['sujet'];
+        $date = date("Y-m-d");
+if(isset($_GET['sub_q'])){
+        if(isset($_GET['q_pseudo'])){
+          $login=$_GET['q_pseudo'];
         }
-        if(isset($_POST['boitemsg'])){
-            $msg=$_POST['boitemsg'];
+        if(isset($_GET['q_sujet'])){
+          $sujet=$_GET['q_sujet'];
         }
-        if(isset($_POST['pseudo'])){
-            $pseudo=$_POST['pseudo'];
+        if(isset($_GET['q_pseudo'])){
+          $contenu=$_GET['q_contenu'];
         }
-        if(isset($_POST['subenvoyer'])){
 
-
-            $query = "INSERT INTO FAQQ VALUES ('', '".$sujet."', '".$msg."' , '" . $date . "' ,'".$pseudo."')";
-            $bdd->query($query) or die("error");
-
-
+        
+          echo 'Votre pseudo : '.$login.'<br> Sujet de votre message : '.$sujet.'<br> Contenu de votre message : '.$contenu.' ';
+           $sql='INSERT INTO forumQ VALUES ("","'.$sujet.'", "'.$contenu.'","'.$date.'","'.$login.'")';
+        $req=$bdd->query($sql);
         }
-        ?>
+
+       
 
 
-</div>
+
+      ?>
+
+
    
-</body>
+        </body>
 </html>

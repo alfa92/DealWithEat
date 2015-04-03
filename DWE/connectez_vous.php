@@ -172,16 +172,16 @@ $ligne = $resultat->fetch_assoc();
                         $mail->SMTPAuth = true;
 
 //Username to use for SMTP authentication - use full email address for gmail
-                        $mail->Username = "d.antoine94@gmail.com";
+                        $mail->Username = "dwedealwitheat@gmail.com";
 
 //Password to use for SMTP authentication
-                        $mail->Password = "14juin199412mai2009";
+                        $mail->Password = "G10Edwe2015";
 
 //Set who the message is to be sent from
-                        $mail->setFrom('d.antoine94@gmail.com', 'DWE');
+                        $mail->setFrom('dwedealwitheat@gmail.com', 'DWE');
 
 //Set an alternative reply-to address
-                        $mail->addReplyTo('d.antoine94@gmail.com', 'DWE');
+                        $mail->addReplyTo('dwedealwitheat@gmail.com', 'DWE');
 
 //Set who the message is to be sent to
                         $mail->addAddress($email, $donnees['prenom'] . ' ' . $donnees['nom']);

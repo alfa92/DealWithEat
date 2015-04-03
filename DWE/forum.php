@@ -19,10 +19,14 @@
     
     </header>
     
-    
-    
-    
+    <?php
 
+          $article=$DB->query('SELECT * FROM forumQ');
+
+    ?>
+    
+    
+<a href="questionforum.php"> Poster un article </a>
 
     
         <body>
@@ -34,29 +38,20 @@
 
             <table>
               <tr>
-                        <th> Probleme </th>
+                        <th> Sujet </th>
                         <th> Reponse </th>
                         <th> Date </th>
                         
                         
                 </tr>
+               <?php foreach ($article as $article): ?>
    <tr>
-       <td><a href="questionforum.php"> Probleme numero 1 </a><br></td>
-       <td><a href="#"> Reponse 1 </a><br></td>
-       <td><a href="#"> Date 1 </a><br></td>
+       <td><a href="probleme1.php"> <?php echo $article->Fo_Sujet ;?> </a><br></td>
+       <td><a href="#"> <?php echo $article->Fo_Pseudo ;?>  </a><br></td>
+       <td><a href="#"> <?php echo $article->Fo_Date ;?>  </a><br></td>
    </tr>
 
-    <tr>
-       <td><a href="#"> Probleme numero 2 </a><br></td>
-       <td><a href="#"> Reponse 2 </a><br></td>
-       <td><a href="#"> Date 2 </a><br></td>
-   </tr>
-
-    <tr>
-       <td><a href="#"> Probleme numero 3 </a><br></td>
-       <td><a href="#"> Reponse 3 </a><br></td>
-       <td><a href="#"> Date 3 </a><br></td>
-   </tr>
+ <?php endforeach ?>
    
 </table>
 
@@ -71,7 +66,7 @@
 
             <table>
               <tr>
-                        <th> Probleme </th>
+                        <th> Sujet </th>
                         <th> Reponse </th>
                         <th> Date </th>
                         
