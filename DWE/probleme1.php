@@ -1,5 +1,14 @@
 <?php session_start() ;?>
+
 <html>
+
+
+ <script src="fichier.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        
+    </script>
+
+    
     <head>
         <meta charset=UTF-8>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
@@ -64,6 +73,13 @@ echo 'Sujet posté le ' . $jour . '/' . $mois . '/' . $annee .' '. 'à ' . $heur
 
    
 </table>
+
+
+
+
+
+
+
         
 
 
