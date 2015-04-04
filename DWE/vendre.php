@@ -68,21 +68,43 @@ function upload($index,$destination,$maxsize=FALSE,$extensions=FALSE)
 
 <section>
   <article>
-    <form id="FormulaireVendre" method="post" action="annonce.php" enctype="multipart/form-data" name="form1">
-               Veuillez indiquer si vous vendez des fruits ou des légumes:<br />
+    <fieldset>
+      <form id="FormulaireVendre" method="post" action="annonce.php" enctype="multipart/form-data" name="form1">
+          <p> Veuillez indiquer si vous vendez des fruits ou des légumes:</p><br />
 
          <input type="radio" name="TypeProduit" value="fruit" id="fruit" /> <label for="fruit">fruit</label><br />
          <input type="radio" name="TypeProduit" value="legume" id="legume" /> <label for="legume">légume</label><br /> <br/>
 
+         <label for="fruit"> Quel fruit voulez-vous déposez ? </label> <br/> <!-- on choisit le fruit qu'on dépose -->
+         <select name="fruit" id="fruit"> 
+            <option value="pomme"> Pomme </option>
+            <option value="poire"> Poire </option>
+            <option value="fraise"> Fraise </option>
+        </select> <br/>
+
+        <label for="legume"> Quel legume voulez-vous déposez ? </label> <br/> <!-- on choisit le fruit qu'on dépose -->
+          <select name="legume" id="legume">
+            <option value="brocolis"> Brocolis </option>
+            <option value="artichaut"> Artichaut </option>
+            <option value="radis"> radis </option>
+          </select>  
+
+        <p>Indiquez la quantité que vous vouhaitez en kg ou à la pièce </p> <br/> <!-- on choisit la quantité de fruit qu'on dépose --> 
+          <input type="radio" name="unite" value="kg" id="kg"/> <label for="kg"> kg </label> <br/>
+          <input type="radio" name="unite" value="pièce" id="pièce"/> <label for="pièce"> pièce </label> <br/>
+          <input type="number" /><br/>
+
+        <p> Indiquez le prix que vous souhaitez </p> <br/>
+          <input type="number"/> <br/>
 
         <label for="file">Ajouter une photo :</label>
         <input type="file" name="fichier" id="fichier" />
         <input type="submit" name="submit" value="Insérer le fichier" />
 
-
-  </form>
-
-
+            <input type="submit" value="Valider" />
+          </p>
+        </form>
+    </fieldset>
 
 
 </article>
