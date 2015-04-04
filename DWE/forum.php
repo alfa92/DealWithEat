@@ -36,7 +36,7 @@
 
             <div id="probleme">
 
-            <table>
+            <table id="tableforum">
               <tr>
                         <th> Sujet </th>
                         <th> Reponse </th>
@@ -55,40 +55,7 @@
    
 </table>
 
-<div id="produits">
-            <h1> Produits </h1>
-        </div>
-            
-               
-                </div>
 
- <div id="problemes">
-
-            <table>
-              <tr>
-                        <th> Sujet </th>
-                        <th> Reponse </th>
-                        <th> Date </th>
-                        
-                        
-                </tr>
-   <tr>
-       <td><a href="probleme1.php"> Probleme numero 1 </a><br></td>
-       <td><a href="#"> Reponse 1 </a><br></td>
-       <td><a href="#"> Date 1 </a><br></td>
-   </tr>
-
-    <tr>
-       <td><a href="#"> Probleme numero 2 </a><br></td>
-       <td><a href="#"> Reponse 2 </a><br></td>
-       <td><a href="#"> Date 2 </a><br></td>
-   </tr>
-
-    <tr>
-       <td><a href="#"> Probleme numero 3 </a><br></td>
-       <td><a href="#"> Reponse 3 </a><br></td>
-       <td><a href="#"> Date 3 </a><br></td>
-   </tr>
    
 </table>
             

@@ -65,46 +65,24 @@ $ligne = $resultat->fetch_assoc();
         </div>
 
 
-            <table id="account_data">
-   <tr>
-       <td>Nom</td>
-       <td><?php if (isset ($ligne['nom'])){echo $ligne['nom'];} ?></td>
-       <td> <a href="moncompte_modif.php"> Modifier </a></td>
-   <tr>
-       <td>Prenom</td>
-       <td><?php echo $ligne['prenom']; ?></td>
-        <td> <a href="moncompte_modif.php"> Modifier </a></td>
-   </tr>
-       <td>Date de naissance</td>
-       <td><?php echo $ligne['age']; ?></td>
-     <td> <a href="moncompte_modif.php"> Modifier </a></td>
-   <tr>
-       <td>Pseudo</td>
-       <td><?php echo $ligne['membre_pseudo']; ?></td>
+    <div id="infocompte" style="margin-top:100px;margin-left:23%;">
+        <ul>
+             <li> Pseudo : <?php echo $ligne['membre_pseudo']; ?></li>
+            <li> <?php if (isset ($ligne['nom'])){echo $ligne['nom'];} ?></li>
+            <li><?php echo $ligne['prenom']; ?></li>
        
-   </tr>
-       <td>Mail</td>
-       <td><?php echo $ligne['membre_mail']; ?></td>
-     <td> <a href="moncompte_modif.php"> Modifier </a></td>
-   <tr>
-       <td>Adresse</td>
-       <td><?php echo $ligne['adresse']; ?></td>
-        <td> <a href="moncompte_modif.php"> Modifier </a></td>
-   </tr>
-       <td>Ville</td>
-       <td><?php echo $ligne['ville']; ?></td>
-     <td> <a href="moncompte_modif.php"> Modifier </a></td>
-   <tr>
-       <td> Pays </td>
-       <td><?php echo $ligne['pays']; ?></td>
-        <td> <a href="moncompte_modif.php"> Modifier </a></td>
-   </tr>
-       <td>Mot de passe</td>
-       <td></td>
-    <td> <a href="moncompte_modif.php"> Modifier </a></td>
-
-   
-</table>
+            <li><?php echo $ligne['age']; ?></li>
+            <li> Mail : <?php echo $ligne['membre_mail']; ?></li>
+            <li> Adresse : <?php echo $ligne['adresse']; ?></li>
+            <li> Ville : <?php echo $ligne['ville']; ?></li>
+            <li> Pays : <?php echo $ligne['pays']; ?></li>
+        </ul>
+    </div>    
+            <a href="moncompte_modif.php"><p style="margin-left:60%;margin-top:50px;"> Modifier mes données </p></a>
+            
+        <div id="map">
+            
+        </div>
       
     </body>
     </div>
