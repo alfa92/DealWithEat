@@ -20,11 +20,11 @@
 
 <?php
 
+			
+			$q=$_GET['q'];
 
-	$q=$_GET['q'];
-
-	$req='SELECT * FROM Produits WHERE Pr_idProduits="'.$q.'"';
-	$res=mysqli_query($conn1,$req);
+			$req='SELECT * FROM Produits WHERE Pr_idProduits="'.$q.'"';
+			$res=mysqli_query($conn1,$req);
 
 
 	if($rows=mysqli_fetch_array($res)){

@@ -14,7 +14,7 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php require('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+		    r<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
         
 <body>
     <div id="gauche_annonce">
@@ -25,20 +25,20 @@
             <input type="radio" name="FruitLegume"  value="Legume"/><label for="Légume">Légume</label>
         
         <h4> Produits </h4>
-            <div id="liste_annonces">
-                    <input type="checkbox" value="Courgette" name="Produit" /> <label for="Courgette">Courgette</label> <br/>
-                    <input type="checkbox" value="Banane" name="Produit" /> <label for="Banane">Banane</label> <br/>
-                    <input type="checkbox" value="Choux"  name="Produit"/> <label for="Choux">Choux</label> <br/>
-                    <input type="checkbox" value="Fraise" name="Produit" /> <label for="Fraise">Fraise</label> <br/>
-                    <input type="checkbox" value="Cerise" name="Produit"/> <label for="Cerise">Cerise</label> <br/>
-                    <input type="checkbox" value="Mangue" name="Produit" /> <label for="Mangue">Mangue</label> <br/>
-                    <input type="checkbox" value="Banane" name="Produit" /> <label for="Banane">Banane</label> <br/>
-                    <input type="checkbox" value="Choux"  name="Produit"/> <label for="Choux">Choux</label> <br/>
-                    <input type="checkbox" value="Fraise" name="Produit" /> <label for="Fraise">Fraise</label> <br/>
-                    <input type="checkbox" value="Cerise" name="Produit"/> <label for="Cerise">Cerise</label> <br/>
-                    <input type="checkbox" value="Mangue" name="Produit" /> <label for="Mangue">Mangue</label> <br/>
-                                    
-            </div>
+                  <div id="liste_annonces">
+                          <input type="checkbox" value="Courgette" name="Produit" /> <label for="Courgette">Courgette</label> <br/>
+                          <input type="checkbox" value="Banane" name="Produit" /> <label for="Banane">Banane</label> <br/>
+                          <input type="checkbox" value="Choux"  name="Produit"/> <label for="Choux">Choux</label> <br/>
+                          <input type="checkbox" value="Fraise" name="Produit" /> <label for="Fraise">Fraise</label> <br/>
+                          <input type="checkbox" value="Cerise" name="Produit"/> <label for="Cerise">Cerise</label> <br/>
+                          <input type="checkbox" value="Mangue" name="Produit" /> <label for="Mangue">Mangue</label> <br/>
+                          <input type="checkbox" value="Banane" name="Produit" /> <label for="Banane">Banane</label> <br/>
+                          <input type="checkbox" value="Choux"  name="Produit"/> <label for="Choux">Choux</label> <br/>
+                          <input type="checkbox" value="Fraise" name="Produit" /> <label for="Fraise">Fraise</label> <br/>
+                          <input type="checkbox" value="Cerise" name="Produit"/> <label for="Cerise">Cerise</label> <br/>
+                          <input type="checkbox" value="Mangue" name="Produit" /> <label for="Mangue">Mangue</label> <br/>
+                                          
+                  </div>
         <h4>  Produits Biologiques </h4>
 						    
     						    <input type="radio" name="BioPeuImporte" value="Bio" /> <label for="Bio">Bio</label><br/>
@@ -91,6 +91,7 @@
 <?php
      endforeach;   
 ?>
+
         <div id="annonces_pages">
            <form id='triage' method="post" action="annonce.php">
              
