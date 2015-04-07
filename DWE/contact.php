@@ -1,12 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Antoine
- * Date: 25/03/15
- * Time: 10:50
- */
-
-?>
 <html>
 <head>
     <meta charset=UTF-8>
@@ -46,11 +37,15 @@
                 <option>Problèmes echange</option>
                 <option>Problèmes autres</option>
             </select>
+            
             <br>
-            <label for="suggestion"><i> Si il y a suggestion choisissez le thème de la suggestion </i></label>
+
+            <label for="suggestion">
+                <i> Si il y a suggestion choisissez le thème de la suggestion </i>
+            </label>
+
             <select name="suggestion">
                 <option>Amélioration vendeur</option>
-
             </select>
             <br>
             <br>

@@ -1,6 +1,4 @@
 <?php session_start(); ?>
-
-
 <html>
     <head>
         <meta charset=UTF-8>
@@ -47,8 +45,8 @@
 
 
 ?>
-
-
+</header>
+<body>
 <?php 
     $requete = "SELECT membre_mdp FROM membres WHERE membre_pseudo='".$login."'";
 
@@ -211,3 +209,5 @@ $ligne = $resultat->fetch_assoc();
             }
         }
         ?>
+</body>
+</html>
