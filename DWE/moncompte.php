@@ -91,7 +91,7 @@ $id=$ligne['US_idUser']
 
             while ($rows=mysqli_fetch_array($res)) {
          
-         echo $rows['AN_Nom']; 
+         
 ?><br>
 <?php
          echo $rows['AN_prix'].'€ <br>';
