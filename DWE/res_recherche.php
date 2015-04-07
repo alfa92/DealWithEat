@@ -39,10 +39,10 @@ setcookie("id",time()+$expire);session_start() ?>
             $nom=$rows['Pr_Nom']; $membre=$rows['Pr_Membre'];$prix=$rows['Pr_Prix'];$quantite=$rows['Pr_Quantité'];
 ?> 
        
-                Nom du produit : <?= $nom ?> <br>
+               <a href="produit.php?q=<?= $rows['Pr_idProduits']; ?>"> Nom du produit : <?= $nom ?> <br>
                 Nom du membre : <?= $membre ?> <br>
                 Prix du produit : <?= $prix ?> <br>
-                Quantitée : <?= $quantite ?> <br>
+                Quantitée : <?= $quantite ?> <br> </a>
 <br>
             <?php
             }

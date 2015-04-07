@@ -48,15 +48,15 @@
 </header>
 <body>
 <?php 
-    $requete = "SELECT membre_mdp FROM membres WHERE membre_pseudo='".$login."'";
+    $requete = "SELECT US_mdp FROM User WHERE US_pseudo='".$login."'";
 
 // envoi de la requête
-$resultat = mysqli_query($conn,$requete) or die ('Erreur '.$requete.' '.$mysqli->error);
+$resultat = mysqli_query($conn2,$requete) or die ('Erreur '.$requete.' '.$mysqli->error);
 // resultat de la requete
 $ligne = $resultat->fetch_assoc();
 
     if(isset($_POST['subconnect'])){
-            if($pass==$ligne["membre_mdp"]){
+            if($pass==$ligne["US_mdp"]){
         
         
         $_SESSION['login']=$login;

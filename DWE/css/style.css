@@ -675,7 +675,7 @@ font-family: 'Roboto' sans-serif;
 
 
 #navcompte ul li a:hover{
-    color: white;;
+    color: white;
 
 }
 
@@ -685,13 +685,29 @@ font-family: 'Roboto' sans-serif;
     top:0;
     left:0;
     margin-top: 230px;
-    margin-left: 11%;
+    margin-left: 13.5%;
+    display: inline-block;
+    vertical-align: top;
 }
+
+#infocompte{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+#annoncescompte{
+   position: absolute;
+   right:0;
+   width: 17%;
+   top:0;
+   margin-top: 200px;
+}
+
 
 #account_data{
     width: 50%;
     margin-left: 22%;
-       margin-top: 60px; 
+    margin-top: 60px; 
 
 }
 
@@ -1601,3 +1617,19 @@ padding-left:0px;
 #tableforum {
     margin-bottom:100px;
 }
+
+
+
+/*********************************************************/
+/************************ RECHERCHE **********************
+**********************PAGE PRODUIT************************/
+/*********************************************************/
+
+
+
+
+
+
+
+
+
