@@ -20,20 +20,46 @@ setcookie("id",time()+$expire);session_start() ?>
 
     </header>
     <body>
-
-
-        <?php
+     <?php
                 $search=$_GET['search'];
 
-        $s=explode(" ",$search);
-        print_r($s);
-        $research = $DB->query('SELECT * FROM Produits ');
-        foreach ($research as $research):
+            $requetemembre= "select * from User where US_pseudo like '%$search%' 
+                                    or US_nom like '%$search%' 
+                                        or US_prenom like '%$search%' ";
+             $resultatmembre=mysqli_query($conn2,$requetemembre);                            
+            $requete= "select * from Produits where Pr_Nom like '%$search%' or Pr_Membre like '%$search%' ";
+            $resultat=mysqli_query($conn1,$requete); 
+    ?>
+            
 
-            echo $research->Pr_Nom;
+<h1> Résultat de la recherche </h1>
+    
+<?php 
+        while ($rows=mysqli_fetch_array($resultat)) {
+            $nom=$rows['Pr_Nom']; $membre=$rows['Pr_Membre'];$prix=$rows['Pr_Prix'];$quantite=$rows['Pr_Quantité'];
+?> 
+       
+               <a href="produit.php?q=<?= $rows['Pr_idProduits']; ?>"> Nom du produit : <?= $nom ?> <br>
+                Nom du membre : <?= $membre ?> <br>
+                Prix du produit : <?= $prix ?> <br>
+                Quantitée : <?= $quantite ?> <br> </a>
+<br>
+            <?php
+            }
+            
+        ?>
+<?php 
+        while ($rows1=mysqli_fetch_array($resultatmembre)) {
+            $mnom=$rows1['US_nom']; $mpseudo=$rows1['US_pseudo'];
+?> 
+       
+                Nom du membre : <?= $mnom ?> <br>
+                Nom du pseudo : <?= $mpseudo ?> <br>
 
-        endforeach;
-
+<br>
+            <?php
+            }
+            
         ?>
     </body>
 

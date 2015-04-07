@@ -14,7 +14,10 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php require('php/header.php'); ?>
-      r<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+
+
+		    <?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+
         
 <body>
     <div id="gauche_annonce">
@@ -40,9 +43,9 @@
                                           
                   </div>
         <h4>  Produits Biologiques </h4>
-          
-              <input type="radio" name="BioPeuImporte" value="Bio" /> <label for="Bio">Bio</label><br/>
-              <input type="radio" name="BioPeuImporte" value="PeuImporte" /> <label for="PeuImporte">Peu importe</label><br/> </br>
+					    
+    						    <input type="radio" name="BioPeuImporte" value="Bio" /> <label for="Bio">Bio</label><br/>
+    						    <input type="radio" name="BioPeuImporte" value="PeuImporte" /> <label for="PeuImporte">Peu importe</label><br/> </br>
                     <center><input type='submit' name='Filtre' value='Fitlrer'  > </center>
         </form>
     </div>
@@ -63,12 +66,15 @@
         </div>
 <?php
 
+
   $products = $DB->query('SELECT * FROM annonce');
+
       foreach ($products as $products):
      
 ?>
         <div id="article_annonce">
             <form id="panier" method="post" action="annonce.php">
+
                   <h5 style="text-align:right;border-bottom:1px dashed black;"> <?php echo $products->PR_idP; ?></h5>
                       <p> <?php echo $products->AN_description; ?> </p>
               
@@ -76,6 +82,7 @@
                 
                 <div id="info_produit">
                       <h5> Prix : <?php echo $products->AN_prix; ?>€/kg</h5> 
+
                       <h5> Echange contre : Produit / Produit / Produit </h5>
                 </div>
 
@@ -83,6 +90,7 @@
                 <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $products->PR_idP; ?>">
                 <div id="div_ajout_panier"> Ajouter au panier </a><br>
                     <i>Quantité disponible : <?php echo $products->AN_quantite; ?> kg </i>
+
                     
                 </div>
             </form>
