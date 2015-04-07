@@ -33,7 +33,7 @@
         <body>
         <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;"> Contacter nous </h1>
 
-        <form id="formmail" style="width:60%;">
+        <form id="formmail" action="verification.php" style="width:60%;" method="get">
             <input type="radio" name="x" value="un"><label style="width: 200px;" for="probl"> Problème</label>
             <br>
             <input type="radio" name="x" value="deux"><label style="width: 200px;" for="suggest"> Suggestion</label>
@@ -55,12 +55,23 @@
             <br>
             <br>
             <input name="titre_mail" placeholder="Sujet de mail" required/>
+            <input name="qui" placeholder="Votre pseudo">
             <br>
             <br>
-            <textarea placeholder="Contenu du mail" rows="10" cols="100"></textarea>
+            <textarea name="contenu" placeholder="Contenu du mail" rows="10" cols="100"></textarea>
             <br>
             <center><input type="submit" value="Envoyer le mail"></center>
         </form>
+
+        <?php
+          if(isset($_GET['contenu'])){
+            $contenu=$_GET['contenu'];
+        }
+          if (isset($_GET['qui'])){
+            $qui=$_GET['qui'];
+          }
+
+        ?>
 
         </body>
 
