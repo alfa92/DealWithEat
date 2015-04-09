@@ -21,13 +21,14 @@ setcookie("id",time()+$expire);session_start() ?>
     </header>
     <body>
      <?php
+                
                 $search=$_GET['search'];
 
-            $requetemembre= "select * from User where US_pseudo like '%$search%' 
+            $requetemembre= "select * from user where US_pseudo like '%$search%' 
                                     or US_nom like '%$search%' 
                                         or US_prenom like '%$search%' ";
              $resultatmembre=mysqli_query($conn2,$requetemembre);                            
-            $requete= "select * from Produits where Pr_Nom like '%$search%' or Pr_Membre like '%$search%' ";
+            $requete= "select * from produits where Pr_Nom like '%$search%' or Pr_Membre like '%$search%' ";
             $resultat=mysqli_query($conn1,$requete); 
     ?>
             

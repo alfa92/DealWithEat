@@ -88,10 +88,22 @@
           <input type="file" name="fichier" id="fichier" />
           <input type="submit" name="submit" value="Insérer le fichier" />
 
-          <input type="submit" value="Valider" />
+          <input type="submit" value="Valider" name="bouton" />
         </form>
       </fieldset>
     </section>
+
+    <!-- PHP pour le formulaire d'envoie à la BD -->
+
+      <?php
+        $req = $bdd2->prepare('INSERT INTO produit (PR_nom,PR_unite,) VALUE (?,?)');
+        if (isset($_POST['bouton'])){
+
+
+        $req->execute(array($_POST['fruit'],$_POST['unite']));
+
+        header ('Location: annonce.php');}
+      ?>         
 
   </body>
          
