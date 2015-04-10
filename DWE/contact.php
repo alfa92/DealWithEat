@@ -57,6 +57,12 @@
             <br>
             <center><input type="submit" value="Envoyer le mail"></center>
         </form>
+        <table>
+              <tr>
+                        <th > Votre pseudo </th>
+                        <th> Votre mail </th>
+                             
+                </tr>
 
         <?php
           if(isset($_GET['contenu'])){

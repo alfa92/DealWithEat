@@ -22,10 +22,18 @@
 
         </header>
         <body>
-             <h1>Votre mail :  </h1>
-
-             <?php if(isset($_GET['contenu'])){ echo $_GET['contenu']; }  ?>
-          <h1> Votre pseudo : </h1>  <?php if(isset($_GET['qui'])){ echo $_GET['qui']; }  ?>
+            <table id="estetiks">
+              <tr>
+                        <th > Votre pseudo </th>
+                        <th> Votre mail </th>
+                             
+                </tr>
+                
+       <td id="plcmt"><?php if(isset($_GET['qui'])){ echo $_GET['qui']; }  ?></td>
+       <td id="stylecontenu"><?php if(isset($_GET['contenu'])){ echo $_GET['contenu']; }  ?> </td>
+    
+           </table>
+            
           
           <center><input type="submit" name="subenvoyer" id="btnenvoyer" value="Envoyer"></center>
 
