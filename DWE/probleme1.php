@@ -27,7 +27,7 @@
     </header>
     <?php
 
-          $article=$DB->query('SELECT * FROM forumQ');
+          $article=$bdd2->query('SELECT * FROM forumQ');
 
     ?>
 
@@ -55,6 +55,7 @@
    </tr>
 
 <?php endforeach; ?>
+
 
    
 </table>

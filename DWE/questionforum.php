@@ -22,9 +22,9 @@
             <input class="inputq" type="text" id="q_pseudo" name="q_pseudo" placeholder="Pseudo" required/><br>
             <input class="inputq" type="text" id="q_sujet" name="q_sujet" placeholder="Sujet" required/><br>
             <textarea class="inputq" type="text" id="q_contenu" name="q_contenu" placeholder="Question" required/></textarea><br>
-            <input type="submit" id="sub_q" name="sub_q" value="Envoyer sur le forum" >
+            <input  type="submit" id="sub_q" name="sub_q" value="Envoyer sur le forum"  >
         </form>
-
++
       <?php 
 
         $date = date("Y-m-d");
@@ -42,7 +42,7 @@ if(isset($_GET['sub_q'])){
         
           echo 'Votre pseudo : '.$login.'<br> Sujet de votre message : '.$sujet.'<br> Contenu de votre message : '.$contenu.' ';
            $sql='INSERT INTO forumQ VALUES ("","'.$sujet.'", "'.$contenu.'","'.$date.'","'.$login.'")';
-        $req=$bdd->query($sql);
+        $req=$bdd2->query($sql);
         }
 
        
