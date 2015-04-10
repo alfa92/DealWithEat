@@ -17,7 +17,7 @@
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
 
     </header>
-
+<div id="produit_info">
 <?php
 
 			
@@ -38,3 +38,4 @@
 }
 	
 ?>
+</div>

@@ -34,7 +34,8 @@ setcookie("id",time()+$expire);session_start() ?>
             
 
 <h1> Résultat de la recherche </h1>
-    
+<h2> Produits </h2>
+    <div id="resultat_produit">
 <?php 
         while ($rows=mysqli_fetch_array($resultat)) {
             $nom=$rows['Pr_Nom']; $membre=$rows['Pr_Membre'];$prix=$rows['Pr_Prix'];$quantite=$rows['Pr_Quantité'];
@@ -49,6 +50,9 @@ setcookie("id",time()+$expire);session_start() ?>
             }
             
         ?>
+</div>
+<div id="resultat_membre">
+<h2> Membres </h2>
 <?php 
         while ($rows1=mysqli_fetch_array($resultatmembre)) {
             $mnom=$rows1['US_nom']; $mpseudo=$rows1['US_pseudo'];
@@ -62,6 +66,7 @@ setcookie("id",time()+$expire);session_start() ?>
             }
             
         ?>
+        </div>
     </body>
 
     </div>

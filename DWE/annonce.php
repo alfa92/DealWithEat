@@ -66,16 +66,16 @@
         </div>
 <?php
 
-
+  
   $products = $DB->query('SELECT * FROM annonce');
-
       foreach ($products as $products):
      
 ?>
         <div id="article_annonce">
             <form id="panier" method="post" action="annonce.php">
 
-                  <h5 style="text-align:right;border-bottom:1px dashed black;"> <?php echo $products->PR_idP; ?></h5>
+                  <h5 style="text-align:right;border-bottom:1px dashed black;"> 
+                  <a href="produit.php?q=<?= $product->Pr_idProduits; ?>"><?php echo $products->PR_idP; ?></h5></a>
                       <p> <?php echo $products->AN_description; ?> </p>
               
               <img id="image_article" src="css/images/<?php echo $products->PR_idP ?>.jpg">

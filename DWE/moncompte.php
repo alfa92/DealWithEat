@@ -86,16 +86,16 @@ $id=$ligne['US_idUser']
         <h4> Vos annonces </h4>
           <?php
 
-            $req= 'SELECT * FROM Annonce,Produit WHERE US_idUserannonceur="'.$id.'"';
-            $res=mysqli_query($conn2,$req); 
+            $req= 'SELECT * FROM Annonce WHERE US_idUserannonceur="'.$id.'"';
+            $res= mysqli_query($conn2,$req); 
 
             while ($rows=mysqli_fetch_array($res)) {
          
          
-?><br>
+?>
 <?php
+        echo $rows['PR_idP'].'<br>';
          echo $rows['AN_prix'].'€ <br>';
-
          echo "Quantité restante : ".$rows['AN_quantite']."kg";
          ?> <hr> <?php
 }

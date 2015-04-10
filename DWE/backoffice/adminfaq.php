@@ -3,9 +3,10 @@
     <head>
         <meta charset=UTF-8>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
 
-        <title>Deal With Eat</title>
+       <link rel="stylesheet" type="text/css" href="backoffice.css" media="screen"/>
+
+        <title>Deal With Eat - Backoffice</title>
     </head>
     <header>
         <?php include('../php/config.php'); ?>
@@ -23,15 +24,13 @@
 
     ?>
     <body>
-    <a href="adminmembre.php">
-        <h1> Interface Administrateur </h1>
+   
 
-        <h2> Ici vous pouvez voir et modifier le site et ses données ( membres, annonces, forum, faq, actualités).</h2>
-    </a>
-    <hr>
     <div id="navcontainer">
         <!-- Nav -->
         <nav id="nav">
+          <a href="adminmembre.php"><img style="width:100px;margin-left:25%;margin-top:50px;"src="../css/images/logoDWE.png" /></a>
+
             <ul>
                 <li><a href="membreadmin.php"> Membres </a></li>
                 <li><a href="#"> Annonces </a></li>
@@ -44,11 +43,13 @@
         </nav>
 
     </div>
-        <hr>
+<div id="back_right">
+         <a href="adminmembre.php">
+        <h1> Interface Administrateur </h1>
 
-        <h1> Vous pouvez ici mettre en ligne des post sur la FAQ</h1>
+        
+        <h1 style="text-align:left;"> Vous pouvez ici mettre en ligne des post sur la FAQ</h1>
 
-        <h2> Il vous suffit de remplir le forumlaire ci-dessous</h2>
 <br>
     <center><h2> Poster un sujet </h2></hé></center>
         <form id="postfaq" name="postfaq" method="post">
@@ -73,10 +74,10 @@
 
 
         <br>
-        <textarea name="rep" placeholder="Veuillez saisir la réponse au sujet mentionné plus haut" cols="75" rows="8" required></textarea>
-        <input name="subrep" type="submit" value="Poster la sujet">
+        
         </center>
     </div>
 <<?php }?>
+</div>
     </body>
 </html>
