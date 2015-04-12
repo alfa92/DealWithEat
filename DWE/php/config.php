@@ -18,6 +18,7 @@ mysqli_set_charset($conn1,"UTF8");
 $conn2=mysqli_connect('localhost', 'root', 'root','dwe');
 try{
 		$bdd2 = new PDO('mysql:host=localhost;dbname=dwe;charset=utf8', 'root', 'root');
+		$bdd2->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (Exception $e){
 		die('Erreur : ' . $e->getMessage());

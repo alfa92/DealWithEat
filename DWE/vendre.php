@@ -23,28 +23,7 @@
     <h1> Vendre</h1>
         <h2> Pour mettre en vente un produit veuillez remplir le formulaire ci-dessous</h2>
             
-        <!-- PHP -->
-         <?php
-      function upload($index,$destination,$maxsize=FALSE,$extensions=FALSE)
-        {
-          //Test1: fichier correctement uploadé
-          if (!isset($_FILES[$index]) OR $_FILES[$index]['error'] > 0) return FALSE;
-          //Test2: taille limite
-          if ($maxsize !== FALSE AND $_FILES[$index]['size'] > $maxsize) return FALSE;
-          //Test3: extension
-          $ext = substr(strrchr($_FILES[$index]['name'],'.'),1);
-          if ($extensions !== FALSE AND !in_array($ext,$extensions)) return FALSE;
-          //Déplacement
-          return move_uploaded_file($_FILES[$index]['tmp_name'],$destination);
-        }
- 
-          //EXEMPLES
-          $upload1 = upload('icone','imageUploades/monicone1',15360, array('png','gif','jpg','jpeg') );
-          $upload2 = upload('mon_fichier','imageUploades/file112',1048576, FALSE );
- 
-            if ($upload1) "Upload de l'icone réussi!<br />";
-            if ($upload2) "Upload du fichier réussi!<br />";
-    ?>
+       
 
             
       <!-- FORMULAIRE HTML -->  
@@ -79,26 +58,35 @@
 
           <p> Indiquez le prix que vous souhaitez </p> <br/><!-- on choisit le prix de fruit/légume qu'on dépose -->
           <input name="prix" type="number"/> <br/>
+
+          <label for="datecuellette"> Quel est la date de cueillette de votre produit: </label>
+          <input type ="date" name="datecueillette"/> <br/>
           
           <label  for="description" > Description du produit </label> <br/> 
           <textarea name="description" rows="8" cols="45">
           </textarea> <br/>
 
+          <label for ="echangeok"> Voulez-vous effectuer une vente et/ou un échange </label> <br/>
           <input type="radio" name="echangeok" value="Oui" id="echange" /> <label for="fruit">Echange</label><br />
           <input type="radio" name="echangeok" value="Non" id="vente" /> <label for="legume">Vente</label><br /> <br/>
+
+
           <label  for="descriptionechange" > Description de l'echange </label> <br/> 
           <textarea name="descriptionechange" rows="8" cols="45">
           </textarea> <br/>
 
+          <label for ="payement"> Indiquez le versement que vous désirer </label> <br/>
           <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label><br />
           <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">cash</label><br /> <br/>
 
+          <label for ="typeenvoie"> De quelle façon voulez-vous vendre/échanger votre produit </label> <br/>
+          <input type ="radio" name = "typeenvoie" value="main" id="main"/> <label for="mainpropre"> En main propre </label> <br/>
+          <input type ="radio" name="typeenvoie" value="poste" id="poste"/> <label for ="parposte"> Par la poste </label> <br/>
 
-          prix colis: <input type="number" name="prixcolis" /> <br/>
-          <label for="file">Ajouter une photo :</label>
-          <input type="file" name="fichier" id="fichier" />
-          <input type="submit" name="submit" value="Insérer le fichier" />
+          <label for ="prixcolis"> Indiquez le prix du colis </label> <br/>
+          <input type="number" name="prixcolis" /> <br/>
 
+          
           <input type="submit" value="Valider" name="bouton" />
         </form>
       </fieldset>
@@ -108,20 +96,20 @@
 
       <?php
 
-        $date = date("d-m-Y");
+        
         $req = $bdd2->prepare('INSERT INTO produit (PR_nom,PR_unite) VALUE (?,?)');
-         $req1 = $bdd2->prepare('INSERT INTO propositionechange (PR_idP,PE_photos,PE_quantite) VALUE (?,?,?)');
-         $req2 = $bdd2->prepare('INSERT INTO Annonce 
-          (AN_idAnnonce,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyenpayement,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description)
-           VALUE (?,?,?,?,?,?,?,?,?,?)');
+        $req1 = $bdd2->prepare('INSERT INTO propositionechange (PR_idP,PE_photos,PE_quantite) VALUE (?,?,?)');
+        $req2 = $bdd2->prepare('INSERT INTO Annonce 
+          (AN_idAnnonce, US_idUserannonceur, PR_idP, PE_idPropositionEchan, AN_quantite,AN_prix, AN_echangeok, AN_echangedescription, AN_moyentpayment,AN_moyenenvoie, AN_datepublication, AN_prixcolis, AN_description)
+           VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?)');
 
         if (isset($_POST['bouton'])){
 
 
         $req->execute(array($_POST['fruit'],$_POST['unite']));
-        $req1->execute(array('2','Bonjour',$_POST['quantite']));
-        $req2->execute(array(' ',$_POST['quantite'],$_POST['prix'],$_POST['echangeok'],
-          $_POST['descriptionechange'],'envoi',$_POST['payement'],$date,$_POST['prixcolis'],$_POST['description']));
+        $req1->execute(array('1','Bonjour',$_POST['quantite']));
+        $req2->execute(array(NULL,'1','1','1',$_POST['quantite'],$_POST['prix'],$_POST['echangeok'],
+          $_POST['descriptionechange'],$_POST['payement'],$_POST['typeenvoie'],$_POST['datecueillette'],$_POST['prixcolis'],$_POST['description']));
 
         
       }
