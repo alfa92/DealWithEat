@@ -16,7 +16,13 @@ $bdd = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'root');
 mysqli_set_charset($conn1,"UTF8");
 
 $conn2=mysqli_connect('localhost', 'root', 'root','dwe');
-$bdd2 = new PDO('mysql:host=localhost;dbname=dwe;charset=utf8', 'root', 'root');
+try{
+		$bdd2 = new PDO('mysql:host=localhost;dbname=dwe;charset=utf8', 'root', 'root');
+}
+catch (Exception $e){
+		die('Erreur : ' . $e->getMessage());
+}
+
 mysqli_set_charset($conn2,"UTF8");
 
 

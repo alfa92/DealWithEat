@@ -52,7 +52,7 @@
 
     <section>
       <fieldset>
-        <form id="FormulaireVendre" method="post" action="annonce.php" enctype="multipart/form-data" name="form1">
+        <form id="FormulaireVendre" method="post" action="vendre.php" enctype="multipart/form-data" name="form1">
           <p> Veuillez indiquer si vous vendez des fruits ou des légumes:</p><br />
 
           <input type="radio" name="TypeProduit" value="fruit" id="fruit" /> <label for="fruit">fruit</label><br />
@@ -75,15 +75,26 @@
           <p>Indiquez la quantité que vous vouhaitez en kg ou à la pièce </p> <br/> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
           <input type="radio" name="unite" value="kg" id="kg"/> <label for="kg"> kg </label> <br/>
           <input type="radio" name="unite" value="pièce" id="pièce"/> <label for="pièce"> pièce </label> <br/>
-          <input type="number" /> <br/>
+          <input type="number" name="quantite" /> <br/>
 
           <p> Indiquez le prix que vous souhaitez </p> <br/><!-- on choisit le prix de fruit/légume qu'on dépose -->
-          <input type="number"/> <br/>
+          <input name="prix" type="number"/> <br/>
           
           <label  for="description" > Description du produit </label> <br/> 
           <textarea name="description" rows="8" cols="45">
           </textarea> <br/>
 
+          <input type="radio" name="echangeok" value="Oui" id="echange" /> <label for="fruit">Echange</label><br />
+          <input type="radio" name="echangeok" value="Non" id="vente" /> <label for="legume">Vente</label><br /> <br/>
+          <label  for="descriptionechange" > Description de l'echange </label> <br/> 
+          <textarea name="descriptionechange" rows="8" cols="45">
+          </textarea> <br/>
+
+          <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label><br />
+          <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">cash</label><br /> <br/>
+
+
+          prix colis: <input type="number" name="prixcolis" /> <br/>
           <label for="file">Ajouter une photo :</label>
           <input type="file" name="fichier" id="fichier" />
           <input type="submit" name="submit" value="Insérer le fichier" />
@@ -96,14 +107,25 @@
     <!-- PHP pour le formulaire d'envoie à la BD -->
 
       <?php
-        $req = $bdd2->prepare('INSERT INTO produit (PR_nom,PR_unite,) VALUE (?,?)');
+
+        $date = date("d-m-Y");
+        $req = $bdd2->prepare('INSERT INTO produit (PR_nom,PR_unite) VALUE (?,?)');
+         $req1 = $bdd2->prepare('INSERT INTO propositionechange (PR_idP,PE_photos,PE_quantite) VALUE (?,?,?)');
+         $req2 = $bdd2->prepare('INSERT INTO Annonce 
+          (AN_idAnnonce,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyenpayement,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description)
+           VALUE (?,?,?,?,?,?,?,?,?,?)');
+
         if (isset($_POST['bouton'])){
 
 
         $req->execute(array($_POST['fruit'],$_POST['unite']));
+        $req1->execute(array('2','Bonjour',$_POST['quantite']));
+        $req2->execute(array(' ',$_POST['quantite'],$_POST['prix'],$_POST['echangeok'],
+          $_POST['descriptionechange'],'envoi',$_POST['payement'],$date,$_POST['prixcolis'],$_POST['description']));
 
-        header ('Location: annonce.php');}
-      ?>         
+        
+      }
+      ?> 
 
   </body>
          

@@ -57,9 +57,10 @@ setcookie("id",time()+$expire);session_start() ?>
         while ($rows1=mysqli_fetch_array($resultatmembre)) {
             $mnom=$rows1['US_nom']; $mpseudo=$rows1['US_pseudo'];
 ?> 
-       
+       <a href="membre.php?a=<?= $rows1['US_pseudo']; ?>">
                 Nom du membre : <?= $mnom ?> <br>
                 Nom du pseudo : <?= $mpseudo ?> <br>
+                </a>
 
 <br>
             <?php

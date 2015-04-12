@@ -41,7 +41,7 @@
 									$pass2=$_POST['pass2'];
 								}
 								if (isset($_POST['mail'])) {
-									$mail=mysqli_real_escape_string($conn,$_POST['mail']);
+									$mail=$_POST['mail'];
 								}
 
 
