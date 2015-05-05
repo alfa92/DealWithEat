@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7acf3b45-d041-4de1-be85-a0fd0c4f6a7e" name="Default" comment="reglage des conflits">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FAQ.php" afterPath="$PROJECT_DIR$/FAQ.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/header.php" afterPath="$PROJECT_DIR$/php/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/questionforum.php" afterPath="$PROJECT_DIR$/questionforum.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../index1.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backoffice/adminfaq.php" afterPath="$PROJECT_DIR$/backoffice/adminfaq.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backoffice/adminmembre.php" afterPath="$PROJECT_DIR$/backoffice/adminmembre.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backoffice/membreadmin.php" afterPath="$PROJECT_DIR$/backoffice/membreadmin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DWE.iws" />
@@ -36,14 +38,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="questionforum.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="questionforum.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/questionforum.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77490777" vertical-offset="615" max-vertical-offset="1170">
-              <caret line="69" column="3" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="3" />
+            <state vertical-scroll-proportion="-30.625" vertical-offset="90" max-vertical-offset="945">
+              <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
               <folding>
-                <marker date="1427879623000" expanded="true" signature="1609:1695" placeholder="INSERT INTO ..." />
-                <marker date="1427879623000" expanded="true" signature="1609:1696" placeholder="INSERT INTO ..." />
+                <marker date="1428837468000" expanded="true" signature="1628:1712" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminfaq.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backoffice/adminfaq.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.25" vertical-offset="405" max-vertical-offset="1290">
+              <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminmembre.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backoffice/adminmembre.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.47416973" vertical-offset="298" max-vertical-offset="840">
+              <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="membreadmin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backoffice/membreadmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.3333335" vertical-offset="433" max-vertical-offset="1830">
+              <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
+              <folding>
+                <marker date="1428910950000" expanded="true" signature="2348:2385" placeholder="SELECT * FRO..User..." />
               </folding>
             </state>
           </provider>
@@ -52,11 +85,9 @@
       <file leaf-file-name="Inscription.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Inscription.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.75" vertical-offset="870" max-vertical-offset="1920">
-              <caret line="72" column="49" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
-              <folding>
-                <marker date="1427484576000" expanded="true" signature="1949:2162" placeholder="INSERT INTO ..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1785">
+              <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,9 +121,7 @@
         <option value="$PROJECT_DIR$/moncompte.php" />
         <option value="$PROJECT_DIR$/backoffice/logout.php" />
         <option value="$PROJECT_DIR$/backoffice/connexion.php" />
-        <option value="$PROJECT_DIR$/backoffice/adminmembre.php" />
         <option value="$PROJECT_DIR$/vendre.php" />
-        <option value="$PROJECT_DIR$/backoffice/membreadmin.php" />
         <option value="$PROJECT_DIR$/php/db.class.php" />
         <option value="$PROJECT_DIR$/panier.class.php" />
         <option value="$PROJECT_DIR$/php/_header.php" />
@@ -114,9 +143,11 @@
         <option value="$PROJECT_DIR$/res_recherche.php" />
         <option value="$PROJECT_DIR$/reglement.php" />
         <option value="$PROJECT_DIR$/php/pied_de_page.php" />
-        <option value="$PROJECT_DIR$/backoffice/adminfaq.php" />
         <option value="$PROJECT_DIR$/FAQ.php" />
         <option value="$PROJECT_DIR$/questionforum.php" />
+        <option value="$PROJECT_DIR$/backoffice/adminfaq.php" />
+        <option value="$PROJECT_DIR$/backoffice/membreadmin.php" />
+        <option value="$PROJECT_DIR$/backoffice/adminmembre.php" />
       </list>
     </option>
   </component>
@@ -125,7 +156,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="2" />
+    <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1279" />
     <option name="height" value="712" />
@@ -215,6 +246,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DWE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DWE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backoffice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -265,17 +310,20 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
       <option name="VM_PARAMETERS" value="" />
       <option name="USER_CFG_CLASS" />
       <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="bc2332e4-214a-4290-929f-3f054927f964" server_name="MAMP Apache">
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -285,9 +333,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server" server_id="bc2332e4-214a-4290-929f-3f054927f964" server_name="MAMP Apache">
       <method />
     </configuration>
     <list size="0" />
@@ -399,7 +444,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="23" width="1279" height="712" extended-state="6" />
+    <frame x="1" y="23" width="1279" height="712" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -408,7 +453,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2489895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24575587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497979" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32612312" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -441,9 +486,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19789983" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -652,13 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backoffice/adminmembre.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21857923" vertical-offset="360" max-vertical-offset="2280">
-          <caret line="32" column="44" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendre.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.69945353" vertical-offset="96" max-vertical-offset="1320">
@@ -670,13 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.875" vertical-offset="960" max-vertical-offset="1785">
           <caret line="67" column="36" selection-start-line="67" selection-start-column="36" selection-end-line="67" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backoffice/membreadmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-31.0" vertical-offset="306" max-vertical-offset="1395">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -712,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16393442" vertical-offset="0" max-vertical-offset="549">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -769,23 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6439114" vertical-offset="941" max-vertical-offset="1545">
           <caret line="86" column="17" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#body#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#h1#0;n#body#0;n#div#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1427876256000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..FAQ..." />
-            <marker date="1427876256000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..FAQ..." />
-            <marker date="1427876256000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..FAQ..." />
-            <marker date="1427876256000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..FAQ..." />
-            <marker date="1427876256000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..FAQ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backoffice/adminfaq.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6748582" vertical-offset="723" max-vertical-offset="1305">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="566">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -809,7 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.791666" vertical-offset="317" max-vertical-offset="945">
           <caret line="61" column="13" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08302583" vertical-offset="0" max-vertical-offset="542">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.056710776" vertical-offset="0" max-vertical-offset="529">
           <caret line="2" column="68" selection-start-line="2" selection-start-column="68" selection-end-line="2" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,30 +842,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.61254615" vertical-offset="448" max-vertical-offset="1770">
           <caret line="52" column="88" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="88" />
-          <folding>
-            <marker date="1427829593000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..membres..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Inscription.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="870" max-vertical-offset="1920">
-          <caret line="72" column="49" selection-start-line="72" selection-start-column="49" selection-end-line="72" selection-end-column="49" />
-          <folding>
-            <marker date="1427484576000" expanded="true" signature="1949:2162" placeholder="INSERT INTO ..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1785">
+          <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/questionforum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77490777" vertical-offset="615" max-vertical-offset="1170">
-          <caret line="69" column="3" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="3" />
+        <state vertical-scroll-proportion="-30.625" vertical-offset="90" max-vertical-offset="945">
+          <caret line="55" column="3" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
           <folding>
-            <marker date="1427879623000" expanded="true" signature="1609:1695" placeholder="INSERT INTO ..." />
-            <marker date="1427879623000" expanded="true" signature="1609:1696" placeholder="INSERT INTO ..." />
+            <marker date="1428837468000" expanded="true" signature="1628:1712" placeholder="INSERT INTO ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/membreadmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.3333335" vertical-offset="433" max-vertical-offset="1830">
+          <caret line="39" column="53" selection-start-line="39" selection-start-column="53" selection-end-line="39" selection-end-column="53" />
+          <folding>
+            <marker date="1428910950000" expanded="true" signature="2348:2385" placeholder="SELECT * FRO..User..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/adminfaq.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25" vertical-offset="405" max-vertical-offset="1290">
+          <caret line="37" column="57" selection-start-line="37" selection-start-column="57" selection-end-line="37" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backoffice/adminmembre.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47416973" vertical-offset="298" max-vertical-offset="840">
+          <caret line="37" column="17" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

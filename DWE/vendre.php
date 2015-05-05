@@ -99,16 +99,27 @@
         
         $req = $bdd2->prepare('INSERT INTO produit (PR_nom,PR_unite) VALUE (?,?)');
         $req1 = $bdd2->prepare('INSERT INTO propositionechange (PR_idP,PE_photos,PE_quantite) VALUE (?,?,?)');
+
+        $sel1= $bdd2->prepare('SELECT MAX(PR_idP) FROM Produit ');
+        $sel2= $bdd2-> prepare('SELECT MAX(PE_idPropositionEchan) FROM propositionechange ');
+
         $req2 = $bdd2->prepare('INSERT INTO Annonce 
           (AN_idAnnonce, US_idUserannonceur, PR_idP, PE_idPropositionEchan, AN_quantite,AN_prix, AN_echangeok, AN_echangedescription, AN_moyentpayment,AN_moyenenvoie, AN_datepublication, AN_prixcolis, AN_description)
-           VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?)');
+           VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?)' );
 
         if (isset($_POST['bouton'])){
 
+       
+
 
         $req->execute(array($_POST['fruit'],$_POST['unite']));
-        $req1->execute(array('1','Bonjour',$_POST['quantite']));
-        $req2->execute(array(NULL,'1','1','1',$_POST['quantite'],$_POST['prix'],$_POST['echangeok'],
+        $req1->execute(array($_POST['PR_idP'],'Bonjour',$_POST['quantite']));
+
+         $sel1->execute();
+        $sel2->execute();
+        
+
+        $req2->execute(array('','',$sel1->PR_idP,$sel2->PE_idPropositionEchan,$_POST['quantite'],$_POST['prix'],$_POST['echangeok'],
           $_POST['descriptionechange'],$_POST['payement'],$_POST['typeenvoie'],$_POST['datecueillette'],$_POST['prixcolis'],$_POST['description']));
 
         

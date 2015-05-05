@@ -38,7 +38,6 @@
             <li><a href="#"> Annonces </a></li>
             <li><a href="#"> Forum </a></li>
             <li><a href="adminfaq.php"> FAQ </a></li>
-            <li><a href="#"> Actualités</a></li>
             <li><a href="../accueil.php" TARGET=_BLANK> Voir le site</a></li>
             <li><a href="logout.php"> Deconnexion</a></li>
         </ul>
