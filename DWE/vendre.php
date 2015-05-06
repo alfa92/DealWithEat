@@ -29,68 +29,89 @@
       <!-- FORMULAIRE HTML -->  
 
 
-    <section>
+    <section >
       <fieldset>
         <form id="FormulaireVendre" method="post" action="vendre.php" enctype="multipart/form-data" name="form1">
-          <p> Veuillez indiquer si vous vendez des fruits ou des légumes:</p><br />
+          <strong> Veuillez indiquer si vous vendez des fruits ou des légumes:</strong><br />
 
           <input type="radio" name="TypeProduit" value="fruit" id="fruit" /> <label for="fruit">fruit</label><br />
           <input type="radio" name="TypeProduit" value="legume" id="legume" /> <label for="legume">légume</label><br /> <br/>
 
-          <label for="fruit"> Quel fruit voulez-vous déposez ? </label> <br/> <!-- on choisit le fruit qu'on dépose -->
+          <label for="fruit"> <strong>   Quel fruit voulez-vous déposez ?</strong>  </label> <br/> <!-- on choisit le fruit qu'on dépose -->
           <select name="fruit" id="fruit"> 
             <option value="pomme"> Pomme </option>
             <option value="poire"> Poire </option>
             <option value="fraise"> Fraise </option>
-          </select> <br/>
+          </select> <br/><br/>
 
-          <label for="legume"> Quel legume voulez-vous déposez ? </label> <br/> <!-- on choisit le légume qu'on dépose -->
+          <label for="legume"> <strong>  Quel legume voulez-vous déposez ? </strong></label> <br/> <!-- on choisit le légume qu'on dépose -->
           <select name="legume" id="legume">
             <option value="brocolis"> Brocolis </option>
             <option value="artichaut"> Artichaut </option>
             <option value="radis"> radis </option>
-          </select>  
+          </select>  <br/><br/>
 
-          <p>Indiquez la quantité que vous vouhaitez en kg ou à la pièce </p> <br/> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
+          <strong>Indiquez la quantité que vous vouhaitez en kg ou à la pièce </strong> <br/> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
           <input type="radio" name="unite" value="kg" id="kg"/> <label for="kg"> kg </label> <br/>
           <input type="radio" name="unite" value="pièce" id="pièce"/> <label for="pièce"> pièce </label> <br/>
-          <input type="number" name="quantite" /> <br/>
+          <input type="number" name="quantite" class="inputvendre"/> <br/><br/>
 
-          <p> Indiquez le prix que vous souhaitez </p> <br/><!-- on choisit le prix de fruit/légume qu'on dépose -->
-          <input name="prix" type="number"/> <br/>
+          <strong> Indiquez le prix que vous souhaitez </strong> <br/><!-- on choisit le prix de fruit/légume qu'on dépose -->
+          <input name="prix" type="number" class="inputvendre"/> <br/><br/>
 
-          <label for="datecuellette"> Quel est la date de cueillette de votre produit: </label>
-          <input type ="date" name="datecueillette"/> <br/>
+          <label for="datecuellette">  <strong>Indiquez la date de cueillette de votre produit:</strong> </label><br/>
+          <input type ="date" name="datecueillette" class="inputvendre"/> <br/><br/>
           
-          <label  for="description" > Description du produit </label> <br/> 
-          <textarea name="description" rows="8" cols="45">
-          </textarea> <br/>
+          <label  for="description" > <strong> Description du produit</strong> </label> <br/> 
+          <textarea name="description" rows="8" cols="45" class="inputvendre">
+          </textarea> <br/><br/>
 
-          <label for ="echangeok"> Voulez-vous effectuer une vente et/ou un échange </label> <br/>
+          <label for ="echangeok"> <strong>Voulez-vous effectuer une vente et/ou un échange</strong> </label> <br/>
           <input type="radio" name="echangeok" value="Oui" id="echange" /> <label for="fruit">Echange</label><br />
           <input type="radio" name="echangeok" value="Non" id="vente" /> <label for="legume">Vente</label><br /> <br/>
 
 
-          <label  for="descriptionechange" > Description de l'echange </label> <br/> 
-          <textarea name="descriptionechange" rows="8" cols="45">
-          </textarea> <br/>
+          <label  for="descriptionechange" > <strong>Description de l'echange</strong> </label> <br/> 
+          <textarea name="descriptionechange" rows="8" cols="45" >
+          </textarea> <br/><br/>
 
-          <label for ="payement"> Indiquez le versement que vous désirer </label> <br/>
+          <label for ="payement"> <strong> Indiquez le versement que vous désirer</strong>  </label> <br/>
           <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label><br />
-          <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">cash</label><br /> <br/>
+          <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">cash</label><br /> <br/><br/>
 
-          <label for ="typeenvoie"> De quelle façon voulez-vous vendre/échanger votre produit </label> <br/>
+          <label for ="typeenvoie"> <strong>De quelle façon voulez-vous vendre/échanger votre produit</strong> </label> <br/>
           <input type ="radio" name = "typeenvoie" value="main" id="main"/> <label for="mainpropre"> En main propre </label> <br/>
-          <input type ="radio" name="typeenvoie" value="poste" id="poste"/> <label for ="parposte"> Par la poste </label> <br/>
+          <input type ="radio" name="typeenvoie" value="poste" id="poste"/> <label for ="parposte"> Par la poste </label> <br/><br/>
 
-          <label for ="prixcolis"> Indiquez le prix du colis </label> <br/>
-          <input type="number" name="prixcolis" /> <br/>
-
+          <label for ="prixcolis"> <strong>Indiquez le prix du colis en euros </strong></label> <br/>
+          <input type="number" name="prixcolis" /> <br/> <br/>
+          <label for="icone"> <strong>Icône du produit (JPG, PNG ou GIF | max. 15 Ko) :</strong></label><br /> 
+          <input type="file" name="icone" id="icone" /><br /><br />
+          <label for="mon_fichier"> <strong>Fichier (tous formats | max. 1 Mo) :</strong></label><br />
+          <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+          <input type="file" name="mon_fichier" id="mon_fichier" /><br /> <br />
+          <label for="titre"> <strong>Titre du produit (max. 50 caractères) :</strong></label><br />
+          <input type="text" name="titre" value="Titre du fichier" id="titre" /><br /><br />
           
-          <input type="submit" value="Valider" name="bouton"/>
-        </form>
+          <input type="submit" value="Valider" name="bouton" id="valider"/>
+        
+
+</form>
       </fieldset>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 
     <!-- PHP pour le formulaire d'envoie à la BD -->
 
