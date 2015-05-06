@@ -20,8 +20,8 @@
 
     <body>
             
-    <h1> Vendre</h1>
-        <h2> Pour mettre en vente un produit veuillez remplir le formulaire ci-dessous</h2>
+    <h1 id="VENDRE">       Vendre</h1>
+        <h2>Pour mettre en vente un produit veuillez remplir le formulaire ci-dessous</h2>
             
        
 
