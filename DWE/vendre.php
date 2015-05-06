@@ -87,7 +87,7 @@
           <input type="number" name="prixcolis" /> <br/>
 
           
-          <input type="submit" value="Valider" name="bouton" />
+          <input type="submit" value="Valider" name="bouton"/>
         </form>
       </fieldset>
     </section>
