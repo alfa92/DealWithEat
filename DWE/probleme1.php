@@ -27,7 +27,7 @@
     </header>
     <?php
 
-          $article=$bdd2->query('SELECT * FROM forumQ');
+          $article=$bdd2->query('SELECT * FROM forumq');
 
     ?>
 
@@ -42,15 +42,15 @@
                 </tr>
                 <?php foreach ($article as $article): ?>
    <tr>
-       <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?= $article->Fo_Pseudo; ?>  </strong> </h5><!--img id=ava src="css/images/avatar.png"--> </a><br></td>
-       <td><?= $article->Fo_Contenu; ?> 
+       <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?= $article->q_pseudo; ?>  </strong> </h5><!--img id=ava src="css/images/avatar.png"--> </a><br></td>
+       <td><?= $article->q_contenu; ?> 
         
  <br></td>
       
 
 
        <td id="tdate"><a href="#"> 
-       <?= $article->Fo_Date; ?> 
+       <?= $article->Date; ?> 
    </a><br></td>
    </tr>
 

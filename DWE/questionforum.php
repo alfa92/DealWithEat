@@ -41,7 +41,7 @@ if(isset($_GET['sub_q'])){
 
         
           echo 'Votre pseudo : '.$login.'<br> Sujet de votre message : '.$sujet.'<br> Contenu de votre message : '.$contenu.' ';
-           $sql='INSERT INTO forumQ VALUES ("","'.$sujet.'", "'.$contenu.'","'.$date.'","'.$login.'")';
+           $sql='INSERT INTO forumq VALUES ("'.$date.'","'.$login.'","'.$sujet.'", "'.$contenu.'")';
         $req=$bdd2->query($sql);
         }
 

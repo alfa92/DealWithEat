@@ -41,9 +41,7 @@
                         <th> Sujet </th>
                         <th> Reponse </th>
                         <th> Date </th>
-                        
-                        
-                </tr>
+             </tr>
                <?php foreach ($article as $article): ?>
    <tr>
        <td><a href="probleme1.php"> <?php echo $article->Fo_Sujet ;?> </a><br></td>
