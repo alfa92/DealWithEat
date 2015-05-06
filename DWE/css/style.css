@@ -15,7 +15,7 @@
 	{
 		font-family: 'Roboto', sans-serif;
 		font-size: 11pt;
-		font-weight: 300;
+		font-weight: 300px;
 		line-height: 1.75em;
 		
 	}
@@ -1615,7 +1615,7 @@ padding-left:0px;
     display: block;
     margin-right: 20%;
     margin-left: 30%;
-    font-family: "Roboto",sans-serif;
+    font-family: 'Roboto',sans-serif;
 }
 
 
@@ -1628,7 +1628,7 @@ padding-left:0px;
 .inputvendre{
     font-family: 'Roboto', sans-serif;
     font-size: 11pt;
-    font-weight: 300;
+    font-weight: 300px;
     line-height: 1.75em;
 }
 
