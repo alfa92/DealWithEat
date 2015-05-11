@@ -28,6 +28,8 @@
     <?php
 
           $article=$bdd2->query('SELECT * FROM forumq');
+          while ($articles = $article->fetch())
+{
 
     ?>
 
@@ -40,21 +42,28 @@
                         <th> Sujet </th>
                         <th> Date </th>     
                 </tr>
-                <?php foreach ($article as $article): ?>
+               
    <tr>
-       <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?= $article->q_pseudo; ?>  </strong> </h5><!--img id=ava src="css/images/avatar.png"--> </a><br></td>
-       <td><?= $article->q_contenu; ?> 
+       <td id="tdpseudo"> <?php echo $articles['q_pseudo']; ?>
+ <br></td>
+       <td><?php echo $articles['q_contenu']; ?> 
+        
         
  <br></td>
       
 
 
        <td id="tdate"><a href="#"> 
-       <?= $article->Date; ?> 
+       <?php echo $articles['Date']; ?>
    </a><br></td>
    </tr>
 
-<?php endforeach; ?>
+<?php
+}
+
+$article->closeCursor(); // Termine le traitement de la requête
+
+?>
 
 
    
