@@ -29,69 +29,75 @@
       <!-- FORMULAIRE HTML -->  
 
 
-    <section>
-      <fieldset>
+    <section class="section_vendre">
+        <h1 class="h1_vente"> VOTRE ANNONCE </h1>
         <form id="FormulaireVendre" method="post" action="vendre.php" enctype="multipart/form-data" name="form1">
 
-            <label for="Produit"> Quel produit voulez-vous déposez ? </label> <br/> <!-- on choisit le fruit qu'on dépose -->
+            <label for="Produit"> Produit : </label>  <!-- on choisit le fruit qu'on dépose -->
             <select name="produit" id="produit">
                 <option> Choisir </option>
 <?php 
-    $prod=$bdd2->query('SELECT DISTINCT* FROM Produit ORDER BY PR_nom ASC');
-    foreach ($prod as $prods):
+    $prods=$bdd2->query('SELECT DISTINCT* FROM produit ORDER BY PR_nom ASC');
+    foreach ($prods as $prods):
 ?>
                 <option  value="<?php $prods->PR_idP; ?>"> <?php echo $prods['PR_nom']; ?> </option>
                     <?php endforeach; ?>
                 <option> Autre </option>
             </select><br/>
-            <i> Si le poduit n'est pas dans la liste merci d'indiquer son nom :</i> <input type="text" placeholder="Autre" />
+            <i> Si autre : </i> <input type="text" placeholder="Autre" /> </br>
            
         
-          <p>Indiquez la quantité que vous vouhaitez en kg ou à la pièce </p> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
+          <label for="quantite">Quantité : </label> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
+          <input type="number" name="quantite" />
           <input type="radio" name="unite" value="kg" id="kg"/> <label for="kg"> kg </label> 
           <input type="radio" name="unite" value="pièce" id="pièce"/> <label for="pièce"> pièce </label> <br/>
-          <input type="number" name="quantite" /> 
-
-          <p> Indiquez le prix que vous souhaitez </p><!-- on choisit le prix de fruit/légume qu'on dépose -->
-          <input name="prix" type="number"/><br/>
-
-          <label for="datecuellette"> Quel est la date de cueillette de votre produit: </label>
-          <input type ="date" name="datecueillette"/><br/>
           
-          <label  for="description" > Description du produit </label><br/>
+
+          <label for="prix"> Prix : </label><!-- on choisit le prix de fruit/légume qu'on dépose -->
+          <input name="prix" type="number"/> <br/>
+
+          <div class="cueillette"
+          <label for="datecuellette"> Date de cueillette : </label>
+          <input type ="date" name="datecueillette"/><br/>
+          </div>
+          
+          <label  for="description" > Description du produit : </label>
           <textarea name="description" rows="4" cols="45">
           </textarea> <br/>
 
-          <label class ="echangeok"for ="echangeok"> Voulez-vous effectuer une vente et/ou un échange </label> <br/>
-          <input type="radio" name="echangeok" value="Oui" id="echange" /> <label for="fruit">Echange</label><br />
-          <input type="radio" name="echangeok" value="Non" id="vente" /> <label for="legume">Vente</label><br /> <br/>
+        <h1 class="h1_vente"> ECHANGE </h1>
+          <label class ="echangeok"for ="echangeok"> Type de transaction : </label>
+          <input  type="checkbox" name="echangeok" value="Non" id="vente" /> <label for="legume">Vente</label>
+          <input  type="checkbox" name="echangeok" value="Oui" id="echange" /> <label for="fruit">Echange</label><br />
+          
 
-
-          <label  for="descriptionechange" > Description de l'echange </label> <br/> 
-          <textarea name="descriptionechange" rows="4" cols="45">
+          <label  for="descriptionechange" > Description de l'echange : </label> 
+          <textarea name="descriptionechange" rows="4" cols="45" placeholder="Précisez les produits désirés">
           </textarea> <br/>
 
+        <h1 class="h1_vente"> PAIEMENT </h1>
           <div class="versement">
-          <label for ="payement"> Indiquez le versement que vous désirer </label> <br/>
+          <label for ="payement"> Versement désiré : </label>
 
-          <input type="checkbox" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label><br />
-          <input type="checkbox" name="payement" value="especes" id="espece" /> <label for="especes">Espèces</label><br /> <br/>
+          <input type="checkbox" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
+          <input type="checkbox" name="payement" value="especes" id="espece" /> <label for="especes">Espèces</label><br />
           </div>
 
-          <div class="type_envoie"
-          <label for ="typeenvoie"> De quelle façon voulez-vous vendre/échanger votre produit </label> <br/>
+          <div class="type_envoie">
+          <label for ="typeenvoie"> Type d'envoie : </label>
 
           <input type ="radio" name = "typeenvoie" value="main" id="main"/> <label for="mainpropre"> En main propre </label> 
           <input type ="radio" name="typeenvoie" value="poste" id="poste"/> <label for ="parposte"> Par la poste </label> <br />
+            </div>
 
           <div class="colis"
-          <label for ="prixcolis"> Indiquez le prix du colis </label> <br/>
+          <label for ="prixcolis"> Prix du colis : </label>
           <input type="number" name="prixcolis" /> 
           </div><br/>
           
           <input type="submit" value="Valider" name="bouton"/>
         </form>
-      </fieldset>
+      
     </section>
 
 
