@@ -1,7 +1,9 @@
 <?php session_start() ?>
 <html>
     <head>
+        <link rel="icon" type="image/png" href="css/images/logoDWE.png" />
         <meta charset=UTF-8>
+        <meta name="description" content="Deal With Eat est un site d'échange et de vente de fruits et légumes entre particuliers. Une personne à coté de chez vous échange peut être votre fruit préféré.">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 
@@ -22,6 +24,23 @@
             } ?>
     </header>
     <body>
+      <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '855939194479022',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
         <div id="msgconnexion">
             <p style="text-align:center;font-family:'Roboto', sans-serif ; font-size:30px; color:Green;">
@@ -62,7 +81,31 @@
                 </p>
         </div>
         
-      
+         </div>
+        </section>
+    <section id="user">
+        <div id="user_presentation">
+        <h1> Inscrivez-vous </h1>
+        <p> Vous pouvez vous inscrire sur notre site pour accéder à plus de fonctionnalités. </p>
+            </div>
+    <div class="user">
+        <img class="imguser" src="css/images/membre_lite.png" />
+        <h2>Inscription lite</h2>
+        <p> L'inscription lite, ou inscription rapide est une inscription dans laquelle seul un mail, un pseudo et un mot de passe vous sont demandés. Cette incription vous donne la place de membre lite. Un membre lite peut accéder au site internet dans son intégralité mais ne peux ni acheter, ni echanger, ni vendre des produits. Il pourrat ajouter des produits dans son panier mais pour finaliser sa commande il lui sera demander de finaliser son inscription.</p>
+    </div>
+    <div class="user">
+        <img class="imguser" src="css/images/membre_plus.png" />
+        <h2>Inscription complète</h2>
+        <p> L'inscription complète vous demande plus d'information comme votre adresse, votre nom etc... Lorsque vous obtenez le grade de membre complet vous pouvez alors vendre, acheter et echanger comme bon vous semble. De plus vous pourrez poster des commentaires sur les profils des autres membres. </p>
+    </div>
+        </section>
+    </div>
+        <center> <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div></center>
     </body>
          
             <?php include('php/pied_de_page.php'); ?>
