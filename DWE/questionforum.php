@@ -24,7 +24,7 @@
             <textarea class="inputq" type="text" id="q_contenu" name="q_contenu" placeholder="Question" required/></textarea><br>
             <input  type="submit" id="sub_q" name="sub_q" value="Envoyer sur le forum"   >
         </form>
-+
+
       <?php 
 
         $date = date("Y-m-d");
@@ -38,10 +38,13 @@ if(isset($_GET['sub_q'])){
         if(isset($_GET['q_pseudo'])){
           $contenu=$_GET['q_contenu'];
         }
+        if(isset($_GET['ID_forum'])){
+          $id=$_GET['ID_forum'];
+        }
 
         
           echo 'Votre pseudo : '.$pseudo.'<br> Sujet de votre message : '.$sujet.'<br> Contenu de votre message : '.$contenu.' ';
-           $sql='INSERT INTO forumq VALUES ("'.$date.'","'.$pseudo.'","'.$sujet.'", "'.$contenu.'")';
+           $sql='INSERT INTO forumq VALUES ("'.$id.'","'.$date.'","'.$pseudo.'","'.$sujet.'", "'.$contenu.'")';
         $req=$bdd2->query($sql);
         }
 

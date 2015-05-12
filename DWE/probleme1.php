@@ -40,14 +40,17 @@
               <tr>
                         <th > Pseudo </th>
                         <th> Sujet </th>
-                        <th> Date </th>     
+                        <th> Date </th>  
+                        <form action="forum.php">
+                        <input id="repondre" type="submit" value="Repondre" style="width:130px">  
+                       </form>
                 </tr>
                
    <tr>
        <td id="tdpseudo"> <?php echo $articles['q_pseudo']; ?>
  <br></td>
        <td><?php echo $articles['q_contenu']; ?> 
-        
+
         
  <br></td>
       
