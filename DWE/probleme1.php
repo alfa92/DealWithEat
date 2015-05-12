@@ -1,5 +1,3 @@
-<?php session_start() ;?>
-
 <html>
 
 
@@ -28,8 +26,7 @@
     <?php
 
           $article=$bdd2->query('SELECT * FROM forumq');
-          while ($articles = $article->fetch())
-{
+      
 
     ?>
 
@@ -40,17 +37,15 @@
               <tr>
                         <th > Pseudo </th>
                         <th> Sujet </th>
-                        <th> Date </th>  
-                        <form action="forum.php">
-                        <input id="repondre" type="submit" value="Repondre" style="width:130px">  
-                       </form>
+                        <th> Date </th>     
                 </tr>
+                <?php while ($articles = $article->fetch()){ ?>
                
    <tr>
-       <td id="tdpseudo"> <?php echo $articles['q_pseudo']; ?>
+       <td id="tdpseudo"> <?php echo $articles['Fo_Pseudo']; ?>
  <br></td>
-       <td><?php echo $articles['q_contenu']; ?> 
-
+       <td><?php echo $articles['q_sujet']; ?> 
+        
         
  <br></td>
       

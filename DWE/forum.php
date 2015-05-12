@@ -1,4 +1,3 @@
-<?php session_start() ;?>
 <html>
     <head>
         <meta charset=UTF-8>
@@ -19,37 +18,31 @@
     
     </header>
     
-    <?php
+        <body><a href="questionforum.php"> Poster un article </a>
 
-          $article=$DB->query('SELECT * FROM forumQ');
+        <?php
+
+          $article=$bdd2->query('SELECT * FROM forumq');
 
     ?>
-    
-    
-<a href="questionforum.php"> Poster un article </a>
-
-    
-        <body>
-           <div id="techniques">
-            <h1> Techniques </h1>
-        </div>
-
+          
             <div id="probleme">
-
             <table id="tableforum">
               <tr>
                         <th> Sujet </th>
-                        <th> Reponse </th>
+                        <th> Dernière réponse </th>
                         <th> Date </th>
              </tr>
-               <?php foreach ($article as $article): ?>
+               <?php while ($articles = $article->fetch())
+{ ?>
    <tr>
-       <td><a href="probleme1.php"> <?php echo $article->Fo_Sujet ;?> </a><br></td>
-       <td><a href="#"> <?php echo $article->Fo_Pseudo ;?>  </a><br></td>
-       <td><a href="#"> <?php echo $article->Fo_Date ;?>  </a><br></td>
+       <td><a href="article.php?a=<?php echo $articles['idforum']; ?>"> <?php echo $articles['Fo_Sujet'] ;?> </a><br></td>
+       <td><a href="article.php?a=<?php echo $articles['idforum']; ?>"> <?php echo $articles['Fo_Pseudo'] ;?>  </a><br></td>
+       <td><a href="article.php?a=<?php echo $articles['idforum']; ?>"> <?php echo $articles['com'] ;?>  </a><br></td>
    </tr>
 
- <?php endforeach ?>
+ <?php } 
+ $article->closeCursor();?>
    
 </table>
 

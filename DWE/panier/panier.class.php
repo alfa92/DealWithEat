@@ -13,7 +13,7 @@
         public function __construct($DB){
             // var_dump($_SESSION); Pour voir ce que contient la variable $_SESSION
             if(!isset($_SESSION)){
-                session_start();
+               // session_start();
             }
             if(!isset($_SESSION['panier'])){
                 $_SESSION['panier'] = array();
