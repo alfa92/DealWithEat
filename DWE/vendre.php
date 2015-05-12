@@ -74,8 +74,9 @@
           <div class="versement">
           <label for ="payement"> Indiquez le versement que vous désirer </label> <br/>
 
-          <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
-          <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">Cash</label> <br/><br />
+          <input type="checkbox" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label><br />
+          <input type="checkbox" name="payement" value="especes" id="espece" /> <label for="especes">Espèces</label><br /> <br/>
+          </div>
 
           <div class="type_envoie"
           <label for ="typeenvoie"> De quelle façon voulez-vous vendre/échanger votre produit </label> <br/>
