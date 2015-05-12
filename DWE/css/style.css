@@ -1634,9 +1634,9 @@ padding-left:0px;
 /**************************Formulaire page annonce****************************/
 /*********************************************************/
 
-fieldset{
+/*fieldset{
     text-align: center
-}
+}*/
 
 .fruit_legume{
     display: inline-block;
@@ -1660,30 +1660,55 @@ fieldset{
     margin-bottom: 3%;
 }
 .versement{
-    display: inline-block;
-    border: 1px solid black;
     margin-top: 3%;
 }
 
 .type_envoie{
     display: inline-block;
-    border: 1px solid red;
     vertical-align: top;
-    margin-right: 10%;
-    margin-left: 10%;
+    margin-right: 5%;
     margin-top: 3%;
+    width: 50%;
+
 }
 
 .colis{
     display: inline-block;
-    border: 1px solid green;
     vertical-align: top;
     margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .description_produit{
     margin-bottom: 3%;
+    display: inline-block;
+    vertical-align: top;
 }
 input{
     display: inline-block;
+}
+.cueillette{
+    margin-top:2%;
+    margin-bottom: 2%;
+}
+.h1_vente {
+    font-size: 2em;
+    font-weight: 400;
+    border-bottom: 2px dashed grey;
+    width: 25%;
+}
+.section_vendre{
+    margin-left: 5%;
+}
+.section_vendre label {
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+
+}
+.type_envoie label{
+    width: 30%;
+}
+.section_vendre input{
+    margin-bottom: 1%;
 }
