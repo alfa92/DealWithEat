@@ -75,7 +75,8 @@
 										}else{
 								// Si les mots de passe ne sont pas les mêmes on affiche un message
 											echo "Les mot des passes ne sont pas les mêmes ! ";
-										}			
+										}		
+                                    
 									}
 ?>
 

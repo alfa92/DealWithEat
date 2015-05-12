@@ -18,16 +18,16 @@
 
             <?php
 
-            $queryfaq1 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Questions populaires" ';
-            $reponsefaq1 = $bdd->query($queryfaq1);
-            $queryfaq2 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Réglement"';
-            $reponsefaq2 = $bdd->query($queryfaq2);
-            $queryfaq3 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Inscription"';
-            $reponsefaq3 = $bdd->query($queryfaq3);
-            $queryfaq4 = 'SELECT * FROM FAQ WHERE FA_Emplacement="Connexion"';
-            $reponsefaq4 = $bdd->query($queryfaq4);
+            $queryfaq1 = 'SELECT * FROM FAQ WHERE FA_Emplacement="QUESTIONS POPULAIREs" ';
+            $reponsefaq1 = $bdd2->query($queryfaq1);
+            $queryfaq2 = 'SELECT * FROM FAQ WHERE FA_Emplacement="REGLEMENT"';
+            $reponsefaq2 = $bdd2->query($queryfaq2);
+            $queryfaq3 = 'SELECT * FROM FAQ WHERE FA_Emplacement="INSCRIPTION"';
+            $reponsefaq3 = $bdd2->query($queryfaq3);
+            $queryfaq4 = 'SELECT * FROM FAQ WHERE FA_Emplacement="CONNEXION"';
+            $reponsefaq4 = $bdd2->query($queryfaq4);
             $queryfaq5 = 'SELECT * FROM FAQ WHERE FA_Emplacement="ACHAT - VENTE - ECHANGE"';
-            $reponsefaq5 = $bdd->query($queryfaq5);
+            $reponsefaq5 = $bdd2->query($queryfaq5);
 
 
 

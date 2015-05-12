@@ -20,7 +20,7 @@
             }else{
                 include('nav.php');
             } ?>
-
+    </header>
     <body>
 
         <div id="msgconnexion">
@@ -39,8 +39,8 @@
                     <h1> Le principe </h1>
                 <p>
 
-                    Deal With Eat est un site d'échange et de vente de fruits et légumes fraits entre particuliers. 
-                    Les produits présents sur le site viennent tous de potager de particulier ou de ferme. 
+                    Deal With Eat est un site d'échange et de vente de fruits et légumes frais entre particuliers. 
+                    Les produits présents sur le site viennent tous de potager de particuliers ou de fermes. 
                     <br>
                     Sur ce site vous pouvez échanger et acheter vos produits. Lors d'un échange il faudra proposer un échange équitable, ainsi chacun pourra consommer les produits d'autres particuliers.
                     
@@ -61,6 +61,8 @@
                     Pour vous inscrire c'est très simple, il suffit de vous rendre sur la <a href="Inscription.php"> page d'inscription</a>.
                 </p>
         </div>
+        
+      
     </body>
          
             <?php include('php/pied_de_page.php'); ?>

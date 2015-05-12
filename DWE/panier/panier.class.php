@@ -37,10 +37,10 @@
             if(empty($ids)){
                 $products=array();
             }else{
-                $products=$this->DB->query('SELECT Pr_idProduits,Pr_Prix FROM Produits WHERE Pr_idProduits IN ('.implode(',',$ids).')');
+                $products=$this->DB->query('SELECT Pr_idP,AN_Prix FROM Annonce WHERE Pr_idP IN ('.implode(',',$ids).')');
             }
             foreach($products as $product){
-                    $total += $product->Pr_Prix * $_SESSION['panier'][$product->Pr_idProduits];
+                    $total += $product->AN_Prix * $_SESSION['panier'][$product->Pr_idP];
             }
             return $total;
         }

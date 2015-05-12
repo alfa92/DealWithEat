@@ -11,7 +11,6 @@
     <div id="principal">
         <header>
             <?php include('php/config.php'); ?>
-            <?php include('php/connexion.php'); ?>
             <?php include('php/header.php'); ?>
             <?php if (isset($_SESSION['id']) && $_SESSION['id'] == '1') {
                 include('nav_connect.php');
