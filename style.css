@@ -15,7 +15,7 @@
 	{
 		font-family: 'Roboto', sans-serif;
 		font-size: 11pt;
-		font-weight: 300px;
+		font-weight: 300;
 		line-height: 1.75em;
 		
 	}
@@ -218,8 +218,8 @@ margin-left: 40px;
 
 #nav
 	{
-    background-color: rgba(1, 1, 1, 0.2);
-    height:50px;
+     background-color: rgba(1, 1, 1, 0.2);
+        height:50px;
 
 	
     }
@@ -276,6 +276,7 @@ margin-left: 40px;
 #nav ul li:hover{
     background: white;
     opacity: 0.5;
+    padding-right: 3px;
 
 }
 
@@ -398,6 +399,7 @@ margin-left: 40px;
     margin-right: auto;
     display: block;
 }
+
 /*********************************************************/
 /************************INSCRIPTION**********************/
 /*********************************************************/
@@ -1136,7 +1138,7 @@ h4{
     -moz-border-radius:5px;
 }
 
-@media screen and (max-width:1050px){
+@media screen and (max-width:550px){
     
  
     
@@ -1172,7 +1174,7 @@ h4{
 }
 }
 
-@media screen and (max-width:780px){
+@media screen and (max-width:580px){
     #msgconnexion{
         margin-top: 80px;
     }
@@ -1212,7 +1214,7 @@ h4{
     }
 
 }
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 550px) {
     header{border-bottom: 2px dotted gray;}
 	#nav {
         background: none;
@@ -1551,11 +1553,6 @@ padding-left:0px;
     border-radius: 0.3em;
 }
 
-#repondre {
-    margin-left: 80%;
-    
-}
-
 
 
 
@@ -1605,7 +1602,6 @@ padding-left:0px;
     display: inline-block;
     vertical-align: top;
     text-align: center;
-
 }
 
 
@@ -1631,151 +1627,8 @@ padding-left:0px;
     margin-top:100px;
 }
 
-/*********************************************************/
-/**************************Formulaire page annonce****************************/
-/*********************************************************/
-
-/*fieldset{
-    text-align: center
-}*/
-
-.fruit_legume{
-    display: inline-block;
-    vertical-align: top;
-    border: 1px solid pink;
-    margin-right: 10%;
-}
-
-.unite_prix{
-    display: inline-block;
-    border: 1px solid black;
-    margin-right: 10%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-.prix{
-    display: inline-block;
-    vertical-align: top;
-    border: 1px solid red;
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-.versement{
-    margin-top: 3%;
-}
-
-.type_envoie{
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 5%;
-    margin-top: 3%;
-    width: 50%;
-
-}
-
-.colis{
-    display: inline-block;
-    vertical-align: top;
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-
-.description_produit{
-    margin-bottom: 3%;
-    display: inline-block;
-    vertical-align: top;
-}
-input{
-    display: inline-block;
-}
-.cueillette{
-    margin-top:2%;
-    margin-bottom: 2%;
-}
-.h1_vente {
-    font-size: 2em;
-    font-weight: 400;
-    border-bottom: 2px dashed grey;
-    width: 25%;
-}
-.section_vendre{
-    margin-left: 5%;
-}
-.section_vendre label {
-    width: 15%;
-    display: inline-block;
-    vertical-align: top;
-
-<<<<<<< HEAD
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*********************************************************/
-/************************ **********************
-**********************  Page   vente   (sinan et olivier)
-************************/
-/*********************************************************/
-
-
-
-
-#FormulaireVendre{
-    display: block;
-    margin-right: 20%;
-    margin-left: 30%;
-    font-family: 'Roboto',sans-serif;
-}
-
-
-#valider{
-    display: block;
-    margin-right: 20%;
-    margin-left: 30%;
-}
-
-.inputvendre{
-    font-family: 'Roboto', sans-serif;
-    outline: medium none !important;
-    color: #33383B;
-    font-size: 15px;
-    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
-    border: medium none;
-    border-radius: 0.3em;
-}
-}
-
-
-#VENDRE{
-
-    left: 20px;
-}
-
-=======
-}
-.type_envoie label{
-    width: 30%;
-}
-.section_vendre input{
-    margin-bottom: 1%;
-}
->>>>>>> origin/master

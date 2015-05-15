@@ -1,5 +1,3 @@
-<?php session_start() ;?>
-
 <html>
 
 
@@ -27,7 +25,8 @@
     </header>
     <?php
 
-          $article=$bdd2->query('SELECT * FROM forumQ');
+          $article=$bdd2->query('SELECT * FROM forumq');
+      
 
     ?>
 
@@ -40,21 +39,29 @@
                         <th> Sujet </th>
                         <th> Date </th>     
                 </tr>
-                <?php foreach ($article as $article): ?>
+                <?php while ($articles = $article->fetch()){ ?>
+               
    <tr>
-       <td id="tdpseudo"><a href="probleme1.php"><h5><strong> <?= $article->Fo_Pseudo; ?>  </strong> </h5><!--img id=ava src="css/images/avatar.png"--> </a><br></td>
-       <td><?= $article->Fo_Contenu; ?> 
+       <td id="tdpseudo"> <?php echo $articles['Fo_Pseudo']; ?>
+ <br></td>
+       <td><?php echo $articles['q_sujet']; ?> 
+        
         
  <br></td>
       
 
 
        <td id="tdate"><a href="#"> 
-       <?= $article->Fo_Date; ?> 
+       <?php echo $articles['Date']; ?>
    </a><br></td>
    </tr>
 
-<?php endforeach; ?>
+<?php
+}
+
+$article->closeCursor(); // Termine le traitement de la requête
+
+?>
 
 
    

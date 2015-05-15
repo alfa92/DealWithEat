@@ -67,7 +67,7 @@
 <?php
 
   
-  $products = $DB->query('SELECT * FROM annonce');
+  $products = $bdd2->query('SELECT * FROM annonce');
       foreach ($products as $products):
      
 ?>

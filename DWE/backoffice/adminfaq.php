@@ -43,18 +43,18 @@
     </div>
 <div id="back_right">
          <a href="adminmembre.php">
-        <h1> Interface Administrateur </h1>
-
+        <h1> Interface Administrateur <?= $_SESSION['id'] ?></h1>
+             
         
         <h1 style="text-align:left;"> Vous pouvez ici mettre en ligne des post sur la FAQ</h1>
-
+    </a>
 <br>
-    <center><h2> Poster un sujet </h2></hé></center>
+    <center><h2> Poster un sujet </h2></center>
         <form id="postfaq" name="postfaq" method="post">
             <label for="Emplacement">Choisissez l'emplacement du sujet </label>
             <select name="Emplacement">
-                <option> - - - - - - -</option>
-                <option> QUESTIONS POPULAIRES </option>
+                <option> - - - - - - - </option>
+                <option>QUESTIONS POPULAIRES</option>
                 <option>REGLEMENT</option>
                 <option>INSCRIPTION</option>
                 <option>CONNEXION</option>
@@ -75,7 +75,16 @@
         
         </center>
     </div>
-<<?php }?>
+<?php }?>
+     
+<?php if(isset($_POST['subfaq'])){
+
+    $sqli="INSERT INTO FAQ VALUES ('','".$_POST['Emplacement']."','".$_POST['titre']."','".$_POST['reponse']."')";
+    $bdd2->query($sqli);
+} 
+?>
+
+?>
 </div>
     </body>
 </html>

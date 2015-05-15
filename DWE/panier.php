@@ -29,7 +29,7 @@
     if(empty($ids)){
         $products=array();
     }else{
-    $products=$DB->query('SELECT * FROM Produits WHERE Pr_idProduits IN ('.implode(',',$ids).')');
+    $products=$DB->query('SELECT * FROM Annonce WHERE Pr_idP IN ('.implode(',',$ids).')');
     }
 
     ?>
@@ -44,25 +44,26 @@
 <p id="continuer" ><a href="annonce.php">Continuer mes achats</a></p>
 <br>
         
-        
+      
         
 <?php foreach($products as $products): ?>
+        <?php $nom = $DB -> query('select PR_nom from produit where PR_idP = PR_idP'); ?>
 <section id="panier">
-    <img id="imgpanier" src="css/images/<?= $products->Pr_Nom;?>.jpg"><br>
+    <img id="imgpanier" src="css/images/<?= $products->PR_idP;?>.jpg"><br>
     <div id="descriptionpanier">
-    <span id="nom"><?= $products->Pr_Nom;?></span><br> 
-        <span id="vendeurpro">  <?= $products->Pr_Membre;?></span><br><br>
+    <span id="nom"><?= $products->PR_idP;?></span><br> 
+        <span id="vendeurpro">  <?= $products->US_idUserannonceur;?></span><br><br>
        
- <span id="autre"> Quantité disponible <?= $products->Pr_Quantité;?> kg </span><br>
-    <span id="autre"> Récolté le  <?= $products->Pr_Date_récolte;?></span><br>
-    <span id="autre"> A consomer avant le <?= $products->Pr_Date_péremption;?></span><br>
+ <span id="autre"> Quantité disponible <?= $products->AN_quantite;?> kg </span><br>
+    <span id="autre"> Récolté le  <?= $products->AN_datepublication;?></span><br>
+    <span id="autre"> A consomer avant le <?= $products->AN_datepublication;?></span><br>
 
-    <a id="delproduit" href="panier.php?delPanier=<?= $products->Pr_idProduits ;?>"> Supprimer du panier </a>
+    <a id="delproduit" href="panier.php?delPanier=<?= $products->Pr_idP ;?>"> Supprimer du panier </a>
 
        
-    <span id="Prix_unite"> <?= $products->Pr_Prix;?> €/kg</span>
-    <span id="quantite"><?= $_SESSION['panier'][$products->Pr_idProduits];?> kg</span>
-    <span id="prixproduit"><?= $products->Pr_Prix;?> €</span>
+    <span id="Prix_unite"> <?= $products->AN_prix;?> €/kg</span>
+    <!--span id="quantite"><?= $_SESSION['panier'][$products->Pr_idP];?> kg</span>
+    <span id="prixproduit"><?= $products->AN_Prix;?> €</span-->
     </div>
     
     
@@ -75,11 +76,11 @@
         <h1> ma commande </h1>
         <div id="macommande">
             <span id="commande"> Sous-total : <?php if(null !== $panier->total()){ echo number_format($panier->total(),2,',',' ');} ?>       € </span><br>
-        <span id="commande" style="padding-bottom:30px!important;border-bottom:2px dotted black;"> Prix de transport ou envoi : <?= $products->Pr_Prix_Envoi;?>   € </span>
+        <span id="commande" style="padding-bottom:30px!important;border-bottom:2px dotted black;"> Prix de transport ou envoi : <?= $products->AN_prixcolis;?>   € </span>
             <br>
             <br>
             <br>
-            <span style="padding-top:30px!important;margin-left:50%;">Total : <strong><?= number_format($panier->total(),2,',',' ')+$products->Pr_Prix_Envoi; ?> € </strong></span>
+            <span style="padding-top:30px!important;margin-left:50%;">Total : <strong><?= number_format($panier->total(),2,',',' ')+$products->AN_prixcolis; ?> € </strong></span>
             
         </div>
         
