@@ -1604,7 +1604,7 @@ padding-left:0px;
 
 /*********************************************************/
 /************************ **********************
-**********************  Page   vente   (sinan et olivieer)
+**********************  Page   vente   (sinan et olivier)
 ************************/
 /*********************************************************/
 
@@ -1627,14 +1627,18 @@ padding-left:0px;
 
 .inputvendre{
     font-family: 'Roboto', sans-serif;
-    font-size: 11pt;
-    font-weight: 300px;
-    line-height: 1.75em;
+    outline: medium none !important;
+    color: #33383B;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: medium none;
+    border-radius: 0.3em;
+}
 }
 
 
 #VENDRE{
-    position: relative;
-    right: -15px;
+
+    left: 20px;
 }
 
