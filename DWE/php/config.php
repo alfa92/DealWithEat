@@ -28,7 +28,7 @@ mysqli_set_charset($conn2,"UTF8");
 
 
 //Email du webmaster
-$mail_webmaster = 'example@example.com';
+$mail = 'example@example.com';
 
 //Adresse du dossier de la top site
 $url_root = 'http://www.example.com/';

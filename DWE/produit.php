@@ -23,19 +23,21 @@
 			
 			$q=$_GET['q'];
 
-			$req='SELECT * FROM Produits WHERE Pr_idProduits="'.$q.'"';
-			$res=mysqli_query($conn1,$req);
+			$req=$bdd2->query('SELECT * FROM Annonce WHERE PR_idP="'.$q.'"');
+			$rows=$req->fetch();
+            $req1=$bdd2->query('SELECT * FROM Produit WHERE PR_idP="'.$q.'" ');
+            $rows1=$req1->fetch();
+            $req2=$bdd2->query('SELECT * FROM User WHERE US_idUser="'.$rows['US_idUserannonceur'].'" ');
+            $rows2=$req2->fetch();
 
 
-	if($rows=mysqli_fetch_array($res)){
-		$nom=$rows['Pr_Nom']; $membre=$rows['Pr_Membre'];$prix=$rows['Pr_Prix'];$quantite=$rows['Pr_Quantité'];
+		$nom=$rows1['PR_nom']; $membre=$rows2['US_pseudo'];$prix=$rows['AN_prix'];$quantite=$rows['AN_quantite'];
 
 			?>	Nom du produit : <?= $nom ?> <br>
                 Nom du membre : <?= $membre ?> <br>
                 Prix du produit : <?= $prix ?> <br>
                 Quantitée : <?= $quantite ?> <br> </a>
 	<?php
-}
-	
+
 ?>
 </div>

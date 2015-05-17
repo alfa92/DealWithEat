@@ -11,9 +11,8 @@
         private $DB;
 
         public function __construct($DB){
-            // var_dump($_SESSION); Pour voir ce que contient la variable $_SESSION
             if(!isset($_SESSION)){
-               // session_start();
+                session_start();
             }
             if(!isset($_SESSION['panier'])){
                 $_SESSION['panier'] = array();
@@ -37,10 +36,10 @@
             if(empty($ids)){
                 $products=array();
             }else{
-                $products=$this->DB->query('SELECT Pr_idP,AN_Prix FROM Annonce WHERE Pr_idP IN ('.implode(',',$ids).')');
+                $products=$this->DB->query('SELECT AN_idAnnonce,AN_prix FROM Annonce WHERE AN_idAnnonce IN ('.implode(',',$ids).')');
             }
             foreach($products as $product){
-                    $total += $product->AN_Prix * $_SESSION['panier'][$product->Pr_idP];
+                    $total += $product->AN_prix * $_SESSION['panier'][$product->AN_idAnnonce];
             }
             return $total;
         }

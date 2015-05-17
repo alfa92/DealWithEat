@@ -1709,6 +1709,25 @@ input{
 .type_envoie label{
     width: 30%;
 }
-.section_vendre input{
+.section_vendre input,.section_vendre textarea,.section_vendre select{
     margin-bottom: 1%;
+	outline: none !important;
+	background: rgba(153, 153, 153, 0.09);
+	color: #33383b;
+	font-size: 15px;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em;
+}
+
+.section_vendre .submit{
+    
+    background: gray;
+	border: 0px;
+	font-family: "Roboto",sans-serif;
+	padding: 6px 14px;
+	outline: none;
+	color: white;
+	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
+	font-size: 17px;
 }

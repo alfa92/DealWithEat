@@ -40,11 +40,11 @@
     $prods=$bdd2->query('SELECT DISTINCT* FROM produit ORDER BY PR_nom ASC');
     foreach ($prods as $prods):
 ?>
-                <option  value="<?php $prods->PR_idP; ?>"> <?php echo $prods['PR_nom']; ?> </option>
+                <option  value="<?php echo $prods['PR_idP']; ?>"> <?php echo $prods['PR_nom']; ?> </option>
                     <?php endforeach; ?>
                 <option> Autre </option>
             </select><br/>
-            <i> Si autre : </i> <input type="text" placeholder="Autre" /> </br>
+            <label> Si autre : </label> <input type="text"  /> </br>
            
         
           <label for="quantite">Quantité : </label> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
@@ -56,8 +56,8 @@
           <label for="prix"> Prix : </label><!-- on choisit le prix de fruit/légume qu'on dépose -->
           <input name="prix" type="number"/> <br/>
 
-          <div class="cueillette"
-          <label for="datecuellette"> Date de cueillette : </label>
+          <div class="cueillette">
+          <label for="datecueillette"> Date de cueillette : </label>
           <input type ="date" name="datecueillette"/><br/>
           </div>
           
@@ -95,12 +95,25 @@
           <input type="number" name="prixcolis" /> 
           </div><br/>
           
-          <input type="submit" value="Valider" name="bouton"/>
+          <input class="submit" type="submit" value="Valider" name="bouton"/>
         </form>
       
     </section>
 
+<?php 
 
+if(isset($_POST['bouton'])){
+    
+    $selec=$bdd2->query('SELECT User.US_idUser, Annonce.US_idUserannonceur FROM User INNER JOIN Annonce ON User.US_idUser = Annonce.US_idUserannonceur');
+
+ 
+    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("","'.$_SESSION['id'].'","'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$_SESSION['id'].'")')==TRUE){
+
+    echo "bravo !";
+    }else{ echo "no";}
+}
+
+?>
 
   </body>
          
