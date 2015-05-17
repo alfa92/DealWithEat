@@ -20,8 +20,8 @@
 
     <body>
             
-    <h1> Vendre</h1>
-        <h2> Pour mettre en vente un produit veuillez remplir le formulaire ci-dessous</h2>
+    <h1 id="VENDRE"> Vendre</h1>
+        <h2>Pour mettre en vente un produit veuillez remplir le formulaire ci-dessous</h2>
             
        
 
@@ -51,10 +51,9 @@
           <input type="number" name="quantite" />
           <input type="radio" name="unite" value="kg" id="kg"/> <label for="kg"> kg </label> 
           <input type="radio" name="unite" value="pièce" id="pièce"/> <label for="pièce"> pièce </label> <br/>
-          
 
-          <label for="prix"> Prix : </label><!-- on choisit le prix de fruit/légume qu'on dépose -->
-          <input name="prix" type="number"/> <br/>
+          <label> Prix : </label><!-- on choisit le prix de fruit/légume qu'on dépose -->
+          <input name="prix" type="number" class="inputvendre"/> <br/><br/>
 
           <div class="cueillette">
           <label for="datecueillette"> Date de cueillette : </label>
@@ -69,35 +68,34 @@
           <label class ="echangeok"for ="echangeok"> Type de transaction : </label>
           <input  type="checkbox" name="echangeok" value="Non" id="vente" /> <label for="legume">Vente</label>
           <input  type="checkbox" name="echangeok" value="Oui" id="echange" /> <label for="fruit">Echange</label><br />
+
           
+          
+          <label  for="descriptionechange" > Description de l'echange :</label> 
+          <textarea class="inputvendre" name="descriptionechange" rows="8" cols="45" >
+          </textarea> <br/><br/>
 
-          <label  for="descriptionechange" > Description de l'echange : </label> 
-          <textarea name="descriptionechange" rows="4" cols="45" placeholder="Précisez les produits désirés">
-          </textarea> <br/>
+          <label for ="payement"> Versement  désirer :  </label>
+          <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
+          <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">Cash</label><br /><br />
 
-        <h1 class="h1_vente"> PAIEMENT </h1>
-          <div class="versement">
-          <label for ="payement"> Versement désiré : </label>
-
-          <input type="checkbox" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
-          <input type="checkbox" name="payement" value="especes" id="espece" /> <label for="especes">Espèces</label><br />
-          </div>
-
-          <div class="type_envoie">
-          <label for ="typeenvoie"> Type d'envoie : </label>
-
+          <label for ="typeenvoie"> Echange : </label> 
           <input type ="radio" name = "typeenvoie" value="main" id="main"/> <label for="mainpropre"> En main propre </label> 
-          <input type ="radio" name="typeenvoie" value="poste" id="poste"/> <label for ="parposte"> Par la poste </label> <br />
-            </div>
+          <input type ="radio" name="typeenvoie" value="poste" id="poste"/> <label for ="parposte"> Par la poste </label> 
 
-          <div class="colis"
-          <label for ="prixcolis"> Prix du colis : </label>
-          <input type="number" name="prixcolis" /> 
-          </div><br/>
-          
-          <input class="submit" type="submit" value="Valider" name="bouton"/>
-        </form>
-      
+          <label for ="prixcolis"> Prix du colis : </label> 
+          <input type="number" name="prixcolis"  class="inputvendre"/> <br/> <br/>
+<input type="submit" value="Envoyer"  name="bouton" />
+                </form>
+<form method="post" name="image">
+<label style="width:450px;"> Vous pouvez aussi insérer une image du produit : </label>
+<input type="file" name="file"> 
+    <input type="submit" value="Insérer photo"  name="submit">
+        
+
+</form>
+
+
     </section>
 
 <?php 
@@ -114,6 +112,58 @@ if(isset($_POST['bouton'])){
 }
 
 ?>
+
+
+
+
+
+
+
+
+
+
+ 
+
+    <!-- PHP pour le formulaire d'envoie à la BD -->
+
+
+
+    <?php
+      if(isset($_POST['submit']))
+        {
+          $fichier = $_FILES['file']['name'];
+          $taille_maximale=2097512;
+          $taille=filesize($_FILES['file']['tmp_name']);
+          $extensions=array ('.png','.jpg','.jpeg','.PNG','.JPG','.JPEG');
+          $extension=strrchr($fichier, '.');
+
+
+        if(!in_array($extension, $extensions))
+        {
+          $error="<div class='alert'> Vous devez uploader un fichier de type png, jpg, jpeg </div>";
+        }
+
+        if($taille>$taille_maximale){
+          $error="<div class='alert'>  Le fichier est trop volumineux </div>";
+        }
+
+        if(!isset($error))
+        {
+          $fichier=preg_replace('/(^.a-z0-9]+)/i','-', $fichier);
+          move_uploaded_file($_FILES['file']['tmp_name'], "ImagesUploades/333-".$fichier);
+
+        }else{
+          echo $error;
+        }
+      
+      }
+
+    ?>
+
+
+
+
+
 
   </body>
          
