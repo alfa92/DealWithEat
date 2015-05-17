@@ -37,7 +37,7 @@
             <select name="produit" id="produit">
                 <option> Choisir </option>
 <?php 
-    $prods=$bdd2->query('SELECT DISTINCT* FROM produit ORDER BY PR_nom ASC');
+    $prods=$bdd2->query('SELECT DISTINCT (PR_nom) FROM produit ORDER BY PR_nom ASC');
     foreach ($prods as $prods):
 ?>
                 <option  value="<?php echo $prods['PR_idP']; ?>"> <?php echo $prods['PR_nom']; ?> </option>
