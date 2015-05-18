@@ -10,10 +10,11 @@ $id=$_GET['id'];
 
     echo $id;
 
-                    $sql2 =' DELETE FROM User WHERE US_idUser="'.$id.'"';                
-                     if($sql2query=$bdd2->exec($sql2)==true)
+                    $sql2 ='DELETE FROM Annonce WHERE AN_idAnnonce="'.$id.'"';
+                   $sql2query=$bdd2->exec($sql2);
+                     if($sql2query==true)
                      {
-                                echo 'Le membre a bien été suprimé !';
+                                echo 'L\'l\'annonce est supprimée  !';
                                     }
                         else
                         { 
