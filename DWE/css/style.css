@@ -1730,6 +1730,6 @@ input{
 .type_envoie label{
     width: 30%;
 }
-.section_vendre input{
+.section_vendre input,.section_vendre textarea,.section_vendre select{
     margin-bottom: 1%;
-
+}
