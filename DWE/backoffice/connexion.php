@@ -19,6 +19,7 @@
 
 
     <?php
+
     if(isset($_POST['login'])) {
         $login = $_POST['login'];
     }
@@ -29,19 +30,20 @@
         $boutton = $_POST['subconnect'];
     }
 
+
     if(isset($_POST['login'])){
-        $co="SELECT membre_mdp,membre_pseudo,actif FROM membres WHERE membre_pseudo='".$login."'";
-        $envoi=mysqli_query($conn,$co) or die ('Erreur ');
+        $co="SELECT US_mdp,US_pseudo,US_admin FROM User WHERE US_pseudo='".$login."'";
+        $envoi=mysqli_query($conn2,$co) or die ('Erreur ');
 
         $donnees = $envoi->fetch_assoc();
 
         if(isset($boutton)){
-            if($donnees['membre_mdp']==$mdp){
-                if($donnees['actif']=='1'){
+            if($donnees['US_mdp']==$mdp){
+                if($donnees['US_admin']=='1'){
                     $_SESSION['id']='2';
                    ?>
                     <br><br>
-                    <center><p style="color:white;font-family: 'Roboto',sans-serif;"> Vous allez être redirigé vers l'esapce administrateur </p></center>
+                    <center><p style="color:white;font-family: 'Roboto',sans-serif;"> Vous allez être redirigé vers l'espace administrateur </p></center>
 
 <script type="text/javascript">
 <!--

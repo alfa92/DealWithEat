@@ -11,7 +11,7 @@
 </head>
 <header>
     <?php include('../php/config.php'); ?>
-
+    <?php require('backoffice.class.php'); ?>
 </header>
 
 <?php if(isset($_SESSION['id'])!='2'){
@@ -77,8 +77,8 @@
     $admembre = 'SELECT * FROM User ORDER BY US_pseudo';
     $repmembre = $bdd2->query($admembre);
 
-
-    while ($donnees1 = $repmembre->fetch()) {
+    foreach($repmembre as $donnees1):
+    
         ?>
 
         <table id="membre_data" style="margin-left:4%;">
@@ -96,21 +96,20 @@
                 <td style="width:100px;"><?php echo $donnees1['US_admin'] ?></td>
                 <td style="width:100px;"><?php echo $donnees1['US_moderateur'] ?></td>
 
-                <form method="post">
+                <form method="post" action="#">
                     <td style="width:100px;"><input type="submit" value="Modifier"/></td>
-                    <td style="width:100px;"><input name="deleteb" type="submit" value="Supprimer"/></td>
+                    <td style="width:100px;"><a href="action/deluser.php?id='<?php echo $donnees1['US_idUser'] ?>'"> Supprimer </a></td>
 
                 </form>
                 
             </tr>
         </table>
-        <hr>
 
     <?php
-    }
-    }
-    ?>
-                
+            endforeach; }
+    
+
+    ?>            
     </div>
 </div>
 </body>

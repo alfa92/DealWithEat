@@ -13,7 +13,8 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-    <?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+    <?php 
+    if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
       
     
     </header>
@@ -100,6 +101,10 @@
 <?php 
 
 if(isset($_POST['bouton'])){
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     
     $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
     $ligne=$selec->fetch();
@@ -111,15 +116,6 @@ if(isset($_POST['bouton'])){
 }
 
 ?>
-
-
-
-
-
-
-
-
-
 
  
 
