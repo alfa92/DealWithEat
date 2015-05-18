@@ -74,7 +74,9 @@ if(isset($_SESSION['login']) ){
     if($_SESSION['id']=='1'){
         ?>
 
+<<<<<<< HEAD
 =======
+
 >>>>>>> origin/master
         <div id="connecterdiv"><p><?php echo $ligne['US_idUser']; ?><br> <i style="font-size:12px;"><a
                         href="panier.php">Mon panier <?= $panier->count(); ?></a></i>
