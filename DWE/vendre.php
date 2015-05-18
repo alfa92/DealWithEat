@@ -37,7 +37,7 @@
             <select name="produit" id="produit">
                 <option> Choisir </option>
 <?php 
-    $prods=$bdd2->query('SELECT DISTINCT (PR_nom) FROM produit ORDER BY PR_nom ASC');
+    $prods=$bdd2->query('SELECT DISTINCT* FROM produit ORDER BY PR_nom ASC');
     foreach ($prods as $prods):
 ?>
                 <option  value="<?php echo $prods['PR_idP']; ?>"> <?php echo $prods['PR_nom']; ?> </option>
@@ -77,7 +77,7 @@
 
           <label for ="payement"> Versement  désirer :  </label>
           <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
-          <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">Cash</label><br /><br />
+          <input type="radio" name="payement" value="espece" id="cash" /> <label for="espece">Espèce</label><br /><br />
 
           <label for ="typeenvoie"> Echange : </label> 
           <input type ="radio" name = "typeenvoie" value="main" id="main"/> <label for="mainpropre"> En main propre </label> 
@@ -101,11 +101,8 @@
 <?php 
 
 if(isset($_POST['bouton'])){
-    
-    $selec=$bdd2->query('SELECT User.US_idUser, Annonce.US_idUserannonceur FROM User INNER JOIN Annonce ON User.US_idUser = Annonce.US_idUserannonceur');
-
- 
-    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("","'.$_SESSION['id'].'","'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$_SESSION['id'].'")')==TRUE){
+  
+    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("",NULL,"'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$_SESSION['id'].'")')==TRUE){
 
     echo "bravo !";
     }else{ echo "no";}
