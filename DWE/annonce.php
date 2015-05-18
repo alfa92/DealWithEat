@@ -67,31 +67,29 @@
 <?php
 
   
-  $products=$bdd2->query('SELECT * FROM annonce');
-
-      foreach($products as $products):
-     $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$products['PR_idP'].'"');
-        $req=$nom->fetch();
+  $products = $bdd2->query('SELECT * FROM annonce');
+      foreach ($products as $products):
+     
 ?>
         <div id="article_annonce">
             <form id="panier" method="post" action="annonce.php">
 
                   <h5 style="text-align:right;border-bottom:1px dashed black;"> 
-                  <a href="produit.php?q=<?= $products['PR_idP']; ?>"><?php echo $req['PR_nom']; ?></h5></a>
-                      <p> <?php echo $products['AN_description']; ?> </p>
+                  <a href="produit.php?q=<?= $product->Pr_idProduits; ?>"><?php echo $products->PR_idP; ?></h5></a>
+                      <p> <?php echo $products->AN_description; ?> </p>
               
-              <img id="image_article" src="imageproduit/<?php echo $products['PR_idP'] ?>.jpg">
+              <img id="image_article" src="css/images/<?php echo $products->PR_idP ?>.jpg">
                 
                 <div id="info_produit">
-                      <h5> Prix : <?php echo $products['AN_prix']; ?>€/kg</h5> 
+                      <h5> Prix : <?php echo $products->AN_prix; ?>€/kg</h5> 
 
                       <h5> Echange contre : Produit / Produit / Produit </h5>
                 </div>
 
 
-                <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $products['AN_idAnnonce']; ?>">
+                <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $products->PR_idP; ?>">
                 <div id="div_ajout_panier"> Ajouter au panier </a><br>
-                    <i>Quantité disponible : <?php echo $products['AN_quantite']; ?> kg </i>
+                    <i>Quantité disponible : <?php echo $products->AN_quantite; ?> kg </i>
 
                     
                 </div>
@@ -114,7 +112,6 @@
                   </select>
                   <input id="sub_page" type='submit' name='page' value='Allez à'  >                   
             </form>
-        </div>
         </div>
 </body>
     <?php include('php/pied_de_page.php'); ?>

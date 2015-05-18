@@ -78,7 +78,7 @@
 
           <label for ="payement"> Versement  désirer :  </label>
           <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
-          <input type="radio" name="payement" value="cash" id="cash" /> <label for="cash">Cash</label><br /><br />
+          <input type="radio" name="payement" value="espece" id="cash" /> <label for="espece">Espèce</label><br /><br />
 
           <label for ="typeenvoie"> Echange : </label> 
           <input type ="radio" name = "typeenvoie" value="main" id="main"/> <label for="mainpropre"> En main propre </label> 
@@ -102,6 +102,7 @@
 <?php 
 
 if(isset($_POST['bouton'])){
+
     
     $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
     $ligne=$selec->fetch();
