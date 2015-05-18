@@ -13,7 +13,8 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-    <?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+    <?php 
+    if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
       
     
     </header>
@@ -102,25 +103,16 @@
 
 if(isset($_POST['bouton'])){
     
-    $selec=$bdd2->query('SELECT User.US_idUser, Annonce.US_idUserannonceur FROM User INNER JOIN Annonce ON User.US_idUser = Annonce.US_idUserannonceur');
-
+    $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
+    $ligne=$selec->fetch();
  
-    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("","'.$_SESSION['id'].'","'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$_SESSION['id'].'")')==TRUE){
+    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("","'.$ligne['US_idUser'].'","'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$ligne['US_idUser'].'")')==TRUE){
 
     echo "bravo !";
     }else{ echo "no";}
 }
 
 ?>
-
-
-
-
-
-
-
-
-
 
  
 
