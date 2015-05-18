@@ -62,6 +62,7 @@ if(isset($_POST['subconnect'])){
         $_SESSION['login']=$login;
         $msgconnexion="Bienvenue ".$_SESSION['login']."";
         $_SESSION['id']='1';
+        $_SESSION['id_perso']=$ligne['US_idUser'];
 
     } else {
         $msgconnexionfail = "La connexion a échoué, veuillez réessayer";
@@ -72,9 +73,24 @@ if(isset($_SESSION['login']) ){
     if($_SESSION['id']=='1'){
         ?>
 
-        <div id="connecterdiv"><p>Bonjour <?php echo $_SESSION['login']; ?><br> <i style="font-size:12px;"><a
+        <div id="connecterdiv"><p><?php echo $_SESSION['login']; ?><br> <i style="font-size:12px;"><a
                         href="panier.php">Mon panier <?= $panier->count(); ?></a></i>
-            </p><img id="avatar_little" src=css/images/avatar.png ></div> <?php
+            </p>
+            <?php 
+            $requete = "SELECT * FROM User WHERE US_pseudo='".$_SESSION['login']."'";
+            $resultat =$bdd2->query($requete);
+            $ligne = $resultat->fetch();
+
+               
+                $filename = "image_user/".$ligne['US_idUser']."/".$ligne['US_image'];
+                if($ligne['US_image'] == "" or !file_exists($filename)){
+                      $avatar="<img id='avatar_little' width='120px' src='image_user/avatar.png' />"; 
+                }else{
+                      $avatar="<img id='avatar_little' width='120px' src='image_user/".$ligne['US_idUser']."/".$ligne['US_image']."' />"; 
+                }
+            ?>
+                <?= $avatar ?>
+                </div> <?php
         $_SESSION['id']='1';
     }
     else{

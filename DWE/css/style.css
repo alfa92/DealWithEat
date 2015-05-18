@@ -720,19 +720,39 @@ font-family: 'Roboto' sans-serif;
     vertical-align: top;
 }
 
+#avatar_upload{
+    position: absolute;
+  width: 120px;
+  top: 0;
+  left: 0;
+  margin-top: 230px;
+  margin-left: 25.5%;
+  display: inline-block;
+  vertical-align: top;
+}
+#avatar_upload input{
+width: 300px;}
+
 #infocompte{
     width: 50%;
     display: inline-block;
     vertical-align: top;
 }
+
 #annoncescompte{
    position: absolute;
    right:0;
    width: 17%;
    top:0;
    margin-top: 200px;
+  
+
 }
 
+#annoncescompte .annonce{
+     height: 200px;
+   overflow-y: scroll;
+}
 
 #account_data{
     width: 50%;
@@ -939,7 +959,7 @@ h4{
     margin-left: auto;
     min-height: 70px;
     max-height: 100px;
-    overflow: scroll;
+    overflow-y: scroll;
     text-align: justify;
     
 }
