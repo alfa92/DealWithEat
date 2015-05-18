@@ -63,7 +63,8 @@ if(isset($_POST['subconnect'])){
 
         $_SESSION['login']=$login;
         $msgconnexion="Bienvenue ".$_SESSION['login']."";
-        $_SESSION['id']='1';
+        $_SESSION['id']='1';   
+        $_SESSION['idperso']=$ligne['US_idUser'];
 
     } else {
         $msgconnexionfail = "La connexion a échoué, veuillez réessayer";
@@ -74,7 +75,7 @@ if(isset($_SESSION['login']) ){
     if($_SESSION['id']=='1'){
         ?>
 
-        <div id="connecterdiv"><p><?php echo $_POST['US_idUser']; ?><br> <i style="font-size:12px;"><a
+        <div id="connecterdiv"><p><?php echo $ligne['US_idUser']; ?><br> <i style="font-size:12px;"><a
                         href="panier.php">Mon panier <?= $panier->count(); ?></a></i>
             </p><img id="avatar_little" src=css/images/avatar.png ></div> <?php
         $_SESSION['id']='1';

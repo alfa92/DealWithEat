@@ -1706,99 +1706,10 @@ input{
     display: inline-block;
     vertical-align: top;
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*********************************************************/
-/************************ **********************
-**********************  Page   vente   (sinan et olivier)
-************************/
-/*********************************************************/
-
-
-
-
-#FormulaireVendre{
-    display: block;
-    margin-right: 20%;
-    margin-left: 30%;
-    font-family: 'Roboto',sans-serif;
-}
-
-
-#valider{
-    display: block;
-    margin-right: 20%;
-    margin-left: 30%;
-}
-
-.inputvendre{
-    font-family: 'Roboto', sans-serif;
-    outline: medium none !important;
-    color: #33383B;
-    font-size: 15px;
-    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
-    border: medium none;
-    border-radius: 0.3em;
-}
-}
-
-
-#VENDRE{
-
-    left: 20px;
-}
-
-=======
 }
 .type_envoie label{
     width: 30%;
 }
-.section_vendre input,.section_vendre textarea,.section_vendre select{
+.section_vendre input{
     margin-bottom: 1%;
-<<<<<<< HEAD
-	outline: none !important;
-	background: rgba(153, 153, 153, 0.09);
-	color: #33383b;
-	font-size: 15px;
-	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
-	border: none;
-	border-radius: 0.3em;
-}
 
-.section_vendre .submit{
-    
-    background: gray;
-	border: 0px;
-	font-family: "Roboto",sans-serif;
-	padding: 6px 14px;
-	outline: none;
-	color: white;
-	box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
-	font-size: 17px;
-}
-=======
-}
->>>>>>> origin/master
->>>>>>> origin/master
