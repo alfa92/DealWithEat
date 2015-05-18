@@ -90,12 +90,11 @@ $id=$ligne['US_idUser']
             $res= mysqli_query($conn2,$req); 
 
             while ($rows=mysqli_fetch_array($res)) {
-                $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$rows['PR_idP'].'"');
-                $rows1=$nom->fetch();
+         
          
 ?>
 <?php
-        echo $rows1['PR_nom'].'<br>';
+        echo $rows['PR_idP'].'<br>';
          echo $rows['AN_prix'].'€ <br>';
          echo "Quantité restante : ".$rows['AN_quantite']."kg";
          ?> <hr> <?php
