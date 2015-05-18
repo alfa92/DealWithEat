@@ -15,7 +15,7 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){
+        <?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){
             include('nav_connect.php');}else{
             include('nav.php');} ?>
         </header>
@@ -29,7 +29,7 @@
     if(empty($ids)){
         $products=array();
     }else{
-    $products=$DB->query('SELECT * FROM Annonce WHERE Pr_idP IN ('.implode(',',$ids).')');
+    $products=$DB->query('SELECT * FROM Annonce WHERE AN_idAnnonce IN ('.implode(',',$ids).')');
     }
 
     ?>
@@ -46,23 +46,30 @@
         
       
         
-<?php foreach($products as $products): ?>
-        <?php $nom = $DB -> query('select PR_nom from produit where PR_idP = PR_idP'); ?>
+<?php 
+
+foreach($products as $products):
+       $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$products->PR_idP.'"');
+                    $req=$nom->fetch();    
+                    $log=$bdd2->query('SELECT US_pseudo FROM User WHERE US_idUser="'.$products->US_idUserannonceur.'"');
+                    $pseudo=$log->fetch();                         
+                            
+        
+        ?>
 <section id="panier">
-    <img id="imgpanier" src="css/images/<?= $products->PR_idP;?>.jpg"><br>
+    <img id="imgpanier" src="imageproduit/<?php echo $products->PR_idP; ?>.jpg">
     <div id="descriptionpanier">
-    <span id="nom"><?= $products->PR_idP;?></span><br> 
-        <span id="vendeurpro">  <?= $products->US_idUserannonceur;?></span><br><br>
-       
+    <span id="nom"><?= $req['PR_nom'];?></span><br> 
+        <span id="vendeurpro">  <?= $pseudo['US_pseudo'];?></span><br><br>
  <span id="autre"> Quantité disponible <?= $products->AN_quantite;?> kg </span><br>
     <span id="autre"> Récolté le  <?= $products->AN_datepublication;?></span><br>
     <span id="autre"> A consomer avant le <?= $products->AN_datepublication;?></span><br>
 
-    <a id="delproduit" href="panier.php?delPanier=<?= $products->Pr_idP ;?>"> Supprimer du panier </a>
+    <a id="delproduit" href="panier.php?delPanier=<?= $products->AN_idAnnonce ;?>"> Supprimer du panier </a>
 
        
     <span id="Prix_unite"> <?= $products->AN_prix;?> €/kg</span>
-    <!--span id="quantite"><?= $_SESSION['panier'][$products->Pr_idP];?> kg</span>
+    <!--span id="quantite"><?= $_SESSION['panier'][$products->AN_idAnnonce];?> kg</span>
     <span id="prixproduit"><?= $products->AN_Prix;?> €</span-->
     </div>
     
@@ -76,7 +83,7 @@
         <h1> ma commande </h1>
         <div id="macommande">
             <span id="commande"> Sous-total : <?php if(null !== $panier->total()){ echo number_format($panier->total(),2,',',' ');} ?>       € </span><br>
-        <span id="commande" style="padding-bottom:30px!important;border-bottom:2px dotted black;"> Prix de transport ou envoi : <?= $products->AN_prixcolis;?>   € </span>
+        <span id="commande" style="padding-bottom:30px!important;border-bottom:2px dotted black;"> Prix de transport ou envoi : <?= $products->AN_prixcolis; ?>   € </span>
             <br>
             <br>
             <br>

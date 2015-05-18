@@ -17,7 +17,7 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
+    <?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
         
         <?php if(isset($_SESSION['id'])!='1'){
 ?>  
@@ -28,14 +28,11 @@
  <?php ;}else{
 
 ?>
-			<?php 
+      <?php 
               
-               $requete = "SELECT * FROM User WHERE US_pseudo='".$_SESSION['login']."'";
-
-// envoi de la requête
-$resultat = mysqli_query($conn2,$requete) or die ('Erreur '.$requete.' '.$mysqli->error);
-// resultat de la requete
-$ligne = $resultat->fetch_assoc();
+              $requete = "SELECT * FROM User WHERE US_pseudo='".$_SESSION['login']."'";
+            $resultat =$bdd2->query($requete);
+            $ligne = $resultat->fetch();
 
 $id=$ligne['US_idUser']
     
@@ -53,17 +50,50 @@ $id=$ligne['US_idUser']
               if (isset ($ligne['US_pseudo'])){echo $ligne['US_pseudo'];}
             ?> veuillez <a href="logout.php">vous déconnectez</a>. 
         </i></fieldset>
-            <img id="avatar_moyen" src="css/images/avatar.png">
+            
+            <form id="avatar_upload" action="" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" /> 
+            <input type="submit" value="Insérer photo" name="subit">
+            </form>
+
+            <?php
+$dossier = "image_user/".$ligne['US_idUser'];
+if(is_dir($dossier)){
+   
+} else{
+   mkdir($dossier);
+}
+              if(isset($_POST['subit'])){
+                $nomfichier=rand()."-".$_FILES['file']['name'];
+                move_uploaded_file($_FILES['file']['tmp_name'],"image_user/".$ligne['US_idUser']."/".$nomfichier);
+                $q='UPDATE User SET US_image = "'.$nomfichier.'" WHERE US_pseudo="'.$_SESSION['login'].'"';
+                $query=$bdd2->query($q);
+
+              }
+
+
+            ?>
+            <?php 
+            $filename = "image_user/".$ligne['US_idUser']."/".$ligne['US_image'];
+                if($ligne['US_image'] == "" or !file_exists($filename)){
+                      $avatar="<img width='120px' src='image_user/avatar.png' />"; 
+                }else{
+                      $avatar="<img width='120px' src='image_user/".$ligne['US_idUser']."/".$ligne['US_image']."' />"; 
+                }
+            ?>
+            <div id="avatar_moyen" >
+                <?= $avatar ?>
+            </div>
         <div id="navcontainercompte"> 
-     	<!-- Nav -->
-				<!--nav id="navcompte">
-					<ul>
-						<li ><a href="moncompte.php">Profil</a></li>
+      <!-- Nav -->
+        <!--nav id="navcompte">
+          <ul>
+            <li ><a href="moncompte.php">Profil</a></li>
                         <li><a href="actualites.php"> Paramètres </a></li>
-						<li><a href="#"> Mes annonces </a></li>
-						<li><a href="logout.php"> Déconnexion </a></li>
-					</ul>
-				</nav-->
+            <li><a href="#"> Mes annonces </a></li>
+            <li><a href="logout.php"> Déconnexion </a></li>
+          </ul>
+        </nav-->
         </div>
 
 
@@ -84,22 +114,26 @@ $id=$ligne['US_idUser']
             
         <div id="annoncescompte">
         <h4> Vos annonces </h4>
-          <?php
+          
+          <div class="annonce"><?php
 
             $req= 'SELECT * FROM Annonce WHERE US_idUserannonceur="'.$id.'"';
             $res= mysqli_query($conn2,$req); 
 
             while ($rows=mysqli_fetch_array($res)) {
-         
+           $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$rows['PR_idP'].'"');
+                $rows1=$nom->fetch();
          
 ?>
+<img id="image_article_compte" style="width:40px;" src="imageproduit/<?php echo $rows['PR_idP'] ?>.jpg">
 <?php
-        echo $rows['PR_idP'].'<br>';
+          echo $rows1['PR_nom'].'<br>';
          echo $rows['AN_prix'].'€ <br>';
          echo "Quantité restante : ".$rows['AN_quantite']."kg";
          ?> <hr> <?php
 }
  ?>   
+ </div>
         </div>
       
     </body>
@@ -108,3 +142,6 @@ $id=$ligne['US_idUser']
 </html>
 
 <?php } ?>
+
+
+
