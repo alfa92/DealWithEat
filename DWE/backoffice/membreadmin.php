@@ -33,12 +33,12 @@
     <nav id="nav">
       <a href="adminmembre.php"><img style="width:100px;margin-left:25%;margin-top:50px;"src="../css/images/logoDWE.png" /></a>
 
-       <ul>
+        <ul>
             <li><a href="membreadmin.php"> Membres </a></li>
-            <li><a href="adminannonce.php"> Annonces </a></li>
+            <li><a href="#"> Annonces </a></li>
             <li><a href="#"> Forum </a></li>
             <li><a href="adminfaq.php"> FAQ </a></li>
-            <li><a href="../index.php" TARGET=_BLANK> Voir le site</a></li>
+            <li><a href="../accueil.php" TARGET=_BLANK> Voir le site</a></li>
             <li><a href="logout.php"> Deconnexion</a></li>
         </ul>
     </nav>
@@ -53,46 +53,60 @@
     <h1 style="text-align:left;"> Vous pouvez gérer les membres </h1>
 
 
-                
+    <br>
+    <table id="membre_data" style="margin-left:4%;">
+    <tr>
+                <th style="width:20px;"> id </th>
+                <th style="width:100px;"> Pseudo </th>
+                <th style="width:500px;"> Email </th>
+
+                <th style="width:190px;"> Prenom </th>
+                <th style="width:100px;"> Nom </th>
+
+                <th style="width:100px;"> Ville </th>
+
+                <th style="width:100px;"> Admin </th>
+                <th style="width:100px;"> Modérateur </th>
+
+                <th style="width:100px;"> Modifier </th>
+                    <th style="width:100px;"> Supprimer </th>
+            </tr>
+           </table>               
     <?php
 
-    $admembre = 'SELECT * FROM User ORDER BY US_idUser DESC';
+    $admembre = 'SELECT * FROM User ORDER BY US_pseudo';
     $repmembre = $bdd2->query($admembre);
 
     foreach($repmembre as $donnees1):
     
-        $nbannonce=$bdd2->query('SELECT * FROM Annonce WHERE US_idUserannonceur="'.$donnees1['US_idUser'].'"');
-        $result = $nbannonce->fetchAll();
-        $nombannonce= count($result);
-
         ?>
 
-         <div id="profil" >
+        <table id="membre_data" style="margin-left:4%;">
             
-                    <center><strong><p style='color:grey;'><?= $donnees1['US_pseudo']; ?></p></strong></center>
-                    <p>Prenom :   <?php echo $donnees1['US_prenom']; ?></p> 
-                    <p>Nom :  <?php echo $donnees1['US_nom']; ?></p>
-                     <p>Admin : <?php echo $donnees1['US_admin']; ?></p> 
-                    <p>Moderateur:  <?php echo $donnees1['US_moderateur']; ?></p>
-                    <p>Annonces:  <?php echo $nombannonce; ?></p>
-        <?php 
-               
-                $filename = "../image_user/".$donnees1['US_idUser']."/".$donnees1['US_image'];
-                if($donnees1['US_image'] == "" or !file_exists($filename)){
-                      $avatar="<img id='avatar_little' width='120px' src='../image_user/avatar.png' />"; 
-                }else{
-                      $avatar="<img id='avatar_little' width='120px' src='../image_user/".$donnees1['US_idUser']."/".$donnees1['US_image']."' />"; 
-                }
-            ?>
-                <?= $avatar ?>
-            <a href="action/deluser.php?id=<?php echo $donnees1['US_idUser'] ?>"><p></p> </a>
-            <a class="moderateur" href="action/upmoderateur.php?id=<?php echo $donnees1['US_idUser'] ?>"><p></p> </a>
-        </div>
+            <tr>
+                <td style="width:20px;"><?php echo $donnees1['US_idUser'] ?></td>
+                <td style="width:100px;"><?php echo $donnees1['US_pseudo'] ?></td>
+                <td style="width:300px;"><?php echo $donnees1['US_mail'] ?></td>
 
+                <td style="width:150px;"><?php echo $donnees1['US_prenom'] ?></td>
+                <td style="width:100px;"><?php echo $donnees1['US_nom'] ?></td>
+
+                <td style="width:100px;"><?php echo $donnees1['US_ville'] ?></td>
+
+                <td style="width:100px;"><?php echo $donnees1['US_admin'] ?></td>
+                <td style="width:100px;"><?php echo $donnees1['US_moderateur'] ?></td>
+
+                <form method="post" action="#">
+                    <td style="width:100px;"><input type="submit" value="Modifier"/></td>
+                    <td style="width:100px;"><a href="action/deluser.php?id='<?php echo $donnees1['US_idUser'] ?>'"> Supprimer </a></td>
+
+                </form>
+                
+            </tr>
+        </table>
 
     <?php
-            endforeach; 
-        }
+            endforeach; }
     
 
     ?>            

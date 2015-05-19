@@ -70,7 +70,7 @@
                                                     {   
                                                                  $sql = "INSERT INTO User VALUES ('','".$_POST['nom']."','".$_POST['prenom']."',
                                                                     '".$_POST['pays']."','".$_POST['ville']."','".$_POST['adresse']."',
-                                                                    '','".$login."','" . $mail . "','".$pass."','".$_POST['age']."','','','','')";
+                                                                    '','".$login."','" . $mail . "','".$pass."','".$_POST['age']."','','','')";
 
 
 											                 if ($conn2->query($sql) == TRUE) 

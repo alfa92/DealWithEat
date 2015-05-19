@@ -28,14 +28,14 @@
         <nav id="nav">
             <a href="adminmembre.php"><img style="width:100px;margin-left:25%;margin-top:50px;"src="../css/images/logoDWE.png" /></a>
 
-           <ul>
-            <li><a href="membreadmin.php"> Membres </a></li>
-            <li><a href="adminannonce.php"> Annonces </a></li>
-            <li><a href="#"> Forum </a></li>
-            <li><a href="adminfaq.php"> FAQ </a></li>
-            <li><a href="../accueil.php" TARGET=_BLANK> Voir le site</a></li>
-            <li><a href="logout.php"> Deconnexion</a></li>
-        </ul>
+            <ul>
+                <li><a href="membreadmin.php"> Membres </a></li>
+                <li><a href="#"> Annonces </a></li>
+                <li><a href="#"> Forum </a></li>
+                <li><a href="adminfaq.php"> FAQ </a></li>
+                <li><a href="../accueil.php" TARGET=_BLANK> Voir le site</a></li>
+                <li><a href="logout.php"> Deconnexion</a></li>
+            </ul>
         </nav>
 
 <div id="back_right">
