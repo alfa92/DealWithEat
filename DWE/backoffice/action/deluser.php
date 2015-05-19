@@ -10,7 +10,11 @@ $id=$_GET['id'];
 
     echo $id;
 
-                    $sql2 =' DELETE FROM User WHERE US_idUser="'.$id.'"';                
+
+                    $sql1=' DELETE FROM Annonce WHERE US_idUserannonceur="'.$id.'"';
+                    $sql2 =' DELETE FROM User WHERE US_idUser="'.$id.'"';
+                    if($sql1query=$bdd2->exec($sql1)==true)
+                    {
                      if($sql2query=$bdd2->exec($sql2)==true)
                      {
                                 echo 'Le membre a bien été suprimé !';
@@ -19,5 +23,8 @@ $id=$_GET['id'];
                         { 
                             echo "Probleme 2";
                         }
-                    
+                    }else
+                    { 
+                        echo "Probleme 1";
+                    }
      ?>
