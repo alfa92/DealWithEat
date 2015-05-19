@@ -144,4 +144,100 @@ h1{
     box-shadow: 0 4px 2px -2px gray;
     margin-bottom: 10px;
 }
+#annoncetotale{
+    font-family: 'Roboto', sans-serif;
+    width:150px;
+    height:200px;
+    box-shadow: 2px 2px 2px grey;
+    display: inline-block;
+    vertical-align: top;
+    margin:0;
+    padding:0;
+    letter-spacing:inherit;
+}
+#annonce{
+    
+    width: 150px;
+    height:100px;
+    background-size:150px 150px;
+    background-position: top;
+    
+}
+
+#annoncetotale p{
+    padding-top:0;
+    margin-top:0;
+    
+}
+
+#annoncetotale a{
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    height:30px;
+    background: red;
+    background-image:url('letter x.png') ;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 120px;
+    margin-top: -3px;
+}
+#profil{
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 200px;
+    text-align: justify;
+    font-family: 'Roboto',sans-serif;
+    box-shadow: 2px 2px 2px black;
+    border:1px solid grey;
+}
+#profil p:first-child{
+    margin-top: 10px;
+}
+#profil p{
+    margin-top:-10px;
+    font-size: 14.5px;
+}
+#profil img{
+    position: absolute;
+    margin-left: 160px;
+    margin-top: -100px;
+}
+#profil a{
+   
+    display: inline-block;
+    vertical-align: top;
+     margin-left: 1px;
+}
+#profil a p{
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height:40px;
+    background: red;
+    background-image:url('letter x.png') ;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#profil .moderateur{
+    display: inline-block;
+    vertical-align: top;
+     margin-top: 0px;
+     margin-left: 2px;
+}
+#profil .moderateur p{
+    
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height:40px;
+    background: green;
+    background-image:url('user36.png') ;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
