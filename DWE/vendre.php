@@ -87,14 +87,11 @@
           <label for ="prixcolis"> Prix du colis : </label> 
           <input type="number" name="prixcolis"  class="inputvendre"/> <br/> <br/>
 <input type="submit" value="Envoyer"  name="bouton" />
-                </form>
-<form method="post" name="image">
+      
 <label style="width:450px;"> Vous pouvez aussi insérer une image du produit : </label>
 <input type="file" name="file"> 
-    <input type="submit" value="Insérer photo"  name="submit">
-        
-
-</form>
+   <input type="submit" value="Envoyer"  name="bouton" />
+                </form>
 
 
     </section>
@@ -102,34 +99,12 @@
 <?php 
 
 if(isset($_POST['bouton'])){
-
     
-   // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
-    //$ligne=$selec->fetch();
- 
-    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("","'.$_SESSION['id_perso'].'","'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$_SESSION['id_perso'].'")')==TRUE){
-
-    echo "bravo !";
-    }else{ echo "no";}
-}
-
-?>
-
- 
-
-    <!-- PHP pour le formulaire d'envoie à la BD -->
-
-
-
-    <?php
-      if(isset($_POST['submit']))
-        {
           $fichier = $_FILES['file']['name'];
           $taille_maximale=2097512;
           $taille=filesize($_FILES['file']['tmp_name']);
           $extensions=array ('.png','.jpg','.jpeg','.PNG','.JPG','.JPEG');
           $extension=strrchr($fichier, '.');
-
 
         if(!in_array($extension, $extensions))
         {
@@ -142,19 +117,39 @@ if(isset($_POST['bouton'])){
 
         if(!isset($error))
         {
+            
+            $nomdufichier = "ImagesUploades/333-".rand(5,333330).$fichier;
           $fichier=preg_replace('/(^.a-z0-9]+)/i','-', $fichier);
-          move_uploaded_file($_FILES['file']['tmp_name'], "ImagesUploades/333-".$fichier);
+          move_uploaded_file($_FILES['file']['tmp_name'], $nomdufichier );
 
         }else{
           echo $error;
         }
-      
-      }
 
-    ?>
+    
+   // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
+    //$ligne=$selec->fetch();
+ 
+  
+} 
 
+?>    
+    
+<?php 
 
+if(isset($_POST['bouton'])){
 
+    
+   // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
+    //$ligne=$selec->fetch();
+ 
+    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("","'.$_SESSION['id_perso'].'","'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$_SESSION['id_perso'].'","'.$_POST['unite'].'","'.$nomdufichier.'")')==TRUE){
+
+    echo "bravo !";
+    }else{ echo "no";}
+}
+
+?>
 
 
 

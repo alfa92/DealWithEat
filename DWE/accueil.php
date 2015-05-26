@@ -6,6 +6,8 @@
         <meta name="description" content="Deal With Eat est un site d'échange et de vente de fruits et légumes entre particuliers. Une personne à coté de chez vous échange peut être votre fruit préféré.">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+       
+        
 
         <title>Deal With Eat</title>
         

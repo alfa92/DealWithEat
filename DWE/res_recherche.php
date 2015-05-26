@@ -24,24 +24,33 @@ setcookie("id",time()+$expire);session_start() ?>
                 
                 $search=$_GET['search'];
 
-            $requetemembre= "select * from user where US_pseudo like '%$search%' 
+            $requetemembre=$bdd2->query( "select * from user where US_pseudo like '%$search%' 
                                     or US_nom like '%$search%' 
-                                        or US_prenom like '%$search%' ";
-             $resultatmembre=mysqli_query($conn2,$requetemembre);                            
-            $requete= "select * from produits where Pr_Nom like '%$search%' or Pr_Membre like '%$search%' ";
-            $resultat=mysqli_query($conn1,$requete); 
+                                        or US_prenom like '%$search%' ");
+             
+           
+            $requete= $bdd2->query("select * from Produit where Pr_Nom like '%$search%' ");
+            $produit=$requete->fetch(); 
+
+            $vrequete =$bdd2->query( "SELECT * FROM Annonce WHERE PR_idP = '".$produit['PR_idP']."'");
+
+        
+
     ?>
             
 
 <h1> Résultat de la recherche </h1>
     
 <?php 
-        while ($rows=mysqli_fetch_array($resultat)) {
-            $nom=$rows['Pr_Nom']; $membre=$rows['Pr_Membre'];$prix=$rows['Pr_Prix'];$quantite=$rows['Pr_Quantité'];
+        while ($rows=$vrequete->fetch()) {
+            $pseudo=$bdd2->query('SELECT US_pseudo FROM User WHERE US_idUser="'.$rows['US_idUserannonceur'].'"');
+        $ps=$pseudo->fetch();
+            
+            $nom=$produit['PR_nom']; $membre=$ps['US_pseudo'];$prix=$rows['AN_prix'];$quantite=$rows['AN_quantite'];
 ?> 
        
-               <a href="produit.php?q=<?= $rows['Pr_idProduits']; ?>"> Nom du produit : <?= $nom ?> <br>
-                Nom du membre : <?= $membre ?> <br>
+               <a href="produit.php?q=<?= $rows['AN_idAnnonce']; ?>"> Nom du produit : <?= $nom ?> <br>
+                Pseudo du membre : <?= $membre ?> <br>
                 Prix du produit : <?= $prix ?> <br>
                 Quantitée : <?= $quantite ?> <br> </a>
 <br>
@@ -50,12 +59,13 @@ setcookie("id",time()+$expire);session_start() ?>
             
         ?>
 <?php 
-        while ($rows1=mysqli_fetch_array($resultatmembre)) {
-            $mnom=$rows1['US_nom']; $mpseudo=$rows1['US_pseudo'];
+        while ($rows1=$requetemembre->fetch()) {
+            $mnom=$rows1['US_prenom']; $mpseudo=$rows1['US_pseudo'];
 ?> 
-       
-                Nom du membre : <?= $mnom ?> <br>
-                Nom du pseudo : <?= $mpseudo ?> <br>
+       <a href="membre.php?a=<?= $rows1['US_idUser'] ?>">
+                Prenom du membre : <?= $mnom ?> <br>
+                Pseudo du membre  : <?= $mpseudo ?> <br>
+        </a>
 
 <br>
             <?php
@@ -65,5 +75,7 @@ setcookie("id",time()+$expire);session_start() ?>
     </body>
 
     </div>
+    
+    <?php include('php/pied_de_page.php'); ?>
 </html>
     

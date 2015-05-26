@@ -33,7 +33,7 @@
     <p  style="display:inline-block;"> <i>Adresse</i> <br/>  Issy-les-moulineaux <br/> 10 rue de vances</p>
     <img src="css/images/adresse.jpg" style="width:100px;height:90px;;display:inline-block;margin-left:5%;border-radius:50%;border:1px solid red;" />
     <h2> Suivez-nous </h2>
-   <p><a href="www.facebook.com/dealwitheat"><img class="img" src="css/images/fb.png" style="width:32px;"/></a>
+   <p><a href="http://www.facebook.com/dealwitheat"><img class="img" src="css/images/fb.png" style="width:32px;"/></a>
     <!--a href="www.twitter.com/"><img  class="img" src="css/images/twitter.png" style="width:32px;"/></a-->
     <a href="mailto:dealwitheat@gmail.com"><img class="img" src="css/images/contact.png" style="width:32px;"/></a>
     <!--a href="www..com"><img class="img" src="css/images/instagram.png" style="width:32px;"/></a></p-->

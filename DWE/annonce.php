@@ -24,8 +24,8 @@
         <form method="POST">
             
         <h4> Types </h4>
-            <input type="radio" name="FruitLegume" value="Fruit" /><label for="Fruit">Fruit</label><br/>
-            <input type="radio" name="FruitLegume"  value="Legume"/><label for="Légume">Légume</label>
+            <input type="radio" name="FruitLegume" value="0" /><label for="Fruit">Fruit</label><br/>
+            <input type="radio" name="FruitLegume"  value="1"/><label for="Légume">Légume</label>
         
         <h4> Produits </h4>
                   <div id="liste_annonces">
@@ -40,28 +40,35 @@
         </form>
     </div>
         
-    <div id="droite_annonce">
-        
-        
+        <?php
+if(isset($_POST['Filtre'])){
+    $type=$bdd2->query('SELECT * FROM Produit WHERE PR_type="'.$_POST['FruitLegume'].'"');
+}
+?>
+            <div id="droite_annonce"> 
 <?php
-
-  
   $products=$bdd2->query('SELECT * FROM Annonce');
       foreach($products as $products):
        $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$products['PR_idP'].'"');
         $req=$nom->fetch();
-?>
+?>        
+       
+
         <div id="article_annonce">
             <form id="panier" method="post" action="annonce.php">
 
                   <h5 style="text-align:right;border-bottom:1px dashed black;"> 
-                  <a href="produit.php?q=<?= $products['PR_idP']; ?>"><?= $req['PR_nom']; ?></h5></a>
+                  <a href="produit.php?q=<?= $products['AN_idAnnonce']; ?>"><?= $req['PR_nom']; ?></h5></a>
                       <p> <?php echo $products['AN_description']; ?> </p>
               
-              <img id="image_article" src="imageproduit/<?php echo $products['PR_idP'] ?>.jpg">
                 
+                <?php if($products['AN_image'] == NULL){ ?>
+              <img id="image_article" src="imageproduit/<?php echo $products['PR_idP'] ?>.jpg">
+                <?php }else{ ?>
+                 <img id="image_article" src="<?=  $products['AN_image'] ?>">
+                <?php }?>
                 <div id="info_produit">
-                      <h5> Prix : <?php echo $products['AN_prix']; ?>€/kg</h5> 
+                      <h5> Prix : <?= $products['AN_prix']; ?>€/kg</h5> 
                 </div>
 
 
