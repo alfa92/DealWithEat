@@ -85,13 +85,15 @@
           <input type ="radio" name="typeenvoie" value="poste" id="poste"/> <label for ="parposte"> Par la poste </label> 
 
           <label for ="prixcolis"> Prix du colis : </label> 
-          <input type="number" name="prixcolis"  class="inputvendre"/> <br/> <br/>
-<input type="submit" value="Envoyer"  name="bouton" />
-      
-<label style="width:450px;"> Vous pouvez aussi insérer une image du produit : </label>
-<input type="file" name="file"> 
-   <input type="submit" value="Envoyer"  name="bouton" />
-                </form>
+          <input type="number" name="prixcolis"  class="inputvendre"/> <br/> <br/>             
+
+    <label style="width:450px;"> Vous pouvez aussi insérer une image du produit : </label>
+    <input type="file" name="file"> 
+        <input type="submit" value="Envoyer"  name="bouton" />
+
+        
+
+</form>
 
 
     </section>
@@ -99,7 +101,7 @@
 <?php 
 
 if(isset($_POST['bouton'])){
-    
+
           $fichier = $_FILES['file']['name'];
           $taille_maximale=2097512;
           $taille=filesize($_FILES['file']['tmp_name']);
@@ -120,6 +122,7 @@ if(isset($_POST['bouton'])){
             
             $nomdufichier = "ImagesUploades/333-".rand(5,333330).$fichier;
           $fichier=preg_replace('/(^.a-z0-9]+)/i','-', $fichier);
+
           move_uploaded_file($_FILES['file']['tmp_name'], $nomdufichier );
 
         }else{
@@ -130,14 +133,10 @@ if(isset($_POST['bouton'])){
    // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
     //$ligne=$selec->fetch();
  
-  
-} 
 
 ?>    
     
 <?php 
-
-if(isset($_POST['bouton'])){
 
     
    // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
