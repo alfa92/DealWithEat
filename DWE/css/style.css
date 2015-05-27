@@ -1765,4 +1765,60 @@ input{
 }
 
 
+ /*********************************************************/
+/************************reinitialisationmdp************************/
+/*********************************************************/
+#account_data2{
+    width: 50%;
+    margin-left: 22%;
+    margin-top: -400px; 
+
+}
+
+
+#account_data2 td{
+    font-family: 'Roboto' sans-serif;
+    font-size:17px;
+
+         padding-top:20px;
+}
+
+#account_data2 a{
+
+font-family: 'Roboto' sans-serif;
+    font-size:14px;
+    color:gray;
+}
+
+#account_data2 input{
+    height: 25px;
+    padding-left: 10px;
+    outline: none !important;
+    background: rgba(153, 153, 153, 0.09);
+    color: #33383b;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+    font-size: 15px;
+}
+
+#modif_sub2{
     
+    float:center;
+    display: block;
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: gray;
+    border: 0px;
+    font-family: "Roboto",sans-serif;
+    padding: 6px 14px;
+    outline: none;
+    color: white;
+    box-shadow: 1px 1px 1px 1px rgba(153, 153, 153, 0.55);
+    font-size: 17px;
+}
+   

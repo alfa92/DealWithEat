@@ -14,4 +14,42 @@
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
-		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?>
+        <?php include('nav.php'); ?>
+
+
+
+
+        
+
+<?php 
+
+    $b=$_GET['b'];
+    $reinitialisation=$bdd2->query('SELECT * FROM user WHERE US_idUser="'.$b.'"');
+    
+
+
+    ?>
+
+
+
+       </div>
+<form method="post">
+<table id="account_data2">
+   <td>Mot de passe</td>
+      
+    <td> <input type="password" name="pass" placeholder="Nouveau mot de passe"/> </td>
+    <td> <input type="password" name="pass2" placeholder="Retaper mon nouveau mot de passe"/> </td>
+</table>
+
+ <input id="modif_sub2" type="submit" name="rafraichir" onclick="return confirm('Êtes vous sur de vouloir effectuer ces changements')" value="Envoyer les modifications">
+ </form> 
+
+ <?php       if(isset($_POST['pass']) && isset($_POST['pass2']) && $_POST['pass']!=NULL && $_POST['pass2']!=NULL && $_POST['pass']==$_POST['pass2'] ){
+            $req = 'UPDATE User SET US_mdp="'.md5($_POST['pass']).'" WHERE US_idUser="'.$b.'"';
+             $result = mysqli_query($conn2,$req) or die ('Erreur '.$req.''.mysql_error());
+             }else{
+                $msg="Les deux mots de passes ne sont pas les mêmes";
+             }
+       
+        
+       ?>

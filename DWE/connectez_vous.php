@@ -113,9 +113,9 @@ $ligne = $resultat->fetch_assoc();
         <?php
 
 
-        // Je selectionne toutes les données de la table membres pour vérifier que le pseudo existe bien.
-        $ob = "SELECT * FROM membres";
-        $resultatob = mysqli_query($conn, $ob) or die ('Erreur ' . $ob . ' ' . $mysqli->error);
+        // Je selectionne toutes les données de la table user pour vérifier que le pseudo existe bien.
+        $ob = "SELECT * FROM user";
+        $resultatob = mysqli_query($conn2, $ob) or die ('Erreur ' . $ob . ' ' . $mysqli->error);
         $tabob = $resultatob->fetch_assoc();
 
 
@@ -125,18 +125,18 @@ $ligne = $resultat->fetch_assoc();
 
 
             // Je selectionne le mail du pseudo
-            $obmdp = "SELECT * FROM membres WHERE membre_pseudo='" . $pseudo . "'";
+            $obmdp = "SELECT * FROM user WHERE US_pseudo='" . $pseudo . "'";
             // envoi de la requête
-            $resultatobmdp = $bdd1->query($obmdp) or die ('Erreur ' . $obmdp . ' ' . $mysqli->error);
+            $resultatobmdp = $bdd2->query($obmdp) or die ('Erreur ' . $obmdp . ' ' . $mysqli->error);
             // resultat de la requete
             $donnees = $resultatobmdp->fetch();
-            $mdp = $donnees['membre_mdp'];
+            $mdp = $donnees['US_mdp'];
             // Je vérifie que les deux cases sont bien remplies
             if (isset($pseudo) && $pseudo != NULL && isset($email) && $email != NULL) {
                 // Si le pseudo existe dans la table membres
-                if ($pseudo == $donnees['membre_pseudo']) {
+                if ($pseudo == $donnees['US_pseudo']) {
                     // SI le mail indiqué est le même mail que celui dans la ligne du pseudo
-                    if ($email == $donnees['membre_mail']) {
+                    if ($email == $donnees['US_mail']) {
 
                         date_default_timezone_set('Etc/UTC');
 
@@ -182,7 +182,7 @@ $ligne = $resultat->fetch_assoc();
                         $mail->addReplyTo('dwedealwitheat@gmail.com', 'DWE');
 
 //Set who the message is to be sent to
-                        $mail->addAddress($email, $donnees['prenom'] . ' ' . $donnees['nom']);
+                        $mail->addAddress($email, $donnees['US_prenom'] . ' ' . $donnees['US_nom']);
 
 //Set the subject line
                         $mail->Subject = '[DWE] Oublie de mot de passe ';
@@ -190,7 +190,7 @@ $ligne = $resultat->fetch_assoc();
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
                         $mail->charSet = "UTF-8";
-                        $mail->msgHTML('<p><strong>Bonjour ' . $pseudo . '</strong> <br><br> Votre mot de passe est le suivant : ' . $mdp . '
+                        $mail->msgHTML('<p><strong>Bonjour ' . $pseudo . '</strong> <br><br> Pour modifier votre mot de passe veuillez cliquer ici : http://localhost/DWE/DealWithEat/DWE/reinitialisationmdp.php?b='.$donnees['US_idUser'].'
                                     <br><br> Merci de ne pas répondre à ce mail ! Ceci est un mail automatique</p>');
 
 //send the message, check for errors
@@ -211,3 +211,4 @@ $ligne = $resultat->fetch_assoc();
         ?>
 </body>
 </html>
+
