@@ -50,37 +50,37 @@
    
 </a>
 
-    <h1 style="text-align:left;"> Vous pouvez gérer les annonces </h1>
+    <h1 style="text-align:left;"> Vous pouvez gérer le forum </h1>
              
     <?php
 
   
-  $products=$bdd2->query('SELECT * FROM Annonce');
-      foreach($products as $products):
-       $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$products['PR_idP'].'"');
-        $req=$nom->fetch();
-        $nomu=$bdd2->query('SELECT US_pseudo FROM User WHERE US_idUser="'.$products['AN_idUser'].'"');
-        $requ=$nomu->fetch();
+  $products=$bdd2->query('SELECT * FROM forumq WHERE ID_forum="'.$_GET['article'].'"');
+    $products=$products->fetch();
+       
 ?>
-            <div id="annoncetotale">
-            <div style='background:url("../imageproduit/<?php echo $products['PR_idP'] ?>.jpg");background-size:150px 150px;' id="annonce">
-            
-                    <center><p><?= $req['PR_nom']; ?></p></center>
-            </div>  
-            <div class="info">
-                    <?php echo $requ['US_pseudo']; ?> 
-                    <p> Prix : <?php echo $products['AN_prix']; ?>€/kg</p> 
-                    <i>Quantité: <?php echo $products['AN_quantite']; ?> kg </i>
-            </div> 
+    <hr />
+            <div id="forumadminarticle">
+                <h1> Sujet :<?= $products['q_sujet']; ?></h1>
+                <p style="text-align:center;"><?= $products['q_contenu']; ?> </p>
+            </div>   
+<hr />
+    <?php } 
+     $prods=$bdd2->query('SELECT * FROM forumr WHERE FR_sujet="'.$_GET['article'].'"');
+    
+while($produits=$prods->fetch()){
 
-            <a href="action/delannonce.php?id=<?php echo $products['AN_idAnnonce']; ?>"></a>
-        </div>
-
+?>
+            <div id="forumadminarticlereponse" >
+                <?php if(isset($produits['FR_reponse'])){ ?>
+                <p> <?= $produits['FR_reponse']; ?></p>
+                
+                <?php    } if(isset($produits['US_idUser'])){?>
+                <p style="font-size:10px; "><?= $produits['US_idUser']; ?> </p>
+            </div>   
+    <?php }} ?>
   
-<?php
-     endforeach;  
-     } 
-?>    
+  
     </div>
 </div>
 </body>

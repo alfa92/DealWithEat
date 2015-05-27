@@ -50,37 +50,45 @@
    
 </a>
 
-    <h1 style="text-align:left;"> Vous pouvez gérer les annonces </h1>
+    <h1 style="text-align:left;"> Vous pouvez gérer le forum </h1>
              
     <?php
 
   
-  $products=$bdd2->query('SELECT * FROM Annonce');
+  $products=$bdd2->query('SELECT * FROM forumq');
       foreach($products as $products):
-       $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$products['PR_idP'].'"');
-        $req=$nom->fetch();
-        $nomu=$bdd2->query('SELECT US_pseudo FROM User WHERE US_idUser="'.$products['AN_idUser'].'"');
-        $requ=$nomu->fetch();
+       
 ?>
-            <div id="annoncetotale">
-            <div style='background:url("../imageproduit/<?php echo $products['PR_idP'] ?>.jpg");background-size:150px 150px;' id="annonce">
-            
-                    <center><p><?= $req['PR_nom']; ?></p></center>
-            </div>  
-            <div class="info">
-                    <?php echo $requ['US_pseudo']; ?> 
-                    <p> Prix : <?php echo $products['AN_prix']; ?>€/kg</p> 
-                    <i>Quantité: <?php echo $products['AN_quantite']; ?> kg </i>
+            <div id="forumadmin">
+                    <a href="forumadminarticle.php?article=<?= $products['ID_forum']; ?>"><p> <?php echo $products['q_sujet']; ?></p> </a>
             </div> 
+    <?php
+     endforeach;  
+     } 
+?>  
+    <style>
+            #forumadmin{
+                display:inline-block;
+                vertical-align:top;
+                box-shadow:2px 2px 2px black;
+                min-width:230px;
+                max-width:250px;
+                min-height:50px;           
+                border:1px solid grey;
+            }
+    
+            #forumadmin p{
+                font-size:14px;
+                font-weight:400;
+                text-align:center;
+            }
+    </style>
 
             <a href="action/delannonce.php?id=<?php echo $products['AN_idAnnonce']; ?>"></a>
         </div>
 
   
-<?php
-     endforeach;  
-     } 
-?>    
+  
     </div>
 </div>
 </body>
