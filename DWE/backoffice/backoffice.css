@@ -240,4 +240,16 @@ h1{
     background-repeat: no-repeat;
     background-position: center;
 }
+#byebye_user{
+ display: inline-block;
+    vertical-align: top;
+     margin-top: 0px;
+     margin-left: 2px;
+     font-weight: 600;
+     font-size: 50;
+}
+#logo_byebye{
 
+    width: 70px;
+    height:70px;
+}
