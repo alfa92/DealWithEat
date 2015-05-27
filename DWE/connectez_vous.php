@@ -190,7 +190,7 @@ $ligne = $resultat->fetch_assoc();
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
                         $mail->charSet = "UTF-8";
-                        $mail->msgHTML('<p><strong>Bonjour ' . $pseudo . '</strong> <br><br> Pour modifier votre mot de passe veuillez cliquer ici : http://localhost/DWE/DealWithEat/DWE/reinitialisationmdp.php?b='.$donnees['US_idUser'].'
+                        $mail->msgHTML('<p><strong>Bonjour ' . $pseudo . '</strong> <br><br> Pour modifier votre mot de passe veuillez cliquer ici : http://localhost/DWE/DealWithEat/DWE/reinitialisationmdp.php?b='.rand().''.$donnees['US_idUser'].''.rand().'
                                     <br><br> Merci de ne pas répondre à ce mail ! Ceci est un mail automatique</p>');
 
 //send the message, check for errors

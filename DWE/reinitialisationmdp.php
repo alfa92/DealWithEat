@@ -16,12 +16,9 @@
         <?php include('php/header.php'); ?>
         <?php include('nav.php'); ?>
 
-
-
-
-        
-
-<?php 
+</header>
+<body>
+    <?php 
 
     $b=$_GET['b'];
     $reinitialisation=$bdd2->query('SELECT * FROM user WHERE US_idUser="'.$b.'"');
@@ -30,10 +27,7 @@
 
     ?>
 
-
-
-       </div>
-<form method="post">
+    <form method="post">
 <table id="account_data2">
    <td>Mot de passe</td>
       
@@ -53,3 +47,16 @@
        
         
        ?>
+
+
+
+    </body>
+
+
+        
+
+
+
+
+       </div>
+
