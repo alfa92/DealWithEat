@@ -36,7 +36,7 @@
        <ul>
             <li><a href="membreadmin.php"> Membres </a></li>
             <li><a href="adminannonce.php"> Annonces </a></li>
-            <li><a href="forumadmin.php"> Forum </a></li>
+            <li><a href="#"> Forum </a></li>
             <li><a href="adminfaq.php"> FAQ </a></li>
             <li><a href="../index.php" TARGET=_BLANK> Voir le site</a></li>
             <li><a href="logout.php"> Deconnexion</a></li>
@@ -79,9 +79,9 @@
                
                 $filename = "../image_user/".$donnees1['US_idUser']."/".$donnees1['US_image'];
                 if($donnees1['US_image'] == "" or !file_exists($filename)){
-                      $avatar="<img id='avatar_little' width='120px' height='auto' src='../image_user/avatar.png' />"; 
+                      $avatar="<img id='avatar_little' width='120px' src='../image_user/avatar.png' />"; 
                 }else{
-                      $avatar="<img id='avatar_little' width='120px' height='auto' style='max-height:150px;' src='../image_user/".$donnees1['US_idUser']."/".$donnees1['US_image']."' />"; 
+                      $avatar="<img id='avatar_little' width='120px' src='../image_user/".$donnees1['US_idUser']."/".$donnees1['US_image']."' />"; 
                 }
             ?>
                 <?= $avatar ?>

@@ -52,7 +52,7 @@ $id=$ligne['US_idUser']
         </i></fieldset>
             
             <form id="avatar_upload" action="" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" required/> 
+            <input type="file" name="file" /> 
             <input type="submit" value="Insérer photo" name="subit">
             </form>
 

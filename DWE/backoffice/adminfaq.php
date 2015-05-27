@@ -34,7 +34,7 @@
            <ul>
             <li><a href="membreadmin.php"> Membres </a></li>
             <li><a href="adminannonce.php"> Annonces </a></li>
-            <li><a href="forumadmin.php"> Forum </a></li>
+            <li><a href="#"> Forum </a></li>
             <li><a href="adminfaq.php"> FAQ </a></li>
             <li><a href="../accueil.php" TARGET=_BLANK> Voir le site</a></li>
             <li><a href="logout.php"> Deconnexion</a></li>
@@ -44,7 +44,7 @@
     </div>
 <div id="back_right">
          <a href="adminmembre.php">
-        <h1> Interface Administrateur</h1>
+        <h1> Interface Administrateur <?= $_SESSION['id'] ?></h1>
              
         
         <h1 style="text-align:left;"> Vous pouvez ici mettre en ligne des post sur la FAQ</h1>
@@ -79,14 +79,13 @@
 <?php }?>
      
 <?php if(isset($_POST['subfaq'])){
-    $reponse=$_POST['reponse'];
 
-    $sqli=$bdd2->query("INSERT INTO FAQ VALUES ('','".$_POST['Emplacement']."','".$_POST['titre']."','".$reponse."')");
+    $sqli="INSERT INTO FAQ VALUES ('','".$_POST['Emplacement']."','".$_POST['titre']."','".$_POST['reponse']."')";
+    $bdd2->query($sqli);
 } 
 ?>
 
 ?>
-
 </div>
     </body>
 </html>

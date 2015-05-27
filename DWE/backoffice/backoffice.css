@@ -1,5 +1,6 @@
 a,h1,h2,p,h3,tr,td{
     font-family: 'Roboto',sans-serif;
+
 }
 
 a{
@@ -240,14 +241,3 @@ h1{
     background-position: center;
 }
 
-
-#forumadminarticlereponse {
-    min-width:300px;
-    box-shadow: 2px 2px 2px black;
-    display: inline-block;
-    vertical-align: top;
-    min-height:100px;
-    margin-right:10px;
-    margin-bottom: 10px;
-    border:1px solid grey;
-}
