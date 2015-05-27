@@ -1,6 +1,5 @@
 
 <title>Deal With Eat - Backoffice</title>
- <meta charset=UTF-8>
 </head>
 <header>
     <?php include('../../php/config.php'); ?>
@@ -17,11 +16,11 @@ $ligne=$query->fetch();
                    $sql2query=$bdd2->exec($sql2);
                      if($sql2query==true)
                      {
-                                echo '<center><p id="byebye_user">Le membre est maintenant un modérateur  !</p></center>';
+                                echo 'Le membre est maintenant un modérateur  !';
                                     }
                         else
                         { 
-                            echo '<center><p id="byebye_user">Probleme 2</p></center>';
+                            echo "Probleme 2";
                         }
 
 				}else{
@@ -29,11 +28,11 @@ $ligne=$query->fetch();
                    $sql2query=$bdd2->exec($sql2);
                      if($sql2query==true)
                      {
-                                echo '<center><p id="byebye_user">Le membre n\'est plus un modérateur  !</p></center>';
+                                echo 'Le membre n\'est plus un modérateur  !';
                                     }
                         else
                         { 
-                            echo '<center><p id="byebye_user">Probleme 2</p></center>';
+                            echo "Probleme 2";
                         }
 
                     }

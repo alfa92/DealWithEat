@@ -1,5 +1,4 @@
-    <title>Deal With Eat - Backoffice</title>
-     <meta charset=UTF-8>
+<title>Deal With Eat - Backoffice</title>
 </head>
 <header>
     <?php include('../../php/config.php'); ?>
@@ -23,4 +22,3 @@ $id=$_GET['id'];
                         }
                     
      ?>
-     <a href="../membreadmin.php"> Retour au backoffice </a>

@@ -240,30 +240,4 @@ h1{
     background-repeat: no-repeat;
     background-position: center;
 }
-<<<<<<< HEAD
 
-=======
-#byebye_user{
- display: inline-block;
-    vertical-align: top;
-     margin-top: 0px;
-     margin-left: 2px;
-     font-weight: 600;
-     font-size: 50;
-}
-#logo_byebye{
-    width: 70px;
-    height:70px;
-}
-
-#forumadminarticlereponse {
-    min-width:300px;
-    box-shadow: 2px 2px 2px black;
-    display: inline-block;
-    vertical-align: top;
-    min-height:100px;
-    margin-right:10px;
-    margin-bottom: 10px;
-    border:1px solid grey;
-}
->>>>>>> origin/master
