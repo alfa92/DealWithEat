@@ -1,6 +1,5 @@
 a,h1,h2,p,h3,tr,td{
     font-family: 'Roboto',sans-serif;
-
 }
 
 a{
@@ -249,7 +248,17 @@ h1{
      font-size: 50;
 }
 #logo_byebye{
-
     width: 70px;
     height:70px;
+}
+
+#forumadminarticlereponse {
+    min-width:300px;
+    box-shadow: 2px 2px 2px black;
+    display: inline-block;
+    vertical-align: top;
+    min-height:100px;
+    margin-right:10px;
+    margin-bottom: 10px;
+    border:1px solid grey;
 }
