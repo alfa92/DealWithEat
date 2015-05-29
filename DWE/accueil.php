@@ -64,7 +64,6 @@
                     Les produits présents sur le site viennent tous de potager de particuliers ou de fermes. 
                     <br />
                     Sur ce site vous pouvez échanger et acheter vos produits. Lors d'un échange il faudra proposer un échange équitable, ainsi chacun pourra consommer les produits d'autres particuliers.
-                    A l’heure de l’hyper consommation, de l’agriculture industriel, des OGM, tarissement des nappes phréatiques et du réchauffement climatique, cessons de vouloir et agissons. Deal With Eat est un outil permettant de connaitre précisément l’origine de nos aliments et offre le plaisir de manger des fruits et légumes locaux. Nous désirons tous un monde plus propre, une meilleur hygiène alimentaire, à nous d’agir maintenant à notre niveau.
                     <br />
                    
                 </p>
