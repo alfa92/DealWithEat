@@ -6,6 +6,8 @@
         <meta name="description" content="Deal With Eat est un site d'échange et de vente de fruits et légumes entre particuliers. Une personne à coté de chez vous échange peut être votre fruit préféré.">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+       
+        
 
         <title>Deal With Eat</title>
         
@@ -62,7 +64,9 @@
                     Les produits présents sur le site viennent tous de potager de particuliers ou de fermes. 
                     <br>
                     Sur ce site vous pouvez échanger et acheter vos produits. Lors d'un échange il faudra proposer un échange équitable, ainsi chacun pourra consommer les produits d'autres particuliers.
-                    
+                    <br>
+                    <br>
+                    A l’heure de l’hyper consommation, de l’agriculture industriel, des OGM, tarissement des nappes phréatiques et du réchauffement climatique, cessons de vouloir et agissons. Deal With Eat est un outil permettant de connaitre précisément l’origine de nos aliments et offre le plaisir de manger des fruits et légumes locaux. Nous désirons tous un monde plus propre, une meilleur hygiène alimentaire, à nous d’agir maintenant à notre niveau.
                 </p>
                     <img id="principe" src="css/images/vegetable.jpg">
         </div>

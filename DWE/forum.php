@@ -5,7 +5,49 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 
         <title>Deal With Eat</title>
-        
+        <style>
+        #probleme{
+          min-height: 29%;
+        }
+        #probleme td, #probleme th{
+          text-align: center;
+          font-family: 'Roboto',sans-serif;
+          font-size: 15px;
+          
+        }
+        #probleme td{
+          height: 50px;
+    vertical-align: middle;
+        }
+        #probleme .sujet{
+          min-width: 200px;
+        }
+        #probleme .autre{
+          width:120px;
+        }
+        .forum h3{
+            text-align: right;
+            margin-right: 10%;
+            margin-left: 30%;
+            border-bottom: 2px dashed grey;
+            width: 60%;
+        }
+        .forum .a{
+          width: 200px;
+          height:50px;
+          margin-left: 10%;
+          margin-bottom: -30px;
+          background: grey;
+          border-radius: 20px;
+          box-shadow: 2px 2px 2px black;
+
+        }
+        .forum .a p{
+          text-align: center;
+          padding-top: 12px;
+
+        }
+        </style>
     </head>
     
 <div id="principal">
@@ -18,11 +60,14 @@
     
     </header>
     
-        <body><a href="questionforum.php"> Poster un article </a>
+        <body class="forum">
+        <h3> Forum </h3>
+        <a href="questionforum.php"> <div class="a"><p>Poster un article </p></div></a>
 
         <?php
-
           $article=$bdd2->query('SELECT * FROM forumq');
+          
+
 
     ?>
           
@@ -30,15 +75,23 @@
             <table id="tableforum">
               <tr>
                         <th> Sujet </th>
-                        <th> Dernière réponse </th>
+                        <th> Auteur </th>
+                        <th class="autre"> Nombre de réponse </th>
                         <th> Date </th>
              </tr>
                <?php while ($articles = $article->fetch())
-{ ?>
+{ 
+  $date=date_create($articles['Date']);
+  $bdate=date_format($date,'d/m/Y');
+$reponse=$bdd2->query('SELECT COUNT(*) FROM forumr WHERE FR_Sujet = '.$articles['ID_forum'].'');
+$rep=$reponse->fetchColumn();
+
+  ?>
    <tr>
-       <td><a href="article.php?a=<?php echo $articles['idforum']; ?>"> <?php echo $articles['Fo_Sujet'] ;?> </a><br></td>
-       <td><a href="article.php?a=<?php echo $articles['idforum']; ?>"> <?php echo $articles['Fo_Pseudo'] ;?>  </a><br></td>
-       <td><a href="article.php?a=<?php echo $articles['idforum']; ?>"> <?php echo $articles['com'] ;?>  </a><br></td>
+       <td class="Sujet" ><a href="article.php?a=<?php echo $articles['ID_forum']; ?>"> <?php echo $articles['q_sujet'] ;?> </a><br></td>
+       <td class="autre" ><a href="article.php?a=<?php echo $articles['ID_forum']; ?>"> <?php echo $articles['q_pseudo'] ;?>  </a><br></td>
+       <td class="autre" ><a href="article.php?a=<?php echo $articles['ID_forum']; ?>"> <?php echo $rep; ;?>  </a><br></td>
+       <td class="autre" ><a href="article.php?a=<?php echo $articles['ID_forum']; ?>"> <?php echo  $bdate;?>  </a><br></td>
    </tr>
 
  <?php } 

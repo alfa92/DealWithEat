@@ -110,6 +110,59 @@ if(is_dir($dossier)){
             <li> Pays : <?php echo $ligne['US_pays']; ?></li>
         </ul>
     </div>    
+               <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr">
+</script>
+        
+        <form>
+  <input type="text" id="adresse" style="outline:none;border:none;display:none;"value="<?= $ligne['US_adresse']?>"/>
+ <center> <input type="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"/>
+</form>
+<span style="display:none;" id="text_latlng"></span>
+<div id="map-canvas" style="height:220px;width:80%"></div></center>
+        
+        
+    <script type="text/javascript">
+var geocoder;
+var map;
+// initialisation de la carte Google Map de départ
+function initialiserCarte() {
+  geocoder = new google.maps.Geocoder();
+  // Ici j'ai mis la latitude et longitude du vieux Port de Marseille pour centrer la carte de départ
+  var latlng = new google.maps.LatLng(48.8566140,2.3522219);
+  var mapOptions = {
+    zoom      : 12,
+    center    : latlng,
+    mapTypeId : google.maps.MapTypeId.ROADMAP
+  }
+  // map-canvas est le conteneur HTML de la carte Google Map
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
+ 
+function TrouverAdresse() {
+  // Récupération de l'adresse tapée dans le formulaire
+  var adresse = document.getElementById('adresse').value;
+  geocoder.geocode( { 'address': adresse}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+      map.setCenter(results[0].geometry.location);
+      // Récupération des coordonnées GPS du lieu tapé dans le formulaire
+      var strposition = results[0].geometry.location+"";
+      strposition=strposition.replace('(', '');
+      strposition=strposition.replace(')', '');
+      // Affichage des coordonnées dans le <span>
+      document.getElementById('text_latlng').innerHTML='Coordonnées : '+strposition;
+      // Création du marqueur du lieu (épingle)
+      var marker = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+      });
+    } else {
+      alert('Adresse introuvable: ' + status);
+    }
+  });
+}
+// Lancement de la construction de la carte google map
+google.maps.event.addDomListener(window, 'load', initialiserCarte);
+</script>
             <a href="moncompte_modif.php"><p style="margin-left:60%;margin-top:50px;"> Modifier mes données </p></a>
             
         <div id="annoncescompte">

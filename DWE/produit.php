@@ -8,6 +8,11 @@
         
     </head>
     
+<script type="text/javascript">
+    function updateTextInput(val) {
+      document.getElementById('textInput').value=val; 
+    }
+  </script>
 <div id="principal">
 
     <header>
@@ -23,19 +28,50 @@
 			
 			$q=$_GET['q'];
 
-			$req='SELECT * FROM Produits WHERE Pr_idProduits="'.$q.'"';
-			$res=mysqli_query($conn1,$req);
 
 
-	if($rows=mysqli_fetch_array($res)){
-		$nom=$rows['Pr_Nom']; $membre=$rows['Pr_Membre'];$prix=$rows['Pr_Prix'];$quantite=$rows['Pr_Quantité'];
+			$req='SELECT * FROM Annonce WHERE AN_idAnnonce="'.$q.'"';
+			$res=$bdd2->query($req);
+            $an=$res->fetch();
 
-			?>	Nom du produit : <?= $nom ?> <br>
-                Nom du membre : <?= $membre ?> <br>
-                Prix du produit : <?= $prix ?> <br>
-                Quantitée : <?= $quantite ?> <br> </a>
-	<?php
-}
-	
+$nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$an['PR_idP'].'"');
+        $req=$nom->fetch();
+
+$pseudo=$bdd2->query('SELECT US_pseudo, US_idUser FROM User WHERE US_idUser="'.$an['US_idUserannonceur'].'"');
+        $ps=$pseudo->fetch();
+
 ?>
+        <h1> <?= $req['PR_nom']; ?> </h1>
+    <h2> <a href="membre.php?a=<?= $an['US_idUserannonceur'] ?>"><?= $ps['US_pseudo'] ?></a> </h2>
+    <img id="image_article" src="imageproduit/<?php echo $an['PR_idP'] ?>.jpg" style="margin-left:500px;">
+    <p> Prix : <?= $an['AN_prix']; ?>€ / <?= $an['AN_unite'] ?></p>
+    
+    <p> Description du produit : <?= $an['AN_description']; ?> </p>
+    
+    
+    
+    <p> Quantité disponible : <?=  $an['AN_quantite'] ?> <?= $an['AN_unite'] ?></p>
+    
+    
+    <label for="quantite"> Quantité :</label>
+  <input type="range" name="rangeInput" min="0" max="<?= $an['AN_quantite']  ?>" value="1" onchange="updateTextInput(this.value);">                                                       
+    <input type="text" id="textInput" value="1" width="10" style="border:none;outline:none;">
+    
+    <a id="panier"  href="panier/addpanier.php?id=<?= $q ?>">
+        <div id="div_ajout_panier"> Ajouter au panier </div></a><br>
+        
+        <style>
+            #div_ajout_panier{
+                display:block;
+                width:auto;
+                height;100px;
+               border:1px solid black;
+                
+            }
+            
+        </style>
 </div>
+
+    <br/>
+</body>
+    <?php include('php/pied_de_page.php'); ?>
