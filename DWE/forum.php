@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <head>
         <meta charset=UTF-8>
@@ -54,7 +55,6 @@
     <header>
         <?php include('php/config.php'); ?>
         <?php include('php/header.php'); ?>
-        <?php include('php/connexion.php'); ?>
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
 			
     

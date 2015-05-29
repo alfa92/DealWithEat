@@ -40,7 +40,9 @@ if(isset($_POST['login'])){
     $login=NULL;
 }
 if(isset($_POST['pass'])){
-    $pass=md5($_POST['pass']);
+   $prefixe="m0td3p4ss3dEbut";
+                        $suffixe="mOtdEpAssEf1N";
+                                $pass = md5($prefixe.$_POST['pass'].$suffixe); 
 }else{
     $pass=NULL;
 }

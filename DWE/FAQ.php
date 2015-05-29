@@ -38,17 +38,6 @@
         <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;">FAQ<i
                 style="margin-left:70%;font-size: 20px;letter-spacing: normal;"><a href="forum.php">Accéder au forum
                     d'aide</a></i></h1>
-        <aside id="asidefaq" ;>
-            <nav>
-                <ul>
-                    <li><a href="#faqr">Réglement</a></li>
-                    <li><a href="#faqi">Inscription</a></li>
-                    <li><a href="#faqc">Connexion</a></li>
-                    <li><a href="#faqave">Achat - Vente -Echange</a></li>
-
-                </ul>
-            </nav>
-        </aside>
         <section id="sectionfaq">
 
             <h6 id="faqQP"> QUESTIONS POPULAIRES </h6>

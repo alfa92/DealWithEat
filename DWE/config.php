@@ -1,6 +1,4 @@
-<?php session_start();
-
-
+<?php
 /******************************************************
 ----------------Configuration Obligatoire--------------
 Veuillez modifier les variables ci-dessous pour que l'

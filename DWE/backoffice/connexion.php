@@ -24,7 +24,9 @@
         $login = $_POST['login'];
     }
     if(isset($_POST['pass'])) {
-        $mdp = md5($_POST['pass']);
+        $prefixe="m0td3p4ss3dEbut";
+                        $suffixe="mOtdEpAssEf1N";
+        $mdp = md5($prefixe.$_POST['pass'].$suffixe);
     }
     if(isset($_POST['subconnect'])) {
         $boutton = $_POST['subconnect'];

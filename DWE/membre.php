@@ -70,27 +70,45 @@
         </div>
     
     <div id="vote_vendeur">
+        <?php  
+            $nombrevote = $bdd2->query('SELECT COUNT(NU_note) FROM note_user WHERE NU_idUser="'.$a.'"');
+            $nbvote=$nombrevote->fetchColumn();
+        
+         $note=$bdd2->query('SELECT sum(NU_note) as somme FROM note_user WHERE NU_idUser="'.$a.'"');
+                    while($noteshow=$note->fetch()){
+                        
+                    $easy=$noteshow['somme'];
+                    }
+        ?>
     <h4>Voter pour ce vendeur :</h4> 
-    <?php   if(isset($_SESSION['id'])>0){ ?>
+    <p>Note moyenne : <?= $easy/$nbvote ?>/5</p>
+        <?php 
+        if(isset($_SESSION['id'])>0){ 
     
-    
-        
-       
-
-    
-    <?php 
-              
-                $dejavote=$bdd2->query('SELECT * FROM note_user WHERE NU_idUser="'.$a.'" AND NU_idUsNote="'.$_SESSION['id_perso'].'" ');
+                $dejavote=$bdd2->query('SELECT * FROM note_user  WHERE NU_idUser = "'.$a.'" && NU_idUsNote ="'.$_SESSION['id_perso'].'"');
                 $dvresult = $dejavote -> fetch();
-                $countdv=count($dvresult);
         
-        if($countdv=0){
-           ?> <p> Vous avez déjà donné votre avi sur ce vendeur </p>
+        if($_SESSION['id_perso'] == $dvresult['NU_idUser'])
+        {
+           ?> <p> Vous ne pouvez pas voter pour vous ! </p>
     
     <?php 
-        }else{  
+            
+        }
+                elseif($dvresult['NU_idUsNote']==$_SESSION['id_perso'])
+                {
+             ?> <p> Vous avez déja voté pour ce vendeur. </p>
+    
+    <?php 
+        
+        }
+                else
+                {  
             
             ?>
+        <?php 
+                   
+                    ?>
      <form method="POST">
     <table>
         <tr>
@@ -149,7 +167,7 @@
         <br />
            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr">
 </script>
-        
+        <?= $rows1['US_adresse'] ?>
         <form>
   <input type="text" id="adresse" style="outline:none;border:none;display:none;"value="<?= $rows1['US_adresse']?>"/>
   <input type="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"/>
@@ -164,10 +182,9 @@ var map;
 // initialisation de la carte Google Map de départ
 function initialiserCarte() {
   geocoder = new google.maps.Geocoder();
-  // Ici j'ai mis la latitude et longitude du vieux Port de Marseille pour centrer la carte de départ
   var latlng = new google.maps.LatLng(48.8566140,2.3522219);
   var mapOptions = {
-    zoom      : 12,
+    zoom      : 7,
     center    : latlng,
     mapTypeId : google.maps.MapTypeId.ROADMAP
   }
