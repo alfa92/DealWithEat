@@ -69,6 +69,9 @@
                 </p>
                     <img id="principe" src="css/images/vegetable.jpg">
         </div>
+        <hr />
+        <h2> Dernières annonces publiées  </h2>
+        <?php include('slider.php'); ?>
 <hr/>
                 <img id="ccmimg" src="css/images/carrots.jpg">
         <div id="ccm">
