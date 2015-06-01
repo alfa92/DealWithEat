@@ -154,7 +154,7 @@ var slider = function(id){
         this.prec=this.div.find(".prec");
         this.suiv=this.div.find(".suivant");
         this.saut= this.largeurCache/3;
-        this.nbEtape= Math.ceil(this.largeur/this.saut - this.largeurCache/this.saut);
+        this.nbEtape= Math.ceil(this.largeur/this.saut - this.largeurCache/this.saut -1);
         this.courant=0;
     
         this.suiv.click(function(){

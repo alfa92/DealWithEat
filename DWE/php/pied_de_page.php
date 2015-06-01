@@ -27,6 +27,7 @@
     
     <ul ><a href="reglement.php"> Réglement </a></ul>
         </div>
+        <center><a href="membre_newsletter.php"> Newsletter </a></center>
 </div>
 <div class="footer" id="footer3">
     <h2>Contact</h2>

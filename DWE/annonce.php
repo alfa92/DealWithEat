@@ -20,6 +20,7 @@
 
         
 <body>
+        
     <div id="gauche_annonce">
         <form method="POST">
             
@@ -45,7 +46,8 @@ if(isset($_POST['Filtre'])){
     $type=$bdd2->query('SELECT * FROM Produit WHERE PR_type="'.$_POST['FruitLegume'].'"');
 }
 ?>
-            <div id="droite_annonce"> 
+            <div style="margin-top:0;" id="droite_annonce"> 
+                <?php include('slider.php'); ?>
 <?php
   $products=$bdd2->query('SELECT * FROM Annonce');
       foreach($products as $products):

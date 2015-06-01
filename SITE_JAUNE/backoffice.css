@@ -1,0 +1,243 @@
+a,h1,h2,p,h3,tr,td{
+    font-family: 'Roboto',sans-serif;
+
+}
+
+a{
+    text-decoration: none;
+        color:black;
+}
+body{
+    margin:0;
+
+}
+
+h1{
+    font-weight: 300;
+    text-align: right;
+}
+
+#postfaq {
+    margin-left: 20%;
+}
+
+#postfaq input, #postfaq textarea {
+    padding: 10px 12px;
+    margin: 7px 5px;
+    outline: none !important;
+    background: rgba(153, 153, 153, 0.09);
+    color: #33383b;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+
+}
+
+#formmail {
+    margin-left: 20%;
+    margin-bottom: 100px;
+
+
+}
+
+#connect_admin{
+    border: 1px solid black;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px 2px black ;
+    width: 300px;
+    height: 300px;
+    left:0;
+    right:0;
+    margin-right: auto;
+    margin-left:auto;
+    background-color: rgba(248, 253, 255, 0.40);
+    margin-top: 10%;
+}
+
+#connect_admin input:first-child{
+   margin-top: 80px;
+
+}
+
+#connect_admin input{
+    opacity:;
+    width: 250px;
+    margin-bottom: 10px;
+    margin-left: 8%;
+    padding: 10px 12px;
+    outline: none !important;
+    background: rgba(153, 153, 153);
+    color: #33383b;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+
+}
+
+
+#body_admin{
+    background:url('../css/images/carrots.jpg');
+}
+
+#membre_data{
+    width: 90%;
+    margin-left: 22%;
+    margin-top: 10px;
+    border: 1px solid black;
+
+}
+
+
+#membre_data td{
+    font-family: 'Roboto', sans-serif;
+    font-size:17px;
+    border: 1px solid black;
+    text-align: center;
+    padding:0;
+}
+
+#membre_data a{
+
+    font-family: 'Roboto', sans-serif;
+    font-size:14px;
+    color:gray;
+
+}
+
+#account_data input{
+    height: 25px;
+    padding-left: 10px;
+    outline: none !important;
+    background: rgba(153, 153, 153, 0.09);
+    color: #33383b;
+    font-size: 15px;
+    min-width: 100px;
+    box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+    border: none;
+    border-radius: 0.3em;
+}
+
+
+#back_right{
+    margin-left: 16%;
+}
+/********* NAVIGATION ***********/
+
+
+#nav{
+
+    background: lightgray;
+    box-shadow: 0px 4px 6px 6px grey; 
+    height: 100%;
+    width: 15%;
+    position: fixed;
+
+}
+#nav ul{
+    margin-top: 50px;
+}
+#nav ul li{
+    list-style: none;
+    height: 40px;
+    box-shadow: 0 4px 2px -2px gray;
+    margin-bottom: 10px;
+}
+#annoncetotale{
+    font-family: 'Roboto', sans-serif;
+    width:150px;
+    height:200px;
+    box-shadow: 2px 2px 2px grey;
+    display: inline-block;
+    vertical-align: top;
+    margin:0;
+    padding:0;
+    letter-spacing:inherit;
+}
+#annonce{
+    
+    width: 150px;
+    height:100px;
+    background-size:150px 150px;
+    background-position: top;
+    
+}
+
+#annoncetotale p{
+    padding-top:0;
+    margin-top:0;
+    
+}
+
+#annoncetotale a{
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    height:30px;
+    background: red;
+    background-image:url('letter x.png') ;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 120px;
+    margin-top: -3px;
+}
+#profil{
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    height: 200px;
+    text-align: justify;
+    font-family: 'Roboto',sans-serif;
+    box-shadow: 2px 2px 2px black;
+    border:1px solid grey;
+}
+#profil p:first-child{
+    margin-top: 10px;
+}
+#profil p{
+    margin-top:-10px;
+    font-size: 14.5px;
+}
+#profil img{
+    position: absolute;
+    margin-left: 160px;
+    margin-top: -100px;
+}
+#profil a{
+   
+    display: inline-block;
+    vertical-align: top;
+     margin-left: 1px;
+}
+#profil a p{
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height:40px;
+    background: red;
+    background-image:url('letter x.png') ;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#profil .moderateur{
+    display: inline-block;
+    vertical-align: top;
+     margin-top: 0px;
+     margin-left: 2px;
+}
+#profil .moderateur p{
+    
+    display: inline-block;
+    vertical-align: top;
+    width: 40px;
+    height:40px;
+    background: green;
+    background-image:url('user36.png') ;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
