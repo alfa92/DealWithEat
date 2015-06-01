@@ -187,6 +187,7 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
 }
  ?>   
  </div>
+    <a href="annonce_modif.php"> Modifier vos annonces </a>
         </div>
       
     </body>
