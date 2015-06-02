@@ -69,7 +69,9 @@
     while($ann=$annonce->fetch()){
     $produit=$bdd2->query('SELECT * FROM Produit WHERE PR_idP="'.$ann['PR_idP'].'" LIMIT 5');
     
-    while($prods=$produit->fetch()){ echo $prods['PR_nom']."- ".$ann['AN_quantite']."".$ann['AN_unite']."-".$ann['AN_prix']."€ , ";}
+    while($prods=$produit->fetch()){ 
+        $annonces= $prods['PR_nom']."- ".$ann['AN_quantite']."".$ann['AN_unite']."-".$ann['AN_prix']."€ , ";
+    echo $annonces;}
  
     }
     ?>
@@ -96,6 +98,8 @@
            
     }
     
+    
+    
     ?>
 
 </fieldset>
@@ -105,13 +109,15 @@
     <input type="submit" name="envoyer" value="Envoyer la newsletter aux inscrits" />
 </form></center>
 
+     <?php 
+
     
-    </div>
-</div>
-    <?php 
-                
+    
     ?>
     
     <?php } ?>
+    </div>
+</div>
+   
 </body>
 </html>
