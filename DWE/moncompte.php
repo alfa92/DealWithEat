@@ -180,14 +180,18 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
 ?>
 <img id="image_article_compte" style="width:40px;" src="imageproduit/<?php echo $rows['PR_idP'] ?>.jpg">
 <?php
-          echo $rows1['PR_nom'].'<br>';
+         
+         echo $rows1['PR_nom'].'<br>';
          echo $rows['AN_prix'].'€ <br>';
-         echo "Quantité restante : ".$rows['AN_quantite']."kg";
-         ?> <hr> <?php
+         echo "<p style='display:inline-block;'> Quantité restante : ".$rows['AN_quantite']."kg </p>";
+         ?> <a href="annonce_modif.php ?id=<?= $rows['AN_idAnnonce']; ?> "> <img class="modifier" src="css/images/modifier.png"  />  </a>
+         <a href="moncompte.php" ?id=<?= $rows['AN_idAnnonce']; ?>> <img class="supprimer" src="css/images/supprimer.png" />
+         <hr> 
+         <?php
 }
  ?>   
  </div>
-    <a href="annonce_modif.php"> Modifier vos annonces </a>
+    
         </div>
       
     </body>
