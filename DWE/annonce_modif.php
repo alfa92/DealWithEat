@@ -20,16 +20,17 @@ include('php/config.php');?>
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
         
         <?php 
+        if(isset($_GET['id'])){
 $id=$_GET['id'];
 echo $id;
-
+}
         if(isset($_SESSION['id'])=='1'){
 ?> 
 	
 	<body>
 		<section class="section_vendre">
         <h1 class="h1_vente"> VOTRE ANNONCE </h1>
-        <form id="FormulaireVendre" method="post" action="vendre.php" enctype="multipart/form-data" name="form1">
+        <form id="FormulaireVendre" method="post" action="annonce_modif.php?id=<?= $id ?>" enctype="multipart/form-data" name="form1">
 
                  
           <label for="quantite">Quantité : </label> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
@@ -74,7 +75,7 @@ echo $id;
     <label style="width:450px;"> Vous pouvez aussi insérer une image du produit : </label>
     <input type="file" name="file"> 
 
-        <input id="modif_sub" type="submit" name="rafraichir" onclick="return confirm('Êtes vous sur de vouloir effectuer ces changements')" value="Envoyer les modifications">
+        <input id="modif_sub" type="submit" name="bouton" onclick="return confirm('Êtes vous sur de vouloir effectuer ces changements')" value="Envoyer les modifications">
 
 <?php
 }
@@ -83,26 +84,23 @@ echo $id;
 
 if(isset($_POST['bouton'])){
 
-$req=$bdd2->prepare('UPDATE Annonce SET quantite=:"'.$_POST[nvquantite].'",prix=:"'.$_POST[nvprix].'",echangeok=:"'.$_POST[nvechangeok].'",descriptionechange=:"'.$_POST[nvdescriptionechange].'", payement=:"'.$_POST[nvpayement].'",typeenvoie=:"'.$_POST[nvtypeenvoie].'",datecueillette=:"'.$_POST[nvdatecueillette].'",prixcolis=:"'.$_POST[nvprixcolis].'",description=:"'.$_POST[nvdescription].'" WHERE AN_idAnnonce="'.$_GET['id'].'"');
-if($req->execute(array(
-  'quantite'=>$_POST['nvquantite'],
-  'prix'=>$_POST['nvprix'],
-  'echangeok'=>$_POST['nvechangeok'],
-  'descriptionechange'=>$_POST['nvdescriptionechange'],
-  'payement'=>$_POST['nvpayement'],
-  'typeenvoie'=>$_POST['nvtypeenvoie'],
-  'datecueillette'=>$_POST['nvdatecueillette'],
-  'prixcolis'=>$_POST['nvprixcolis'],
-  'description'=>$_POST['nvdescription']
+$req=$bdd2->prepare('UPDATE Annonce SET AN_quantite=:nvquantite, AN_unite=:nvunite ,AN_prix=:nvprix,AN_echangeok=:nvechangeok, AN_echangedescription=:nvdescriptionechange, AN_moyentpayment=:nvpayement, AN_moyenenvoie=:nvtypeenvoie, AN_datepublication=:nvdatecueillette ,AN_prixcolis=:nvprixcolis, AN_description=:nvdescription WHERE AN_idAnnonce=:idAnnonce');
+$req->execute(array(
+  'nvquantite'=>$_POST['nvquantite'],
+  'nvunite'=>$_POST['nvunite'],
+  'nvprix'=>$_POST['nvprix'],
+  'nvechangeok'=>$_POST['nvechangeok'],
+  'nvdescriptionechange'=>$_POST['nvdescriptionechange'],
+  'nvpayement'=>$_POST['nvpayement'],
+  'nvtypeenvoie'=>$_POST['nvtypeenvoie'],
+  'nvdatecueillette'=>$_POST['nvdatecueillette'],
+  'nvprixcolis'=>$_POST['nvprixcolis'],
+  'nvdescription'=>$_POST['nvdescription'],
+  'idAnnonce'=>$_GET['id']
+  ));
+
+echo "<script type='text/javascript'>document.location.replace('moncompte.php');</script>";
   
-
-  ))==TRUE){
-
-  echo "bravo !";
-    }
-    else{ echo "no";}
-
-
 }
   
   ?>

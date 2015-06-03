@@ -142,10 +142,25 @@ if(isset($_POST['bouton'])){
    // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
     //$ligne=$selec->fetch();
  
-    if($article=$bdd2->exec('INSERT INTO Annonce  VALUES ("","'.$_SESSION['id_perso'].'","'.$_POST['produit'].'",NULL,"'.$_POST['quantite'].'","'.$_POST['prix'].'","'.$_POST['echangeok'].'","'.$_POST['descriptionechange'].'","'.$_POST['payement'].'","'.$_POST['typeenvoie'].'","'.$_POST['datecueillette'].'","'.$_POST['prixcolis'].'","'.$_POST['description'].'","'.$_SESSION['id_perso'].'","'.$_POST['unite'].'","'.$nomdufichier.'")')==TRUE){
-
-    echo "bravo !";
-    }else{ echo "no";}
+    $req=$bdd2->prepare('INSERT INTO annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image)
+   VALUES (:US_idUserannonceur,:PR_idP,:PE_idPropositionEchan,:AN_quantite,:AN_prix,:AN_echangeok,:AN_echangedescription,:AN_moyentpayment,:AN_moyentenvoie,:AN_datepublication,:AN_prixcolis,:AN_description,:AN_idUser,:AN_unite,:AN_image)');
+  $req->execute(array(
+  "US_idUserannonceur"=>$_SESSION['id_perso'],
+  "PR_idP"=>$_POST['produit'],
+  "PE_idPropositionEchan"=>NULL,
+  "AN_quantite"=>$_POST['quantite'],
+  "AN_prix"=>$_POST['prix'],
+  "AN_echangeok"=>$_POST['echangeok'],
+  "AN_echangedescription"=>$_POST['descriptionechange'],
+  "AN_moyentpayment"=>$_POST['payement'],
+  "AN_moyentenvoie"=>$_POST['typeenvoie'],
+  "AN_datepublication"=>$_POST['datecueillette'],
+  "AN_prixcolis"=>$_POST['prixcolis'],
+  "AN_description"=>$_POST['description'],
+  "AN_idUser"=>$_SESSION['id_perso'],
+  "AN_unite"=>$_POST['unite'],
+  "AN_image"=>$nomdufichier
+));
 }
 
 ?>
