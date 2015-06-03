@@ -1536,6 +1536,12 @@ input{
     vertical-align: top;
 
 }
+.BIO{
+    width: 15%;
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid blue;
+}
 .type_envoie label{
     width: 30%;
 }

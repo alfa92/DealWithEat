@@ -45,7 +45,6 @@
                     <?php endforeach; ?>
                 <option> Autre </option>
             </select><br/>
-            <label> Si autre : </label> <input type="text"  /> </br>
            
         
           <label for="quantite">Quantité : </label> <!-- on choisit la quantité de fruit/légume qu'on dépose --> 
@@ -54,8 +53,12 @@
           <input type="radio" name="unite" value="pièce" id="pièce"/> <label for="pièce"> pièce </label> <br/>
 
           <label> Prix : </label><!-- on choisit le prix de fruit/légume qu'on dépose -->
-          <input name="prix" type="number" class="inputvendre"/> <br/><br/>
+          <input name="prix" type="number" class="inputvendre"/> <br/>
 
+         
+          <label>Le produit est: </label><input type="radio" name="BioPeuImporte" value="Bio" /> <label for="Bio">Bio</label>
+          <input type="radio" name="BioPeuImporte" value="PeuImporte" /> <label for="PeuImporte">Peu importe</label><br/> 
+          
           <div class="cueillette">
           <label for="datecueillette"> Date de cueillette : </label>
           <input type ="date" name="datecueillette"/><br/>
@@ -76,7 +79,7 @@
           <textarea class="inputvendre" name="descriptionechange" rows="8" cols="45" >
           </textarea> <br/><br/>
 
-          <label for ="payement"> Versement  désirer :  </label>
+          <label for ="payement"> Versement  désiré :  </label>
           <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
           <input type="radio" name="payement" value="espece" id="cash" /> <label for="espece">Espèce</label><br /><br />
 
