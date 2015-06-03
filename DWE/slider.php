@@ -178,7 +178,9 @@ var slider = function(id){
             }
     
         });
+    
     }
+
 
 
 </script>

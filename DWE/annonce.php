@@ -47,7 +47,7 @@ if(isset($_POST['Filtre'])){
 }
 ?>
             <div style="margin-top:0;" id="droite_annonce"> 
-                <?php include('slider.php'); ?>
+                
 <?php
   $products=$bdd2->query('SELECT * FROM Annonce');
       foreach($products as $products):
@@ -59,10 +59,9 @@ if(isset($_POST['Filtre'])){
         <div id="article_annonce">
             <form id="panier" method="post" action="annonce.php">
 
-                  <h5 style="text-align:right;border-bottom:1px dashed black;"> 
-                  <a href="produit.php?q=<?= $products['AN_idAnnonce']; ?>"><?= $req['PR_nom']; ?></h5></a>
-                      <p> <?php echo $products['AN_description']; ?> </p>
-              
+                  <h1 > 
+                  <a href="produit.php?q=<?= $products['AN_idAnnonce']; ?>"><?= $req['PR_nom']; ?></h1> 
+                      <h5> Prix : <?= $products['AN_prix']; ?>€/kg</h5> 
                 
                 <?php if($products['AN_image'] == NULL){ ?>
               <img id="image_article" src="imageproduit/<?php echo $products['PR_idP'] ?>.jpg">
@@ -70,16 +69,15 @@ if(isset($_POST['Filtre'])){
                  <img id="image_article" src="<?=  $products['AN_image'] ?>">
                 <?php }?>
                 <div id="info_produit">
-                      <h5> Prix : <?= $products['AN_prix']; ?>€/kg</h5> 
-                </div>
+                      <i>Quantité disponible : <?php echo $products['AN_quantite']; ?> kg </i>
+                </div></a>  
 
 
-                <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $products['AN_idAnnonce']; ?>">
-                <div id="div_ajout_panier"> Ajouter au panier </a><br>
-                    <i>Quantité disponible : <?php echo $products['AN_quantite']; ?> kg </i>
-
+                <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $products['AN_idAnnonce']; ?>"> 
+                <img id="div_ajout_panier" src="css/images/addpanier.png" width="40" height="40">  </a> <br>
+                
                     
-                </div>
+                
             </form>
         </div>
   

@@ -81,11 +81,10 @@ echo $id;
 }
 ?>
 <?php
-
-if(isset($_POST['bouton'])){
-
-$req=$bdd2->prepare('UPDATE Annonce SET AN_quantite=:nvquantite, AN_unite=:nvunite ,AN_prix=:nvprix,AN_echangeok=:nvechangeok, AN_echangedescription=:nvdescriptionechange, AN_moyentpayment=:nvpayement, AN_moyenenvoie=:nvtypeenvoie, AN_datepublication=:nvdatecueillette ,AN_prixcolis=:nvprixcolis, AN_description=:nvdescription WHERE AN_idAnnonce=:idAnnonce');
+if(isset($_POST['rafraichir'])){
+$req=$bdd2->prepare('UPDATE Annonce SET quantite=:"'.$_POST[nvquantite].'",prix=:"'.$_POST[nvprix].'",echangeok=:"'.$_POST[nvechangeok].'",descriptionechange=:"'.$_POST[nvdescriptionechange].'", payement=:"'.$_POST[nvpayement].'",typeenvoie=:"'.$_POST[nvtypeenvoie].'",datecueillette=:"'.$_POST[nvdatecueillette].'",prixcolis=:"'.$_POST[nvprixcolis].'",description=:"'.$_POST[nvdescription].'" WHERE AN_idAnnonce=:AN_idAnnonce');
 $req->execute(array(
+
   'nvquantite'=>$_POST['nvquantite'],
   'nvunite'=>$_POST['nvunite'],
   'nvprix'=>$_POST['nvprix'],
@@ -101,9 +100,10 @@ $req->execute(array(
 
 echo "<script type='text/javascript'>document.location.replace('moncompte.php');</script>";
   
+
 }
-  
-  ?>
+	
+	?>
 
 	</body>
 

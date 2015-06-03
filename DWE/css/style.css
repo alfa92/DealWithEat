@@ -940,70 +940,36 @@ h4{
     left:0;
     margin-right: 00px;
     margin-left: auto;
+
 }
 
 #article_annonce{  
-    width: 60%;
-    margin-left: 5%;
-    border-top:1px solid black;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
+        width:22%;
+        min-height:130px;
+        margin-top:5px;
+        display:inline-block;
+        vertical-align:top;
+        margin-left:2%;
 }
  h5{
-    font-size: 16px;
+     margin-left: 0;
+     margin-right: 0;
+     margin-top: -30px;  
+     font-size: 14px;
+
  }
-#article_annonce p{
-    width: 60%;
-    right:0;
-    margin-right: 0;
-    margin-left: auto;
-    min-height: 70px;
-    max-height: 100px;
-    overflow-y: scroll;
-    text-align: justify;
-    
-}
 
 #image_article{
-    left:0;
-    margin-left: 0;
-    width: 30%;
-    border:1px solid black;
-    margin-top:  -110px;
+        top:0;
+       min-height:80px;
+        max-height:120px;
+        width:auto;
+        margin-top:0px;
+        opacity:0.7;
+        border-radius:40px;
+        outline:none;         
 }
 
-#info_produit{
-    margin-top: 10px;
-    width: 60%;
-    border-top:1px dashed black;
-}
-
-#info_produit h5{
-    margin:0;
-}
-
-#ajout_panier{
-    border:none;
-    height: 40px;
-    padding-top:5px;
-    font-weight: 700;
-    background: white;
-    outline: none;
-	box-shadow: 1px 1px 1px 1px green;
-    
-}
-
-#div_ajout_panier{
-    float: right;
-    display: inline; 
-    margin-top: -60px;
-    margin-right: 10px;
-}
-
-#div_ajout_panier i{
-    font-family:'Roboto' sans-serif;
-    font-size: 10px;
-}
 
 
 /**********************************************************
@@ -1011,7 +977,7 @@ h4{
 **********************************************************/
 
 #bodypanier{
-
+    
 }
 
 #monpanier{
@@ -1842,4 +1808,44 @@ font-family: 'Roboto' sans-serif;
     margin-left:2%;
     margin-top:1px;
     display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************************************
+**************************Formmmail***********************
+**********************************************************/
+#formmail {
+    margin-left: auto;
+    margin-right: auto;
+}
+#qui{
+    margin-left: 5%;
+}
+#mail{
+    margin-left: 5%;
 }

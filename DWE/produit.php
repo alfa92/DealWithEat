@@ -58,18 +58,8 @@ $pseudo=$bdd2->query('SELECT US_pseudo, US_idUser FROM User WHERE US_idUser="'.$
     <input type="text" id="textInput" value="1" width="10" style="border:none;outline:none;">
     
     <a id="panier"  href="panier/addpanier.php?id=<?= $q ?>">
-        <div id="div_ajout_panier"> Ajouter au panier </div></a><br>
+         <img id="div_ajout_panier" src="css/images/addpanier.png" width="40" height="40">  </a> </a><br>
         
-        <style>
-            #div_ajout_panier{
-                display:block;
-                width:auto;
-                height;100px;
-               border:1px solid black;
-                
-            }
-            
-        </style>
 </div>
 
     <br/>
