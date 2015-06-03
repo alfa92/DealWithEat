@@ -23,38 +23,24 @@
         <body>
         <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;"> Contacter nous </h1>
 
-        <form id="formmail" action="verification.php" style="width:60%;" method="get">
-            <input type="radio" name="x" value="un"><label style="width: 200px;" for="probl"> Problème</label>
-            <br>
-            <input type="radio" name="x" value="deux"><label style="width: 200px;" for="suggest"> Suggestion</label>
-            <br>
-
-            <label for="sujetmail"><i> Thème du mail </i></label>
-            <select name="sujetmail1">
-                <option>Problèmes inscription</option>
-                <option>Problèmes payement</option>
-                <option>Problèmes echange</option>
-                <option>Problèmes autres</option>
-            </select>
+        <form id="formmail" action="contact.php" style="width:60%;" method="post">
             
-            <br>
 
-            <label for="suggestion">
-                <i> Si il y a suggestion choisissez le thème de la suggestion </i>
-            </label>
+            
+     
 
-            <select name="suggestion">
-                <option>Amélioration vendeur</option>
-            </select>
             <br>
-            <br>
+            <label   for="titre_mail"><strong>Sujet : </strong></label>
             <input name="titre_mail" placeholder="Sujet de mail" required/>
-            <input name="qui" placeholder="Votre pseudo">
+            <label id="qui"  for="qui"><strong>Pseudo : </strong></label>
+            <input name="qui" placeholder="Votre pseudo" required/>
+            <label  id="mail"  for="mail"><strong>Mail : </strong></label>
+            <input name="mail" placeholder="Votre Mail" required/>
             <br>
             <br>
-            <textarea name="contenu" placeholder="Contenu du mail" rows="10" cols="100"></textarea>
+            <textarea name="contenu" placeholder="Contenu du mail" rows="10" cols="100" required/></textarea>
             <br>
-            <center><input type="submit" value="Envoyer le mail"></center>
+            <center><input name="submit" type="submit" value="Envoyer le mail"></center>
         </form>
         <table>
               <tr>
@@ -64,14 +50,82 @@
                 </tr>
 
         <?php
-          if(isset($_GET['contenu'])){
-            $contenu=$_GET['contenu'];
+          if(isset($_POST['contenu'])){
+            $_SESSION['contenu']=$_POST['contenu'];
         }
-          if (isset($_GET['qui'])){
-            $qui=$_GET['qui'];
+          if (isset($_POST['qui'])){
+            $_SESSION['qui']=$_POST['qui'];
+          }
+          if (isset($_POST['mail'])){
+            $_SESSION['mail']=$_POST['mail'];
           }
 
         ?>
+
+
+        <?php if (isset($_POST['submit'])){ date_default_timezone_set('Etc/UTC');
+
+                        require 'phpmailer/PHPMailerAutoload.php';
+
+//Create a new PHPMailer instance
+                        $mail = new PHPMailer;
+
+//Tell PHPMailer to use SMTP
+                        $mail->isSMTP();
+
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+                        // $mail->SMTPDebug = 2;
+
+//Ask for HTML-friendly debug output
+                        // $mail->Debugoutput = 'html';
+
+//Set the hostname of the mail server
+                        $mail->Host = 'smtp.gmail.com';
+
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+                        $mail->Port = 587;
+
+//Set the encryption system to use - ssl (deprecated) or tls
+                        $mail->SMTPSecure = 'tls';
+
+//Whether to use SMTP authentication
+                        $mail->SMTPAuth = true;
+
+//Username to use for SMTP authentication - use full email address for gmail
+                        $mail->Username = "dwedealwitheat@gmail.com";
+
+//Password to use for SMTP authentication
+                        $mail->Password = "G10Edwe2015";
+
+//Set who the message is to be sent from
+                        $mail->setFrom('dwedealwitheat@gmail.com', 'DWE');
+
+//Set an alternative reply-to address
+                        $mail->addReplyTo('dwedealwitheat@gmail.com', 'DWE');
+
+//Set who the message is to be sent to
+                        $mail->addAddress('dwedealwitheat@gmail.com', 'DWE');
+
+//Set the subject line
+                        $mail->Subject = '[DWE] Contact du client ';
+
+//Read an HTML message body from an external file, convert referenced images to embedded,
+//convert HTML into a basic plain-text alternative body
+                        $mail->charSet = "UTF-8";
+                        $mail->msgHTML('<p><strong> Bonjour, vous avez reçus un mail de la part de </strong>  '.$_SESSION['qui'].' <br><br><br> <strong> Voici son message: </strong> '.$_SESSION['contenu'].'   <br> <strong>Lui repondre: </strong> '.$_SESSION['mail'].'  ');
+                                  
+
+//send the message, check for errors
+                        if (!$mail->send()) {
+                            echo "Mailer Error: " . $mail->ErrorInfo;
+                        } else {
+                            echo "Votre message à bien été pris en compte. Nous vous recontacterons dans les plus bref delais <br> <a href='accueil.php'> <strong> Cliquez ici pour retourner à l'acceuil </a> </strong>";
+                        }
+                    }
+                        ?>
 
         </body>
 

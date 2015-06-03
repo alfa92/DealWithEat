@@ -19,7 +19,11 @@ include('php/config.php');?>
         <?php include('php/header.php'); ?>
 		<?php if(isset($_SESSION['id']) && $_SESSION['id']=='1'){include('nav_connect.php');}else{include('nav.php');} ?> 
         
-        <?php if(isset($_SESSION['id'])=='1'){
+        <?php 
+$id=$_GET['id'];
+echo $id;
+
+        if(isset($_SESSION['id'])=='1'){
 ?> 
 	
 	<body>
@@ -79,6 +83,7 @@ include('php/config.php');?>
 if(isset($_POST['rafraichir'])){
 $req=$bdd2->prepare('UPDATE Annonce SET quantite=:"'.$_POST[nvquantite].'",prix=:"'.$_POST[nvprix].'",echangeok=:"'.$_POST[nvechangeok].'",descriptionechange=:"'.$_POST[nvdescriptionechange].'", payement=:"'.$_POST[nvpayement].'",typeenvoie=:"'.$_POST[nvtypeenvoie].'",datecueillette=:"'.$_POST[nvdatecueillette].'",prixcolis=:"'.$_POST[nvprixcolis].'",description=:"'.$_POST[nvdescription].'" WHERE AN_idAnnonce=:AN_idAnnonce');
 $req->execute(array(
+
   'quantite'=>$_POST['nvquantite'],
   'prix'=>$_POST['nvprix'],
   'echangeok'=>$_POST['nvechangeok'],
@@ -87,8 +92,8 @@ $req->execute(array(
   'typeenvoie'=>$_POST['nvtypeenvoie'],
   'datecueillette'=>$_POST['nvdatecueillette'],
   'prixcolis'=>$_POST['nvprixcolis'],
-  'description'=>$_POST['nvdescription'],
-  'Annonce'=>$AN_idAnnonce
+  'description'=>$_POST['nvdescription']
+  
 
   ));
 }
