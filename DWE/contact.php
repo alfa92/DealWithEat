@@ -23,7 +23,7 @@
         <body>
         <h1 id="FAQh1" style="border-bottom:2px dotted gray;width:90%;"> Contacter nous </h1>
 
-        <form id="formmail" action="mailcontact.php" style="width:60%;" method="post">
+        <form id="formmail" action="contact.php" style="width:60%;" method="post">
             <input type="radio" name="x" value="un"><label style="width: 200px;" for="probl"> Problème</label>
             <br>
             <input type="radio" name="x" value="deux"><label style="width: 200px;" for="suggest"> Suggestion</label>
