@@ -52,7 +52,7 @@
 <?php
     
     
-    $sql=$bdd2->query('SELECT US_mail,US_pseudo,US_ville FROM User WHERE US_news = 1 ');
+    $sql=$bdd2->query('SELECT * FROM User WHERE US_news = 1 ');
     $newsletter=$bdd2->query('SELECT * FROM `newsletter`');
     $news=$newsletter->fetch();
     $annonce=$bdd2->query('SELECT * FROM Annonce LIMIT 5');
@@ -64,14 +64,14 @@
     <legend><h2>Aperçu de la Newsletter </h2></legend>
     <p>
         Bonjour, <br />
-       <?php echo $news['NE_texte1']."<br />".$news['NE_image1']."<br />".$news['NE_texte2']."<br />".$news['NE_image2']."<br />" ;
+       <?php echo nl2br($news['NE_texte1'])."<br />".$news['NE_image1']."<br />".nl2br($news['NE_texte2'])."<br />".$news['NE_image2']."<br />" ;
     echo "Les dernières annonces : ";
     while($ann=$annonce->fetch()){
     $produit=$bdd2->query('SELECT * FROM Produit WHERE PR_idP="'.$ann['PR_idP'].'" LIMIT 5');
-    
-    while($prods=$produit->fetch()){ 
+     while($prods=$produit->fetch()){ 
         $annonces= $prods['PR_nom']."- ".$ann['AN_quantite']."".$ann['AN_unite']."-".$ann['AN_prix']."€ , ";
     echo $annonces;}
+   
  
     }
     ?>
@@ -91,7 +91,7 @@
     </p>
     <?php 
     if(isset($_POST['submit_news'])){
-        $sql=$bdd2->query('UPDATE newsletter SET NE_texte1="'.$_POST['texte1'].'",NE_texte2="'.$_POST['texte2'].'",NE_image1="'.$_POST['image1'].'",NE_image2="'.$_POST['image2'].'" WHERE 1');
+        $sql=$bdd2->query('UPDATE newsletter SET NE_texte1="'.nl2br($_POST['texte1']).'",NE_texte2="'.nl2br($_POST['texte2']).'",NE_image1="'.$_POST['image1'].'",NE_image2="'.$_POST['image2'].'" WHERE 1');
         
     }else
     {
@@ -105,17 +105,67 @@
 </fieldset>
     
     
-<center><form mehod="POST">
-    <input type="submit" name="envoyer" value="Envoyer la newsletter aux inscrits" />
-</form></center>
+<center>
+<form method="post" action ="#">
+            <input type="submit" name="send_news" value="Envoyer la newsletter" />
+        </form>
+         <?php 
+        $amail=$bdd2->query('SELECT US_mail,US_pseudo FROM User WHERE US_news= 1');
 
-     <?php 
+    $body="<h1 style='font-family:'roboto''> Bonjour  </h1><br />
+                        <p style='font-family:'roboto'>".nl2br($news['NE_texte1'])."<br />"
+                                       .$news['NE_image1']."<br />"
+                                            .nl2br($news['NE_texte2'])."<br />"
+                                                    .$news['NE_image2']."<br /><br /> <h2> Dernières annonces en lignes : <br />"
+                                       .$annonces.'</p>
+                                       <br />
+                                       <img src="../css/images/mail_image.png" width="600px" />'
+                                      ;
+    
+    if(isset($_POST['send_news']))    {
+        
+          date_default_timezone_set('Etc/UTC');
+
+                        require '../phpmailer/PHPMailerAutoload.php';
+
+                                               
+                         $mail = new PHPMailer;
+                        $mail->isSMTP();
+                        $mail->CharSet = 'UTF-8';
+                        $mail->Host = 'smtp.gmail.com';
+                        $mail->Port = 587;
+                        $mail->SMTPSecure = 'tls';
+                        $mail->SMTPAuth = true;
+
+                        $mail->Username = "dwedealwitheat@gmail.com";
+
+                        $mail->Password = "G10Edwe2015";
+                
+                        $mail->setFrom('dwedealwitheat@gmail.com', 'DWE');
+
+                        $mail->addReplyTo('dwedealwitheat@gmail.com', 'DWE');
+
+
+
+                       while($email=$amail->fetch()){
+             $mail->AddBCC($email[0]);
+        
+
+                        $mail->Subject = '[DWE] NEWSLETTER';
+                       
+                        $mail->msgHTML($body);
 
     
-    
+                       }
+                        if (!$mail->send()) {
+                            echo "Mailer Error: " . $mail->ErrorInfo;
+                        } else {
+                            echo "Un mail vous a été envoyé";
+                        }
+    }
+    }
     ?>
-    
-    <?php } ?>
+    </center>
     </div>
 </div>
    

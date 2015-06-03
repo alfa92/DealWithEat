@@ -76,7 +76,7 @@ include('php/config.php');?>
 }
 ?>
 <?php
-
+if(isset($_POST['rafraichir'])){
 $req=$bdd2->prepare('UPDATE Annonce SET quantite=:"'.$_POST[nvquantite].'",prix=:"'.$_POST[nvprix].'",echangeok=:"'.$_POST[nvechangeok].'",descriptionechange=:"'.$_POST[nvdescriptionechange].'", payement=:"'.$_POST[nvpayement].'",typeenvoie=:"'.$_POST[nvtypeenvoie].'",datecueillette=:"'.$_POST[nvdatecueillette].'",prixcolis=:"'.$_POST[nvprixcolis].'",description=:"'.$_POST[nvdescription].'" WHERE AN_idAnnonce=:AN_idAnnonce');
 $req->execute(array(
   'quantite'=>$_POST['nvquantite'],
@@ -91,7 +91,7 @@ $req->execute(array(
   'Annonce'=>$AN_idAnnonce
 
   ));
-
+}
 	
 	?>
 
