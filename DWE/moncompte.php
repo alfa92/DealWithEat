@@ -184,8 +184,8 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
          echo $rows1['PR_nom'].'<br>';
          echo $rows['AN_prix'].'€ <br>';
          echo "<p style='display:inline-block;'> Quantité restante : ".$rows['AN_quantite']."kg </p>";
-         ?> <a href="annonce_modif.php ?id=<?= $rows['AN_idAnnonce']; ?> "> <img class="modifier" src="css/images/modifier.png"  />  </a>
-         <a href="supprimer_annonce.php ?id=<?= $rows['AN_idAnnonce']; ?> " > <img class="supprimer" src="css/images/supprimer.png" />
+         ?> <a href="annonce_modif.php?id=<?= $rows['AN_idAnnonce']; ?> "> <img class="modifier" src="css/images/modifier.png"  />  </a>
+         <a href="supprimer_annonce.php?id=<?= $rows['AN_idAnnonce']; ?> " > <img class="supprimer" src="css/images/supprimer.png" />
          <hr> 
          <?php
 }
