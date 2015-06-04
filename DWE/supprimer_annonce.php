@@ -37,7 +37,7 @@ $req->execute(array(
 ?>
 
 
-
+<?php include('php/pied_de_page.php'); ?>
 </html>
 
 
