@@ -56,8 +56,8 @@
           <input name="prix" type="number" class="inputvendre"/> <br/>
 
          
-          <label>Le produit est: </label><input type="radio" name="BioPeuImporte" value="Bio" /> <label for="Bio">Bio</label>
-          <input type="radio" name="BioPeuImporte" value="PeuImporte" /> <label for="PeuImporte">Peu importe</label><br/> 
+          <label>Le produit est: </label><input type="radio" name="BioPeuImporte" value="1" /> <label for="Bio">Bio</label>
+          <input type="radio" name="BioPeuImporte" value="0" /> <label for="PeuImporte">Peu importe</label><br/> 
           
           <div class="cueillette">
           <label for="datecueillette"> Date de cueillette : </label>
@@ -145,8 +145,8 @@ if(isset($_POST['bouton'])){
    // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
     //$ligne=$selec->fetch();
  
-    $req=$bdd2->prepare('INSERT INTO annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image)
-   VALUES (:US_idUserannonceur,:PR_idP,:PE_idPropositionEchan,:AN_quantite,:AN_prix,:AN_echangeok,:AN_echangedescription,:AN_moyentpayment,:AN_moyentenvoie,:AN_datepublication,:AN_prixcolis,:AN_description,:AN_idUser,:AN_unite,:AN_image)');
+    $req=$bdd2->prepare('INSERT INTO annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image,AN_type,AN_bio)
+   VALUES (:US_idUserannonceur,:PR_idP,:PE_idPropositionEchan,:AN_quantite,:AN_prix,:AN_echangeok,:AN_echangedescription,:AN_moyentpayment,:AN_moyentenvoie,:AN_datepublication,:AN_prixcolis,:AN_description,:AN_idUser,:AN_unite,:AN_image,:AN_type,:AN_bio)');
   $req->execute(array(
   "US_idUserannonceur"=>$_SESSION['id_perso'],
   "PR_idP"=>$_POST['produit'],
@@ -162,7 +162,9 @@ if(isset($_POST['bouton'])){
   "AN_description"=>$_POST['description'],
   "AN_idUser"=>$_SESSION['id_perso'],
   "AN_unite"=>$_POST['unite'],
-  "AN_image"=>$nomdufichier
+"AN_type"=>$prods['PR_type'],
+    "AN_bio"=>$_POST['BioPeuImporte'],
+       "AN_image"=>$nomdufichier
 ));
 }
 
