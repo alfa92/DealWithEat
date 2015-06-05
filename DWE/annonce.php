@@ -33,7 +33,7 @@
                     
                         
                      <label class ="echangeok"for ="echangeok"> Type de transaction : </label> <br/>
-                     <input  type="radio" name="echangeok" value="0" id="vente" /> <label for="legume">Vente</label>
+                     <input  type="radio" name="echangeok" value="0" id="vente" /> <label for="legume">Vente</label> <br/>
                      <input  type="radio" name="echangeok" value="1" id="echange" /> <label for="fruit">Echange</label><br />
                          
                                           
