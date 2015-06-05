@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost:8889
--- Généré le :  Mar 26 Mai 2015 à 15:04
+-- Généré le :  Ven 05 Juin 2015 à 10:25
 -- Version du serveur :  5.5.38
 -- Version de PHP :  5.6.2
 
@@ -36,18 +36,23 @@ CREATE TABLE `Annonce` (
   `AN_description` text NOT NULL,
   `AN_idUser` int(11) NOT NULL,
   `AN_unite` varchar(20) NOT NULL,
-  `AN_image` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+  `AN_image` text,
+  `AN_bio` int(11) DEFAULT NULL,
+  `AN_type` int(11) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `Annonce`
 --
 
-INSERT INTO `Annonce` (`AN_idAnnonce`, `US_idUserannonceur`, `PR_idP`, `PE_idPropositionEchan`, `AN_quantite`, `AN_prix`, `AN_echangeok`, `AN_echangedescription`, `AN_moyentpayment`, `AN_moyenenvoie`, `AN_datepublication`, `AN_prixcolis`, `AN_description`, `AN_idUser`, `AN_unite`, `AN_image`) VALUES
-(13, 4, 57, NULL, 13, 4, 0, '          ', 'espece', 0, '2015-05-18', 0, '          Patate douce (avec un peu de sel au barbecue ... parfait)\r\n', 4, 'kg', ''),
-(14, 6, 72, NULL, 34, 2, 0, '          ', 'espece', 0, '2015-05-19', 0, '          Betterave ', 6, 'kg', ''),
-(15, 4, 94, NULL, 1, 10, 0, '          Contre une pomme (granny smith)', 'espece', 0, '2015-05-24', 0, '          Echalote de qualité', 4, 'pièce', ''),
-(20, 4, 85, NULL, 4, 2, 0, '          ', 'espece', 0, '2015-05-18', 0, '          Céleri bien frais', 4, 'pièce', 'ImagesUploades/333-28103image.jpeg');
+INSERT INTO `Annonce` (`AN_idAnnonce`, `US_idUserannonceur`, `PR_idP`, `PE_idPropositionEchan`, `AN_quantite`, `AN_prix`, `AN_echangeok`, `AN_echangedescription`, `AN_moyentpayment`, `AN_moyenenvoie`, `AN_datepublication`, `AN_prixcolis`, `AN_description`, `AN_idUser`, `AN_unite`, `AN_image`, `AN_bio`, `AN_type`) VALUES
+(23, 8, 44, NULL, 12, 2, 0, '          ', 'espece', 0, '2015-05-13', 0, '          Petit avocat presque mûr', 8, 'pièce', NULL, NULL, 1),
+(25, 9, 80, NULL, 23, 4, 0, NULL, NULL, NULL, NULL, NULL, '', 0, '', '', NULL, 0),
+(26, 8, 90, NULL, 23, 2, 1, '          ', 'espece', 0, '2015-05-30', 0, '          Brocoli', 8, 'kg', '', NULL, 0),
+(27, 8, 84, NULL, 23, 2, 0, '          ', 'espece', 0, '2015-06-03', 0, '          ', 8, 'kg', NULL, 1, 1),
+(28, 8, 51, NULL, 21, 2, 0, '          ', 'espece', 0, '2015-06-03', 0, '          ', 8, 'kg', NULL, 0, 0),
+(29, 8, 39, NULL, 12, 3, 0, '          ', 'espece', 0, '2015-06-03', 0, '          ', 8, 'pièce', NULL, 0, 0),
+(30, 8, 48, NULL, 21, 2, 0, '          ', 'espece', 0, '2015-06-03', 0, '          ', 8, 'kg', NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -151,14 +156,15 @@ CREATE TABLE `forumq` (
   `q_pseudo` varchar(50) NOT NULL,
   `q_sujet` text NOT NULL,
   `q_contenu` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `forumq`
 --
 
 INSERT INTO `forumq` (`ID_forum`, `Date`, `q_pseudo`, `q_sujet`, `q_contenu`) VALUES
-(1, '2015-05-23', 'antoined', 'Présentation des membres', 'Bonjour,\r\nIci vous pouvez vous présenter afin de faire connaissance avec les autres utilisateurs du site.');
+(1, '2015-05-23', 'antoined', 'Présentation des membres', 'Bonjour,\r\nIci vous pouvez vous présenter afin de faire connaissance avec les autres utilisateurs du site.'),
+(2, '2015-05-27', 'antoined', 'Recettes ', 'Publier toutes vos recettes avec des fruits et légumes .\r\n');
 
 -- --------------------------------------------------------
 
@@ -173,7 +179,7 @@ CREATE TABLE `forumr` (
   `FR_reponse` longtext NOT NULL,
   `FR_sujet` int(11) NOT NULL,
   `FR_like` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `forumr`
@@ -181,10 +187,29 @@ CREATE TABLE `forumr` (
 
 INSERT INTO `forumr` (`FR_idForumr`, `US_idUser`, `FR_date`, `FR_reponse`, `FR_sujet`, `FR_like`) VALUES
 (2, 'antoined', '2015-05-23', ' bonjour\r\n', 1, 12),
-(3, 'antoined', '2015-05-23', ' Bonjour,\r\n', 1, 13),
-(6, 'antoined', '2015-05-23', ' Bonjour', 1, 3),
-(7, 'antoined', '2015-05-23', ' zea', 1, 3),
-(8, 'antoined', '2015-05-23', ' Peut etre', 1, 2);
+(3, 'toinou', '2015-05-29', ' Je m''apelle Antoine, \r\nje suis un étudiant de 20 ans en école d''ingénieur.', 1, 0),
+(4, 'toinou', '2015-06-04', ' Salut moi c''est Jeremy\r\n', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `newsletter`
+--
+
+CREATE TABLE `newsletter` (
+`NE_numero` int(11) NOT NULL,
+  `NE_texte1` text NOT NULL,
+  `NE_texte2` text NOT NULL,
+  `NE_image1` text NOT NULL,
+  `NE_image2` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Contenu de la table `newsletter`
+--
+
+INSERT INTO `newsletter` (`NE_numero`, `NE_texte1`, `NE_texte2`, `NE_image1`, `NE_image2`) VALUES
+(1, 'Du neuf sur votre site :\r\n-Sécurité :  Les mots de passes ont été revues, vous devez maintenant avoir un mot de passe supérieur à 6 caractères et ayant au minimum UN chiffre et UNE majuscule.\r\n\r\n- Sécurité : Le cryptage a été revu à la hausse.\r\n\r\n- Annonce: Vous pouvez maintenant supprimer ou modifier vos annonces.', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -198,7 +223,7 @@ CREATE TABLE `note_user` (
   `NU_note` int(11) NOT NULL,
   `NU_idUsNote` int(11) NOT NULL,
   `NU_comm` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `note_user`
@@ -206,7 +231,9 @@ CREATE TABLE `note_user` (
 
 INSERT INTO `note_user` (`NU_id`, `NU_idUser`, `NU_note`, `NU_idUsNote`, `NU_comm`) VALUES
 (1, 4, 5, 4, 'Aucun soucis avec ce vendeur, rapide et bon produits'),
-(2, 6, 4, 4, '');
+(2, 6, 4, 4, ''),
+(3, 8, 5, 8, ''),
+(4, 8, 4, 9, 'Bonne vente, merci pour vos produits très frais.');
 
 -- --------------------------------------------------------
 
@@ -233,7 +260,7 @@ INSERT INTO `Produit` (`PR_idP`, `PR_nom`, `PR_unite`, `PR_type`) VALUES
 (40, 'Citron', NULL, 0),
 (41, 'Pamplemousse', NULL, 0),
 (43, 'Kiwi', NULL, 0),
-(44, 'Avocat', NULL, 0),
+(44, 'Avocat', NULL, 1),
 (45, 'Orange sanguine', NULL, 0),
 (46, 'Clémentine', NULL, 0),
 (47, 'Potiron', NULL, 1),
@@ -260,7 +287,7 @@ INSERT INTO `Produit` (`PR_idP`, `PR_nom`, `PR_unite`, `PR_type`) VALUES
 (69, 'Citron vert', NULL, 0),
 (70, 'Poire', NULL, 0),
 (71, 'Framboise', NULL, 0),
-(72, 'Betterave', NULL, 0),
+(72, 'Betterave', NULL, 1),
 (73, 'Endive', NULL, 0),
 (74, 'Prune', NULL, 0),
 (75, 'Haricot vert', NULL, 0),
@@ -273,12 +300,12 @@ INSERT INTO `Produit` (`PR_idP`, `PR_nom`, `PR_unite`, `PR_type`) VALUES
 (82, 'Chataigne', NULL, 0),
 (83, 'Concombre', NULL, 0),
 (84, 'Asperge', NULL, 0),
-(85, 'Céleri', NULL, 0),
+(85, 'Céleri', NULL, 1),
 (86, 'Figue', NULL, 0),
 (87, 'Poivron', NULL, 0),
 (88, 'Tomate', NULL, 0),
 (89, 'Mâche', NULL, 0),
-(90, 'Brocoli', NULL, 0),
+(90, 'Brocoli', NULL, 1),
 (91, 'Épinard', NULL, 0),
 (93, 'Radis', NULL, 0),
 (94, 'Echalote', NULL, 0);
@@ -330,17 +357,17 @@ CREATE TABLE `User` (
   `US_admin` varchar(45) DEFAULT NULL,
   `US_moderateur` tinyint(1) DEFAULT NULL,
   `US_like` int(11) DEFAULT NULL,
-  `US_image` varchar(250) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `US_image` varchar(250) NOT NULL,
+  `US_news` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `User`
 --
 
-INSERT INTO `User` (`US_idUser`, `US_nom`, `US_prenom`, `US_pays`, `US_ville`, `US_adresse`, `US_codepostale`, `US_pseudo`, `US_mail`, `US_mdp`, `US_datenaissance`, `US_admin`, `US_moderateur`, `US_like`, `US_image`) VALUES
-(4, 'Doyen', 'Antoine', 'France', 'Paris', '49 rue de babylone', 75007, 'AntoineD', 'd.antoine94@gmail.com', 'fe77b0cfd7ce54bc1afe4df74b68680a', '1994-06-14', '1', 0, 0, '1180132836-Photo 03-10-2014 22 00 14.jpg'),
-(6, 'Test', 'Antoine', 'France', 'Paris', '10 rue de vanves', 0, 'Test', 'olivier.madre@hotmail.com', '14acbbc3a2b3a38df7c4fc90e1e7647d', '2015-05-12', '', 1, 0, '1770315902-7.jpg'),
-(7, 'Callu', 'Mélanie', 'France', 'Rueil-malmaison', NULL, NULL, 'missloc56', NULL, 'missloc', NULL, NULL, NULL, NULL, '');
+INSERT INTO `User` (`US_idUser`, `US_nom`, `US_prenom`, `US_pays`, `US_ville`, `US_adresse`, `US_codepostale`, `US_pseudo`, `US_mail`, `US_mdp`, `US_datenaissance`, `US_admin`, `US_moderateur`, `US_like`, `US_image`, `US_news`) VALUES
+(8, 'Doyen', 'Antoine', 'France', 'Iwuy', '35 rue du 4 septembre', 0, 'toinou', 'antoine.doyen@isep.fr', 'f5d24472cb0a59ae4a191ada55da2415', '1994-06-14', '1', 0, 0, '1943575511-Photo 03-10-2014 22 00 14.jpg', 1),
+(9, 'Doyen', 'Antoine', '', 'Paris', '49 rue de babylone', 0, 'admin', 'doyen.antoine@outlook.fr', '5317c92a67aa34acd5e01da35885cbf3', '', '', 0, 0, '', 1);
 
 --
 -- Index pour les tables exportées
@@ -401,6 +428,12 @@ ALTER TABLE `forumr`
  ADD PRIMARY KEY (`FR_idForumr`);
 
 --
+-- Index pour la table `newsletter`
+--
+ALTER TABLE `newsletter`
+ ADD PRIMARY KEY (`NE_numero`);
+
+--
 -- Index pour la table `note_user`
 --
 ALTER TABLE `note_user`
@@ -438,7 +471,7 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT pour la table `Annonce`
 --
 ALTER TABLE `Annonce`
-MODIFY `AN_idAnnonce` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+MODIFY `AN_idAnnonce` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT pour la table `Article`
 --
@@ -473,17 +506,22 @@ MODIFY `FR_idFAQR` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT pour la table `forumq`
 --
 ALTER TABLE `forumq`
-MODIFY `ID_forum` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `ID_forum` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `forumr`
 --
 ALTER TABLE `forumr`
-MODIFY `FR_idForumr` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `FR_idForumr` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT pour la table `newsletter`
+--
+ALTER TABLE `newsletter`
+MODIFY `NE_numero` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT pour la table `note_user`
 --
 ALTER TABLE `note_user`
-MODIFY `NU_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `NU_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `Produit`
 --
@@ -503,7 +541,7 @@ MODIFY `TR_idTran` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT pour la table `User`
 --
 ALTER TABLE `User`
-MODIFY `US_idUser` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `US_idUser` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- Contraintes pour les tables exportées
 --

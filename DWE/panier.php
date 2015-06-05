@@ -66,11 +66,12 @@ foreach($products as $products):
     <span id="autre"> A consomer avant le <?= $products->AN_datepublication;?></span><br>
 
     <a id="delproduit" href="panier.php?delPanier=<?= $products->AN_idAnnonce ;?>"> Supprimer du panier </a>
+        
 
        
     <span id="Prix_unite"> <?= $products->AN_prix;?> €/kg</span>
-    <!--span id="quantite"><?= $_SESSION['panier'][$products->AN_idAnnonce];?> kg</span>
-    <span id="prixproduit"><?= $products->AN_Prix;?> €</span-->
+    <span id="quantite"><?= $_SESSION['panier'][$products->AN_idAnnonce];?> kg</span><br />
+        <a id="finaliser" href="finaliser_achat.php?id=<?= $products->AN_idAnnonce ;?>"> Finaliser l'achat </a>
     </div>
     
     
