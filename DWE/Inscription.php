@@ -133,7 +133,7 @@ $_SESSION['login'] = NULL ;
                 
             		</div>
             			<input type="checkbox" name="reglement" required/>
-            			<label for="reglement"> J'ai lu et j'accepte les <a href="conditions.php"><i> Conditions d'utilisation </i></a></label>
+            			<label for="reglement"> J'ai lu et j'accepte les <a href="reglement.php"><i> Conditions d'utilisation </i></a></label>
             			<br>
 						<input class="r-submit" name='submit' style="cursor:pointer;" type="submit"  value="S'inscrire"/>
 					</div>
