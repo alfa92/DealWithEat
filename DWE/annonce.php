@@ -71,7 +71,8 @@ if(empty($_POST['filtre'])){
   $product_req=$bdd2->query('SELECT * FROM Annonce');
     
 }elseif(isset($_POST['filtre']) && !isset($BioPeuImporte) && !isset($echangeok) &&  !isset($FruitLegume)){
-echo "Veuillez choisir au moins un critère et recommencez SVP";
+echo "<p> Veuillez choisir au moins un critère et recommencez SVP</p> </br>";
+
 $product_req=$bdd2->query('SELECT * FROM Annonce');
 }elseif(isset($_POST['filtre']) && isset($FruitLegume)){
 
