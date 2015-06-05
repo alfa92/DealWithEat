@@ -39,7 +39,7 @@ $_SESSION['login'] = NULL ;
                 {
                        $prefixe="m0td3p4ss3dEbut";
                         $suffixe="mOtdEpAssEf1N";
-                                $pass = md5($prefixe.$_POST['pass'].$suffixe); 
+                        $pass = md5($prefixe.$_POST['pass'].$suffixe); 
                     // Le md5 signifie que l'on crypte le mot de passe (il existe d'aute méthode de cryptage comme le sha1
                 }
                 if (isset($_POST['pass2'])) 
@@ -80,7 +80,7 @@ $_SESSION['login'] = NULL ;
                         {
                             if($_POST['pass'] == $_POST['pass2'] )
                             {   
-                                $sql = "INSERT INTO User VALUES ('','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['pays']."','".$_POST['ville']."','".$_POST['adresse']."','','".$login."','" . $mail . "','".$pass."','".$_POST['age']."','','','','')";
+                                $sql = "INSERT INTO User VALUES ('','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['pays']."','".$_POST['ville']."','".$_POST['adresse']."','','".$login."','" . $mail . "','".$pass."','".$_POST['age']."','','','','','')";
 
                                 if ($conn2->query($sql) == TRUE) 
                                 {                                
