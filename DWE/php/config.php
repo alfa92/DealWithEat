@@ -7,12 +7,7 @@ espace membre puisse fonctionner correctement.
 ******************************************************/
 
 //On se connecte a la base de donnee
-$conn=mysqli_connect('localhost', 'root', 'root','dealwitheat');
-$bdd1 = new PDO('mysql:host=localhost;dbname=dealwitheat;charset=utf8', 'root', 'root');
 
-$conn1=mysqli_connect('localhost', 'root', 'root','mydb');
-$bdd = new PDO('mysql:host=localhost;dbname=mydb;charset=utf8', 'root', 'root');
-mysqli_set_charset($conn1,"UTF8");
 
 $conn2=mysqli_connect('localhost', 'root', 'root','dwe');
 try{
