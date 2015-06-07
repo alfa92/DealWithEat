@@ -32,12 +32,23 @@
                   <div id="liste_annonces">   
                     
                         
-                     <label class ="echangeok"for ="echangeok"> Type de transaction : </label> <br/>
+                     <label class ="echangeok" for ="echangeok"> Type de transaction : </label> <br/>
                      <input  type="radio" name="echangeok" value="0" id="vente" /> <label for="legume">Vente</label> <br/>
-                     <input  type="radio" name="echangeok" value="1" id="echange" /> <label for="fruit">Echange</label><br />
+                     <input  type="radio" name="echangeok" value="1" id="echange" /> <label for="fruit">Echange</label><br /><br />
+                     
+
+
+
+
+
+                     <label  for ="echangeok"> Trier selon des prix: </label> <br/>
+                     <input  type="radio" name="croissant"  /> <label for="croissant">croissants</label> <br/>
+                     <input  type="radio"  name="decroissant" /> <label for="decroissant"> décroissants</label><br />
                          
+                                           
                                           
                   </div>
+
         <h4>  Produits Biologiques </h4>
               
                     <input type="radio" name="BioPeuImporte" value="1" /> <label for="Bio">Bio</label><br/>
@@ -62,6 +73,15 @@ $echangeok=$_POST['echangeok'];
 if(isset($_POST['FruitLegume'])){
 $FruitLegume=$_POST['FruitLegume'];
 }
+ if(isset($_POST['croissant'])){
+$croissant=$_POST['croissant'];
+}
+if(isset($_POST['decroissant'])){
+$decroissant=$_POST['decroissant'];
+}
+
+
+
 
 $product_req=NULL;
 
@@ -70,7 +90,7 @@ if(empty($_POST['filtre'])){
     
   $product_req=$bdd2->query('SELECT * FROM Annonce');
     
-}elseif(isset($_POST['filtre']) && !isset($BioPeuImporte) && !isset($echangeok) &&  !isset($FruitLegume)){
+}elseif(isset($_POST['filtre']) && !isset($BioPeuImporte) && !isset($echangeok) &&  !isset($FruitLegume) && !isset($croissant) && !isset($decroissant) ){
 echo "<p> Veuillez choisir au moins un critère et recommencez SVP</p> </br>";
 
 $product_req=$bdd2->query('SELECT * FROM Annonce');
@@ -86,7 +106,25 @@ $product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_echangeok="'.$echangeo
 
 $product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_bio="'.$BioPeuImporte.'"');
    
+}elseif(isset($_POST['filtre']) && isset($croissant)){
+
+
+$product_req=$bdd2->query('SELECT * FROM Annonce   ORDER BY AN_prix ASC' ) ;
+
 }
+
+elseif(isset($_POST['filtre']) && isset($decroissant)){
+
+
+$product_req=$bdd2->query('SELECT * FROM Annonce   ORDER BY AN_prix DESC' ) ;
+
+}
+
+
+
+
+
+
       
      // foreach($product_req as $products) {
 while($products=$product_req->fetch()){
