@@ -115,10 +115,10 @@ if(is_dir($dossier)){
         
         <form>
   <input type="text" id="adresse" style="outline:none;border:none;display:none;"value="<?= $ligne['US_adresse']?>"/>
- <center> <input type="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"/>
+            <center> <input type="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"/></center>
 </form>
 <span style="display:none;" id="text_latlng"></span>
-<div id="map-canvas" style="height:220px;width:80%"></div></center>
+<div id="map-canvas" style="height:220px;width:60%"></div>
         
         
     <script type="text/javascript">
@@ -166,6 +166,8 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
             <a href="moncompte_modif.php"><p style="margin-left:60%;margin-top:50px;"> Modifier mes données </p></a>
             
         <div id="annoncescompte">
+            <i style="color:red;font-size:10px;">Demande d'achat</i> - 
+            <i style="color:green;font-size:10px;">Demande d'echange</i>
         <h4> Vos annonces </h4>
           
           <div class="annonce"><?php
@@ -176,14 +178,61 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
             while ($rows=mysqli_fetch_array($res)) {
            $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$rows['PR_idP'].'"');
                 $rows1=$nom->fetch();
+                  $transac=$bdd2->query('SELECT * FROM Transaction WHERE AN_idAnnonce="'.$rows['AN_idAnnonce'].'"');
+            $rows2=$transac->fetch();
+            
          
 ?>
 <img id="image_article_compte" style="width:40px;" src="imageproduit/<?php echo $rows['PR_idP'] ?>.jpg">
 <?php
-         
-         echo $rows1['PR_nom'].'<br>';
+             if($rows2['AN_idAnnonce']==$rows['AN_idAnnonce'] && $rows2['TR_typetransaction']==0){
+         ?> <a href="produit_achat.php?id=<?= $rows['AN_idAnnonce']; ?>"><i style="color:red"><?= $rows1['PR_nom'] ?></i></a><br> <?php
+         }elseif($rows2['AN_idAnnonce']==$rows['AN_idAnnonce'] && $rows2['TR_typetransaction']==1){
+            ?> <a href="produit_echange.php?id=<?= $rows['AN_idAnnonce']; ?>"><i style="color:green">'<?= $rows1['PR_nom'] ?></i></a><br> <?php
+         }else{
+              echo $rows1['PR_nom'].'<br>';
+         }
+                
+                
+                
          echo $rows['AN_prix'].'€ <br>';
-         echo "<p style='display:inline-block;'> Quantité restante : ".$rows['AN_quantite']."kg </p>";
+         echo "<p style='display:inline-block;font-size:10px;'> Quantité restante : ".$rows['AN_quantite']."kg </p>";
+         ?> <a href="annonce_modif.php?id=<?= $rows['AN_idAnnonce']; ?> "> <img class="modifier" src="css/images/modifier.png"  />  </a>
+              <a href="supprimer_annonce.php?id=<?= $rows['AN_idAnnonce']; ?> " > <img class="supprimer" src="css/images/supprimer.png" /></a>
+         <hr> 
+         <?php
+}
+ ?>   
+ </div>
+              <h4> Vos transactions en cours </h4>
+              <div class="annonce_transaction"><?php
+
+            $req=$bdd2->query('SELECT * FROM Transaction');
+           
+
+            while ($rows=$req->fetch()){
+          
+                $transac=$bdd2->query('SELECT * FROM Annonce WHERE AN_idAnnonce="'.$rows['AN_idAnnonce'].'"');
+                $rows2=$transac->fetch();
+                 $nom=$bdd2->query('SELECT PR_nom FROM Produit WHERE PR_idP="'.$rows2['PR_idP'].'"');
+                $rows1=$nom->fetch();
+            
+         
+?>
+<img id="image_article_compte" style="width:40px;" src="imageproduit/<?php echo $rows2['PR_idP'] ?>.jpg">
+<?php
+             if($rows['AN_idAnnonce']==$rows2['AN_idAnnonce'] && $rows['TR_typetransaction']==0){
+         echo '<a href="transaction/produit_echange.php"><i style="color:red">' .$rows1['PR_nom'].'</i></a><br>';
+         }elseif($rows['AN_idAnnonce']==$rows2['AN_idAnnonce'] && $rows['TR_typetransaction']==1){
+             echo '<a href="transaction/produit_achat.php"><i style="color:green">' .$rows1['PR_nom'].'</i></a><br>';
+         }else{
+              echo $rows1['PR_nom'].'<br>';
+         }
+                
+                
+                
+         echo $rows2['AN_prix'].'€ <br>';
+         echo "<p style='display:inline-block;font-size:10px;'> Quantité restante : ".$rows2['AN_quantite']."kg </p>";
          ?> <a href="annonce_modif.php?id=<?= $rows['AN_idAnnonce']; ?> "> <img class="modifier" src="css/images/modifier.png"  />  </a>
          <a href="supprimer_annonce.php?id=<?= $rows['AN_idAnnonce']; ?> " > <img class="supprimer" src="css/images/supprimer.png" />
          <hr> 

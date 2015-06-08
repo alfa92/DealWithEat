@@ -435,6 +435,20 @@ h3{
 	border-radius: 0.3em;
 	
 }
+
+.rgstr-main .email{
+    width: 61%;
+	padding: 10px 12px;
+	margin: 9px 0px;
+	outline: none !important;
+	background: rgba(153, 153, 153, 0.09);
+	color: #33383b;
+	font-size: 15px;
+	box-shadow: 1px 1px 1px 1px rgba(51, 56, 59, 0.35);
+	border: none;
+	border-radius: 0.3em;
+    
+}
 .r-submit  {
 	background: gray;
 	border: 0px;
@@ -749,7 +763,7 @@ width: 300px;}
 
 }
 
-#annoncescompte .annonce{
+#annoncescompte .annonce,#annoncescompte .annonce_transaction{
      height: 200px;
    overflow-y: scroll;
 }

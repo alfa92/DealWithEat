@@ -1,4 +1,4 @@
-<?php require'panier/_header.php'; ?>
+<?php require('panier/_header.php'); ?>
 
 <div id="container_header">
         <a href='accueil.php'><div class="logo">
@@ -71,6 +71,7 @@ if(isset($_POST['subconnect'])){
 
     }
 }
+
 if(isset($_SESSION['login']) ){
     if($_SESSION['id']=='1'){
         ?>

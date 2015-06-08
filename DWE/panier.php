@@ -71,8 +71,13 @@ foreach($products as $products):
        
     <span id="Prix_unite"> <?= $products->AN_prix;?> €/kg</span>
     <span id="quantite"><?= $_SESSION['panier'][$products->AN_idAnnonce];?> kg</span><br />
-        <a id="finaliser" href="finaliser_achat.php?id=<?= $products->AN_idAnnonce ;?>"> Finaliser l'achat </a>
-    </div>
+        <?php 
+        if(isset($_SESSION['id_perso'])){
+        
+        ?>
+        <a id="finaliser" href="finaliser_achat.php?id=<?= $products->AN_idAnnonce ;?>&type=0"> Finaliser l'achat en échange</a><br />
+        <a id="finaliser" href="finaliser_achat.php?id=<?= $products->AN_idAnnonce ;?>&type=1"> Finaliser l'achat en achat</a>
+        <?php } ?></div>
     
     
     
