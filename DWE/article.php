@@ -200,16 +200,13 @@ if(isset($_POST['repsub'])){
     $sql='INSERT INTO forumr VALUES ("","'.$_SESSION['login'].'","'.$today.'","'.$_POST['reponsesujet'].'", "'.$a.'","")';
         
         $req=$bdd2->query($sql);
+    
      ?>
-           <script>
-                function redirection(page)
-  {window.location=page;}
-setTimeout('redirection("#")');
-            </script> 
+
+        
 <?php
 }
         ?>
-
 
 
     

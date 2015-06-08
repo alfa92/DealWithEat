@@ -48,10 +48,8 @@
                     <center><p style="color:white;font-family: 'Roboto',sans-serif;"> Vous allez être redirigé vers l'espace administrateur </p></center>
 
 <script type="text/javascript">
-<!--
 var obj = 'window.location.replace("adminmembre.php");';
 setTimeout(obj,1000);
-// -->
 </script>
 <?php
                 }else{

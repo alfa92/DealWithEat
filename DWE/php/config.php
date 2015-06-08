@@ -8,6 +8,7 @@ espace membre puisse fonctionner correctement.
 
 //On se connecte a la base de donnee
 
+
 $conn2=mysqli_connect('localhost', 'root', 'root','dwe');
 try{
 		$bdd2 = new PDO('mysql:host=localhost;dbname=dwe;charset=utf8', 'root', 'root');
