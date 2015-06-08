@@ -140,11 +140,7 @@ if(isset($_POST['bouton'])){
     
 <?php 
 
-    
-   // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
-    //$ligne=$selec->fetch();
- 
-    $req=$bdd2->prepare('INSERT INTO annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image,AN_type,AN_bio)
+     $req=$bdd2->prepare('INSERT INTO annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image,AN_type,AN_bio)
    VALUES (:US_idUserannonceur,:PR_idP,:PE_idPropositionEchan,:AN_quantite,:AN_prix,:AN_echangeok,:AN_echangedescription,:AN_moyentpayment,:AN_moyentenvoie,:AN_datepublication,:AN_prixcolis,:AN_description,:AN_idUser,:AN_unite,:AN_image,:AN_type,:AN_bio)');
   $req->execute(array(
   "US_idUserannonceur"=>$_SESSION['id_perso'],
@@ -167,7 +163,6 @@ if(isset($_POST['bouton'])){
 
 ));
 }
-
 ?>
 
 
