@@ -80,7 +80,7 @@
      
 <?php if(isset($_POST['subfaq'])){
 
-    $sqli="INSERT INTO FAQ VALUES ('','".$_POST['Emplacement']."','".$_POST['titre']."','".$_POST['reponse']."')";
+    $sqli="INSERT INTO FAQ VALUES ('','".$_POST['Emplacement']."','".addslashes($_POST['titre'])."','".addslashes($_POST['reponse'])."')";
     $bdd2->query($sqli);
 } 
 ?>

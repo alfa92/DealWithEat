@@ -57,7 +57,11 @@ foreach($products as $products):
         
         ?>
 <section id="panier">
-    <img id="imgpanier" src="imageproduit/<?php echo $products->PR_idP; ?>.jpg">
+     <?php if($products->AN_image==NULL){ ?>
+    <img id="imgpanier" src="imageproduit/<?php echo $products->PR_idP ?>.jpg" >
+    <?php }else{ ?>
+    <img id="imgpanier"src="<?= $products->AN_image; ?>" >
+    <?php } ?>
     <div id="descriptionpanier">
     <span id="nom"><?= $req['PR_nom'];?></span><br> 
         <span id="vendeurpro">  <?= $pseudo['US_pseudo'];?></span><br><br>
@@ -77,7 +81,9 @@ foreach($products as $products):
         ?>
         <a id="finaliser" href="finaliser_achat.php?id=<?= $products->AN_idAnnonce ;?>&type=0"> Finaliser l'achat en échange</a><br />
         <a id="finaliser" href="finaliser_achat.php?id=<?= $products->AN_idAnnonce ;?>&type=1"> Finaliser l'achat en achat</a>
-        <?php } ?></div>
+        <?php }else{
+            echo "Pour finaliser vos achats veuillez vous inscrire/connecter";
+        }?></div>
     
     
     

@@ -108,7 +108,11 @@ while($results=$requet->fetch()){
         <a href="produit.php?q=<?= $results['AN_idAnnonce']; ?>">
             <div id="contenu">
                 <div style="z-index:2;position:absolute;">
-                  <img width="100px" height="40px" src="imageproduit/<?= $results['PR_idP'] ?>.jpg" />
+                        <?php if($results['AN_image']==NULL){ ?>
+    <img src="imageproduit/<?php echo $results['PR_idP'] ?>.jpg" width="100px" height="40px">
+    <?php }else{ ?>
+    <img src="<?= $results['AN_image']; ?>" width="100px" height="40px">
+    <?php } ?>
                 </div>
                 <div style="z-index:100;position:absolute;">
                 <h1 > <?= $req['PR_nom'] ?> </h1>

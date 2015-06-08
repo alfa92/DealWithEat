@@ -24,11 +24,13 @@
     </header>
     
     <body >
+        
+        <?php if(isset($_SESSION['id_perso'])){ ?>
         <?php $id=$_GET['id'];
             
     $sql=$bdd2->query('SELECT * FROM Annonce WHERE AN_idANnonce="'.$id.'"');
     $row=$sql->fetch();
-  $sql4=$bdd2->query('SELECT US_pseudo,US_mail FROM User WHERE US_idUser ="'.$row['US_idUserannonceur'].'"');
+    $sql4=$bdd2->query('SELECT US_pseudo,US_mail FROM User WHERE US_idUser ="'.$row['US_idUserannonceur'].'"');
     $row4=$sql4->fetch();
     $sql1=$bdd2->query('SELECT * FROM Produit WHERE PR_idP="'.$row['PR_idP'].'"');
     $row1=$sql1->fetch();
@@ -37,17 +39,26 @@
     $sql3=$bdd2->query('SELECT US_pseudo,US_mail FROM User WHERE US_idUser ="'.$row2['US_idUseracheteur'].'"');
     $row3=$sql3->fetch();
 
-if($row2=='0'){
-    $type="échange";   
-}else{
+if($row2['TR_typetransaction']=='0'){
     $type="achat";   
+}else{
+    $type="echange";   
 }
 ?>
+        
+            
         
         <h1><?= $row1['PR_nom']; ?></h1>
         <h2>Proposé à l'<?= $type ?> par <?= $row3['US_pseudo']; ?> </h2>
         
-        <center><p>Si vous n'acceptez pas cet achat cliquer sur refuser sinon compléter votre validation </p>
+        <br/>
+        <center><fieldset style="width:700px">
+        <legend><h1>Message de <?= $row3['US_pseudo']; ?></h1></legend>
+        <p> <?= $row2['TR_echangecontenu'] ?></p></center>
+        </fieldset>
+        
+        
+        <center><p>Si vous n'acceptez pas cet echange cliquer sur refuser sinon compléter votre validation </p>
         <form method="post">
             <input type="submit" name="refus" value="Refuser" />
         </form>
@@ -56,9 +67,8 @@ if($row2=='0'){
             <label for="dispo">Donner vos disponibilités et/ou votre méthode d'envoi</label><br />
             <textarea name="dispo" rows="4" cols="50"> </textarea><br />
             <input type="submit" name="envoi_dispo" />
-        </form></center>
-        
-         <?php 
+        </form></center>    
+        <?php 
     if(isset($_POST['envoi_dispo'])){
         if(!empty($_POST['dispo'])){
             
@@ -85,9 +95,9 @@ if($row2=='0'){
 
                         $mail->addAddress($row3['US_mail'], $row3['US_pseudo']);
 
-                        $mail->Subject = '[DWE] Validation de votre achat';
+                        $mail->Subject = '[DWE] Validation de votre échange';
                 
-                        $mail->msgHTML('Bonjour '.$row3['US_pseudo'].', <br /> votre demande d\'achat pour le produit :"'.$row1['PR_nom'].'"http://localhost:8888/Github_DWE/DealWithEat/DWE/produit.php?q='. $id.') a été accepté. <br />Voici le message que vous a laissé le vendeur '.$row4['US_pseudo'].' : <br />'.$_POST['dispo'].'<br /> Merci de bien vouloir communique avec lui grâce à son adresse mail : ' .$row4['US_mail'].'    <br /><br /> Ce mail est un mail automatique veuillez ne pas y repondre.'); 
+                        $mail->msgHTML('Bonjour '.$row3['US_pseudo'].', <br /> votre demande d\'échange pour le produit :"'.$row1['PR_nom'].'"http://localhost:8888/Github_DWE/DealWithEat/DWE/produit.php?q='. $id.') a été accepté. <br />Voici le message que vous a laissé le vendeur '.$row4['US_pseudo'].' : <br />'.$_POST['dispo'].'<br /> Merci de bien vouloir communique avec lui grâce à son adresse mail : ' .$row4['US_mail'].'    <br /><br /> Ce mail est un mail automatique veuillez ne pas y repondre.'); 
 
                         if (!$mail->send()) {
                             echo "Mailer Error: " . $mail->ErrorInfo;
@@ -101,8 +111,12 @@ if($row2=='0'){
         }
 }
 
-
+    
+    
+    
     
     ?>
-    
+        
+        
+        <?php }else{ ?><h1> Vous n'avez pas accès à cette page si vous n'êtes pas connecté/inscrit </h1> <?php } ?>
     </body>

@@ -14,8 +14,13 @@
 
         <title>Deal With Eat</title>
         <?php 
+
+                
         $id=$_GET['id'];
         $type=$_GET['type'];
+
+                    $pseudo=$bdd2->query('SELECT US_idUserannonceur  FROM Annonce WHERE AN_idAnnonce="'.$id.'"');
+                    $affiche=$pseudo->fetch();
 
                     $sql=$bdd2->query('SELECT * FROM Transaction WHERE AN_idAnnonce="'.$id.'"');
                     $affiche=$sql->fetch();
@@ -30,8 +35,7 @@ if(isset($affiche['US_idUseracheteur'])){
 if($user==$_SESSION['id_perso']){
             ?> <h1> Vous avez déjà envoyé une demande pour ce produit.</h1> <?php
         }else{
-            
-            $sql1=$bdd2->query('INSERT INTO Transaction VALUES ("", "'.$_SESSION['id_perso'].'", "'.$id.'", "","", "'.$type.'")');
+            $sql1=$bdd2->query('INSERT INTO Transaction VALUES ("","'.$affiche['US_idUserannonceur'].'","'.$_SESSION['id_perso'].'", "'.$id.'", "","", "'.$type.'","","")');
             ?> <h1>Votre demande pour ce produit a été envoyé.</h1> <?php            
         }
             
