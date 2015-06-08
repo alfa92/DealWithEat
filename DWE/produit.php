@@ -58,7 +58,7 @@ $pseudo=$bdd2->query('SELECT US_pseudo, US_idUser FROM User WHERE US_idUser="'.$
     
     
     <label for="quantite"> Quantité :</label>
-  <input type="range" name="rangeInput" min="0" max="<?= $an['AN_quantite']  ?>" value="1" onchange="updateTextInput(this.value);">                                                       
+  <input type="range" name="rangeInput" min="1" max="<?= $an['AN_quantite']  ?>" value="1" onchange="updateTextInput(this.value);">                                                       
     <input type="text" id="textInput" value="1" width="10" style="border:none;outline:none;">
     
     <a id="panier"  href="panier/addpanier.php?id=<?= $q ?>">

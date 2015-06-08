@@ -123,7 +123,7 @@
 if(isset($_POST['bouton'])){
 
           $fichier = $_FILES['file']['name'];
-          $taille_maximale=2097512;
+          $taille_maximale=2097152; //2GO de mmoire
           $taille=filesize($_FILES['file']['tmp_name']);
           $extensions=array ('.png','.jpg','.jpeg','.PNG','.JPG','.JPEG');
           $extension=strrchr($fichier, '.');
@@ -157,12 +157,12 @@ if(isset($_POST['bouton'])){
 ?>    
     
 <?php 
-    
-   // $selec=$bdd2->query('SELECT * FROM User WHERE US_pseudo="'.$_SESSION['login'].'"');
-    //$ligne=$selec->fetch();
+
+
  
     $req=$bdd2->prepare('INSERT INTO Annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image,AN_type,AN_bio,AN_departement)
    VALUES (:US_idUserannonceur,:PR_idP,:PE_idPropositionEchan,:AN_quantite,:AN_prix,:AN_echangeok,:AN_echangedescription,:AN_moyentpayment,:AN_moyentenvoie,:AN_datepublication,:AN_prixcolis,:AN_description,:AN_idUser,:AN_unite,:AN_image,:AN_type,:AN_bio,:AN_departement)');
+
   $req->execute(array(
   "US_idUserannonceur"=>$_SESSION['id_perso'],
   "PR_idP"=>$_POST['produit'],
@@ -186,7 +186,6 @@ if(isset($_POST['bouton'])){
 
 ));
 }
-
 ?>
 
 
