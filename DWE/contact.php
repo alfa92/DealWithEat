@@ -63,7 +63,9 @@
         ?>
 
 
-        <?php if (isset($_POST['submit'])){ date_default_timezone_set('Etc/UTC');
+        <?php if (isset($_POST['submit'])){
+
+         date_default_timezone_set('Etc/UTC');
 
                         require 'phpmailer/PHPMailerAutoload.php';
 
@@ -120,6 +122,7 @@
 
 //send the message, check for errors
                         if (!$mail->send()) {
+
                             echo "Mailer Error: " . $mail->ErrorInfo;
                         } else {
                             echo "Votre message à bien été pris en compte. Nous vous recontacterons dans les plus bref delais <br> <a href='accueil.php'> <strong> Cliquez ici pour retourner à l'acceuil </a> </strong>";
