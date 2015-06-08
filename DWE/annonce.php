@@ -51,8 +51,7 @@
 
         <h4>  Produits Biologiques </h4>
               
-                    <input type="radio" name="BioPeuImporte" value="1" /> <label for="Bio">Bio</label><br/>
-                    <input type="radio" name="BioPeuImporte" value="0" /> <label for="PeuImporte">Peu importe</label><br/> </br>
+                    <input type="radio" name="BioPeuImporte" value="1" /> <label for="Bio">Produits Biologiques</label><br/>
                     <center><input type='submit' name='filtre' value='Filtrer'  > </center>
         </form>
     </div>
@@ -103,8 +102,7 @@ $product_req=$bdd2->query('SELECT * FROM Annonce');
 $product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_echangeok="'.$echangeok.'"');
    
  }elseif(isset($_POST['filtre']) && isset($BioPeuImporte)){
-
-$product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_bio="'.$BioPeuImporte.'"');
+ $product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_bio="'.$BioPeuImporte.'"');
    
 }elseif(isset($_POST['filtre']) && isset($croissant)){
 

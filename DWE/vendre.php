@@ -105,7 +105,7 @@
 if(isset($_POST['bouton'])){
 
           $fichier = $_FILES['file']['name'];
-          $taille_maximale=2097512;
+          $taille_maximale=2097152; //2GO de mmoire
           $taille=filesize($_FILES['file']['tmp_name']);
           $extensions=array ('.png','.jpg','.jpeg','.PNG','.JPG','.JPEG');
           $extension=strrchr($fichier, '.');
