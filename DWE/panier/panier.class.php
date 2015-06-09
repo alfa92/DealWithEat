@@ -21,9 +21,8 @@
 
         public function count(){
            return array_sum($_SESSION['panier']);
-
-
         }
+        
         public function total(){
             $total= 0;
             $ids=array_keys($_SESSION['panier']);
@@ -37,6 +36,7 @@
             }
             return $total;
         }
+        
         public function add($product_id){
             if(isset($_SESSION['panier'][$product_id])){
             $_SESSION['panier'][$product_id]++;

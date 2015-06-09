@@ -46,7 +46,7 @@
             <select name="produit" id="produit">
                 <option> Choisir </option>
 <?php 
-    $prods=$bdd2->query('SELECT DISTINCT* FROM produit ORDER BY PR_nom ASC');
+    $prods=$bdd2->query('SELECT DISTINCT* FROM Produit ORDER BY PR_nom ASC');
     foreach ($prods as $prods):
 ?>
                 <option  value="<?php echo $prods['PR_idP']; ?>"> <?php echo $prods['PR_nom']; ?> </option>
@@ -88,9 +88,9 @@
           </textarea> <br/><br/>
             
             <label for="departement"> Ou vous trouvez vous ?</label>
-           <select required>
+           <select name="departement" required>
                <?php for($i=1;$i<97;$i++){ ?>
-                <option name="departement" value="$i"> <?= $i; ?> </option>
+                <option value="<?= $i ?>"> <?= $i ?> </option>
                <?php } ?>
             </select> <br /><br />
             
@@ -114,7 +114,6 @@
 
 </form>
 
-
     </section>
 
 <?php 
@@ -130,10 +129,12 @@ if(isset($_POST['bouton'])){
 
         if(!in_array($extension, $extensions))
         {
+            $nomdufichier=NULL;
           $error="<div class='alert'> Vous devez uploader un fichier de type png, jpg, jpeg </div>";
         }
 
         if($taille>$taille_maximale){
+            $nomdufichier=NULL;
           $error="<div class='alert'>  Le fichier est trop volumineux </div>";
         }
 
@@ -146,6 +147,7 @@ if(isset($_POST['bouton'])){
           move_uploaded_file($_FILES['file']['tmp_name'], $nomdufichier );
 
         }else{
+            $nomdufichier=NULL;
           echo $error;
         }
 
