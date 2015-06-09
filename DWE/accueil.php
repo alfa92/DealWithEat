@@ -56,7 +56,8 @@
                     } ?></p>
         </div>
 
-        <div id="presentation">
+        
+    </div><div id="presentation">
                     <h1> Le principe </h1>
                 <p>
 
@@ -105,7 +106,6 @@
         <p> L'inscription complète vous demande plus d'information comme votre adresse, votre nom etc... Lorsque vous obtenez le grade de membre complet vous pouvez alors vendre, acheter et echanger comme bon vous semble. De plus vous pourrez poster des commentaires sur les profils des autres membres. </p>
     </div>
         </section>
-    </div>
         <center> <div
   class="fb-like"
   data-share="true"
