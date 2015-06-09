@@ -36,11 +36,6 @@
                      <input  type="radio" name="echangeok" value="0" id="vente" /> <label for="legume">Vente</label> <br/>
                      <input  type="radio" name="echangeok" value="1" id="echange" /> <label for="fruit">Echange</label><br /><br />
                      
-
-
-
-
-
                      <label  for ="echangeok"> Trier selon des prix: </label> <br/>
                      <input  type="radio" name="croissant"  /> <label for="croissant">croissants</label> <br/>
                      <input  type="radio"  name="decroissant" /> <label for="decroissant"> décroissants</label><br />
@@ -79,9 +74,6 @@ if(isset($_POST['decroissant'])){
 $decroissant=$_POST['decroissant'];
 }
 
-
-
-
 $product_req=NULL;
 
 
@@ -118,11 +110,6 @@ $product_req=$bdd2->query('SELECT * FROM Annonce   ORDER BY AN_prix DESC' ) ;
 
 }
 
-
-
-
-
-
       
      // foreach($product_req as $products) {
 while($products=$product_req->fetch()){
@@ -130,10 +117,6 @@ while($products=$product_req->fetch()){
         $req=$nom->fetch(); 
 ?>        
       
-
-
-
-
         <div id="article_annonce">
             <form id="panier" method="post" action="annonce.php">
                   <h1 > 
