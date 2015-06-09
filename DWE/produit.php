@@ -43,7 +43,11 @@ $pseudo=$bdd2->query('SELECT US_pseudo, US_idUser FROM User WHERE US_idUser="'.$
 ?>
         <h1> <?= $req['PR_nom']; ?> </h1>
     <h2> <a href="membre.php?a=<?= $an['US_idUserannonceur'] ?>"><?= $ps['US_pseudo'] ?></a> </h2>
+    <?php if($an['AN_image']==NULL){ ?>
     <img id="image_article" src="imageproduit/<?php echo $an['PR_idP'] ?>.jpg" style="margin-left:500px;">
+    <?php }else{ ?>
+    <img id="image_article"src="<?= $an['AN_image']; ?>" style="margin-left:500px;">
+    <?php } ?>
     <p> Prix : <?= $an['AN_prix']; ?>€ / <?= $an['AN_unite'] ?></p>
     
     <p> Description du produit : <?= $an['AN_description']; ?> </p>

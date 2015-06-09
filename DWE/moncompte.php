@@ -118,7 +118,7 @@ if(is_dir($dossier)){
             <center> <input type="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"/></center>
 </form>
 <span style="display:none;" id="text_latlng"></span>
-<div id="map-canvas" style="height:220px;width:60%"></div>
+<center><div id="map-canvas" style="height:220px;width:60%"></div></center>
         
         
     <script type="text/javascript">
@@ -168,7 +168,8 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
         <div id="annoncescompte">
             <i style="color:red;font-size:10px;">Demande d'achat</i> - 
             <i style="color:green;font-size:10px;">Demande d'echange</i>
-        <h4> Vos annonces </h4>
+        <div id="annonce">
+            <h4> Vos annonces </h4>
           
           <div class="annonce"><?php
 
@@ -185,13 +186,8 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
 ?>
 <img id="image_article_compte" style="width:40px;" src="imageproduit/<?php echo $rows['PR_idP'] ?>.jpg">
 <?php
-             if($rows2['AN_idAnnonce']==$rows['AN_idAnnonce'] && $rows2['TR_typetransaction']==0){
-         ?> <a href="produit_achat.php?id=<?= $rows['AN_idAnnonce']; ?>"><i style="color:red"><?= $rows1['PR_nom'] ?></i></a><br> <?php
-         }elseif($rows2['AN_idAnnonce']==$rows['AN_idAnnonce'] && $rows2['TR_typetransaction']==1){
-            ?> <a href="produit_echange.php?id=<?= $rows['AN_idAnnonce']; ?>"><i style="color:green">'<?= $rows1['PR_nom'] ?></i></a><br> <?php
-         }else{
-              echo $rows1['PR_nom'].'<br>';
-         }
+         ?><i ><?= $rows1['PR_nom'] ?></i></a><br> <?php
+    
                 
                 
                 
@@ -204,12 +200,12 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
 }
  ?>   
  </div>
+            </div>
+            <div style="position:absolute;top:0;margin-right:200px;" id="trasanction">
               <h4> Vos transactions en cours </h4>
               <div class="annonce_transaction"><?php
-
-            $req=$bdd2->query('SELECT * FROM Transaction');
-           
-
+    
+            $req=$bdd2->query('SELECT * FROM Transaction WHERE TR_idUservendeur="'.$_SESSION['id_perso'].'"');
             while ($rows=$req->fetch()){
           
                 $transac=$bdd2->query('SELECT * FROM Annonce WHERE AN_idAnnonce="'.$rows['AN_idAnnonce'].'"');
@@ -222,24 +218,20 @@ google.maps.event.addDomListener(window, 'load', initialiserCarte);
 <img id="image_article_compte" style="width:40px;" src="imageproduit/<?php echo $rows2['PR_idP'] ?>.jpg">
 <?php
              if($rows['AN_idAnnonce']==$rows2['AN_idAnnonce'] && $rows['TR_typetransaction']==0){
-         echo '<a href="transaction/produit_echange.php"><i style="color:red">' .$rows1['PR_nom'].'</i></a><br>';
-         }elseif($rows['AN_idAnnonce']==$rows2['AN_idAnnonce'] && $rows['TR_typetransaction']==1){
-             echo '<a href="transaction/produit_achat.php"><i style="color:green">' .$rows1['PR_nom'].'</i></a><br>';
-         }else{
-              echo $rows1['PR_nom'].'<br>';
+         ?> <a href="produit_achat.php?id=<?= $rows['AN_idAnnonce']; ?>"><i style="color:red"><?= $rows1['PR_nom'] ?></i></a>
+         <?php }elseif($rows['AN_idAnnonce']==$rows2['AN_idAnnonce'] && $rows['TR_typetransaction']==1){
+            ?> <a href="produit_echange.php?id=<?= $rows['AN_idAnnonce']; ?>"><i style="color:green"><?= $rows1['PR_nom'] ?></i></a>
+         <?php }else{
+              echo $rows1['PR_nom'];
          }
-                
-                
-                
-         echo $rows2['AN_prix'].'€ <br>';
          echo "<p style='display:inline-block;font-size:10px;'> Quantité restante : ".$rows2['AN_quantite']."kg </p>";
-         ?> <a href="annonce_modif.php?id=<?= $rows['AN_idAnnonce']; ?> "> <img class="modifier" src="css/images/modifier.png"  />  </a>
-         <a href="supprimer_annonce.php?id=<?= $rows['AN_idAnnonce']; ?> " > <img class="supprimer" src="css/images/supprimer.png" />
+         ?> 
          <hr> 
          <?php
 }
  ?>   
  </div>
+                  </div>
     
         </div>
       

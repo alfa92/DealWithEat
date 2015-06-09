@@ -1,12 +1,16 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Antoine
- * Date: 30/03/15
- * Time: 16:22
- */
-
+<?php 
 require '_header.php';
+?>
+<html>
+    <head>
+        <meta charset=UTF-8>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+
+        <title>Deal With Eat</title>
+        
+    </head>
+<?php
     if(isset($_GET['id'])){
         $product = $DB->query('SELECT AN_idAnnonce FROM Annonce WHERE AN_idAnnonce="'.$_GET['id'].'"');
         if(empty($product)){
@@ -24,3 +28,4 @@ require '_header.php';
     }
 
     ?>
+    </html>

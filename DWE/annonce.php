@@ -78,9 +78,11 @@ $product_req=NULL;
 
 
 if(empty($_POST['filtre'])){
-    
+    if(isset($_GET['ville'])){
+         $product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_departement="'.$_GET['ville'].'"');
+    }else{
   $product_req=$bdd2->query('SELECT * FROM Annonce');
-    
+    }
 }elseif(isset($_POST['filtre']) && !isset($BioPeuImporte) && !isset($echangeok) &&  !isset($FruitLegume) && !isset($croissant) && !isset($decroissant) ){
 echo "<p> Veuillez choisir au moins un critère et recommencez SVP</p> </br>";
 
@@ -134,7 +136,7 @@ while($products=$product_req->fetch()){
                 </div></a>  
 
 
-                <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $product['AN_idAnnonce']; ?>">
+                <a id="ajout_panier"  href="panier/addpanier.php?id=<?= $products['AN_idAnnonce']; ?>">
                 <div id="div_ajout_panier"> Ajouter au panier </a><br>
 
                     

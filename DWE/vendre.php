@@ -17,6 +17,15 @@
       
     
     </header>
+     <?php if(isset($_SESSION['id'])!='1'){
+?>  
+
+<p style="text-align:center;font-family:'Roboto' sans-serif; font-size:14px;"> Vous n'avez pas accés à cette page, pour accéder à cette page vous devez être <a href="Inscription.php" style="text-decoration:underline;">inscrit</a> et <a style="text-decoration:underline;" href="connectez_vous.php">vous connectez</a> à votre compte. <br>
+
+<a style="text-decoration:underline;" href="accueil.php">Retour à l'accueil</a></p>
+ <?php ;}else{
+
+?>
 
     <body>
             
@@ -77,6 +86,14 @@
           <label  for="descriptionechange" > Description de l'echange :</label> 
           <textarea class="inputvendre" name="descriptionechange" rows="8" cols="45" >
           </textarea> <br/><br/>
+            
+            <label for="departement"> Ou vous trouvez vous ?</label>
+           <select required>
+               <?php for($i=1;$i<97;$i++){ ?>
+                <option name="departement" value="$i"> <?= $i; ?> </option>
+               <?php } ?>
+            </select> <br /><br />
+            
 
           <label for ="payement"> Versement  désiré :  </label>
           <input type="radio" name="payement" value="carte" id="carte" /> <label for="carte">Carte</label>
@@ -102,6 +119,7 @@
 
 <?php 
 
+
 if(isset($_POST['bouton'])){
 
           $fichier = $_FILES['file']['name'];
@@ -122,7 +140,7 @@ if(isset($_POST['bouton'])){
         if(!isset($error))
         {
             
-            $nomdufichier = "ImagesUploades/333-".rand(5,333330).$fichier;
+            $nomdufichier = "ImagesUploades/333-".$fichier;
           $fichier=preg_replace('/(^.a-z0-9]+)/i','-', $fichier);
 
           move_uploaded_file($_FILES['file']['tmp_name'], $nomdufichier );
@@ -140,8 +158,11 @@ if(isset($_POST['bouton'])){
     
 <?php 
 
-     $req=$bdd2->prepare('INSERT INTO annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image,AN_type,AN_bio)
-   VALUES (:US_idUserannonceur,:PR_idP,:PE_idPropositionEchan,:AN_quantite,:AN_prix,:AN_echangeok,:AN_echangedescription,:AN_moyentpayment,:AN_moyentenvoie,:AN_datepublication,:AN_prixcolis,:AN_description,:AN_idUser,:AN_unite,:AN_image,:AN_type,:AN_bio)');
+
+ 
+    $req=$bdd2->prepare('INSERT INTO Annonce (US_idUserannonceur,PR_idP,PE_idPropositionEchan,AN_quantite,AN_prix,AN_echangeok,AN_echangedescription,AN_moyentpayment,AN_moyenenvoie,AN_datepublication,AN_prixcolis,AN_description,AN_idUser,AN_unite,AN_image,AN_type,AN_bio,AN_departement)
+   VALUES (:US_idUserannonceur,:PR_idP,:PE_idPropositionEchan,:AN_quantite,:AN_prix,:AN_echangeok,:AN_echangedescription,:AN_moyentpayment,:AN_moyentenvoie,:AN_datepublication,:AN_prixcolis,:AN_description,:AN_idUser,:AN_unite,:AN_image,:AN_type,:AN_bio,:AN_departement)');
+
   $req->execute(array(
   "US_idUserannonceur"=>$_SESSION['id_perso'],
   "PR_idP"=>$_POST['produit'],
@@ -157,9 +178,11 @@ if(isset($_POST['bouton'])){
   "AN_description"=>$_POST['description'],
   "AN_idUser"=>$_SESSION['id_perso'],
   "AN_unite"=>$_POST['unite'],
+      "AN_image"=>$nomdufichier,
 "AN_type"=>$prods['PR_type'],
     "AN_bio"=>$_POST['BioPeuImporte'],
-       "AN_image"=>$nomdufichier
+      "AN_departement"=>$_POST['departement']
+       
 
 ));
 }
@@ -169,7 +192,8 @@ if(isset($_POST['bouton'])){
 
   </body>
          
-   <?php include('php/pied_de_page.php'); ?>
+   <?php include('php/pied_de_page.php');
+    }?>
     
     
 </html>

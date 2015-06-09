@@ -1,3 +1,7 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
 <title>Deal With Eat - Backoffice</title>
 </head>
 <header>
@@ -21,3 +25,5 @@ $id=$_GET['id'];
                         }
                     
      ?>
+<center><a href="../membreadmin.php">Retour </a></center>
+</html>

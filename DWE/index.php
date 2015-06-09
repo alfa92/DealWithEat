@@ -16,49 +16,41 @@
   
 <img id= "fondindex" src="css/images/fondindex.jpg" alt="fond page index" /> 
 
+  <img  id="logoindex" src="css/images/logodwe.png" alt="logo dwe"/>
 
-  	<p id="logoindex">  <img src="css/images/logodwe.png" alt="logo dwe"/>
-  	</p>
-
-<h1 id="titreindex">Deal With Eat
-</h1>
-		
-		
-
-	
-
-  </br>
-
-
-<section> 
-     <article>
-
-         <p id="Slogan">Vendez, Achetez, Echangez </p>
-
-
-        <p class="ChoixLangue"> Choisissez votre langue/Choose your language  </p> 
-
-        <p class="Drapeaux"> <a href="accueil.php"><img  src="css/images/drapeauFR.png" alt="drapeau de la France " title="Naviguez sur le site en français" width="20%" height="30%"/> </a>              
-         <img src="css/images/drapeauRU.png" alt="drapeau de la RU " title="browse the siteweb in English" width="20%" height="30%"/>  </p>
-
-     
-
-    </article>
-
-
-           
-
- 
+<h1 id="titreindex">Deal With Eat</h1>
+		 <p id="Slogan">Vendez, Achetez, Echangez </p>
+</br>
 
 
 
-           
-</section>
-
-
-
- 
-
+        
+    
+<link href="js/jqvmap.css" media="screen" rel="stylesheet" type="text/css" />
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.vmap.js" type="text/javascript"></script>
+    <script src="js/jquery.vmap.france.js" type="text/javascript"></script>
+	<script src="js/jquery.vmap.colorsFrance.js" type="text/javascript"></script>
+    
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#francemap').vectorMap({
+		    map: 'france_fr',
+			hoverOpacity: 0.4,
+			backgroundColor: "#ffffff",
+			borderColor: "#000000",
+			showTooltip: true,
+		    onRegionClick: function(element, code)
+		    {
+		       
+                window.location="annonce.php?ville="+ code;
+		    }
+		});
+	});
+	</script>
+  </head>
+  <body>
+    <div id="francemap" style="width: 600px; height: 500px;"></div>
   </body>
-
 </html>
