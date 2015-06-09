@@ -16,6 +16,7 @@
 <div id="principal">
 
     <header>
+
         <?php include('php/config.php'); ?>
         <?php include('php/connexion.php'); ?>
         <?php include('php/header.php'); ?>
@@ -54,14 +55,27 @@ $pseudo=$bdd2->query('SELECT US_pseudo, US_idUser FROM User WHERE US_idUser="'.$
     
     
     
-    <p> Quantité disponible : <?=  $an['AN_quantite'] ?> <?= $an['AN_unite'] ?></p>
+    <p> Quantité disponible : <?=  $an['AN_quantite'] ?> <?= $an['AN_unite'] ?><?php if($an['AN_quantite']>1){ echo "s";} ?></p>
     
     
     <label for="quantite"> Quantité :</label>
+    <form method="post" action="#">
   <input type="range" name="rangeInput" min="1" max="<?= $an['AN_quantite']  ?>" value="1" onchange="updateTextInput(this.value);">                                                       
-    <input type="text" id="textInput" value="1" width="10" style="border:none;outline:none;">
-    
-    <a id="panier"  href="panier/addpanier.php?id=<?= $q ?>">
+    <input type="text" name="quantite" id="textInput" value="1" width="10" style="border:none;outline:none;">
+        <input type="submit" name="n" value="Valider la quantité" >
+    </form>
+        <?php if(isset($_POST['n']))
+{
+    $var = $_POST['rangeInput'];
+    echo "Vous avez choisi ".$var." ".$an['AN_unite']."s";
+}
+            ?> 
+    <br />
+    <?php if(isset($var)){ ?>
+    <a id="panier"  href="panier/addpanier.php?id=<?= $q ?>&n=<?= $var ?>">
+        <?php }else{ ?>
+         <a id="panier"  href="panier/addpanier.php?id=<?= $q ?>">
+        <?php } ?>
          <img id="div_ajout_panier" src="css/images/addpanier.png" width="40" height="40">  </a> </a><br>
         
 </div>

@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Antoine
- * Date: 30/03/15
- * Time: 14:40
- */
-
 class DB{
     private $host = 'localhost';
     private $username = 'root';

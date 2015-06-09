@@ -16,10 +16,19 @@ require '_header.php';
         if(empty($product)){
             die ("Ce produit n'existe pas");
         }
-
+        if(isset($_GET['n'])){
+        $n=$_GET['n'];
+            for($i=1;$i<$n+1;$i++){
+                $panier->add($product[0]->AN_idAnnonce);
+            }
+            $a=$i-1;
+            echo 'Le produit a été ajouté à votre panier '.$a.' fois';
+            }else{
         $panier->add($product[0]->AN_idAnnonce);
-
-        echo 'Le produit a été ajouté à votre panier <a href="javascript:history.back()"> Retourner sur le catalogue</a>';?>
+            echo 'Le produit a été ajouté à votre panier ';
+            }
+        ?>
+    <p></p><a href="../annonce.php"> Retourner sur le catalogue</a></p>
     <p><a href="../panier.php"> Voir son panier </a></p>
 <?php
 

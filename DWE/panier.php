@@ -74,7 +74,8 @@ foreach($products as $products):
 
        
     <span id="Prix_unite"> <?= $products->AN_prix;?> €/kg</span>
-    <span id="quantite"><?= $_SESSION['panier'][$products->AN_idAnnonce];?> kg</span><br />
+    <span id="quantite"><?= $_SESSION['panier'][$products->AN_idAnnonce];?> <?= $products->AN_unite; ?><?php if(($_SESSION['panier'][$products->AN_idAnnonce])>1){
+            echo "s"; } ?></span><br />
         <?php 
         if(isset($_SESSION['id_perso'])){
         

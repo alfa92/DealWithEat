@@ -16,10 +16,10 @@
   
 <img id= "fondindex" src="css/images/fondindex.jpg" alt="fond page index" /> 
 
-  <img  id="logoindex" src="css/images/logodwe.png" alt="logo dwe"/>
+  <a href="accueil.php" style="color:black;"><img  id="logoindex" src="css/images/logodwe.png" alt="logo dwe"/>
 
 <h1 id="titreindex">Deal With Eat</h1>
-		 <p id="Slogan">Vendez, Achetez, Echangez </p>
+		 <p id="Slogan">Vendez, Achetez, Echangez </p></a>
 </br>
 
 

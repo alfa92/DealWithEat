@@ -99,8 +99,6 @@ $product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_echangeok="'.$echangeo
  $product_req=$bdd2->query('SELECT * FROM Annonce WHERE AN_bio="'.$BioPeuImporte.'"');
    
 }elseif(isset($_POST['filtre']) && isset($croissant)){
-
-
 $product_req=$bdd2->query('SELECT * FROM Annonce   ORDER BY AN_prix ASC' ) ;
 
 }

@@ -1,4 +1,5 @@
-<?php session_start(); ?><html>
+<?php session_start(); ?>
+<html>
     <head>
         <meta charset=UTF-8>
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
@@ -23,28 +24,24 @@
 			
 			$a=$_GET['a'];
 
-			$req='SELECT * FROM User WHERE US_idUser="'.$a.'"';
-			$res=mysqli_query($conn2,$req);
+			$req=$bdd2->query('SELECT * FROM User WHERE US_idUser="'.$a.'"');
+			$res=$req->fetch();
 
             $prods=$bdd2->query('SELECT * FROM Annonce WHERE US_idUserannonceur="'.$a.'"');
             
 
-
-	if($rows1=mysqli_fetch_array($res)){
-		$pseudo=$rows1['US_pseudo']; $membre=$rows1['US_nom'];$mail=$rows1['US_mail'];$prenom=$rows1['US_prenom'];
-
-			?>
+?>
     <div id="membre_presentation">
-    <?php  if($rows1['US_image'] != null){ ?>
-    <img height="auto" style="max-width:200px;max-height:200px" src="image_user/<?=$a ?>/<?= $rows1['US_image'] ?>" />
+    <?php  if($res['US_image'] != null){ ?>
+    <img height="auto" style="max-width:200px;max-height:200px" src="image_user/<?=$a ?>/<?= $res['US_image'] ?>" />
     <?php }else{ ?>
             <img height="auto" style="max-width:200px;max-height:200px" src="image_user/avatar.png" />
     <?php } ?>
                 
     
-    <h1><?= $pseudo ?></h1>
-    <h2><?= $rows1['US_ville']?></h2><br/>
-        
+    <h1><?= $res['US_pseudo'] ?></h1>
+    <h2><?= $res['US_ville']?></h2><br/>
+    </div>  
         <br />
         <h2> Dernières annonces</h2>
         <div style="max-width:23àpx;overflow-x:scroll;">
@@ -62,8 +59,11 @@
                 <img src="imageproduit/<?= $prod['PR_idP'] ?>.jpg" width="120px" />
                 
                  </div>
-                <?php } ?>
-        
+
+        	<?php
+}
+	
+?>
         </div>
         
         
@@ -81,14 +81,15 @@
                     }
         ?>
     <h4>Voter pour ce vendeur :</h4> 
+        <?php if(isset($easy)){ ?>
     <p>Note moyenne : <?= $easy/$nbvote ?>/5</p>
-        <?php 
+        <?php }
         if(isset($_SESSION['id'])>0){ 
     
                 $dejavote=$bdd2->query('SELECT * FROM note_user  WHERE NU_idUser = "'.$a.'" && NU_idUsNote ="'.$_SESSION['id_perso'].'"');
                 $dvresult = $dejavote -> fetch();
         
-        if($_SESSION['id_perso'] == $dvresult['NU_idUser'])
+        if($_SESSION['id_perso'] == $a)
         {
            ?> <p> Vous ne pouvez pas voter pour vous ! </p>
     
@@ -150,75 +151,24 @@
             width:50%;
         }
         #vote_vendeur{
-            display:inline-block;
-            vertical-align:top;
+            position:absolute;
+            top:0;
+            right:0;
             width:30%;
+            margin-top:250px;
+            margin-right:200px;
+            
         }
         
     </style>
         
-        
+    </div> 
      
         
-	<?php
-}
-	
-?>
-        <br />
-           <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=fr">
-</script>
-        <?= $rows1['US_adresse'] ?>
-        <form>
-  <input type="text" id="adresse" style="outline:none;border:none;display:none;"value="<?= $rows1['US_adresse']?>"/>
-  <input type="button"  value="Localiser sur Google Map" onclick="TrouverAdresse();"/>
-</form>
-<span style="display:none;" id="text_latlng"></span>
-<div id="map-canvas" style="float:right;height:220px;width:100%"></div>
+
         
-        
-    <script type="text/javascript">
-var geocoder;
-var map;
-// initialisation de la carte Google Map de départ
-function initialiserCarte() {
-  geocoder = new google.maps.Geocoder();
-  var latlng = new google.maps.LatLng(48.8566140,2.3522219);
-  var mapOptions = {
-    zoom      : 7,
-    center    : latlng,
-    mapTypeId : google.maps.MapTypeId.ROADMAP
-  }
-  // map-canvas est le conteneur HTML de la carte Google Map
-  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-}
- 
-function TrouverAdresse() {
-  // Récupération de l'adresse tapée dans le formulaire
-  var adresse = document.getElementById('adresse').value;
-  geocoder.geocode( { 'address': adresse}, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      map.setCenter(results[0].geometry.location);
-      // Récupération des coordonnées GPS du lieu tapé dans le formulaire
-      var strposition = results[0].geometry.location+"";
-      strposition=strposition.replace('(', '');
-      strposition=strposition.replace(')', '');
-      // Affichage des coordonnées dans le <span>
-      document.getElementById('text_latlng').innerHTML='Coordonnées : '+strposition;
-      // Création du marqueur du lieu (épingle)
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
-    } else {
-      alert('Adresse introuvable: ' + status);
-    }
-  });
-}
-// Lancement de la construction de la carte google map
-google.maps.event.addDomListener(window, 'load', initialiserCarte);
-</script>
             </div>
-    
+    </div>
 </div>
     </body>
 <?php include('php/pied_de_page.php');
