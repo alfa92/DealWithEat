@@ -11,7 +11,6 @@
 </head>
 <header>
     <?php include('../php/config.php'); ?>
-    <?php require('backoffice.class.php'); ?>
 </header>
 
 <?php if(isset($_SESSION['id'])!='2'){
@@ -33,11 +32,12 @@
     <nav id="nav">
       <a href="adminmembre.php"><img style="width:100px;margin-left:25%;margin-top:50px;"src="../css/images/logoDWE.png" /></a>
 
-        <ul>
+       <ul>
             <li><a href="membreadmin.php"> Membres </a></li>
             <li><a href="adminannonce.php"> Annonces </a></li>
             <li><a href="adminforum.php"> Forum </a></li>
             <li><a href="adminfaq.php"> FAQ </a></li>
+            <li><a href="newsletter.php"> Newsletter </a></li>
             <li><a href="../accueil.php" TARGET=_BLANK> Voir le site</a></li>
             <li><a href="logout.php"> Deconnexion</a></li>
         </ul>
@@ -59,7 +59,7 @@
     $subjects=$subject->fetch();
     
     ?>  <h2><?= $subjects['q_sujet'] ?></h2> <?php
-     $post=$bdd2->query('SELECT * FROM forumr WHERE FR_sujet="'.$subjects['ID_forum'].'"');
+     $post=$bdd2->query('SELECT * FROM forumr WHERE FR_sujet="'.$_GET['id'].'"');
     foreach($post as $posts):
    
 ?>

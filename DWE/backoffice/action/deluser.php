@@ -14,6 +14,7 @@ $id=$_GET['id'];
 
     echo $id;
 
+         
                     $sql2 =' DELETE FROM User WHERE US_idUser="'.$id.'"';                
                      if($sql2query=$bdd2->exec($sql2)==true)
                      {
